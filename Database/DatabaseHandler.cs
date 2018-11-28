@@ -296,6 +296,29 @@ namespace DataAccess
 
         //}
 
+
+        public List<Ydelse>GetAllYdelse()
+        {
+            string sqlString = "select * from Ydelse";
+            List<Ydelse> All = new List<Ydelse>();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
+            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            {
+                conn.Open();
+                using (SqlDataReader sqld = com.ExecuteReader())
+                {
+                    if (sqld.HasRows)
+                        while (sqld.Read())
+                        {
+                            Ydelse ydelse = new Ydelse();
+                            ydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            ydelse.StartDato = sqld["StartDato"].ToString();
+                        }
+                    return All;
+                }
+            }
+
+
     }
 }
 
