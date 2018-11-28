@@ -292,7 +292,7 @@ namespace DataAccess
             }
         }
 
-       
+
         //public void DeleteFromCase()
         //{
 
@@ -308,7 +308,7 @@ namespace DataAccess
         //}
 
 
-        public List<Ydelse>GetAllYdelse()
+        public List<Ydelse> GetAllYdelse()
         {
             string sqlString = "select * from Ydelse";
             List<Ydelse> All = new List<Ydelse>();
@@ -333,7 +333,7 @@ namespace DataAccess
                 }
             }
 
-
+        }
     }
 }
 
