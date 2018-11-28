@@ -11,13 +11,13 @@ namespace BusinessLogic
 
     public class Controller
     {
-        //private IDatabase _myDataBase = BadDataBase();
+        //Eksempel: private IDatabase _myDataBase = BadDataBase();
         // BadDataBase : IDatabase
         // DummyDatabase : IDatabase
         //
         // 
-        //.Instance() pga det er en singleton
         //
+        //.Instance() pga det er en singleton
         //Before:  private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
         private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance();
         //23
