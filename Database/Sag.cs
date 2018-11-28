@@ -21,18 +21,18 @@ namespace DataAccess
         public int YdelsesTypeNr { get; set; }
 
         public Sag() { }
-        public Sag(string Arbejdstitel, string StartDato, string SlutDato, string Kørselstimer, string TimeEstimat, string SagsBeskrivelse , string InterneNoter, string KlientNr, int AdvokatId, int YdelsesTypeNr)
+        public Sag(string arbejdstitel, string startDato, string slutDato, string kørselstimer, string timeEstimat, string sagsBeskrivelse , string interneNoter, string klientNr, int advokatId, int ydelsesTypeNr)
         {
-            this.Arbejdstitel = Arbejdstitel;
-            this.StartDato = StartDato;
-            this.SlutDato = SlutDato;
-            this.Kørselstimer = Kørselstimer;
-            this.TimeEstimat = TimeEstimat;
-            this.SagsBeskrivelse = SagsBeskrivelse;
-            this.InterneNoter = InterneNoter;
-            this.KlientNr = KlientNr;
-            this.AdvokatId = AdvokatId;
-            this.YdelsesTypeNr = YdelsesTypeNr;
+            Arbejdstitel = arbejdstitel;
+            StartDato = startDato;
+            SlutDato = slutDato;
+            Kørselstimer = kørselstimer;
+            TimeEstimat = timeEstimat;
+            SagsBeskrivelse = sagsBeskrivelse;
+            InterneNoter = interneNoter;
+            KlientNr = klientNr;
+            AdvokatId = advokatId;
+            YdelsesTypeNr = ydelsesTypeNr;
         }
     }
 }
