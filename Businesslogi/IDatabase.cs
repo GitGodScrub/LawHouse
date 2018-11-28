@@ -13,10 +13,10 @@ namespace BusinessLogic
         void CreateSag(Sag instanceSag);
         void CreateKlient(Klient instanceKlient);
         void CreateYdelse(Ydelse instanceYdelse);
-        void UpdateAdvokat(Advokat @case);
+        void UpdateAdvokat(Advokat @advokat);
         void UpdateSag(Sag @case);
-        void UpdateKlient(Klient)
-        void UpdateSag(Sag @case);
+        void UpdateKlient(Klient @klient);
+        void UpdateYdelse(Ydelse @ydelse);
 
 
 
