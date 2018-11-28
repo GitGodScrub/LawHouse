@@ -28,6 +28,9 @@ namespace BusinessLogic
         void List<Klient> KlientList();
         void List<Advokat> GetAllSag();
         void List<Advokat> GetAllAdvokatFromYdelse();
+        void List<YdelseList> Tjenesteydelse();
+        void List<YdelseType> YdelseType();
+        void List<ListItems> GetList();
 
 
 
