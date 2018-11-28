@@ -10,15 +10,15 @@ namespace DataAccess
 {
     //Singletone er blevet brugt nedenunder og i kontrolleren
     //A singleton is a convenient way for accessing the service from anywhere in the application code
-    public class DatabaseCase
+    public class DatabaseHandler
     {
-        private static DatabaseCase _database = null;
-        private DatabaseCase() { }
-        public static DatabaseCase Instance()
+        private static DatabaseHandler _database = null;
+        private DatabaseHandler() { }
+        public static DatabaseHandler Instance()
         {
             if (_database == null)
             {
-                _database = new DatabaseCase();
+                _database = new DatabaseHandler();
 
             }
             return _database;
