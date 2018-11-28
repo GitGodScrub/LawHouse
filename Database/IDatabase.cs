@@ -27,7 +27,7 @@ namespace DataAccess
         List<ListItems> GetAllList();
         List<Ydelse> GetAllYdelse();
 
-        void AddSpecialeToAdvokat();
+        void AddSpecialeToAdvokat();//Rename to AddTjenestesydelseToAdvokat
         void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId); //awaiting aproval
     }
 }
