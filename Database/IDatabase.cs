@@ -21,7 +21,7 @@ namespace DataAccess
         List<Sag> GetAllSag();
         List<Klient> GetAllKlient();
         List<Advokat> GetAllAdvokat();
-        List<Advokat> GetAllAdvokatFromYdelse();
+        List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr);
         List<YdelseList> Tjenesteydelse();//changeMaybe
         List<YdelseType> YdelseType();//changeMaybe
         List<ListItems> GetList();//changeMaybe
