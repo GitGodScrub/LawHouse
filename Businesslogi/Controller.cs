@@ -43,6 +43,11 @@ namespace BusinessLogic
             Sag @case = (Sag)objectToUpdate;
             currentDatabaseInstance.UpdateSag(@case);
         }
+        public static void UpdateAdvokat(object objectToUpdate)
+        {
+            Advokat advokat = (Advokat)objectToUpdate;
+            currentDatabaseInstance.
+        }
 
         public static List<Sag> GetAllSag()
         {

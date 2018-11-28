@@ -154,6 +154,12 @@ namespace DataAccess
             RunSqlCommand(sqlString);
         }
 
+        public void UpdateAdvokat(Advokat ad)
+        {
+            String sqlString=
+                $"update Advokat navn = '"
+        }
+
         public List<Advokat> GetAllAdvokat()// By Daniella
         {
             string sqlString = "select * from Advokat";
