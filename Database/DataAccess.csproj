@@ -46,7 +46,6 @@
     <Compile Include="Advokat.cs" />
     <Compile Include="Sag.cs" />
     <Compile Include="DatabaseHandler.cs" />
-    <Compile Include="DatabaseAdvokat.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Klient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

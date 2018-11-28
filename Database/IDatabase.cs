@@ -8,13 +8,13 @@ namespace DataAccess
 {
     public interface IDatabase
     {
-        void CreateAdvokat(Advokat instanceAdvokat);
-        void CreateSag(Sag instanceSag);
-        void CreateKlient(Klient instanceKlient);
-        void CreateYdelse(Ydelse instanceYdelse);
+        void CreateAdvokat(Advokat @advokat);
+        void CreateSag(Sag @sag);
+        void CreateKlient(Klient @klient);
+        void CreateYdelse(Ydelse @ydelse);
 
         void UpdateAdvokat(Advokat @advokat);
-        void UpdateSag(Sag @case);
+        void UpdateSag(Sag @sag);
         void UpdateKlient(Klient @klient);
         void UpdateYdelse(Ydelse @ydelse);
 
