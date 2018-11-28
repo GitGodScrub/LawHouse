@@ -10,7 +10,7 @@ namespace DataAccess
 {
     //Singletone er blevet brugt nedenunder og i kontrolleren
     //A singleton is a convenient way for accessing the service from anywhere in the application code
-    public class DatabaseHandler
+    public class DatabaseHandler : IDatabase
     {
         private static DatabaseHandler _database = null;
         private DatabaseHandler() { }
@@ -258,32 +258,6 @@ namespace DataAccess
             }
         }
 
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public void CreateKlient(Klient KL)
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
@@ -315,6 +289,5 @@ namespace DataAccess
         //}
 
     }
-
 }
 
