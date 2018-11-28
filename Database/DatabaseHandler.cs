@@ -148,7 +148,7 @@ namespace DataAccess
              * Havde forstillet mig, at man i vores ViewListe skal kunne vælge "vis advokater" og derinde så tilføje efteruddannelse ud fra en "valgt" advokats id.
              - Dennie 
              */
-        public void AddEfterudannelseToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
+        public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
         {
             string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
             RunSqlCommand(sqlString);
