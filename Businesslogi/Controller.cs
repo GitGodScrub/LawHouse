@@ -11,16 +11,16 @@ namespace BusinessLogic
 
     public class Controller
     {
-        //private IDatabase _myDataBase = BadDataBase();
+        //Eksempel: private IDatabase _myDataBase = BadDataBase();
         // BadDataBase : IDatabase
         // DummyDatabase : IDatabase
-
-
-        // private static IDatabase _myTestDatabase = BadDataBase.Instance();
+        //
+        // 
+        //
         //.Instance() pga det er en singleton
-
-        private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
-
+        //Before:  private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
+        private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance();
+        //23
         public static void CreateAdvokat(int AdvokatId, string advokatNavn)
         {
             Advokat ad = new Advokat(AdvokatId, advokatNavn);
@@ -70,7 +70,7 @@ namespace BusinessLogic
 
         public static void AddSpecialToAdvokat(string specialName, int advokatId)
         {
-            currentDatabaseInstance.AddEfterudannelseToAdvokat(specialName, advokatId);
+            currentDatabaseInstance.AddEfteruddannelseToAdvokat(specialName, advokatId);
         }
 
         public static List<YdelseList> GetAllYdelser()

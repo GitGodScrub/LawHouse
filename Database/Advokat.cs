@@ -7,16 +7,16 @@
         public string Efteruddannelse { get; set; }
 
         public Advokat() { }
-        public Advokat(int AdvokatId, string navn)
+        public Advokat(int advokatId, string navn)
         {
-            this.AdvokatId = AdvokatId;
-            this.Navn = navn;
+            AdvokatId = advokatId;
+            Navn = navn;
         }
-        public Advokat(int AdvokatId, string navn, string efteruddannelse)
+        public Advokat(int advokatId, string navn, string efteruddannelse)
         {
-            this.AdvokatId = AdvokatId;
-            this.Navn = navn;
-            this.Efteruddannelse = efteruddannelse;
+            AdvokatId = advokatId;
+            Navn = navn;
+            Efteruddannelse = efteruddannelse;
         }
     }
 }
