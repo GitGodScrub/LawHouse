@@ -11,7 +11,9 @@ namespace BusinessLogic
 
     public class Controller
     {
-
+        //private IDatabase _myDataBase = BadDataBase();
+        // BadDataBase : IDatabase
+        // DummyDatabase : IDatabase
         private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
 
 
