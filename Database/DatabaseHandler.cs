@@ -112,6 +112,14 @@ namespace DataAccess
             }
         }
 
+        public void UpdateKlient(Klient KL)
+        {
+            string sqlString =
+                $"update set navn'{KL.Navn}'adresse '{KL.Adresse}' TelefonNR'{KL.TelefonNr}' " +
+                $"where KlientNR = {KL.KlientNr}";
+            RunSqlCommand(sqlString);
+        }
+
         public List<Klient> GetAllKlient()// By Daniella
         {
             string sqlString = "select * from Klient";
@@ -156,8 +164,11 @@ namespace DataAccess
 
         public void UpdateAdvokat(Advokat ad)
         {
-            String sqlString=
-                $"update Advokat navn = '"
+
+            String sqlString =
+                $"update set navn = '{ad.Navn}'" + $"where AdvokatID ='{ad.AdvokatId}'";
+            RunSqlCommand(sqlString);
+
         }
 
         public List<Advokat> GetAllAdvokat()// By Daniella
