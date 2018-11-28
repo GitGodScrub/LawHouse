@@ -14,6 +14,11 @@ namespace BusinessLogic
         //private IDatabase _myDataBase = BadDataBase();
         // BadDataBase : IDatabase
         // DummyDatabase : IDatabase
+
+
+        // private static IDatabase _myTestDatabase = BadDataBase.Instance();
+        //.Instance() pga det er en singleton
+
         private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
 
 

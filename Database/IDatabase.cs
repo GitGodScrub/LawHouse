@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    interface IDatabase
+    public interface IDatabase
     {
         void CreateAdvokat(Advokat instanceAdvokat);
         void CreateSag(Sag instanceSag);
