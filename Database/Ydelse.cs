@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
+    public class Ydelse
+    {
+        public int YdelsesTypeNr { get; set; }
+    }
+
     public class YdelseList
     {
         public int AdvokatId { get; set; }
         public int YdelsesTypeNr { get; set; }
 
         public YdelseList() { }
-        public YdelseList(int AdvokatId, int YdelsesTypeNr)
+        public YdelseList(int advokatId, int ydelsesTypeNr)
         {
-            this.AdvokatId = AdvokatId;
-            this.YdelsesTypeNr = YdelsesTypeNr;
+            AdvokatId = advokatId;
+            YdelsesTypeNr = ydelsesTypeNr;
         }
     }
     public class YdelseType
@@ -23,11 +28,11 @@ namespace DataAccess
         public int YdelsesTypeNr { get; set; }
         public string YdelsesNavn { get; set; }
 
-        public YdelseType () { }
-        public YdelseType(int YdelsesTypeNr,string YdelsesNavn)
+        public YdelseType() { }
+        public YdelseType(int ydelsesTypeNr, string ydelsesNavn)
         {
-            this.YdelsesNavn = YdelsesNavn;
-            this.YdelsesTypeNr = YdelsesTypeNr;
+            YdelsesNavn = ydelsesNavn;
+            YdelsesTypeNr = ydelsesTypeNr;
 
         }
     }
