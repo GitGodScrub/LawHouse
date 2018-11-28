@@ -11,8 +11,8 @@ namespace BusinessLogic
 
     public class Controller
     {
-        private static DatabaseCase currentDatabaseInstance = DatabaseCase.Instance();
-         //   private string DatabaseAdvokat currentDatabaseAdvokat = DatabaseAdvokat.Instance();
+        private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
+        // private string DatabaseAdvokat currentDatabaseAdvokat = DatabaseAdvokat.Instance();
 
         public static void CreateSag(string Arbejdstitel, string StartDato, string SlutDato, string Kørselstimer,
         string TimeEstimat, string SagsBeskrivelse, string InterneNoter, string KlientNr, int AdvokatId, int YdelsesTypeNr)
