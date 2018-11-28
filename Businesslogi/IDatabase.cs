@@ -13,6 +13,10 @@ namespace BusinessLogic
         void CreateSag(Sag instanceSag);
         void CreateKlient(Klient instanceKlient);
         void CreateYdelse(Ydelse instanceYdelse);
+        void 
+
+
+
 
 
 
