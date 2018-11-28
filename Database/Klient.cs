@@ -13,11 +13,11 @@ namespace DataAccess
         public string Adresse { get; set; }
         public string TelefonNr { get; set; }
         public Klient() { }
-        public Klient(string Navn, string Adresse, string TelefonNr)
+        public Klient(string navn, string adresse, string telefonNr)
         {
-            this.Navn = Navn;
-            this.Adresse = Adresse;
-            this.TelefonNr = TelefonNr;
+            Navn = navn;
+            Adresse = adresse;
+            TelefonNr = telefonNr;
         }
 
     }
