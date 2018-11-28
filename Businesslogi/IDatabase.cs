@@ -24,13 +24,13 @@ namespace BusinessLogic
 
 
 
-        void List<Sag> GetAllSag();
-        void List<Klient> KlientList();
-        void List<Advokat> GetAllSag();
-        void List<Advokat> GetAllAdvokatFromYdelse();
-        void List<YdelseList> Tjenesteydelse();
-        void List<YdelseType> YdelseType();
-        void List<ListItems> GetList();
+         List<Sag> GetAllSag();
+         List<Klient> GetAllKlient();
+         List<Advokat> GetAllAdvokat();
+         List<Advokat> GetAllAdvokatFromYdelse();
+         List<YdelseList> Tjenesteydelse();
+         List<YdelseType> YdelseType();
+         List<ListItems> GetList();
 
 
 

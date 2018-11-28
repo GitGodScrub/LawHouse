@@ -43,7 +43,7 @@ namespace BusinessLogic
 
         public static List<Klient> GetAllKlient()
         {
-            List<Klient> GetClient = currentDatabaseInstance.KlientList();
+            List<Klient> GetClient = currentDatabaseInstance.GetAllKlient();
             return GetClient;
         }
 
