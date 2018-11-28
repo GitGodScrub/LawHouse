@@ -65,7 +65,7 @@ namespace BusinessLogic
 
         public static void AddSpecialToAdvokat(string specialName, int advokatId)
         {
-            currentDatabaseInstance.AddSpecialToAdvokat(specialName, advokatId);
+            currentDatabaseInstance.AddEfterudannelseToAdvokat(specialName, advokatId);
         }
 
         public static List<YdelseList> GetAllYdelser()

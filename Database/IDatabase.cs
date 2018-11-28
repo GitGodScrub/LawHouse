@@ -26,5 +26,7 @@ namespace DataAccess
         List<YdelseType> YdelseType();
         List<ListItems> GetList();
 
+        void AddSpecialeToAdvokat();
+        void AddEfterudannelseToAdvokat(); //awaiting aproval
     }
 }
