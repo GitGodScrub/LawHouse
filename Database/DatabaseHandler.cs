@@ -44,17 +44,17 @@ namespace DataAccess
             }
         }
 
-        public void CreateSag(Sag c)// By Daniella
+        public void CreateSag(Sag @sag)// By Daniella
         //Grunden til at der den her er fordi den tager en case og opretter det ud for properties
         {
-            string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{c.Arbejdstitel}' , '{c.StartDato}' ,'{c.SlutDato}' ,'{c.Kørselstimer}' ,'{c.TimeEstimat}' , '{c.SagsBeskrivelse}',  '{c.InterneNoter}' , '{c.KlientNr}', {c.AdvokatId}, {c.YdelsesTypeNr})";
+            string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
             RunSqlCommand(sqlString);
         }
-        public void UpdateSag(Sag @case)// By Daniella, refactored by Julius
+        public void UpdateSag(Sag @sag)// By Daniella, refactored by Julius
         {
             string sqlString =
-                $"update Sag set Arbejdstitel = '{@case.Arbejdstitel}', StartDato = '{@case.StartDato}', SlutDato = '{@case.SlutDato}', Kørselstimer = '{@case.Kørselstimer}', TimeEstimat = '{@case.TimeEstimat}', SagsBeskrivelse = '{@case.SagsBeskrivelse}', InterneNoter = '{@case.InterneNoter}', KlientNr = '{@case.KlientNr}', AdvokatId = {@case.AdvokatId}, YdelsesTypeNr = {@case.YdelsesTypeNr}" +
-                $"where SagsNr = {@case.SagsNr}";
+                $"update Sag set Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = '{sag.KlientNr}', AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
+                $"where SagsNr = {sag.SagsNr}";
             RunSqlCommand(sqlString);
         }
 
@@ -95,7 +95,7 @@ namespace DataAccess
 
         }
 
-        public void CreateKlient(Klient KL)//By Thomas
+        public void CreateKlient(Klient @klient)//By Thomas
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
@@ -104,7 +104,7 @@ namespace DataAccess
                     com.Connection = conn;
                     conn.Open();
 
-                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{KL.Navn}', '{KL.Adresse}', '{KL.TelefonNr}')";
+                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{klient.Navn}', '{klient.Adresse}', '{klient.TelefonNr}')";
 
                     com.CommandText = sqlString;
                     com.ExecuteNonQuery();
@@ -117,6 +117,7 @@ namespace DataAccess
             string sqlString =
                 $"update set navn'{KL.Navn}'adresse '{KL.Adresse}' TelefonNR'{KL.TelefonNr}' " +
                 $"where KlientNR = {KL.KlientNr}";
+            RunSqlCommand(sqlString);
         }
 
         public List<Klient> GetAllKlient()// By Daniella
@@ -146,9 +147,9 @@ namespace DataAccess
         }
 
 
-        public void CreateAdvokat(Advokat ad)// By Dennie
+        public void CreateAdvokat(Advokat @advokat)// By Dennie
         {
-            string sqlString = $"INSERT INTO Advokat(Navn) VALUES ({ad.AdvokatId} , {ad.Navn}')";
+            string sqlString = $"INSERT INTO Advokat(Navn) VALUES ({advokat.AdvokatId} , {advokat.Navn}')";
             RunSqlCommand(sqlString);
         }
         /* Når en advokat skal have tilføjet et speciale/efteruddannelse, skal man i vores database bare indtaste et "navn" på specialet + "advokat id'et", som skal have denne efteruddannelse.
@@ -163,9 +164,11 @@ namespace DataAccess
 
         public void UpdateAdvokat(Advokat ad)
         {
+
             String sqlString =
                 $"update set navn = '{ad.Navn}'" + $"where AdvokatID ='{ad.AdvokatId}'";
             RunSqlCommand(sqlString);
+
         }
 
         public List<Advokat> GetAllAdvokat()// By Daniella
@@ -231,10 +234,10 @@ namespace DataAccess
                     if (sqld.HasRows)
                         while (sqld.Read())
                         {
-                            YdelseList ydelse = new YdelseList();
-                            ydelse.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            ydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            All.Add(ydelse);
+                            YdelseList @ydelseList = new YdelseList();
+                            @ydelseList.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
+                            @ydelseList.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            All.Add(@ydelseList);
                         }
                     return All;
                 }
@@ -254,10 +257,10 @@ namespace DataAccess
                     if (sqld.HasRows)
                         while (sqld.Read())
                         {
-                            YdelseType ydelse = new YdelseType();
-                            ydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            ydelse.YdelsesNavn = sqld["YdelsesNavn"].ToString();
-                            All.Add(ydelse);
+                            YdelseType @ydelseType = new YdelseType();
+                            @ydelseType.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            @ydelseType.YdelsesNavn = sqld["YdelsesNavn"].ToString();
+                            All.Add(@ydelseType);
                         }
                     return All;
                 }
