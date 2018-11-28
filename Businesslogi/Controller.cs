@@ -38,6 +38,7 @@ namespace BusinessLogic
             currentDatabaseInstance.CreateKlient(KL);
         }
 
+
         public static void UpdateSag(object objectToUpdate)
         {
             Sag @case = (Sag)objectToUpdate;
@@ -47,6 +48,11 @@ namespace BusinessLogic
         {
             Advokat advokat = (Advokat)objectToUpdate;
             currentDatabaseInstance.UpdateAdvokat(advokat);
+        }
+        public static void UpdateKLient(object objectToUpdate)
+        {
+            Klient klient = (Klient)objectToUpdate;
+            currentDatabaseInstance.UpdateKlient(klient);
         }
 
         public static List<Sag> GetAllSag()
