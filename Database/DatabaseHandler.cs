@@ -156,8 +156,9 @@ namespace DataAccess
 
         public void UpdateAdvokat(Advokat ad)
         {
-            String sqlString=
-                $"update Advokat navn = '"
+            String sqlString =
+                $"update Advokat navn = '{ad.Navn}'" + $"where AdvokatID ='{ad.AdvokatId}'";
+            RunSqlCommand(sqlString);
         }
 
         public List<Advokat> GetAllAdvokat()// By Daniella
@@ -181,7 +182,6 @@ namespace DataAccess
                     return All;
                 }
             }
-
         }
 
         public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella
