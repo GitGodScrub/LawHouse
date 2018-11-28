@@ -76,7 +76,7 @@ namespace DataAccess
                         while (sqld.Read())
                         {
                             Sag @case = new Sag();
-                            @case.SagsNr = sqld["SagsNr"].ToString();
+                            @case.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
                             @case.Arbejdstitel = sqld["Arbejdstitel"].ToString();
                             @case.StartDato = sqld["StartDato"].ToString();
                             @case.SlutDato = sqld["SlutDato"].ToString();
@@ -84,7 +84,7 @@ namespace DataAccess
                             @case.TimeEstimat = sqld["TimeEstimat"].ToString();
                             @case.SagsBeskrivelse = sqld["SagsBeskrivelse"].ToString();
                             @case.InterneNoter = sqld["InterneNoter"].ToString();
-                            @case.KlientNr = sqld["Klientnr"].ToString();
+                            @case.KlientNr = Convert.ToInt32(sqld["Klientnr"]);
                             @case.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
                             @case.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
                             Alle.Add(@case);
@@ -135,7 +135,7 @@ namespace DataAccess
                         while (sqld.Read())
                         {
                             Klient @klient = new Klient();
-                            @klient.KlientNr = sqld["KlientNr"].ToString();
+                            @klient.KlientNr = Convert.ToInt32(sqld["KlientNr"]);
                             @klient.Navn = sqld["Navn"].ToString();
                             @klient.Adresse = sqld["Adresse"].ToString();
                             @klient.TelefonNr = sqld["TelefonNr"].ToString();
@@ -327,7 +327,7 @@ namespace DataAccess
                             ydelse.YdelseBeskrivelse = sqld["YdelseBeskrivelse"].ToString();
                             ydelse.Pris = sqld["Pris"].ToString();
                             ydelse.Timer = sqld["Timer"].ToString();
-                            ydelse.AdvokatID = sqld["AdvokatID"].ToString();
+                            ydelse.AdvokatID = Convert.ToInt32(sqld["AdvokatID"]);
                         }
                     return All;
                 }

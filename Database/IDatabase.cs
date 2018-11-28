@@ -24,8 +24,8 @@ namespace DataAccess
         List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr);
         List<YdelseList> GetAllTjenesteydelse();
         List<YdelseType> GetAllYdelseType();
-        List<ListItems> GetAllList();
         List<Ydelse> GetAllYdelse();
+        List<ListItems> GetAllList();
 
         void AddSpecialeToAdvokat();
         void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId); //awaiting aproval

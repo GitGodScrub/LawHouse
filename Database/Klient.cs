@@ -8,7 +8,7 @@ namespace DataAccess
 {
     public class Klient
     {
-        public string KlientNr { get; set; }
+        public int KlientNr { get; set; }
         public string Navn { get; set; }
         public string Adresse { get; set; }
         public string TelefonNr { get; set; }

@@ -27,7 +27,7 @@ namespace BusinessLogic
             currentDatabaseInstance.CreateAdvokat(ad);
         }
         public static void CreateSag(string arbejdstitel, string startDato, string slutDato, string kørselstimer,
-        string timeEstimat, string sagsBeskrivelse, string interneNoter, string klientNr, int advokatId, int ydelsesTypeNr)
+        string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
         {
             Sag @case = new Sag(arbejdstitel, startDato, slutDato, kørselstimer, timeEstimat, sagsBeskrivelse, interneNoter, klientNr, advokatId, ydelsesTypeNr);
             currentDatabaseInstance.CreateSag(@case);
@@ -36,6 +36,10 @@ namespace BusinessLogic
         {
             Klient kl = new Klient(navn, adresse, telefonNr);
             currentDatabaseInstance.CreateKlient(kl);
+        }
+        public static void CreateYdelse(string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatId)
+        {
+            Ydelse ydelse = new Ydelse(y )
         }
 
 

@@ -13,12 +13,12 @@ namespace DataAccess
         public string YdelseBeskrivelse { get; set; }
         public string Pris { get; set; }
         public string Timer { get; set; }
-        public string SagsNr { get; set; }
-        public string AdvokatID { get; set; }
+        public int SagsNr { get; set; }
+        public int AdvokatID { get; set; }
 
         public Ydelse() { }
 
-        public Ydelse(int ydelsesTypeNr, string startDato, string ydelseBeskrivelse, string pris, string timer, string sagsNr, string advokatID)
+        public Ydelse(int ydelsesTypeNr, string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatID)
         {
             YdelsesTypeNr = ydelsesTypeNr;
             StartDato = startDato;
