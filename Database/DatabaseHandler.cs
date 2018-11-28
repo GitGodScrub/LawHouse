@@ -334,6 +334,13 @@ namespace DataAccess
             }
 
         }
+        public void CreateYdelser( Ydelse @ydelse)
+        {
+            {
+                string sqlString = $"insert into Ydelse(YdelseNr, StartDato, YdelseBeskrivelse, Pris, Timer, SagsNr, AdvokatID )" + $"values('{ydelse.YdelsesTypeNr}' , '{ydelse.StartDato}' ,'{ydelse.YdelseBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatID}')";
+                RunSqlCommand(sqlString);
+            }
+        }
     }
 }
 

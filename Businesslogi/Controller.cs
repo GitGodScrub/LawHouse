@@ -39,7 +39,8 @@ namespace BusinessLogic
         }
         public static void CreateYdelse(string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatId)
         {
-            Ydelse ydelse = new Ydelse(y )
+            Ydelse @ydelse = new Ydelse(startDato, ydelseBeskrivelse, pris, timer, sagsNr, advokatId);
+            currentDatabaseInstance.CreateYdelse(@ydelse);
         }
 
 
@@ -99,18 +100,13 @@ namespace BusinessLogic
         }
 
 
-        
-
-        
-
-
         public static List<ListItems> GetAllItems()
         {
             List<ListItems> GetItems = currentDatabaseInstance.GetAllList();
             return GetItems;
         }
 
-        
+       
 
         public static List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)
         {
