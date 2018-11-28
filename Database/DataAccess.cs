@@ -94,7 +94,7 @@ namespace DataAccess
         }
 
 
-        public List<Klient> KlientList()
+        public List<Klient> GetAllKlient()
         {
             string sqlString = "select * from Klient";
             List<Klient> All = new List<Klient>();
