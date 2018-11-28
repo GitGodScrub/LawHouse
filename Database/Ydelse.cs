@@ -18,9 +18,9 @@ namespace DataAccess
 
         public Ydelse() { }
 
-        public Ydelse(int ydelsesTypeNr, string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatID)
+        public Ydelse( string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatID)
         {
-            YdelsesTypeNr = ydelsesTypeNr;
+           
             StartDato = startDato;
             YdelseBeskrivelse = ydelseBeskrivelse;
             Pris = pris;
