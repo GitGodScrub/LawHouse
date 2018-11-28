@@ -44,10 +44,10 @@ namespace DataAccess
             }
         }
 
-        public void CreateSag(Sag c)// By Daniella
+        public void CreateSag(Sag @sag)// By Daniella
         //Grunden til at der den her er fordi den tager en case og opretter det ud for properties
         {
-            string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{c.Arbejdstitel}' , '{c.StartDato}' ,'{c.SlutDato}' ,'{c.Kørselstimer}' ,'{c.TimeEstimat}' , '{c.SagsBeskrivelse}',  '{c.InterneNoter}' , '{c.KlientNr}', {c.AdvokatId}, {c.YdelsesTypeNr})";
+            string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
             RunSqlCommand(sqlString);
         }
         public void UpdateSag(Sag @case)// By Daniella, refactored by Julius
@@ -95,7 +95,7 @@ namespace DataAccess
 
         }
 
-        public void CreateKlient(Klient KL)//By Thomas
+        public void CreateKlient(Klient kl)//By Thomas
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
@@ -104,7 +104,7 @@ namespace DataAccess
                     com.Connection = conn;
                     conn.Open();
 
-                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{KL.Navn}', '{KL.Adresse}', '{KL.TelefonNr}')";
+                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{kl.Navn}', '{kl.Adresse}', '{kl.TelefonNr}')";
 
                     com.CommandText = sqlString;
                     com.ExecuteNonQuery();
@@ -224,10 +224,10 @@ namespace DataAccess
                     if (sqld.HasRows)
                         while (sqld.Read())
                         {
-                            YdelseList ydelse = new YdelseList();
-                            ydelse.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            ydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            All.Add(ydelse);
+                            YdelseList @ydelseList = new YdelseList();
+                            @ydelseList.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
+                            @ydelseList.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            All.Add(@ydelseList);
                         }
                     return All;
                 }

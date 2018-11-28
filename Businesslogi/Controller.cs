@@ -21,21 +21,21 @@ namespace BusinessLogic
         //Before:  private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
         private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance();
         //23
-        public static void CreateAdvokat(int AdvokatId, string advokatNavn)
+        public static void CreateAdvokat(int advokatId, string advokatNavn)
         {
-            Advokat ad = new Advokat(AdvokatId, advokatNavn);
+            Advokat ad = new Advokat(advokatId, advokatNavn);
             currentDatabaseInstance.CreateAdvokat(ad);
         }
-        public static void CreateSag(string Arbejdstitel, string StartDato, string SlutDato, string Kørselstimer,
-        string TimeEstimat, string SagsBeskrivelse, string InterneNoter, string KlientNr, int AdvokatId, int YdelsesTypeNr)
+        public static void CreateSag(string arbejdstitel, string startDato, string slutDato, string kørselstimer,
+        string timeEstimat, string sagsBeskrivelse, string interneNoter, string klientNr, int advokatId, int ydelsesTypeNr)
         {
-            Sag @case = new Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter, KlientNr, AdvokatId, YdelsesTypeNr);
+            Sag @case = new Sag(arbejdstitel, startDato, slutDato, kørselstimer, timeEstimat, sagsBeskrivelse, interneNoter, klientNr, advokatId, ydelsesTypeNr);
             currentDatabaseInstance.CreateSag(@case);
         }
-        public static void CreateKlient(String Navn, string Adresse, string TelefonNr)
+        public static void CreateKlient(string navn, string adresse, string telefonNr)
         {
-            Klient KL = new Klient(Navn, Adresse, TelefonNr);
-            currentDatabaseInstance.CreateKlient(KL);
+            Klient kl = new Klient(navn, adresse, telefonNr);
+            currentDatabaseInstance.CreateKlient(kl);
         }
 
         public static void UpdateSag(object objectToUpdate)
