@@ -22,9 +22,9 @@ namespace DataAccess
         List<Klient> GetAllKlient();
         List<Advokat> GetAllAdvokat();
         List<Advokat> GetAllAdvokatFromYdelse();
-        List<YdelseList> Tjenesteydelse();
-        List<YdelseType> YdelseType();
-        List<ListItems> GetList();
+        List<YdelseList> Tjenesteydelse();//changeMaybe
+        List<YdelseType> YdelseType();//changeMaybe
+        List<ListItems> GetList();//changeMaybe
 
         void AddSpecialeToAdvokat();
         void AddEfterudannelseToAdvokat(); //awaiting aproval

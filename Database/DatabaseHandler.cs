@@ -204,7 +204,7 @@ namespace DataAccess
 
         }
 
-
+        
         public List<YdelseList> Tjenesteydelse()// By Daniella
         {
             string sqlString = "select * from Tjenesteydelse";
