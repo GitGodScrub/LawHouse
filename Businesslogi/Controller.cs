@@ -71,7 +71,11 @@ namespace BusinessLogic
             return ad;
         }
 
-
+        public static List<Ydelse> GetAllYdelses()
+        {
+            List<Ydelse> Getydelses = currentDatabaseInstance.GetAllYdelse();
+            return Getydelses;
+        }
 
 
         public static void AddSpecialToAdvokat(string specialName, int advokatId)

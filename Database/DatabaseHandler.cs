@@ -308,7 +308,7 @@ namespace DataAccess
         //}
 
 
-        public List<Ydelse> GetAllYdelse()
+        public List<Ydelse> GetAllYdelse()// By Daniella
         {
             string sqlString = "select * from Ydelse";
             List<Ydelse> All = new List<Ydelse>();

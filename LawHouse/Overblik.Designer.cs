@@ -45,13 +45,15 @@
             this.Navn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Adresse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TelefonNr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.AdvokatId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Advokat_navn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btn_Update = new System.Windows.Forms.Button();
             this.dataSetDropBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetDrop = new GUI.DataSetDrop();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Btn_Help = new System.Windows.Forms.Button();
+            this.YdelseBeskrivelse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDropBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).BeginInit();
@@ -74,8 +76,10 @@
             this.objectListView1.AllColumns.Add(this.Navn);
             this.objectListView1.AllColumns.Add(this.Adresse);
             this.objectListView1.AllColumns.Add(this.TelefonNr);
-            this.objectListView1.AllColumns.Add(this.AdvokatId);
             this.objectListView1.AllColumns.Add(this.Advokat_navn);
+            this.objectListView1.AllColumns.Add(this.YdelseBeskrivelse);
+            this.objectListView1.AllColumns.Add(this.Pris);
+            this.objectListView1.AllColumns.Add(this.Timer);
             this.objectListView1.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.objectListView1.CellEditUseWholeCell = false;
             this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -94,8 +98,10 @@
             this.Navn,
             this.Adresse,
             this.TelefonNr,
-            this.AdvokatId,
-            this.Advokat_navn});
+            this.Advokat_navn,
+            this.YdelseBeskrivelse,
+            this.Pris,
+            this.Timer});
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.GridLines = true;
@@ -192,12 +198,6 @@
             this.TelefonNr.IsEditable = false;
             this.TelefonNr.Text = "TelefonNr";
             // 
-            // AdvokatId
-            // 
-            this.AdvokatId.AspectName = "AdvokatId";
-            this.AdvokatId.IsEditable = false;
-            this.AdvokatId.Text = "AdvokatId";
-            // 
             // Advokat_navn
             // 
             this.Advokat_navn.AspectName = "Navn";
@@ -245,6 +245,21 @@
             this.Btn_Help.UseVisualStyleBackColor = true;
             this.Btn_Help.Click += new System.EventHandler(this.button1_Click);
             // 
+            // YdelseBeskrivelse
+            // 
+            this.YdelseBeskrivelse.AspectName = "YdelseBeskrivelse";
+            this.YdelseBeskrivelse.Text = "Ydelse Beskrivelse";
+            // 
+            // Pris
+            // 
+            this.Pris.AspectName = "Pris";
+            this.Pris.Text = "Pris";
+            // 
+            // Timer
+            // 
+            this.Timer.AspectName = "Timer";
+            this.Timer.Text = "Timer";
+            // 
             // Overblik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -286,8 +301,10 @@
         private BrightIdeasSoftware.OLVColumn Navn;
         private BrightIdeasSoftware.OLVColumn Adresse;
         private BrightIdeasSoftware.OLVColumn TelefonNr;
-        private BrightIdeasSoftware.OLVColumn AdvokatId;
         private BrightIdeasSoftware.OLVColumn Advokat_navn;
         private System.Windows.Forms.Button Btn_Help;
+        private BrightIdeasSoftware.OLVColumn YdelseBeskrivelse;
+        private BrightIdeasSoftware.OLVColumn Pris;
+        private BrightIdeasSoftware.OLVColumn Timer;
     }
 }
