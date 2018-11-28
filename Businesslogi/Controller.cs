@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+ 
 
 namespace BusinessLogic
 {
@@ -11,7 +12,7 @@ namespace BusinessLogic
     public class Controller
     {
         private static DatabaseCase currentDatabaseInstance = DatabaseCase.Instance();
-        //    private string DatabaseAdvokat currentDatabaseAdvokat = DatabaseAdvokat.Instance();
+         //   private string DatabaseAdvokat currentDatabaseAdvokat = DatabaseAdvokat.Instance();
 
         public static void CreateSag(string Arbejdstitel, string StartDato, string SlutDato, string Kørselstimer,
         string TimeEstimat, string SagsBeskrivelse, string InterneNoter, string KlientNr, int AdvokatId, int YdelsesTypeNr)
