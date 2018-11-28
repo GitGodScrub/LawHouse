@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.btn_Create = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_Titel = new System.Windows.Forms.Label();
+            this.lbl_Start = new System.Windows.Forms.Label();
+            this.lbl_Kørselstimer = new System.Windows.Forms.Label();
+            this.lbl_TimeEstimat = new System.Windows.Forms.Label();
             this.txt_nr = new System.Windows.Forms.TextBox();
             this.txt_kørsel = new System.Windows.Forms.TextBox();
             this.txt_titel = new System.Windows.Forms.TextBox();
             this.txt_time = new System.Windows.Forms.TextBox();
             this.Slutdato = new System.Windows.Forms.DateTimePicker();
             this.txt_KlientNr = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_Medarbejder = new System.Windows.Forms.Label();
+            this.lbl_Klientnr = new System.Windows.Forms.Label();
             this.StartDato = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Oversigt = new System.Windows.Forms.Button();
             this.txt_SagsBeskrivelse = new System.Windows.Forms.TextBox();
             this.txt_InterneNoter = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_Sagsbeskrivelse = new System.Windows.Forms.Label();
+            this.lbl_Noter = new System.Windows.Forms.Label();
             this.btn_GoToFormCreateAdvokat = new System.Windows.Forms.Button();
             this.Btn_Help = new System.Windows.Forms.Button();
             this.Btn_CreateKlient = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_YdelseNr = new System.Windows.Forms.Label();
             this.txt_MedarbejderNr = new System.Windows.Forms.ComboBox();
-            this.Sags = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Sags = new System.Windows.Forms.Label();
+            this.lbl_Slut = new System.Windows.Forms.Label();
             this.txt_YdelseTypeNr = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -68,41 +68,41 @@
             this.btn_Create.UseVisualStyleBackColor = true;
             this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
-            // label2
+            // lbl_Titel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(251, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Arbejdstitel";
+            this.lbl_Titel.AutoSize = true;
+            this.lbl_Titel.Location = new System.Drawing.Point(251, 109);
+            this.lbl_Titel.Name = "lbl_Titel";
+            this.lbl_Titel.Size = new System.Drawing.Size(78, 17);
+            this.lbl_Titel.TabIndex = 2;
+            this.lbl_Titel.Text = "Arbejdstitel";
             // 
-            // label3
+            // lbl_Start
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(251, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "StartDato";
+            this.lbl_Start.AutoSize = true;
+            this.lbl_Start.Location = new System.Drawing.Point(251, 148);
+            this.lbl_Start.Name = "lbl_Start";
+            this.lbl_Start.Size = new System.Drawing.Size(72, 17);
+            this.lbl_Start.TabIndex = 3;
+            this.lbl_Start.Text = "Start Dato";
             // 
-            // label5
+            // lbl_Kørselstimer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(251, 227);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Kørselstimer";
+            this.lbl_Kørselstimer.AutoSize = true;
+            this.lbl_Kørselstimer.Location = new System.Drawing.Point(251, 227);
+            this.lbl_Kørselstimer.Name = "lbl_Kørselstimer";
+            this.lbl_Kørselstimer.Size = new System.Drawing.Size(86, 17);
+            this.lbl_Kørselstimer.TabIndex = 5;
+            this.lbl_Kørselstimer.Text = "Kørselstimer";
             // 
-            // label6
+            // lbl_TimeEstimat
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(251, 267);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "TimeEstimat";
+            this.lbl_TimeEstimat.AutoSize = true;
+            this.lbl_TimeEstimat.Location = new System.Drawing.Point(251, 267);
+            this.lbl_TimeEstimat.Name = "lbl_TimeEstimat";
+            this.lbl_TimeEstimat.Size = new System.Drawing.Size(89, 17);
+            this.lbl_TimeEstimat.TabIndex = 6;
+            this.lbl_TimeEstimat.Text = "Time Estimat";
             // 
             // txt_nr
             // 
@@ -153,23 +153,23 @@
             this.txt_KlientNr.Size = new System.Drawing.Size(170, 22);
             this.txt_KlientNr.TabIndex = 15;
             // 
-            // label7
+            // lbl_Medarbejder
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(251, 414);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Medarbejder";
+            this.lbl_Medarbejder.AutoSize = true;
+            this.lbl_Medarbejder.Location = new System.Drawing.Point(251, 414);
+            this.lbl_Medarbejder.Name = "lbl_Medarbejder";
+            this.lbl_Medarbejder.Size = new System.Drawing.Size(88, 17);
+            this.lbl_Medarbejder.TabIndex = 14;
+            this.lbl_Medarbejder.Text = "Medarbejder";
             // 
-            // label8
+            // lbl_Klientnr
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(253, 479);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 17);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Klientnr";
+            this.lbl_Klientnr.AutoSize = true;
+            this.lbl_Klientnr.Location = new System.Drawing.Point(254, 479);
+            this.lbl_Klientnr.Name = "lbl_Klientnr";
+            this.lbl_Klientnr.Size = new System.Drawing.Size(56, 17);
+            this.lbl_Klientnr.TabIndex = 13;
+            this.lbl_Klientnr.Text = "Klientnr";
             // 
             // StartDato
             // 
@@ -180,16 +180,16 @@
             this.StartDato.Size = new System.Drawing.Size(170, 22);
             this.StartDato.TabIndex = 17;
             // 
-            // button1
+            // Btn_Oversigt
             // 
-            this.button1.Location = new System.Drawing.Point(3, 383);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 46);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Se oversigt";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_Oversigt.Location = new System.Drawing.Point(3, 389);
+            this.Btn_Oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btn_Oversigt.Name = "Btn_Oversigt";
+            this.Btn_Oversigt.Size = new System.Drawing.Size(161, 46);
+            this.Btn_Oversigt.TabIndex = 18;
+            this.Btn_Oversigt.Text = "Se oversigt";
+            this.Btn_Oversigt.UseVisualStyleBackColor = true;
+            this.Btn_Oversigt.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_SagsBeskrivelse
             // 
@@ -207,23 +207,23 @@
             this.txt_InterneNoter.Size = new System.Drawing.Size(170, 22);
             this.txt_InterneNoter.TabIndex = 20;
             // 
-            // label9
+            // lbl_Sagsbeskrivelse
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(251, 303);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 17);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "SagsBeskrivelse";
+            this.lbl_Sagsbeskrivelse.AutoSize = true;
+            this.lbl_Sagsbeskrivelse.Location = new System.Drawing.Point(251, 303);
+            this.lbl_Sagsbeskrivelse.Name = "lbl_Sagsbeskrivelse";
+            this.lbl_Sagsbeskrivelse.Size = new System.Drawing.Size(111, 17);
+            this.lbl_Sagsbeskrivelse.TabIndex = 21;
+            this.lbl_Sagsbeskrivelse.Text = "Sagsbeskrivelse";
             // 
-            // label10
+            // lbl_Noter
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(251, 364);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 17);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "InterneNoter";
+            this.lbl_Noter.AutoSize = true;
+            this.lbl_Noter.Location = new System.Drawing.Point(251, 364);
+            this.lbl_Noter.Name = "lbl_Noter";
+            this.lbl_Noter.Size = new System.Drawing.Size(91, 17);
+            this.lbl_Noter.TabIndex = 22;
+            this.lbl_Noter.Text = "Interne Noter";
             // 
             // btn_GoToFormCreateAdvokat
             // 
@@ -258,15 +258,15 @@
             this.Btn_CreateKlient.UseVisualStyleBackColor = true;
             this.Btn_CreateKlient.Click += new System.EventHandler(this.Btn_CreateKlient_Click);
             // 
-            // label11
+            // lbl_YdelseNr
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(254, 27);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 17);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "YdelseTypeNr";
+            this.lbl_YdelseNr.AutoSize = true;
+            this.lbl_YdelseNr.Location = new System.Drawing.Point(253, 27);
+            this.lbl_YdelseNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_YdelseNr.Name = "lbl_YdelseNr";
+            this.lbl_YdelseNr.Size = new System.Drawing.Size(87, 17);
+            this.lbl_YdelseNr.TabIndex = 25;
+            this.lbl_YdelseNr.Text = "Ydelse Type";
             // 
             // txt_MedarbejderNr
             // 
@@ -276,23 +276,23 @@
             this.txt_MedarbejderNr.Size = new System.Drawing.Size(170, 24);
             this.txt_MedarbejderNr.TabIndex = 26;
             // 
-            // Sags
+            // lbl_Sags
             // 
-            this.Sags.AutoSize = true;
-            this.Sags.Location = new System.Drawing.Point(251, 67);
-            this.Sags.Name = "Sags";
-            this.Sags.Size = new System.Drawing.Size(55, 17);
-            this.Sags.TabIndex = 28;
-            this.Sags.Text = "SagsNr";
+            this.lbl_Sags.AutoSize = true;
+            this.lbl_Sags.Location = new System.Drawing.Point(251, 67);
+            this.lbl_Sags.Name = "lbl_Sags";
+            this.lbl_Sags.Size = new System.Drawing.Size(59, 17);
+            this.lbl_Sags.TabIndex = 28;
+            this.lbl_Sags.Text = "Sags Nr";
             // 
-            // label1
+            // lbl_Slut
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 188);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "SlutDato";
+            this.lbl_Slut.AutoSize = true;
+            this.lbl_Slut.Location = new System.Drawing.Point(251, 188);
+            this.lbl_Slut.Name = "lbl_Slut";
+            this.lbl_Slut.Size = new System.Drawing.Size(66, 17);
+            this.lbl_Slut.TabIndex = 29;
+            this.lbl_Slut.Text = "Slut Dato";
             // 
             // txt_YdelseTypeNr
             // 
@@ -311,31 +311,31 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(675, 570);
             this.Controls.Add(this.txt_YdelseTypeNr);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Sags);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lbl_Slut);
+            this.Controls.Add(this.lbl_Sags);
+            this.Controls.Add(this.lbl_YdelseNr);
             this.Controls.Add(this.Btn_CreateKlient);
             this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.btn_GoToFormCreateAdvokat);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbl_Noter);
+            this.Controls.Add(this.lbl_Sagsbeskrivelse);
             this.Controls.Add(this.txt_InterneNoter);
             this.Controls.Add(this.txt_SagsBeskrivelse);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_Oversigt);
             this.Controls.Add(this.StartDato);
             this.Controls.Add(this.txt_MedarbejderNr);
             this.Controls.Add(this.txt_KlientNr);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbl_Medarbejder);
+            this.Controls.Add(this.lbl_Klientnr);
             this.Controls.Add(this.Slutdato);
             this.Controls.Add(this.txt_time);
             this.Controls.Add(this.txt_titel);
             this.Controls.Add(this.txt_kørsel);
             this.Controls.Add(this.txt_nr);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_TimeEstimat);
+            this.Controls.Add(this.lbl_Kørselstimer);
+            this.Controls.Add(this.lbl_Start);
+            this.Controls.Add(this.lbl_Titel);
             this.Controls.Add(this.btn_Create);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "New_case";
@@ -348,31 +348,31 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Create;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Titel;
+        private System.Windows.Forms.Label lbl_Start;
+        private System.Windows.Forms.Label lbl_Kørselstimer;
+        private System.Windows.Forms.Label lbl_TimeEstimat;
         private System.Windows.Forms.TextBox txt_nr;
         private System.Windows.Forms.TextBox txt_kørsel;
         private System.Windows.Forms.TextBox txt_titel;
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.DateTimePicker Slutdato;
         private System.Windows.Forms.TextBox txt_KlientNr;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_Medarbejder;
+        private System.Windows.Forms.Label lbl_Klientnr;
         private System.Windows.Forms.TextBox StartDato;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Oversigt;
         private System.Windows.Forms.TextBox txt_SagsBeskrivelse;
         private System.Windows.Forms.TextBox txt_InterneNoter;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_Sagsbeskrivelse;
+        private System.Windows.Forms.Label lbl_Noter;
         private System.Windows.Forms.Button btn_GoToFormCreateAdvokat;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_YdelseNr;
         private System.Windows.Forms.Button Btn_Help;
         private System.Windows.Forms.Button Btn_CreateKlient;
         private System.Windows.Forms.ComboBox txt_MedarbejderNr;
-        private System.Windows.Forms.Label Sags;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Sags;
+        private System.Windows.Forms.Label lbl_Slut;
         private System.Windows.Forms.ComboBox txt_YdelseTypeNr;
     }
 }
