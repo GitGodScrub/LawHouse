@@ -175,7 +175,6 @@ namespace DataAccess
                     return All;
                 }
             }
-
         }
 
         public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella
