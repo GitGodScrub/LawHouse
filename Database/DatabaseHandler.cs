@@ -12,7 +12,7 @@ namespace DataAccess
     //A singleton is a convenient way for accessing the service from anywhere in the application code
     public class DatabaseHandler : IDatabase
     {
-        private static DatabaseHandler _database = null;
+        private static DatabaseHandler _database = null;//By Daniella
         private DatabaseHandler() { }
         public static DatabaseHandler Instance()
         {
@@ -23,7 +23,7 @@ namespace DataAccess
             }
             return _database;
         }
-        private void RunSqlCommand(string commandToRun) //Made by Daniella, refactored by Julius
+        private void RunSqlCommand(string commandToRun) //By Daniella, refactored by Julius
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
@@ -43,12 +43,14 @@ namespace DataAccess
                 }
             }
         }
-        public void CreateSag(Sag c) //Grunden til at der den her er fordi den tager en case og opretter det ud for properties
+
+        public void CreateSag(Sag c)// By Daniella
+        //Grunden til at der den her er fordi den tager en case og opretter det ud for properties
         {
             string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{c.Arbejdstitel}' , '{c.StartDato}' ,'{c.SlutDato}' ,'{c.Kørselstimer}' ,'{c.TimeEstimat}' , '{c.SagsBeskrivelse}',  '{c.InterneNoter}' , '{c.KlientNr}', {c.AdvokatId}, {c.YdelsesTypeNr})";
             RunSqlCommand(sqlString);
         }
-        public void UpdateSag(Sag @case)
+        public void UpdateSag(Sag @case)// By Daniella, refactored by Julius
         {
             string sqlString =
                 $"update Sag set Arbejdstitel = '{@case.Arbejdstitel}', StartDato = '{@case.StartDato}', SlutDato = '{@case.SlutDato}', Kørselstimer = '{@case.Kørselstimer}', TimeEstimat = '{@case.TimeEstimat}', SagsBeskrivelse = '{@case.SagsBeskrivelse}', InterneNoter = '{@case.InterneNoter}', KlientNr = '{@case.KlientNr}', AdvokatId = {@case.AdvokatId}, YdelsesTypeNr = {@case.YdelsesTypeNr}" +
@@ -56,7 +58,7 @@ namespace DataAccess
             RunSqlCommand(sqlString);
         }
 
-        public List<Sag> GetAllSag()
+        public List<Sag> GetAllSag()// By Daniella
         {
             string sqlString = "select * from Sag " +
                "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
@@ -93,8 +95,24 @@ namespace DataAccess
 
         }
 
+        public void CreateKlient(Klient KL)//By Thomas
+        {
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
+            {
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = conn;
+                    conn.Open();
 
-        public List<Klient> GetAllKlient()
+                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{KL.Navn}', '{KL.Adresse}', '{KL.TelefonNr}')";
+
+                    com.CommandText = sqlString;
+                    com.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public List<Klient> GetAllKlient()// By Daniella
         {
             string sqlString = "select * from Klient";
             List<Klient> All = new List<Klient>();
@@ -121,7 +139,7 @@ namespace DataAccess
         }
 
 
-        public void CreateAdvokat(Advokat ad)
+        public void CreateAdvokat(Advokat ad)// By Dennie
         {
             string sqlString = $"INSERT INTO Advokat(Navn) VALUES ({ad.AdvokatId} , {ad.Navn}')";
             RunSqlCommand(sqlString);
@@ -130,13 +148,13 @@ namespace DataAccess
              * Havde forstillet mig, at man i vores ViewListe skal kunne vælge "vis advokater" og derinde så tilføje efteruddannelse ud fra en "valgt" advokats id.
              - Dennie 
              */
-        public void AddSpecialToAdvokat(string efteruddannelse, int advokatId)
+        public void AddSpecialToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
         {
             string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
             RunSqlCommand(sqlString);
         }
 
-        public List<Advokat> GetAllAdvokat()
+        public List<Advokat> GetAllAdvokat()// By Daniella
         {
             string sqlString = "select * from Advokat";
             List<Advokat> All = new List<Advokat>();
@@ -160,7 +178,7 @@ namespace DataAccess
 
         }
 
-        public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)
+        public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella
         {
             string sqlString = @"SELECT * FROM ADVOKAT
                                 JOIN Tjenesteydelse ON Tjenesteydelse.AdvokatId = Advokat.AdvokatId
@@ -187,7 +205,7 @@ namespace DataAccess
         }
 
 
-        public List<YdelseList> Tjenesteydelse()
+        public List<YdelseList> Tjenesteydelse()// By Daniella
         {
             string sqlString = "select * from Tjenesteydelse";
             List<YdelseList> All = new List<YdelseList>();
@@ -210,7 +228,7 @@ namespace DataAccess
             }
         }
 
-        public List<YdelseType> YdelseType()
+        public List<YdelseType> YdelseType()// By Daniella
         {
             string sqlString = "select * from YdelseType";
             List<YdelseType> All = new List<YdelseType>();
@@ -234,7 +252,7 @@ namespace DataAccess
         }
 
 
-        public List<ListItems> GetList()
+        public List<ListItems> GetList()// By Daniella
         {
             string sqlString = "select * from List";
             List<ListItems> All = new List<ListItems>();
@@ -258,22 +276,7 @@ namespace DataAccess
             }
         }
 
-        public void CreateKlient(Klient KL)
-        {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            {
-                using (SqlCommand com = new SqlCommand())
-                {
-                    com.Connection = conn;
-                    conn.Open();
-
-                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{KL.Navn}', '{KL.Adresse}', '{KL.TelefonNr}')";
-
-                    com.CommandText = sqlString;
-                    com.ExecuteNonQuery();
-                }
-            }
-        }
+       
         //public void DeleteFromCase()
         //{
 
