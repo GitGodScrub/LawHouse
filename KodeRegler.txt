@@ -1,0 +1,14 @@
+KODE REGLER:
+Mellem hver metode skal der være et mellemrum
+Mellem hver nye afsnit, skal der være to linjer kode
+
+
+Man ændre ikke vigtigte navne unden at spørge gruppen først
+
+
+GUI:
+For at lave hjælpe siden, kan vi altid lave en tekst fil somme denne.
+Det vil sige højre klik på GUI og add en ny tekst fil, som har en navn
+der forbindes til hvilken GUI, der skal have en hjælpe side
+
+Der skal måske laves interface for GUI
