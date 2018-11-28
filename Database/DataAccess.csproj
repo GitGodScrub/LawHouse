@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Advokat.cs" />
     <Compile Include="Case.cs" />
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseAdvokat.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Klient.cs" />
