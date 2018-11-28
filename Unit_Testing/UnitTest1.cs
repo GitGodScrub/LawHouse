@@ -53,7 +53,7 @@ namespace UnitTestLawHouse
             @case.SagsBeskrivelse = "Ezy Case bois";
             @case.InterneNoter = "not that ezy";
             @case.KlientNr = "2";
-            @case.AdvokatId = "3";
+            @case.AdvokatId = 3;
         }
     }
 }
