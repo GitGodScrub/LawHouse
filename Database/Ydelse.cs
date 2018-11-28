@@ -9,6 +9,8 @@ namespace DataAccess
     public class Ydelse
     {
         public int YdelsesTypeNr { get; set; }
+        public string StartDato { get; set; }
+
     }
 
     public class YdelseList
