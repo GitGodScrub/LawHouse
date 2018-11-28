@@ -10,6 +10,17 @@ namespace BusinessLogic
     interface IDatabase
     {
         void CreateAdvokat(Advokat instanceAdvokat);
+        void CreateSag(Sag instanceSag);
+        void CreateKlient(Klient instanceKlient);
+        void CreateYdelse(Ydelse instanceYdelse);
+
+
+
+
+
+
+
+
 
 
     }
