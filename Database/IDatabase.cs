@@ -27,6 +27,6 @@ namespace DataAccess
         List<ListItems> GetList();//changeMaybe
 
         void AddSpecialeToAdvokat();
-        void AddEfterudannelseToAdvokat(); //awaiting aproval
+        void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId); //awaiting aproval
     }
 }
