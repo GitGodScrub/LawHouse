@@ -322,22 +322,23 @@ namespace DataAccess
                         while (sqld.Read())
                         {
                             Ydelse ydelse = new Ydelse();
-                            ydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            ydelse.YdelsesNr = Convert.ToInt32(sqld["YdelsesNr"]);
                             ydelse.StartDato = sqld["StartDato"].ToString();
-                            ydelse.YdelseBeskrivelse = sqld["YdelseBeskrivelse"].ToString();
+                            ydelse.YdelsesBeskrivelse = sqld["YdelsesBeskrivelse"].ToString();
                             ydelse.Pris = sqld["Pris"].ToString();
                             ydelse.Timer = sqld["Timer"].ToString();
                             ydelse.AdvokatID = Convert.ToInt32(sqld["AdvokatID"]);
+                            All.Add(ydelse);
                         }
                     return All;
                 }
             }
 
         }
-        public void CreateYdelser( Ydelse @ydelse)
+        public void CreateYdelse( Ydelse @ydelse)
         {
             {
-                string sqlString = $"insert into Ydelse(YdelseNr, StartDato, YdelseBeskrivelse, Pris, Timer, SagsNr, AdvokatID )" + $"values('{ydelse.YdelsesTypeNr}' , '{ydelse.StartDato}' ,'{ydelse.YdelseBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatID}')";
+                string sqlString = $"insert into Ydelse(YdelseNr, StartDato, YdelseBeskrivelse, Pris, Timer, SagsNr, AdvokatID )" + $"values('{ydelse.YdelsesNr}' , '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatID}')";
                 RunSqlCommand(sqlString);
             }
         }

@@ -46,14 +46,16 @@
             this.Adresse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TelefonNr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Advokat_navn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.YdelsesNr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.YdelseBeskrivelse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btn_Update = new System.Windows.Forms.Button();
             this.dataSetDropBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetDrop = new GUI.DataSetDrop();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Btn_Help = new System.Windows.Forms.Button();
-            this.YdelseBeskrivelse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDropBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).BeginInit();
@@ -77,9 +79,11 @@
             this.objectListView1.AllColumns.Add(this.Adresse);
             this.objectListView1.AllColumns.Add(this.TelefonNr);
             this.objectListView1.AllColumns.Add(this.Advokat_navn);
+            this.objectListView1.AllColumns.Add(this.YdelsesNr);
             this.objectListView1.AllColumns.Add(this.YdelseBeskrivelse);
             this.objectListView1.AllColumns.Add(this.Pris);
             this.objectListView1.AllColumns.Add(this.Timer);
+            this.objectListView1.AllColumns.Add(this.AdvokatID);
             this.objectListView1.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.objectListView1.CellEditUseWholeCell = false;
             this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -99,9 +103,11 @@
             this.Adresse,
             this.TelefonNr,
             this.Advokat_navn,
+            this.YdelsesNr,
             this.YdelseBeskrivelse,
             this.Pris,
-            this.Timer});
+            this.Timer,
+            this.AdvokatID});
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.GridLines = true;
@@ -203,6 +209,26 @@
             this.Advokat_navn.AspectName = "Navn";
             this.Advokat_navn.Text = "Advokat Navn";
             // 
+            // YdelsesNr
+            // 
+            this.YdelsesNr.AspectName = "YdelsesNr";
+            this.YdelsesNr.Text = "Ydelses Nr";
+            // 
+            // YdelseBeskrivelse
+            // 
+            this.YdelseBeskrivelse.AspectName = "YdelsesBeskrivelse";
+            this.YdelseBeskrivelse.Text = "Ydelse Beskrivelse";
+            // 
+            // Pris
+            // 
+            this.Pris.AspectName = "Pris";
+            this.Pris.Text = "Pris";
+            // 
+            // Timer
+            // 
+            this.Timer.AspectName = "Timer";
+            this.Timer.Text = "Timer";
+            // 
             // btn_Update
             // 
             this.btn_Update.Location = new System.Drawing.Point(44, 12);
@@ -243,22 +269,11 @@
             this.Btn_Help.TabIndex = 7;
             this.Btn_Help.Text = "?";
             this.Btn_Help.UseVisualStyleBackColor = true;
-            this.Btn_Help.Click += new System.EventHandler(this.button1_Click);
             // 
-            // YdelseBeskrivelse
+            // AdvokatID
             // 
-            this.YdelseBeskrivelse.AspectName = "YdelseBeskrivelse";
-            this.YdelseBeskrivelse.Text = "Ydelse Beskrivelse";
-            // 
-            // Pris
-            // 
-            this.Pris.AspectName = "Pris";
-            this.Pris.Text = "Pris";
-            // 
-            // Timer
-            // 
-            this.Timer.AspectName = "Timer";
-            this.Timer.Text = "Timer";
+            this.AdvokatID.AspectName = "AdvokatId";
+            this.AdvokatID.Text = "AdvokatId";
             // 
             // Overblik
             // 
@@ -306,5 +321,7 @@
         private BrightIdeasSoftware.OLVColumn YdelseBeskrivelse;
         private BrightIdeasSoftware.OLVColumn Pris;
         private BrightIdeasSoftware.OLVColumn Timer;
+        private BrightIdeasSoftware.OLVColumn YdelsesNr;
+        private BrightIdeasSoftware.OLVColumn AdvokatID;
     }
 }

@@ -16,7 +16,7 @@ namespace DataAccess
         void UpdateAdvokat(Advokat @advokat);
         void UpdateSag(Sag @sag);
         void UpdateKlient(Klient @klient);
-        void UpdateYdelse(Ydelse @ydelse);
+      //  void UpdateYdelse(Ydelse @ydelse);
 
         List<Sag> GetAllSag();
         List<Klient> GetAllKlient();
@@ -27,7 +27,7 @@ namespace DataAccess
         List<Ydelse> GetAllYdelse();
         List<ListItems> GetAllList();
 
-       void AddTjenestesydelseToAdvokat();
+      // void AddTjenestesydelseToAdvokat();
         void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId); //awaiting aproval
     }
 }

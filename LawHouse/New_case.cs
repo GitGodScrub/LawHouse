@@ -51,11 +51,6 @@ namespace GUI
             advokatTester.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_CreateKlient_Click(object sender, EventArgs e)
         {
             OpretKLient KlientTester = new OpretKLient();

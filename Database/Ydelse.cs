@@ -8,9 +8,9 @@ namespace DataAccess
 {
     public class Ydelse
     {
-        public int YdelsesTypeNr { get; set; }
+        public int YdelsesNr { get; set; }
         public string StartDato { get; set; }
-        public string YdelseBeskrivelse { get; set; }
+        public string YdelsesBeskrivelse { get; set; }
         public string Pris { get; set; }
         public string Timer { get; set; }
         public int SagsNr { get; set; }
@@ -22,7 +22,7 @@ namespace DataAccess
         {
            
             StartDato = startDato;
-            YdelseBeskrivelse = ydelseBeskrivelse;
+            YdelsesBeskrivelse = ydelseBeskrivelse;
             Pris = pris;
             Timer = timer;
             SagsNr = sagsNr;

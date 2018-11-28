@@ -88,7 +88,7 @@ namespace BusinessLogic
             currentDatabaseInstance.AddEfteruddannelseToAdvokat(specialName, advokatId);
         }
 
-        public static List<YdelseList> GetAllYdelser()
+        public static List<YdelseList> GetAllYdelse()
         {
             List<YdelseList> ydelseLists = currentDatabaseInstance.GetAllTjenesteydelse();
             return ydelseLists;

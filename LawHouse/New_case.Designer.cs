@@ -245,7 +245,6 @@
             this.Btn_Help.TabIndex = 25;
             this.Btn_Help.Text = "?";
             this.Btn_Help.UseVisualStyleBackColor = true;
-            this.Btn_Help.Click += new System.EventHandler(this.button2_Click);
             // 
             // Btn_CreateKlient
             // 
