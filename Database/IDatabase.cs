@@ -21,10 +21,10 @@ namespace DataAccess
         List<Sag> GetAllSag();
         List<Klient> GetAllKlient();
         List<Advokat> GetAllAdvokat();
-        List<Advokat> GetAllAdvokatFromYdelse();
-        List<YdelseList> Tjenesteydelse();//changeMaybe
-        List<YdelseType> YdelseType();//changeMaybe
-        List<ListItems> GetList();//changeMaybe
+        List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr);
+        List<YdelseList> GetAllTjenesteydelse();
+        List<YdelseType> GetAllYdelseType();
+        List<ListItems> GetAllList();
 
         void AddSpecialeToAdvokat();
         void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId); //awaiting aproval

@@ -43,6 +43,11 @@ namespace BusinessLogic
             Sag @case = (Sag)objectToUpdate;
             currentDatabaseInstance.UpdateSag(@case);
         }
+        public static void UpdateAdvokat(object objectToUpdate)
+        {
+            Advokat advokat = (Advokat)objectToUpdate;
+            currentDatabaseInstance.
+        }
 
         public static List<Sag> GetAllSag()
         {
@@ -70,12 +75,12 @@ namespace BusinessLogic
 
         public static List<YdelseList> GetAllYdelser()
         {
-            List<YdelseList> ydelseLists = currentDatabaseInstance.Tjenesteydelse();
+            List<YdelseList> ydelseLists = currentDatabaseInstance.GetAllTjenesteydelse();
             return ydelseLists;
         }
         public static List<YdelseType> GetAllYdelseType()
         {
-            List<YdelseType> ydT = currentDatabaseInstance.YdelseType();
+            List<YdelseType> ydT = currentDatabaseInstance.GetAllYdelseType();
             return ydT;
         }
 
@@ -87,7 +92,7 @@ namespace BusinessLogic
 
         public static List<ListItems> GetAllItems()
         {
-            List<ListItems> GetItems = currentDatabaseInstance.GetList();
+            List<ListItems> GetItems = currentDatabaseInstance.GetAllList();
             return GetItems;
         }
 

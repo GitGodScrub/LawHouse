@@ -154,6 +154,12 @@ namespace DataAccess
             RunSqlCommand(sqlString);
         }
 
+        public void UpdateAdvokat(Advokat ad)
+        {
+            String sqlString=
+                $"update Advokat navn = '"
+        }
+
         public List<Advokat> GetAllAdvokat()// By Daniella
         {
             string sqlString = "select * from Advokat";
@@ -204,7 +210,7 @@ namespace DataAccess
         }
 
         
-        public List<YdelseList> Tjenesteydelse()// By Daniella
+        public List<YdelseList> GetAllTjenesteydelse()// By Daniella
         {
             string sqlString = "select * from Tjenesteydelse";
             List<YdelseList> All = new List<YdelseList>();
@@ -227,7 +233,7 @@ namespace DataAccess
             }
         }
 
-        public List<YdelseType> YdelseType()// By Daniella
+        public List<YdelseType> GetAllYdelseType()// By Daniella
         {
             string sqlString = "select * from YdelseType";
             List<YdelseType> All = new List<YdelseType>();
@@ -251,7 +257,7 @@ namespace DataAccess
         }
 
 
-        public List<ListItems> GetList()// By Daniella
+        public List<ListItems> GetAllList()// By Daniella
         {
             string sqlString = "select * from List";
             List<ListItems> All = new List<ListItems>();
