@@ -22,9 +22,9 @@ namespace DataAccess
         List<Klient> GetAllKlient();
         List<Advokat> GetAllAdvokat();
         List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr);
-        List<YdelseList> Tjenesteydelse();//changeMaybe
-        List<YdelseType> YdelseType();//changeMaybe
-        List<ListItems> GetList();//changeMaybe
+        List<YdelseList> GetAllTjenesteydelse();
+        List<YdelseType> GetAllYdelseType();
+        List<ListItems> GetAllList();
 
         void AddSpecialeToAdvokat();
         void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId); //awaiting aproval
