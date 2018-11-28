@@ -324,6 +324,10 @@ namespace DataAccess
                             Ydelse ydelse = new Ydelse();
                             ydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
                             ydelse.StartDato = sqld["StartDato"].ToString();
+                            ydelse.YdelseBeskrivelse = sqld["YdelseBeskrivelse"].ToString();
+                            ydelse.Pris = sqld["Pris"].ToString();
+                            ydelse.Timer = sqld["Timer"].ToString();
+                            ydelse.AdvokatID = sqld["AdvokatID"].ToString();
                         }
                     return All;
                 }
