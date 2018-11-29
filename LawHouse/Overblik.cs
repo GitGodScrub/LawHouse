@@ -48,7 +48,8 @@ namespace GUI
                 }
 
             }
-            
+            MessageBox.Show("færdig");
+
         }
 
         //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
