@@ -327,6 +327,7 @@ namespace DataAccess
                             ydelse.YdelsesBeskrivelse = sqld["YdelsesBeskrivelse"].ToString();
                             ydelse.Pris = sqld["Pris"].ToString();
                             ydelse.Timer = sqld["Timer"].ToString();
+                            ydelse.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
                             ydelse.AdvokatID = Convert.ToInt32(sqld["AdvokatID"]);
                             All.Add(ydelse);
                         }
