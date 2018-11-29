@@ -64,7 +64,8 @@ namespace BusinessLogic
             Ydelse ydelse = (Ydelse)objectToUpdate;
             currentDatabaseInstance.UpdateYdelse(ydelse);
         }
-
+        
+        
         public static List<Sag> GetAllSag()
         {
              List<Sag> listToReturn = currentDatabaseInstance.GetAllSag();

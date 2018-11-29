@@ -23,21 +23,23 @@ namespace GUI
         }
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            //ListItems listItems = new ListItems();
 
+           
+            foreach (object item in objectListView1.Objects)
+            {
+                if (item is Sag)
+                {
+                    Controller.UpdateSag(item);
+                   
+                }
+                else if (item is Advokat)
+                {
 
-            //foreach (var item in objectListView1.Objects)
-            //{
-            //    if (objectListView1.SelectedObject == "Sag")
-            //    {
-            //        Controller.UpdateSag(item);
-
-            //    }
-            //    else if (true)
-            //    {
-
-            //    }            
-            //   // Controller.UpdateSag(item);
-            //}
+                    Controller.UpdateAdvokat(item);
+                }            
+                 Controller.UpdateSag(item);
+            }
             
         }
 
