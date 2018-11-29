@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess
-{
+{/*
     class SqlReader
     {
         public List<Object> ReadThis(string sqlString, Object toReadType)
@@ -71,5 +71,5 @@ namespace DataAccess
 
             return varTypesInObject;
         }
-    }
+    }*/
 }
