@@ -24,19 +24,20 @@ namespace GUI
         private void btn_Update_Click(object sender, EventArgs e)
         {
 
-            foreach (var item in objectListView1.Objects)
-            {
-                if (objectListView1.SelectedObject == "Sag")
-                {
-                    Controller.UpdateSag(item);
 
-                }
-                else if (true)
-                {
+            //foreach (var item in objectListView1.Objects)
+            //{
+            //    if (objectListView1.SelectedObject == "Sag")
+            //    {
+            //        Controller.UpdateSag(item);
 
-                }            
-               // Controller.UpdateSag(item);
-            }
+            //    }
+            //    else if (true)
+            //    {
+
+            //    }            
+            //   // Controller.UpdateSag(item);
+            //}
             
         }
 
