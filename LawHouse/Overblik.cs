@@ -38,12 +38,7 @@ namespace GUI
 
                     Controller.UpdateAdvokat(item);
                 }
-                else if (item is Ydelse)
-                {
-
-                    Controller.upd(item);
-                }
-                Controller.UpdateSag(item);
+             
             }
             
         }
