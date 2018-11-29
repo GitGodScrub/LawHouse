@@ -7,6 +7,11 @@
         public string Efteruddannelse { get; set; }
 
         public Advokat() { }
+
+        public Advokat(string navn)
+        {
+            Navn = navn;
+        }
         public Advokat(int advokatId, string navn)
         {
             AdvokatId = advokatId;
