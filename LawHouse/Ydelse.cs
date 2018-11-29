@@ -22,7 +22,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Controller.CreateYdelse(txt_startdato.Text, txt_beskrivelse.Text, txt_Pris.Text, txt_timer.Text, Convert.ToInt32(txt_sagsNr), Convert.ToInt32(txt_advokatId));
+            Controller.CreateYdelse(txt_startdato.Text, txt_beskrivelse.Text, txt_Pris.Text, txt_timer.Text, Convert.ToInt32(txt_sagsNr.Text), Convert.ToInt32(txt_advokatId.Text));
             MessageBox.Show("Test");
            
         }

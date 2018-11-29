@@ -328,7 +328,7 @@ namespace DataAccess
                             ydelse.Pris = sqld["Pris"].ToString();
                             ydelse.Timer = sqld["Timer"].ToString();
                             ydelse.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
-                            ydelse.AdvokatID = Convert.ToInt32(sqld["AdvokatID"]);
+                            ydelse.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
                             All.Add(ydelse);
                         }
                     return All;
@@ -339,7 +339,7 @@ namespace DataAccess
         public void CreateYdelse( Ydelse @ydelse)
         {
             {
-                string sqlString = $"insert into Ydelse(YdelsesNr, StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatID )" + $"values('{ydelse.YdelsesNr}' , '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatID}')";
+                string sqlString = $"insert into Ydelse(YdelsesNr, StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values('{ydelse.YdelsesNr}' , '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatId}')";
                 RunSqlCommand(sqlString);
             }
         }

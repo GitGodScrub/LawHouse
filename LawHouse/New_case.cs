@@ -35,7 +35,7 @@ namespace GUI
 
         private void btn_Create_Click(object sender, EventArgs e)
         {            
-            Controller.CreateSag(txt_titel.Text, StartDato.Text, Slutdato.Text, txt_kørsel.Text, txt_time.Text,  txt_SagsBeskrivelse.Text , txt_InterneNoter.Text,Convert.ToInt32( txt_KlientNr), (int)txt_MedarbejderNr.SelectedValue, (int)txt_YdelseTypeNr.SelectedValue);
+            Controller.CreateSag(txt_titel.Text, StartDato.Text, Slutdato.Text, txt_kørsel.Text, txt_time.Text,  txt_SagsBeskrivelse.Text , txt_InterneNoter.Text,Convert.ToInt32( txt_KlientNr.Text), (int)txt_MedarbejderNr.SelectedValue, (int)txt_YdelseTypeNr.SelectedValue);
             this.Close();
         }
 

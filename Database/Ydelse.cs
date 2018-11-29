@@ -14,19 +14,19 @@ namespace DataAccess
         public string Pris { get; set; }
         public string Timer { get; set; }
         public int SagsNr { get; set; }
-        public int AdvokatID { get; set; }
+        public int AdvokatId { get; set; }
 
         public Ydelse() { }
 
-        public Ydelse( string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatID)
+        public Ydelse( string startDato, string ydelsesBeskrivelse, string pris, string timer, int sagsNr, int advokatId)
         {
            
             StartDato = startDato;
-            YdelsesBeskrivelse = ydelseBeskrivelse;
+            YdelsesBeskrivelse = ydelsesBeskrivelse;
             Pris = pris;
             Timer = timer;
             SagsNr = sagsNr;
-            AdvokatID = advokatID;
+            AdvokatId = advokatId;
         }
     }
 
