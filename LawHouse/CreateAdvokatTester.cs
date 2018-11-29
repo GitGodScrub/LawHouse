@@ -30,6 +30,7 @@ namespace GUI
         private void btn_CreateAdvokat_Click(object sender, EventArgs e)
         {
                     string navn = txt_AdvokatNavn.Text;
+                    Controller.CreateAdvokat(navn);
                     MessageBox.Show("Oprettet.");
                     txt_AdvokatNavn.Clear();
         }

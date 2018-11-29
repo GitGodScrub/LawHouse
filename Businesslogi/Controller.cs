@@ -21,9 +21,9 @@ namespace BusinessLogic
         //Before:  private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
         private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance();
         //23
-        public static void CreateAdvokat(int advokatId, string advokatNavn)
+        public static void CreateAdvokat(string advokatNavn)
         {
-            Advokat ad = new Advokat(advokatId, advokatNavn);
+            Advokat ad = new Advokat(advokatNavn);
             currentDatabaseInstance.CreateAdvokat(ad);
         }
         public static void CreateSag(string arbejdstitel, string startDato, string slutDato, string kørselstimer,
