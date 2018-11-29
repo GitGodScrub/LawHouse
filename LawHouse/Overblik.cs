@@ -23,14 +23,21 @@ namespace GUI
         }
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            if (objectListView1.SelectedObjects.Count == 1)
+
+            foreach (var item in objectListView1.Objects)
             {
-                if (objectListView1.SelectedObject != null)
+                if (objectListView1.SelectedObject == "Sag")
                 {
-                    Controller.UpdateSag(objectListView1.SelectedObject);
-                    MessageBox.Show("Opdateret");
+                    Controller.UpdateSag(item);
+
                 }
+                else if (true)
+                {
+
+                }            
+               // Controller.UpdateSag(item);
             }
+            
         }
 
         //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
