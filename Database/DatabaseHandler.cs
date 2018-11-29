@@ -149,7 +149,7 @@ namespace DataAccess
 
         public void CreateAdvokat(Advokat @advokat)// By Dennie
         {
-            string sqlString = $"INSERT INTO Advokat(Navn) VALUES ({advokat.AdvokatId} , {advokat.Navn}')";
+            string sqlString = $"INSERT INTO Advokat(Navn) VALUES ('{advokat.Navn}')";
             RunSqlCommand(sqlString);
         }
         /* Når en advokat skal have tilføjet et speciale/efteruddannelse, skal man i vores database bare indtaste et "navn" på specialet + "advokat id'et", som skal have denne efteruddannelse.
@@ -327,6 +327,7 @@ namespace DataAccess
                             ydelse.YdelsesBeskrivelse = sqld["YdelsesBeskrivelse"].ToString();
                             ydelse.Pris = sqld["Pris"].ToString();
                             ydelse.Timer = sqld["Timer"].ToString();
+                            ydelse.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
                             ydelse.AdvokatID = Convert.ToInt32(sqld["AdvokatID"]);
                             All.Add(ydelse);
                         }
