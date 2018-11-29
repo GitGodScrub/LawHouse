@@ -28,17 +28,25 @@ namespace GUI
            
             foreach (object item in objectListView1.Objects)
             {
+              
                 if (item is Sag)
                 {
                     Controller.UpdateSag(item);
-                   
+
                 }
                 else if (item is Advokat)
                 {
-
                     Controller.UpdateAdvokat(item);
                 }
-             
+                else if (item is Ydelse)
+                {
+                    Controller.UpdateYdelse(item);
+                }
+                else if (item is Klient)
+                {
+                    Controller.UpdateKLient(item);
+                }
+
             }
             
         }
