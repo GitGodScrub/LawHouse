@@ -339,7 +339,7 @@ namespace DataAccess
         public void CreateYdelse( Ydelse @ydelse)
         {
             {
-                string sqlString = $"insert into Ydelse(YdelsesNr, StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values('{ydelse.YdelsesNr}' , '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatId}')";
+                string sqlString = $"insert into Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatId}')";
                 RunSqlCommand(sqlString);
             }
         }

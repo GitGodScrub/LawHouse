@@ -19,9 +19,11 @@ namespace GUI
         public New_case()
         {
             InitializeComponent();
-            StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);       
+            StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);    
+            
             Slutdato.Format = DateTimePickerFormat.Custom;
             Slutdato.MinDate = DateTime.Today;
+            Slutdato.CustomFormat = " ";
 
             txt_YdelseTypeNr.DataSource = Controller.GetAllYdelseType();
             txt_YdelseTypeNr.DisplayMember = "YdelsesNavn";
