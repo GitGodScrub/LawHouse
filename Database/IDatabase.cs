@@ -16,7 +16,7 @@ namespace DataAccess
         void UpdateAdvokat(Advokat @advokat);
         void UpdateSag(Sag @sag);
         void UpdateKlient(Klient @klient);
-      //  void UpdateYdelse(Ydelse @ydelse);
+        void UpdateYdelse(Ydelse @ydelse);
 
         List<Sag> GetAllSag();
         List<Klient> GetAllKlient();
