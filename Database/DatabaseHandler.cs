@@ -167,7 +167,7 @@ namespace DataAccess
 
             String sqlString =
                 $"update Advokat set Navn = '{ad.Navn}'" +
-                 $"where AdvokatID ={ad.AdvokatId}";
+                 $"where AdvokatId ={ad.AdvokatId}";
             RunSqlCommand(sqlString);
 
         }
@@ -347,7 +347,7 @@ namespace DataAccess
         public void UpdateYdelse(Ydelse ydelse)
         {
             String sqlString =
-                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', SagsNr ='{ydelse.SagsNr}', AdvokatId = '{ydelse.AdvokatId}'" + $"where YdelsesNr ={ydelse.YdelsesNr}";
+                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', SagsNr ={ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" + $"where YdelsesNr ={ydelse.YdelsesNr}";
             RunSqlCommand(sqlString);
         }
 
