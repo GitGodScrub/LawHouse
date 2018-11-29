@@ -63,5 +63,11 @@ namespace GUI
             txt_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
             txt_MedarbejderNr.SelectedIndex = -1;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Ydelse ydelse = new Ydelse();
+            ydelse.Show();
+        }
     }
 }
