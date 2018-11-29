@@ -112,7 +112,7 @@ namespace DataAccess
             }
         }
 
-        public void UpdateKlient(Klient KL)
+        public void UpdateKlient(Klient KL) // By Thomas
         {
             string sqlString =
                 $"update set navn'{KL.Navn}'adresse '{KL.Adresse}' TelefonNR'{KL.TelefonNr}' " +
@@ -162,7 +162,7 @@ namespace DataAccess
             RunSqlCommand(sqlString);
         }
 
-        public void UpdateAdvokat(Advokat ad)
+        public void UpdateAdvokat(Advokat ad) // by Thomas
         {
 
             String sqlString =
