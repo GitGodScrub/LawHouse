@@ -37,8 +37,13 @@ namespace GUI
                 {
 
                     Controller.UpdateAdvokat(item);
-                }            
-                 Controller.UpdateSag(item);
+                }
+                else if (item is Ydelse)
+                {
+
+                    Controller.upd(item);
+                }
+                Controller.UpdateSag(item);
             }
             
         }
