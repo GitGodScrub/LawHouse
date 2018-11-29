@@ -59,6 +59,11 @@ namespace BusinessLogic
             Klient klient = (Klient)objectToUpdate;
             currentDatabaseInstance.UpdateKlient(klient);
         }
+        public void UpdateYdelse(object objectToUpdate)
+        {
+            Ydelse ydelse = (Ydelse)objectToUpdate;
+            currentDatabaseInstance.UpdateYdelse(ydelse);
+        }
 
         public static List<Sag> GetAllSag()
         {
