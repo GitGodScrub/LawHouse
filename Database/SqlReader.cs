@@ -7,32 +7,35 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess
-{/*
+{
     class SqlReader
     {
-        public List<Object> ReadThis(string sqlString, Object toReadType)
+        public List<object> ReadThis(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);
             SqlDataReader sqld = com.ExecuteReader();
 
-            List<toReadType> listToReturn = new List<toReadType>();
+            List<object> returnList = new List<object>() {objectType};
+            List<string[]> typesToRead = getColumnInfo(conn, sqld);
             try
             {
-                List<Object> typesToRead = ReaderHelper(sqlString, toReadType, conn, com, sqld);
-
                 conn.Open();
                 if (sqld.HasRows)
                 {
                     while (sqld.Read())
                     {
-                        toReadType @returnItem = new toReadType();
-                        for (int i = 0; i < typesToRead.Count; i++)
+                        dynamic instanceToAddToList = Activator.CreateInstance(objectType);
+                        for (int i = 0; i < sqld.FieldCount; i++)
                         {
-                            Object @currentType = typesToRead[i];
-                            @returnItem.@currentType = Convert.ChangeType(sqld[$"{@currentType}"], @currentType.GetType());
-                        }
+                            string fieldName = typesToRead[i][0];
+                            var fieldValueRaw = sqld[$"{fieldName}"];
+                            Type fieldType = objectType.GetProperty(fieldName).GetType();
+                            var fieldValueConverted = Convert.ChangeType(fieldValueRaw, fieldType);
 
+                            instanceToAddToList.GetProperty(fieldName).SetValue(fieldName, fieldValueConverted, null);
+                        }
+                        returnList.Add(instanceToAddToList);
                     }
                 }
             }
@@ -43,22 +46,20 @@ namespace DataAccess
             {
                 conn.Close();
             }
-
-            return listToReturn;
+            return returnList;
         }
-
-        private List<Object> ReaderHelper(string sqlString, Object toReadType, SqlConnection conn, SqlCommand com, SqlDataReader sqld)
+        private List<string[]> getColumnInfo(SqlConnection conn, SqlDataReader sqld)
         {
-            List<Object> varTypesInObject = new List<object>();
+            List<string[]> columnInfo = new List<string[]>();
             try
             {
                 conn.Open();
-                if (sqld.HasRows)
+                for (int i = 0; i < sqld.FieldCount; i++)
                 {
-                    while (sqld.Read())
-                    {
-
-                    }
+                    string[] arrayWithInfo = new string[2];
+                    arrayWithInfo[0] = sqld.GetName(i).ToString();
+                    arrayWithInfo[1] = sqld.GetFieldType(i).ToString();
+                    columnInfo.Add(arrayWithInfo);
                 }
             }
             catch (Exception)
@@ -68,8 +69,7 @@ namespace DataAccess
             {
                 conn.Close();
             }
-
-            return varTypesInObject;
+            return columnInfo;
         }
-    }*/
+    }
 }
