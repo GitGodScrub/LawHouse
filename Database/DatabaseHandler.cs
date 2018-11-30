@@ -53,7 +53,7 @@ namespace DataAccess
         public void UpdateSag(Sag @sag)// By Daniella, refactored by Julius
         {
             string sqlString =
-                $"update Sag set Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = '{sag.KlientNr}', AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
+                $"update Sag set Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = {sag.KlientNr}, AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
                 $"where SagsNr = {sag.SagsNr}";
             RunSqlCommand(sqlString);
         }
@@ -115,8 +115,8 @@ namespace DataAccess
         public void UpdateKlient(Klient KL) // By Thomas
         {
             string sqlString =
-                $"update set navn'{KL.Navn}'adresse '{KL.Adresse}' TelefonNR'{KL.TelefonNr}' " +
-                $"where KlientNR = {KL.KlientNr}";
+                $"update Klient set Navn ='{KL.Navn}', Adresse = '{KL.Adresse}', TelefonNr = '{KL.TelefonNr}' " +
+                $"where KlientNr = {KL.KlientNr}";
             RunSqlCommand(sqlString);
         }
 
@@ -166,7 +166,8 @@ namespace DataAccess
         {
 
             String sqlString =
-                $"update set navn = '{ad.Navn}'" + $"where AdvokatID ='{ad.AdvokatId}'";
+                $"update Advokat set Navn = '{ad.Navn}'" +
+                 $"where AdvokatId ={ad.AdvokatId}";
             RunSqlCommand(sqlString);
 
         }
@@ -339,14 +340,14 @@ namespace DataAccess
         public void CreateYdelse( Ydelse @ydelse)
         {
             {
-                string sqlString = $"insert into Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , '{ydelse.SagsNr}', '{ydelse.AdvokatId}')";
+                string sqlString = $"insert into Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
                 RunSqlCommand(sqlString);
             }
         }
         public void UpdateYdelse(Ydelse ydelse)
         {
             String sqlString =
-                $"update set Startdato = '{ydelse.StartDato}'YdelsesBeskrivelse'{ydelse.YdelsesBeskrivelse}'Pris '{ydelse.Pris}'SagsNr '{ydelse.SagsNr}'AdvokatId '{ydelse.AdvokatId}'" + $"where YdelsesNr ='{ydelse.YdelsesNr}'";
+                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', Timer ='{ydelse.Timer}', SagsNr ={ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" + $"where YdelsesNr ={ydelse.YdelsesNr}";
             RunSqlCommand(sqlString);
         }
     }

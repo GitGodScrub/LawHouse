@@ -11,7 +11,7 @@ namespace DataAccess
         void CreateAdvokat(Advokat @advokat);
         void CreateSag(Sag @sag);
         void CreateKlient(Klient @klient);
-       void CreateYdelse(Ydelse @ydelse);
+        void CreateYdelse(Ydelse @ydelse);
 
         void UpdateAdvokat(Advokat @advokat);
         void UpdateSag(Sag @sag);

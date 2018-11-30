@@ -12,9 +12,9 @@ using System.Globalization;
 
 namespace GUI
 {
-    public partial class Ydelse : Form
+    public partial class OpretYdelse : Form
     {
-        public Ydelse()
+        public OpretYdelse()
         {
             InitializeComponent();
             txt_startdato.Text = DateTime.Today.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);

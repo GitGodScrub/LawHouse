@@ -68,7 +68,7 @@ namespace GUI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Ydelse ydelse = new Ydelse();
+            OpretYdelse ydelse = new OpretYdelse();
             ydelse.Show();
         }
     }

@@ -28,19 +28,28 @@ namespace GUI
            
             foreach (object item in objectListView1.Objects)
             {
+              
                 if (item is Sag)
                 {
                     Controller.UpdateSag(item);
-                   
+
                 }
                 else if (item is Advokat)
                 {
-
                     Controller.UpdateAdvokat(item);
                 }
-             
+                else if (item is Ydelse)
+                {
+                    Controller.UpdateYdelse(item);
+                }
+                else if (item is Klient)
+                {
+                    Controller.UpdateKLient(item);
+                }
+
             }
-            
+            MessageBox.Show("færdig");
+
         }
 
         //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
