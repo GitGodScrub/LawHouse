@@ -68,7 +68,7 @@
             this.txt_AdvokatNavn.Name = "txt_AdvokatNavn";
             this.txt_AdvokatNavn.Size = new System.Drawing.Size(100, 22);
             this.txt_AdvokatNavn.TabIndex = 2;
-            // 
+             // 
             // lbl_AdvokatNavn
             // 
             this.lbl_AdvokatNavn.AutoSize = true;
@@ -77,7 +77,7 @@
             this.lbl_AdvokatNavn.Size = new System.Drawing.Size(100, 17);
             this.lbl_AdvokatNavn.TabIndex = 3;
             this.lbl_AdvokatNavn.Text = "Advokat Navn:";
-            // 
+             // 
             // lbl_AdvokatId
             // 
             this.lbl_AdvokatId.AutoSize = true;
@@ -86,7 +86,7 @@
             this.lbl_AdvokatId.Size = new System.Drawing.Size(78, 17);
             this.lbl_AdvokatId.TabIndex = 4;
             this.lbl_AdvokatId.Text = "Advokat Id:";
-            // 
+             // 
             // lbl_SpecialeNavn
             // 
             this.lbl_SpecialeNavn.AutoSize = true;
@@ -95,7 +95,7 @@
             this.lbl_SpecialeNavn.Size = new System.Drawing.Size(103, 17);
             this.lbl_SpecialeNavn.TabIndex = 5;
             this.lbl_SpecialeNavn.Text = "Speciale Navn:";
-            // 
+             // 
             // txt_AdvokatId
             // 
             this.txt_AdvokatId.Location = new System.Drawing.Point(283, 194);
@@ -103,7 +103,7 @@
             this.txt_AdvokatId.Name = "txt_AdvokatId";
             this.txt_AdvokatId.Size = new System.Drawing.Size(100, 22);
             this.txt_AdvokatId.TabIndex = 6;
-            // 
+             // 
             // txt_SpecialeNavn
             // 
             this.txt_SpecialeNavn.Location = new System.Drawing.Point(283, 235);
@@ -111,18 +111,17 @@
             this.txt_SpecialeNavn.Name = "txt_SpecialeNavn";
             this.txt_SpecialeNavn.Size = new System.Drawing.Size(100, 22);
             this.txt_SpecialeNavn.TabIndex = 7;
-            // 
+             // 
             // Btn_Help
             // 
-            this.Btn_Help.Location = new System.Drawing.Point(12, 134);
+            this.Btn_Help.Location = new System.Drawing.Point(13, 136);
             this.Btn_Help.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Size = new System.Drawing.Size(100, 28);
             this.Btn_Help.TabIndex = 8;
             this.Btn_Help.Text = "?";
             this.Btn_Help.UseVisualStyleBackColor = true;
-            this.Btn_Help.Click += new System.EventHandler(this.button1_Click);
-            // 
+             // 
             // CreateAdvokatTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,8 +139,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CreateAdvokatTester";
             this.Text = "CreateAdvokatTester";
-            this.Load += new System.EventHandler(this.CreateAdvokatTester_Load);
-            this.ResumeLayout(false);
+             this.ResumeLayout(false);
             this.PerformLayout();
 
         }

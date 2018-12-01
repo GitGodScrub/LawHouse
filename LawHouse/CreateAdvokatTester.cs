@@ -35,14 +35,6 @@ namespace GUI
                     txt_AdvokatNavn.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateAdvokatTester_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
