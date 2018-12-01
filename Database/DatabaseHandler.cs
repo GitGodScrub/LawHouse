@@ -346,8 +346,9 @@ namespace DataAccess
         }
         public void UpdateYdelse(Ydelse ydelse)
         {
-            String sqlString =
-                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', SagsNr ='{ydelse.SagsNr}', AdvokatId = '{ydelse.AdvokatId}'" + $"where YdelsesNr ={ydelse.YdelsesNr}";
+            string sqlString =
+                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', SagsNr = {ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" + 
+                $"where YdelsesNr ={ydelse.YdelsesNr}";
             RunSqlCommand(sqlString);
         }
 
