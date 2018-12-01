@@ -350,7 +350,6 @@ namespace DataAccess
                 $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', Timer ='{ydelse.Timer}', SagsNr ={ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" + $"where YdelsesNr ={ydelse.YdelsesNr}";
             RunSqlCommand(sqlString);
         }
-
     }
 }
 
