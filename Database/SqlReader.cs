@@ -10,17 +10,59 @@ namespace DataAccess
 {
     class SqlReader
     {
-        public List<object> ReadThis(string sqlString, Type objectType)
+        /*public List<string[]> ReadThis(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);
-            SqlDataReader sqld = com.ExecuteReader();
-
-            List<object> returnList = new List<object>() {objectType};
-            List<string[]> typesToRead = getColumnInfo(conn, sqld);
+            List<string[]> typesToRead = getColumnInfo(conn, com);
+            List<int, string[]> returnList = new List<int, string[]>();
             try
             {
                 conn.Open();
+                SqlDataReader sqld = com.ExecuteReader();
+                if (sqld.HasRows)
+                {
+                    int runCount = 0;
+                    while (sqld.Read())
+                    {
+                        
+                        string[] writeToList = new string[2];
+                        for (int i = 0; i < sqld.FieldCount; i++)
+                        {
+
+                            string fieldName = typesToRead[i][0];
+                            dynamic fieldValueRaw = sqld[$"{fieldName}"];
+                            string fieldValueConverted = Convert.ToString(fieldValueRaw);
+
+                            writeToList[0] = fieldName;
+                            writeToList[1] = fieldValueConverted;
+                        }
+                        returnList.Add(runCount, writeToList);
+                        runCount++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return returnList;
+        }
+        public List<dynamic> OldReadThis(string sqlString, Type objectType)
+        {
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
+            SqlCommand com = new SqlCommand(sqlString, conn);
+            List<string[]> typesToRead = getColumnInfo(conn, com);
+
+            List<dynamic> returnList = new List<dynamic>() {objectType};
+            try
+            {
+                conn.Open();
+                SqlDataReader sqld = com.ExecuteReader();
                 if (sqld.HasRows)
                 {
                     while (sqld.Read())
@@ -39,8 +81,9 @@ namespace DataAccess
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                throw e;
             }
             finally
             {
@@ -48,12 +91,13 @@ namespace DataAccess
             }
             return returnList;
         }
-        private List<string[]> getColumnInfo(SqlConnection conn, SqlDataReader sqld)
+        private List<string[]> getColumnInfo(SqlConnection conn, SqlCommand com)
         {
             List<string[]> columnInfo = new List<string[]>();
             try
             {
                 conn.Open();
+                SqlDataReader sqld = com.ExecuteReader();
                 for (int i = 0; i < sqld.FieldCount; i++)
                 {
                     string[] arrayWithInfo = new string[2];
@@ -62,8 +106,9 @@ namespace DataAccess
                     columnInfo.Add(arrayWithInfo);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                throw e;
             }
             finally
             {
@@ -71,5 +116,5 @@ namespace DataAccess
             }
             return columnInfo;
         }
-    }
+    */}
 }

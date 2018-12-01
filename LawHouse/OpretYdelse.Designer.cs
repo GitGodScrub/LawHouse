@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Ydelse
+    partial class OpretYdelse
     {
         /// <summary>
         /// Required designer variable.
