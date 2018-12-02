@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    class SqlReader
+    class SqlReader //By Julius
+    // Virker ikke
     {
         /*public List<string[]> ReadThis(string sqlString, Type objectType)
         {

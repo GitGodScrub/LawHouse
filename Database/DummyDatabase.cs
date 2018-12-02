@@ -8,7 +8,8 @@ using System.Xml.XPath;
 
 namespace DataAccess
 {
-    public class DummyDatabase : IDatabase //Virker ikke
+    public class DummyDatabase : IDatabase // By Julius
+        //Virker ikke
     {
         public DummyDatabase()
         {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!-- is it REALLY standalone?-->
+<!-- By Julius-->
 
 <!-- This is a comment
 
@@ -32,7 +32,6 @@ X*
 <test>
   <![CDATA[ xdxdxd ]]>
 </test>
-
 -->
 
 <!DOCTYPE Root [
