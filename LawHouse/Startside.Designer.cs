@@ -89,7 +89,6 @@
             this.txt_ydelse_ydelsesNr = new System.Windows.Forms.TextBox();
             this.Se_oversigt = new System.Windows.Forms.TabPage();
             this.combobox_hvad_type = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -137,17 +136,18 @@
             this.DynamicTabControl.Controls.Add(this.Opret_klient);
             this.DynamicTabControl.Controls.Add(this.Opret_ydelse);
             this.DynamicTabControl.Controls.Add(this.Se_oversigt);
-            this.DynamicTabControl.Location = new System.Drawing.Point(205, -3);
+            this.DynamicTabControl.ItemSize = new System.Drawing.Size(1, 70);
+            this.DynamicTabControl.Location = new System.Drawing.Point(205, -8);
             this.DynamicTabControl.Name = "DynamicTabControl";
             this.DynamicTabControl.SelectedIndex = 0;
-            this.DynamicTabControl.Size = new System.Drawing.Size(912, 603);
+            this.DynamicTabControl.Size = new System.Drawing.Size(912, 641);
             this.DynamicTabControl.TabIndex = 0;
             // 
             // Loge
             // 
-            this.Loge.Location = new System.Drawing.Point(4, 25);
+            this.Loge.Location = new System.Drawing.Point(4, 74);
             this.Loge.Name = "Loge";
-            this.Loge.Size = new System.Drawing.Size(904, 574);
+            this.Loge.Size = new System.Drawing.Size(904, 530);
             this.Loge.TabIndex = 5;
             this.Loge.Text = "tabPage1";
             this.Loge.UseVisualStyleBackColor = true;
@@ -176,10 +176,10 @@
             this.Opret_sag.Controls.Add(this.lbl_Kørselstimer);
             this.Opret_sag.Controls.Add(this.lbl_Start);
             this.Opret_sag.Controls.Add(this.lbl_Titel);
-            this.Opret_sag.Location = new System.Drawing.Point(4, 25);
+            this.Opret_sag.Location = new System.Drawing.Point(4, 74);
             this.Opret_sag.Name = "Opret_sag";
             this.Opret_sag.Padding = new System.Windows.Forms.Padding(3);
-            this.Opret_sag.Size = new System.Drawing.Size(904, 574);
+            this.Opret_sag.Size = new System.Drawing.Size(904, 563);
             this.Opret_sag.TabIndex = 0;
             this.Opret_sag.Text = "Sag";
             this.Opret_sag.UseVisualStyleBackColor = true;
@@ -386,10 +386,10 @@
             this.Opret_advokat.Controls.Add(this.txt_Advokat_AdvokatNavn);
             this.Opret_advokat.Controls.Add(this.btn_AddSpecialToAdvokat);
             this.Opret_advokat.Controls.Add(this.btn_CreateAdvokat);
-            this.Opret_advokat.Location = new System.Drawing.Point(4, 25);
+            this.Opret_advokat.Location = new System.Drawing.Point(4, 74);
             this.Opret_advokat.Name = "Opret_advokat";
             this.Opret_advokat.Padding = new System.Windows.Forms.Padding(3);
-            this.Opret_advokat.Size = new System.Drawing.Size(904, 574);
+            this.Opret_advokat.Size = new System.Drawing.Size(904, 563);
             this.Opret_advokat.TabIndex = 1;
             this.Opret_advokat.Text = "Advokat";
             // 
@@ -485,10 +485,10 @@
             this.Opret_klient.Controls.Add(this.Txt_Klient_TelefonNr);
             this.Opret_klient.Controls.Add(this.Txt_Klient_Adresse);
             this.Opret_klient.Controls.Add(this.Txt_Klient_navn);
-            this.Opret_klient.Location = new System.Drawing.Point(4, 25);
+            this.Opret_klient.Location = new System.Drawing.Point(4, 5);
             this.Opret_klient.Name = "Opret_klient";
             this.Opret_klient.Padding = new System.Windows.Forms.Padding(3);
-            this.Opret_klient.Size = new System.Drawing.Size(904, 574);
+            this.Opret_klient.Size = new System.Drawing.Size(904, 599);
             this.Opret_klient.TabIndex = 2;
             this.Opret_klient.Text = "Klient";
             this.Opret_klient.UseVisualStyleBackColor = true;
@@ -575,10 +575,10 @@
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_beskrivelse);
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_startdato);
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_ydelsesNr);
-            this.Opret_ydelse.Location = new System.Drawing.Point(4, 25);
+            this.Opret_ydelse.Location = new System.Drawing.Point(4, 5);
             this.Opret_ydelse.Name = "Opret_ydelse";
             this.Opret_ydelse.Padding = new System.Windows.Forms.Padding(3);
-            this.Opret_ydelse.Size = new System.Drawing.Size(904, 574);
+            this.Opret_ydelse.Size = new System.Drawing.Size(904, 599);
             this.Opret_ydelse.TabIndex = 3;
             this.Opret_ydelse.Text = "Ydelse";
             this.Opret_ydelse.UseVisualStyleBackColor = true;
@@ -710,13 +710,12 @@
             // 
             this.Se_oversigt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Se_oversigt.Controls.Add(this.combobox_hvad_type);
-            this.Se_oversigt.Controls.Add(this.button6);
             this.Se_oversigt.Controls.Add(this.btn_Update);
             this.Se_oversigt.Controls.Add(this.objectListView1);
-            this.Se_oversigt.Location = new System.Drawing.Point(4, 25);
+            this.Se_oversigt.Location = new System.Drawing.Point(4, 74);
             this.Se_oversigt.Name = "Se_oversigt";
             this.Se_oversigt.Padding = new System.Windows.Forms.Padding(3);
-            this.Se_oversigt.Size = new System.Drawing.Size(904, 574);
+            this.Se_oversigt.Size = new System.Drawing.Size(904, 563);
             this.Se_oversigt.TabIndex = 4;
             this.Se_oversigt.Text = "Oversigt";
             this.Se_oversigt.UseVisualStyleBackColor = true;
@@ -724,21 +723,11 @@
             // combobox_hvad_type
             // 
             this.combobox_hvad_type.FormattingEnabled = true;
-            this.combobox_hvad_type.Location = new System.Drawing.Point(6, 38);
+            this.combobox_hvad_type.Location = new System.Drawing.Point(6, 40);
             this.combobox_hvad_type.Name = "combobox_hvad_type";
             this.combobox_hvad_type.Size = new System.Drawing.Size(109, 24);
             this.combobox_hvad_type.TabIndex = 12;
             this.combobox_hvad_type.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(472, 21);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 28);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "?";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // btn_Update
             // 
@@ -802,7 +791,7 @@
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.GridLines = true;
             this.objectListView1.HasCollapsibleGroups = false;
-            this.objectListView1.Location = new System.Drawing.Point(6, 69);
+            this.objectListView1.Location = new System.Drawing.Point(6, 117);
             this.objectListView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowGroups = false;
@@ -999,13 +988,14 @@
             this.btn_opretsag.TabIndex = 59;
             this.btn_opretsag.Text = "Gå til: Opret Sag";
             this.btn_opretsag.UseVisualStyleBackColor = true;
+            this.btn_opretsag.Click += new System.EventHandler(this.btn_opretsag_Click);
             // 
             // Startside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1229, 612);
+            this.ClientSize = new System.Drawing.Size(1229, 645);
             this.Controls.Add(this.btn_opretsag);
             this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.btn_Create);
@@ -1100,7 +1090,6 @@
         private System.Windows.Forms.TextBox txt_ydelse_beskrivelse;
         private System.Windows.Forms.TextBox txt_ydelse_startdato;
         private System.Windows.Forms.TextBox txt_ydelse_ydelsesNr;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btn_Update;
         private BrightIdeasSoftware.ObjectListView objectListView1;
         private BrightIdeasSoftware.OLVColumn olvColumn1;

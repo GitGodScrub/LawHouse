@@ -98,8 +98,12 @@ namespace GUI
         {
             DynamicTabControl.SelectedTab = Se_oversigt;
         }
+        private void btn_opretsag_Click(object sender, EventArgs e)
+        {
+            DynamicTabControl.SelectedTab = Opret_sag;
+        }
 
-     //Koden under til opret advokat
+        //Koden under til opret advokat
 
         private void btn_CreateAdvokat_Click(object sender, EventArgs e)
         {
