@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- is it REALLY standalone?-->
+
+<!-- This is a comment
+
+&#255
+enterties are cool!
+
+Wellformed
+Wellformed + valid
+
+Valid - dtd´s eller xml schema
+-->
+
+<test>
+  <![CDATA[
+xdxdxd
+]]>
+</test>
+
+<Root>
+
+  <Sag>
+    <SagsNr></SagsNr>
+    <Arbejdstitel></Arbejdstitel>
+    <StartDato></StartDato>
+    <SlutDato></SlutDato>
+    <Kørselstimer></Kørselstimer>
+    <TimeEstimat></TimeEstimat>
+    <SagsBeskrivelse></SagsBeskrivelse>
+    <InterneNoter></InterneNoter>
+  </Sag>
+
+  <Advokat>
+    <AdvokatId></AdvokatId>
+    <Navn></Navn>
+  </Advokat>
+
+  <Ydelse>
+    <YdelsesNr></YdelsesNr>
+    <StartDato></StartDato>
+    <YdelsesBeskrivelse></YdelsesBeskrivelse>
+    <Pris></Pris>
+    <Timer></Timer>
+  </Ydelse>
+
+  <Klient>
+    <KlientNr></KlientNr>
+    <Navn></Navn>
+    <Adresse></Adresse>
+    <TelefonNr></TelefonNr>
+  </Klient>
+
+  <Efteruddannelse>
+    <Navn></Navn>
+  </Efteruddannelse>
+
+  <YdelseTyper>
+    <YdelseTypeNr></YdelseTypeNr>
+    <YdelsesNavn></YdelsesNavn>
+    <StandartPris></StandartPris>
+    <PrisType></PrisType>
+  </YdelseTyper>
+
+  <Tjenesteydelser>
+  </Tjenesteydelser>
+
+</Root>
