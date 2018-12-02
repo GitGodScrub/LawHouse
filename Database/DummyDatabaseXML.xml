@@ -10,14 +10,150 @@ Wellformed
 Wellformed + valid
 
 Valid - dtd´s eller xml schema
--->
+Det er altså constraints n shit
+
+
+|
+=or (?)
+
+,
+=and
+
+X?
+=0 or 1
+
+X+
+=1 or more
+
+X*
+=0 or more
+
 
 <test>
-  <![CDATA[
-xdxdxd
-]]>
+  <![CDATA[ xdxdxd ]]>
 </test>
 
+-->
+
+<!DOCTYPE Root [
+  <!ELEMENT Sag (SagsNr, Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter, KlientNr, AdvokatId, YdelsesTypeNr)>
+  <!ELEMENT Advokat (AdvokatId, Navn)>
+  <!ELEMENT Ydelse (YdelsesNr, StartDato, YdelsesBeskrivelse, Pris, Timer, AdvokatId, SagsNr)>
+  <!ELEMENT Klient (KlientNr, Navn, Adresse, TelefonNr)>
+  <!ELEMENT Efteruddannelse (Navn, AdvokatId)>
+  <!ELEMENT YdelseTyper (YdelseTypeNr, YdelsesNavn, StandartPris, PrisType)>
+  <!ELEMENT Tjenesteydelser (AdvokatId, YdelsesTypeNr)>
+]>
+<Root>
+  <Sag>
+    <SagsNr>1</SagsNr>
+    <Arbejdstitel>TestSag1</Arbejdstitel>
+    <StartDato>01-01-2018</StartDato>
+    <SlutDato>02-02-2019</SlutDato>
+    <Kørselstimer>10</Kørselstimer>
+    <TimeEstimat>100</TimeEstimat>
+    <SagsBeskrivelse>Dette er en TestSag</SagsBeskrivelse>
+    <InterneNoter>Dette ER rent faktisk en TestSag</InterneNoter>
+
+    <KlientNr>1</KlientNr>
+    <AdvokatId>1</AdvokatId>
+    <YdelsesTypeNr>1</YdelsesTypeNr>
+  </Sag>
+
+  <Advokat>
+    <AdvokatId>1</AdvokatId>
+    <Navn>Jens</Navn>
+  </Advokat>
+  <Advokat>
+    <AdvokatId>2</AdvokatId>
+    <Navn>Pede</Navn>
+  </Advokat>
+  <Advokat>
+    <AdvokatId>3</AdvokatId>
+    <Navn>Lars</Navn>
+  </Advokat>
+
+  <Ydelse>
+    <YdelsesNr>1</YdelsesNr>
+    <StartDato>02-01-2018</StartDato>
+    <YdelsesBeskrivelse>TestYdelse</YdelsesBeskrivelse>
+    <Pris>200</Pris>
+    <Timer>10</Timer>
+
+    <AdvokatId>1</AdvokatId>
+    <SagsNr>1</SagsNr>
+  </Ydelse>
+  <Ydelse>
+    <YdelsesNr>2</YdelsesNr>
+    <StartDato>02-01-2018</StartDato>
+    <YdelsesBeskrivelse>TestYdelse</YdelsesBeskrivelse>
+    <Pris>500</Pris>
+    <Timer>5</Timer>
+
+    <AdvokatId>2</AdvokatId>
+    <SagsNr>1</SagsNr>
+  </Ydelse>
+
+  <Klient>
+    <KlientNr>1</KlientNr>
+    <Navn>Bob</Navn>
+    <Adresse>Bobsplads 4</Adresse>
+    <TelefonNr>22442244</TelefonNr>
+  </Klient>
+  <Klient>
+    <KlientNr>2</KlientNr>
+    <Navn>Bob2</Navn>
+    <Adresse>Skyttevej 2</Adresse>
+    <TelefonNr>34003400</TelefonNr>
+  </Klient>
+
+  <Efteruddannelse>
+    <Navn>Eu-Rettighedder</Navn>
+
+    <AdvokatId>1</AdvokatId>
+  </Efteruddannelse>
+  <Efteruddannelse>
+    <Navn>Borger-Rettighedder</Navn>
+
+    <AdvokatId>1</AdvokatId>
+  </Efteruddannelse>
+  <Efteruddannelse>
+    <Navn>Eu-Rettighedder</Navn>
+
+    <AdvokatId>2</AdvokatId>
+  </Efteruddannelse>
+
+  <YdelseTyper>
+    <YdelseTypeNr>1</YdelseTypeNr>
+    <YdelsesNavn>TestYdelsesType</YdelsesNavn>
+    <StandartPris>200</StandartPris>
+    <PrisType>Fast Pris</PrisType>
+  </YdelseTyper>
+  <YdelseTyper>
+    <YdelseTypeNr>2</YdelseTypeNr>
+    <YdelsesNavn>NyType</YdelsesNavn>
+    <StandartPris>500</StandartPris>
+    <PrisType>Time Pris</PrisType>
+  </YdelseTyper>
+
+  <Tjenesteydelser>
+
+    <AdvokatId>1</AdvokatId>
+    <YdelsesTypeNr>1</YdelsesTypeNr>
+  </Tjenesteydelser>
+  <Tjenesteydelser>
+
+    <AdvokatId>1</AdvokatId>
+    <YdelsesTypeNr>2</YdelsesTypeNr>
+  </Tjenesteydelser>
+  <Tjenesteydelser>
+
+    <AdvokatId>3</AdvokatId>
+    <YdelsesTypeNr>1</YdelsesTypeNr>
+  </Tjenesteydelser>
+</Root>
+
+<!--
 <Root>
 
   <Sag>
@@ -66,3 +202,4 @@ xdxdxd
   </Tjenesteydelser>
 
 </Root>
+  -->
