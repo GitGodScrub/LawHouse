@@ -8,7 +8,7 @@ using System.Xml.XPath;
 
 namespace DataAccess
 {
-    public class DummyDatabase : IDatabase
+    public class DummyDatabase : IDatabase //Virker ikke
     {
         public DummyDatabase()
         {
@@ -39,14 +39,6 @@ namespace DataAccess
                         break;
                     case XmlNodeType.EndElement: //EndTag f.eks </Sag>
                         break;
-
-
-                    /*
-                    case XmlNodeType.Document://idk
-                        break;
-                    case XmlNodeType.DocumentType://idk
-                        break;
-                        */
                 }
             }
             return toReturn;
