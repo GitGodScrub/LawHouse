@@ -18,13 +18,14 @@ namespace DataAccess
         void UpdateKlient(Klient @klient);
         void UpdateYdelse(Ydelse @ydelse);
 
+        List<Advokat> GetAllAdvokat();
         List<Sag> GetAllSag();
         List<Klient> GetAllKlient();
-        List<Advokat> GetAllAdvokat();
+        List<Ydelse> GetAllYdelse();
+
         List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr);
         List<YdelseList> GetAllTjenesteydelse();
         List<YdelseType> GetAllYdelseType();
-        List<Ydelse> GetAllYdelse();
         List<ListItems> GetAllList();
 
         //void AddTjenestesydelseToAdvokat();
