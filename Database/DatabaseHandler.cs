@@ -23,6 +23,7 @@ namespace DataAccess
             }
             return _database;
         }
+
         private void RunSqlCommand(string commandToRun) //By Daniella, refactored by Julius
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
@@ -45,8 +46,7 @@ namespace DataAccess
         }
 
         public void CreateSag(Sag @sag)// By Daniella
-        //Grunden til at der den her er fordi den tager en case og opretter det ud for properties
-        {
+        {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
             string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
             RunSqlCommand(sqlString);
         }
@@ -57,7 +57,6 @@ namespace DataAccess
                 $"where SagsNr = {sag.SagsNr}";
             RunSqlCommand(sqlString);
         }
-
         public List<Sag> GetAllSag()// By Daniella
         {
             string sqlString = "select * from Sag " +
@@ -111,7 +110,6 @@ namespace DataAccess
                 }
             }
         }
-
         public void UpdateKlient(Klient KL) // By Thomas
         {
             string sqlString =
@@ -119,7 +117,6 @@ namespace DataAccess
                 $"where KlientNr = {KL.KlientNr}";
             RunSqlCommand(sqlString);
         }
-
         public List<Klient> GetAllKlient()// By Daniella
         {
             string sqlString = "select * from Klient";
@@ -155,13 +152,7 @@ namespace DataAccess
         /* Når en advokat skal have tilføjet et speciale/efteruddannelse, skal man i vores database bare indtaste et "navn" på specialet + "advokat id'et", som skal have denne efteruddannelse.
              * Havde forstillet mig, at man i vores ViewListe skal kunne vælge "vis advokater" og derinde så tilføje efteruddannelse ud fra en "valgt" advokats id.
              - Dennie 
-             */
-        public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
-        {
-            string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
-            RunSqlCommand(sqlString);
-        }
-
+        */
         public void UpdateAdvokat(Advokat ad) // by Thomas
         {
 
@@ -171,7 +162,6 @@ namespace DataAccess
             RunSqlCommand(sqlString);
 
         }
-
         public List<Advokat> GetAllAdvokat()// By Daniella
         {
             string sqlString = "select * from Advokat";
@@ -193,6 +183,12 @@ namespace DataAccess
                     return All;
                 }
             }
+        }
+
+        public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
+        {
+            string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
+            RunSqlCommand(sqlString);
         }
 
         public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella
@@ -268,7 +264,6 @@ namespace DataAccess
             }
         }
 
-
         public List<ListItems> GetAllList()// By Daniella
         {
             string sqlString = "select * from List";
@@ -293,22 +288,20 @@ namespace DataAccess
             }
         }
 
-
-        //public void DeleteFromCase()
-        //{
-
-        //}
-        //public void DeleteFromKlient()
-        //{
-
-        //}
-
-        //public void DeleteFromAdvokat()
-        //{
-
-        //}
-
-
+        public void CreateYdelse(Ydelse @ydelse)
+        {
+            {
+                string sqlString = $"insert into Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
+                RunSqlCommand(sqlString);
+            }
+        }
+        public void UpdateYdelse(Ydelse ydelse)
+        {
+            string sqlString =
+                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', SagsNr = {ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" +
+                $"where YdelsesNr ={ydelse.YdelsesNr}";
+            RunSqlCommand(sqlString);
+        }
         public List<Ydelse> GetAllYdelse()// By Daniella
         {
             string sqlString = "select * from Ydelse";
@@ -337,21 +330,6 @@ namespace DataAccess
             }
 
         }
-        public void CreateYdelse( Ydelse @ydelse)
-        {
-            {
-                string sqlString = $"insert into Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
-                RunSqlCommand(sqlString);
-            }
-        }
-        public void UpdateYdelse(Ydelse ydelse)
-        {
-            string sqlString =
-                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}', SagsNr = {ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" + 
-                $"where YdelsesNr ={ydelse.YdelsesNr}";
-            RunSqlCommand(sqlString);
-        }
-
     }
 }
 
