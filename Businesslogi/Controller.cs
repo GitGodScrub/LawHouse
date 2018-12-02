@@ -15,12 +15,10 @@ namespace BusinessLogic
         // BadDataBase : IDatabase
         // DummyDatabase : IDatabase
         //
-        // 
-        //
         //.Instance() pga det er en singleton
         //Before:  private static DatabaseHandler currentDatabaseInstance = DatabaseHandler.Instance();
         private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance();
-        //23
+
         public static void CreateAdvokat(string advokatNavn)
         {
             Advokat ad = new Advokat(advokatNavn);
