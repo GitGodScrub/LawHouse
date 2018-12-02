@@ -3,11 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.XPath;
 
 namespace DataAccess
 {
     public class DummyDatabase : IDatabase
     {
+        public DummyDatabase()
+        {
+            xmlFileToUse = @"DummyDatabaseXML.xml";
+            xReader = new XmlTextReader(xmlFileToUse);
+        }
+        private XmlTextReader xReader;
+        private string xmlFileToUse;
+        private List<string> Reader()
+        {
+            List<string> toReturn = new List<string>();
+
+            while (xReader.Read())
+            {
+                switch (xReader.NodeType)
+                {
+                    case XmlNodeType.XmlDeclaration:
+                        break;
+                    case XmlNodeType.Comment:
+                        break;
+                    case XmlNodeType.CDATA:
+                        break;
+
+                    case XmlNodeType.Element: //Tag, f.eks <Sag>
+                        break;
+                    case XmlNodeType.Text: //Content f.eks Petersplads 6
+                        toReturn.Add(xReader.Value);
+                        break;
+                    case XmlNodeType.EndElement: //EndTag f.eks </Sag>
+                        break;
+
+
+                    /*
+                    case XmlNodeType.Document://idk
+                        break;
+                    case XmlNodeType.DocumentType://idk
+                        break;
+                        */
+                }
+            }
+            return toReturn;
+        }
+
         public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)
         {
             throw new NotImplementedException();
