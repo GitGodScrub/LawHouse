@@ -11,10 +11,10 @@ namespace BusinessLogic
 
     public class Controller
     {
-        private static IDatabase currentDatabaseInstance;
+        private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance();
         public Controller()
         {
-            currentDatabaseInstance = DatabaseHandler.Instance();
+            //currentDatabaseInstance = DatabaseHandler.Instance();
             //currentDatabaseInstance = new DummyDatabase();
         }
         //Eksempel: private IDatabase _myDataBase = BadDataBase();
