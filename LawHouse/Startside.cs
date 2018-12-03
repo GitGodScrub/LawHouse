@@ -18,10 +18,11 @@ namespace GUI
         public Startside()
         {
             InitializeComponent();
-            
-            //Denne kode er til at oprette sag
-            txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
 
+            //Denne kode er til at oprette sag
+            txt_Sag_StartDato.Text = DateTime.Now.ToString("dd-MM-yyyy");
+           // txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
+          //  txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
             Datetimepicker_Sag_slutdato.Format = DateTimePickerFormat.Custom;
             Datetimepicker_Sag_slutdato.MinDate = DateTime.Today;
             Datetimepicker_Sag_slutdato.CustomFormat = " ";
