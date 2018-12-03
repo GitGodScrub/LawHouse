@@ -160,6 +160,7 @@
             // 
             this.Opret_sag.Controls.Add(this.Sag_drop_YdelseTypeNr);
             this.Opret_sag.Controls.Add(this.lbl_Slut);
+            this.Opret_sag.Controls.Add(this.btn_Create);
             this.Opret_sag.Controls.Add(this.lbl_Sags);
             this.Opret_sag.Controls.Add(this.lbl_YdelseNr);
             this.Opret_sag.Controls.Add(this.lbl_Noter);
@@ -740,7 +741,7 @@
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(124, 25);
             this.btn_Update.TabIndex = 8;
-            this.btn_Update.Text = "Opdater";
+            this.btn_Update.Text = "Gem ændring";
             this.btn_Update.UseVisualStyleBackColor = true;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
@@ -955,7 +956,7 @@
             this.Btn_Oversigt.Location = new System.Drawing.Point(12, 397);
             this.Btn_Oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btn_Oversigt.Name = "Btn_Oversigt";
-            this.Btn_Oversigt.Size = new System.Drawing.Size(161, 46);
+            this.Btn_Oversigt.Size = new System.Drawing.Size(161, 120);
             this.Btn_Oversigt.TabIndex = 56;
             this.Btn_Oversigt.Text = "Se oversigt";
             this.Btn_Oversigt.UseVisualStyleBackColor = true;
@@ -963,10 +964,10 @@
             // 
             // btn_Create
             // 
-            this.btn_Create.Location = new System.Drawing.Point(12, 447);
+            this.btn_Create.Location = new System.Drawing.Point(682, 519);
             this.btn_Create.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(161, 46);
+            this.btn_Create.Size = new System.Drawing.Size(161, 28);
             this.btn_Create.TabIndex = 57;
             this.btn_Create.Text = "Opret Sag";
             this.btn_Create.UseVisualStyleBackColor = true;
@@ -1010,7 +1011,6 @@
             this.ClientSize = new System.Drawing.Size(1229, 645);
             this.Controls.Add(this.btn_opretsag);
             this.Controls.Add(this.Btn_Help);
-            this.Controls.Add(this.btn_Create);
             this.Controls.Add(this.Btn_Oversigt);
             this.Controls.Add(this.btn_GåtilYdelse);
             this.Controls.Add(this.Btn_CreateKlient);
