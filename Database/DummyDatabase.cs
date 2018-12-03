@@ -18,7 +18,7 @@ namespace DataAccess
         }
         private XmlTextReader xReader;
         private string xmlFileToUse;
-        private List<string> Reader()
+        private List<string> xmlReadAndReturnContent(string tagToFind)
         {
             List<string> toReturn = new List<string>();
 
@@ -26,11 +26,11 @@ namespace DataAccess
             {
                 switch (xReader.NodeType)
                 {
-                    case XmlNodeType.XmlDeclaration:
+                    case XmlNodeType.XmlDeclaration://skip
                         break;
-                    case XmlNodeType.Comment:
+                    case XmlNodeType.Comment://skip
                         break;
-                    case XmlNodeType.CDATA:
+                    case XmlNodeType.CDATA://skip
                         break;
 
                     case XmlNodeType.Element: //Tag, f.eks <Sag>
