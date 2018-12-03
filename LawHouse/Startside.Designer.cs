@@ -264,7 +264,7 @@
             this.txt_Sag_StartDato.Location = new System.Drawing.Point(391, 178);
             this.txt_Sag_StartDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Sag_StartDato.Name = "txt_Sag_StartDato";
-            this.txt_Sag_StartDato.Size = new System.Drawing.Size(312, 22);
+            this.txt_Sag_StartDato.Size = new System.Drawing.Size(170, 22);
             this.txt_Sag_StartDato.TabIndex = 36;
             // 
             // Sag_drop_MedarbejderNr
@@ -885,7 +885,6 @@
             // TelefonNr
             // 
             this.TelefonNr.AspectName = "TelefonNr";
-            this.TelefonNr.IsEditable = false;
             this.TelefonNr.Text = "TelefonNr";
             // 
             // Advokat_navn
