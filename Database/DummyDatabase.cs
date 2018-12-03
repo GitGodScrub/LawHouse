@@ -9,7 +9,6 @@ using System.Xml.XPath;
 namespace DataAccess
 {
     public class DummyDatabase : IDatabase // By Julius
-        //Virker ikke
     {
         public DummyDatabase()
         {
@@ -18,9 +17,13 @@ namespace DataAccess
         }
         private XmlTextReader xReader;
         private string xmlFileToUse;
-        private List<string> xmlReadAndReturnContent(string tagToFind)
+
+        private List<List<string>> xmlReadAndReturnContent(string tagToFind)
         {
-            List<string> toReturn = new List<string>();
+            List<List<string>> toReturn = new List<List<string>>();
+
+            bool isInTag = false;
+            int numberOfPreviousInstances = 0;
 
             while (xReader.Read())
             {
@@ -34,11 +37,23 @@ namespace DataAccess
                         break;
 
                     case XmlNodeType.Element: //Tag, f.eks <Sag>
+                        if (xReader.Name == $"<{tagToFind}>")
+                        {
+                            isInTag = true;
+                        }
                         break;
                     case XmlNodeType.Text: //Content f.eks Petersplads 6
-                        toReturn.Add(xReader.Value);
+                        if (isInTag == true)
+                        {
+                            toReturn[numberOfPreviousInstances].Add(xReader.Value);
+                        }
                         break;
                     case XmlNodeType.EndElement: //EndTag f.eks </Sag>
+                        if (xReader.Name == $"</{tagToFind}>")
+                        {
+                            isInTag = false;
+                            numberOfPreviousInstances++;
+                        }
                         break;
                 }
             }
@@ -72,7 +87,18 @@ namespace DataAccess
 
         public List<Advokat> GetAllAdvokat()
         {
-            throw new NotImplementedException();
+            List<List<string>> unrefinedXmlData = xmlReadAndReturnContent("Advokat");
+            List<Advokat> listToReturn = new List<Advokat>();
+
+            foreach (List<string> i in unrefinedXmlData)
+            {
+                Advokat @advokat = new Advokat();
+                @advokat.AdvokatId = Convert.ToInt32(i[0]);
+                @advokat.Navn = i[1];
+                listToReturn.Add(@advokat);
+            }
+
+            return listToReturn;
         }
 
         public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)
