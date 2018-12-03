@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
 
+
 namespace GUI
 {
     public partial class New_case : Form
@@ -33,6 +34,7 @@ namespace GUI
             txt_MedarbejderNr.DisplayMember= "Navn";
             txt_MedarbejderNr.ValueMember = "AdvokatId";
             txt_MedarbejderNr.SelectedIndex = -1;
+
         }
 
         private void btn_Create_Click(object sender, EventArgs e)
@@ -70,6 +72,12 @@ namespace GUI
         {
             OpretYdelse ydelse = new OpretYdelse();
             ydelse.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Startside startside = new Startside();
+            startside.Show();
         }
     }
 }

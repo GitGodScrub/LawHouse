@@ -86,6 +86,12 @@
     <Compile Include="OpretYdelse.Designer.cs">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Startside.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Startside.Designer.cs">
+      <DependentUpon>Startside.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateAdvokatTester.resx">
       <DependentUpon>CreateAdvokatTester.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="OpretYdelse.resx">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Startside.resx">
+      <DependentUpon>Startside.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetDrop.xsc">
       <DependentUpon>DataSetDrop.xsd</DependentUpon>
