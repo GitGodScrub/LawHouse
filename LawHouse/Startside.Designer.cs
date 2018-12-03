@@ -216,9 +216,9 @@
             this.lbl_Slut.AutoSize = true;
             this.lbl_Slut.Location = new System.Drawing.Point(261, 230);
             this.lbl_Slut.Name = "lbl_Slut";
-            this.lbl_Slut.Size = new System.Drawing.Size(66, 17);
+            this.lbl_Slut.Size = new System.Drawing.Size(64, 17);
             this.lbl_Slut.TabIndex = 58;
-            this.lbl_Slut.Text = "Slut Dato";
+            this.lbl_Slut.Text = "Slut dato";
             // 
             // btn_Create
             // 
@@ -236,9 +236,9 @@
             this.lbl_Sags.AutoSize = true;
             this.lbl_Sags.Location = new System.Drawing.Point(261, 80);
             this.lbl_Sags.Name = "lbl_Sags";
-            this.lbl_Sags.Size = new System.Drawing.Size(59, 17);
+            this.lbl_Sags.Size = new System.Drawing.Size(57, 17);
             this.lbl_Sags.TabIndex = 57;
-            this.lbl_Sags.Text = "Sags Nr";
+            this.lbl_Sags.Text = "Sags nr";
             // 
             // lbl_YdelseNr
             // 
@@ -246,18 +246,18 @@
             this.lbl_YdelseNr.Location = new System.Drawing.Point(261, 32);
             this.lbl_YdelseNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_YdelseNr.Name = "lbl_YdelseNr";
-            this.lbl_YdelseNr.Size = new System.Drawing.Size(87, 17);
+            this.lbl_YdelseNr.Size = new System.Drawing.Size(71, 17);
             this.lbl_YdelseNr.TabIndex = 56;
-            this.lbl_YdelseNr.Text = "Ydelse Type";
+            this.lbl_YdelseNr.Text = "Sags type";
             // 
             // lbl_Noter
             // 
             this.lbl_Noter.AutoSize = true;
             this.lbl_Noter.Location = new System.Drawing.Point(261, 423);
             this.lbl_Noter.Name = "lbl_Noter";
-            this.lbl_Noter.Size = new System.Drawing.Size(91, 17);
+            this.lbl_Noter.Size = new System.Drawing.Size(89, 17);
             this.lbl_Noter.TabIndex = 54;
-            this.lbl_Noter.Text = "Interne Noter";
+            this.lbl_Noter.Text = "Interne noter";
             // 
             // lbl_Sagsbeskrivelse
             // 
@@ -373,9 +373,9 @@
             this.lbl_TimeEstimat.AutoSize = true;
             this.lbl_TimeEstimat.Location = new System.Drawing.Point(261, 330);
             this.lbl_TimeEstimat.Name = "lbl_TimeEstimat";
-            this.lbl_TimeEstimat.Size = new System.Drawing.Size(89, 17);
+            this.lbl_TimeEstimat.Size = new System.Drawing.Size(88, 17);
             this.lbl_TimeEstimat.TabIndex = 39;
-            this.lbl_TimeEstimat.Text = "Time Estimat";
+            this.lbl_TimeEstimat.Text = "Time estimat";
             // 
             // lbl_Kørselstimer
             // 
@@ -391,9 +391,9 @@
             this.lbl_Start.AutoSize = true;
             this.lbl_Start.Location = new System.Drawing.Point(261, 183);
             this.lbl_Start.Name = "lbl_Start";
-            this.lbl_Start.Size = new System.Drawing.Size(72, 17);
+            this.lbl_Start.Size = new System.Drawing.Size(70, 17);
             this.lbl_Start.TabIndex = 34;
-            this.lbl_Start.Text = "Start Dato";
+            this.lbl_Start.Text = "Start dato";
             // 
             // lbl_Titel
             // 
