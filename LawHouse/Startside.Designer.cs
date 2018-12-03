@@ -728,7 +728,7 @@
             // combobox_hvad_type
             // 
             this.combobox_hvad_type.FormattingEnabled = true;
-            this.combobox_hvad_type.Location = new System.Drawing.Point(6, 40);
+            this.combobox_hvad_type.Location = new System.Drawing.Point(6, 53);
             this.combobox_hvad_type.Name = "combobox_hvad_type";
             this.combobox_hvad_type.Size = new System.Drawing.Size(109, 24);
             this.combobox_hvad_type.TabIndex = 12;
