@@ -128,7 +128,18 @@ namespace DataAccess
 
         public List<Ydelse> GetAllYdelse()
         {
-            throw new NotImplementedException();
+            List<List<string>> unrefinedXmlData = xmlReadAndReturnContent("Advokat");
+            List<Ydelse> listToReturn = new List<Ydelse>();
+
+            foreach (List<string> i in unrefinedXmlData)
+            {
+                Ydelse @ydelse = new Ydelse();
+                //@ydelse.AdvokatId = Convert.ToInt32(i[0]);
+                //@ydelse.Navn = i[1];
+                listToReturn.Add(@ydelse);
+            }
+
+            return listToReturn;
         }
 
         public List<YdelseType> GetAllYdelseType()
