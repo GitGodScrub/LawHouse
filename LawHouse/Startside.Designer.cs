@@ -136,7 +136,7 @@
             this.DynamicTabControl.Controls.Add(this.Opret_klient);
             this.DynamicTabControl.Controls.Add(this.Opret_ydelse);
             this.DynamicTabControl.Controls.Add(this.Se_oversigt);
-            this.DynamicTabControl.ItemSize = new System.Drawing.Size(1, 70);
+            this.DynamicTabControl.ItemSize = new System.Drawing.Size(1, 1);
             this.DynamicTabControl.Location = new System.Drawing.Point(205, -8);
             this.DynamicTabControl.Name = "DynamicTabControl";
             this.DynamicTabControl.SelectedIndex = 0;
@@ -386,10 +386,10 @@
             this.Opret_advokat.Controls.Add(this.txt_Advokat_AdvokatNavn);
             this.Opret_advokat.Controls.Add(this.btn_AddSpecialToAdvokat);
             this.Opret_advokat.Controls.Add(this.btn_CreateAdvokat);
-            this.Opret_advokat.Location = new System.Drawing.Point(4, 74);
+            this.Opret_advokat.Location = new System.Drawing.Point(4, 5);
             this.Opret_advokat.Name = "Opret_advokat";
             this.Opret_advokat.Padding = new System.Windows.Forms.Padding(3);
-            this.Opret_advokat.Size = new System.Drawing.Size(904, 563);
+            this.Opret_advokat.Size = new System.Drawing.Size(904, 632);
             this.Opret_advokat.TabIndex = 1;
             this.Opret_advokat.Text = "Advokat";
             // 
