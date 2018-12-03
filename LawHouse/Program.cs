@@ -16,7 +16,8 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new New_case());
+            Application.Run(new Startside()); //Ny
+            // Application.Run(new New_case()); //gammel
         }
     }
 }
