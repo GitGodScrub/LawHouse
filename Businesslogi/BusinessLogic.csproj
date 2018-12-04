@@ -51,9 +51,9 @@
       <Project>{a46d458f-18ff-466a-bfa9-687b1c61c885}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataClassLibrary\DataClassLibrary1.csproj">
+    <ProjectReference Include="..\DataClassLibrary\DataClassLibrary.csproj">
       <Project>{e1387d1c-1e78-427e-bf60-bf5d3af7eb45}</Project>
-      <Name>DataClassLibrary1</Name>
+      <Name>DataClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
