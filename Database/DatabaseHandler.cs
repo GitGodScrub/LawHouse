@@ -96,64 +96,35 @@ namespace DataAccess
 
         }
 
-        private List<Sag> NewGetAllSag()//julius
+        private List<Sag> NewGetAllSag() //julius
         {
             string sqlString = "select * from Sag " +
                                "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
                                " join Klient on Sag.KlientNr = Klient.KlientNr";
 
-            List<Sag> Alle = new List<Sag>();
+            List<Sag> listOfCases = new List<Sag>();
 
             SqlReader sqRead = new SqlReader();
-            /*List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
                 Sag @sag = new Sag();
-                @sag.SagsNr = Convert.ToInt32(x[0]);//osv
-                @sag.Arbejdstitel = sqld["Arbejdstitel"].ToString();
-                @sag.StartDato = sqld["StartDato"].ToString();
-                @sag.SlutDato = sqld["SlutDato"].ToString();
-                @sag.Kørselstimer = sqld["Kørselstimer"].ToString();
-                @sag.TimeEstimat = sqld["TimeEstimat"].ToString();
-                @sag.SagsBeskrivelse = sqld["SagsBeskrivelse"].ToString();
-                @sag.InterneNoter = sqld["InterneNoter"].ToString();
-                @sag.KlientNr = Convert.ToInt32(sqld["Klientnr"]);
-                @sag.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                @sag.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                Alle.Add(@sag);
-
-                for (int y = 0; y == x.Count; y++)
-                {
-                    
-                }
-            }*/
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
-            {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Sag @sag = new Sag();
-                            @sag.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
-                            @sag.Arbejdstitel = sqld["Arbejdstitel"].ToString();
-                            @sag.StartDato = sqld["StartDato"].ToString();
-                            @sag.SlutDato = sqld["SlutDato"].ToString();
-                            @sag.Kørselstimer = sqld["Kørselstimer"].ToString();
-                            @sag.TimeEstimat = sqld["TimeEstimat"].ToString();
-                            @sag.SagsBeskrivelse = sqld["SagsBeskrivelse"].ToString();
-                            @sag.InterneNoter = sqld["InterneNoter"].ToString();
-                            @sag.KlientNr = Convert.ToInt32(sqld["Klientnr"]);
-                            @sag.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            @sag.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            Alle.Add(@sag);
-                        }
-                    return Alle;
-                }
+                @sag.SagsNr = Convert.ToInt32(x[0]); 
+                @sag.Arbejdstitel = x[1];
+                @sag.StartDato = x[2];
+                @sag.SlutDato = x[3];
+                @sag.Kørselstimer = x[4];
+                @sag.TimeEstimat = x[5];
+                @sag.SagsBeskrivelse = x[6];
+                @sag.InterneNoter = x[7];
+                @sag.KlientNr = Convert.ToInt32(x[8]);
+                @sag.AdvokatId = Convert.ToInt32(x[9]);
+                @sag.YdelsesTypeNr = Convert.ToInt32(x[10]);
+                listOfCases.Add(@sag);
             }
+
+            return listOfCases;
         }
 
         public void CreateKlient(Klient @klient)//By Thomas
