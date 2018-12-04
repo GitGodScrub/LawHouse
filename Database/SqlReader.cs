@@ -12,6 +12,41 @@ namespace DataAccess
     // Virker ikke
     // Experimentiel Feature
     {
+        public List<List<string>> ReadThisLastTry(string sqlString)
+        {
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
+            SqlCommand com = new SqlCommand(sqlString, conn);
+            List<List<string>> toReturn = new List<List<string>>();
+
+            try
+            {
+                conn.Open();
+                SqlDataReader sqld = com.ExecuteReader();
+                if (sqld.HasRows)
+                {
+                    while (sqld.Read())
+                    {
+                        List<string> collectedAttributes = new List<string>();
+                        for (int i = 0; i < sqld.FieldCount; i++)
+                        {
+                            collectedAttributes.Add(Convert.ToString(sqld.GetValue(i)));
+                        }
+                        toReturn.Add(collectedAttributes);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return toReturn;
+        }
+
+
         public List<string[]> ReadThis(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
