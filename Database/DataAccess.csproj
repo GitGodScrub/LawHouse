@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Advokat.cs" />
     <Compile Include="DummyDatabase.cs" />
     <Compile Include="Sag.cs" />
     <Compile Include="DatabaseHandler.cs" />
@@ -69,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DummyDatabaseXML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataClassLibrary\DataClassLibrary.csproj">
+      <Project>{e1387d1c-1e78-427e-bf60-bf5d3af7eb45}</Project>
+      <Name>DataClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

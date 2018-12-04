@@ -1,6 +1,6 @@
-﻿namespace DataAccess
+﻿namespace DataClassLibrary
 {
-    public class Advokat
+    public class Advokat //Dennie
     {
         public int AdvokatId { get; set; }
         public string Navn { get; set; }
