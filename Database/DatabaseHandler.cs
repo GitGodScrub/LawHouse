@@ -96,7 +96,7 @@ namespace DataAccess
 
         }
 
-        private List<Sag> NewGetAllSag()
+        private List<Sag> NewGetAllSag()//julius
         {
             string sqlString = "select * from Sag " +
                                "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
