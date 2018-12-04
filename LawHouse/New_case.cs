@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
-using DataClassLibrary;
+using DataClassLib;
 
 namespace GUI
 {

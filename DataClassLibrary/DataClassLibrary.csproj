@@ -5,8 +5,4 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-  </ItemGroup>
-
 </Project>
