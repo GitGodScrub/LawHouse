@@ -74,19 +74,19 @@ namespace DataAccess
                     if (sqld.HasRows)
                         while (sqld.Read())
                         {
-                            Sag @case = new Sag();
-                            @case.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
-                            @case.Arbejdstitel = sqld["Arbejdstitel"].ToString();
-                            @case.StartDato = sqld["StartDato"].ToString();
-                            @case.SlutDato = sqld["SlutDato"].ToString();
-                            @case.Kørselstimer = sqld["Kørselstimer"].ToString();
-                            @case.TimeEstimat = sqld["TimeEstimat"].ToString();
-                            @case.SagsBeskrivelse = sqld["SagsBeskrivelse"].ToString();
-                            @case.InterneNoter = sqld["InterneNoter"].ToString();
-                            @case.KlientNr = Convert.ToInt32(sqld["Klientnr"]);
-                            @case.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            @case.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            Alle.Add(@case);
+                            Sag @sag = new Sag();
+                            @sag.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
+                            @sag.Arbejdstitel = sqld["Arbejdstitel"].ToString();
+                            @sag.StartDato = sqld["StartDato"].ToString();
+                            @sag.SlutDato = sqld["SlutDato"].ToString();
+                            @sag.Kørselstimer = sqld["Kørselstimer"].ToString();
+                            @sag.TimeEstimat = sqld["TimeEstimat"].ToString();
+                            @sag.SagsBeskrivelse = sqld["SagsBeskrivelse"].ToString();
+                            @sag.InterneNoter = sqld["InterneNoter"].ToString();
+                            @sag.KlientNr = Convert.ToInt32(sqld["Klientnr"]);
+                            @sag.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
+                            @sag.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            Alle.Add(@sag);
                         }
                     return Alle;
                 }
@@ -218,10 +218,10 @@ namespace DataAccess
         }
 
         
-        public List<YdelseList> GetAllTjenesteydelse()// By Daniella
+        public List<Tjenesteydelse> GetAllTjenesteydelse()// By Daniella
         {
             string sqlString = "select * from Tjenesteydelse";
-            List<YdelseList> All = new List<YdelseList>();
+            List<Tjenesteydelse> All = new List<Tjenesteydelse>();
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             using (SqlCommand com = new SqlCommand(sqlString, conn))
             {
@@ -231,10 +231,10 @@ namespace DataAccess
                     if (sqld.HasRows)
                         while (sqld.Read())
                         {
-                            YdelseList @ydelseList = new YdelseList();
-                            @ydelseList.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            @ydelseList.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            All.Add(@ydelseList);
+                            Tjenesteydelse tjenesteydelse = new Tjenesteydelse();
+                            tjenesteydelse.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
+                            tjenesteydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
+                            All.Add(tjenesteydelse);
                         }
                     return All;
                 }

@@ -24,7 +24,7 @@ namespace DataAccess
         List<Ydelse> GetAllYdelse();
 
         List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr);
-        List<YdelseList> GetAllTjenesteydelse();
+        List<Tjenesteydelse> GetAllTjenesteydelse();
         List<YdelseType> GetAllYdelseType();
         List<ListItems> GetAllList();
 

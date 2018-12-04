@@ -11,8 +11,8 @@ namespace BusinessLogic
 
     public class Controller
     {
-        private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance(); //Sql Database
-        //private static IDatabase currentDatabaseInstance = new DummyDatabase(); //Xml Database
+        //private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance(); //Sql Database
+        private static IDatabase currentDatabaseInstance = new DummyDatabase(); //Xml Database
 
         //Eksempel: private IDatabase _myDataBase = BadDataBase();
         // BadDataBase : IDatabase
@@ -64,8 +64,8 @@ namespace BusinessLogic
             Ydelse ydelse = (Ydelse)objectToUpdate;
             currentDatabaseInstance.UpdateYdelse(ydelse);
         }
-        
-        
+       
+
         public static List<Sag> GetAllSag()
         {
              List<Sag> listToReturn = currentDatabaseInstance.GetAllSag();
@@ -94,9 +94,9 @@ namespace BusinessLogic
             currentDatabaseInstance.AddEfteruddannelseToAdvokat(specialName, advokatId);
         }
 
-        public static List<YdelseList> GetAllYdelse()
+        public static List<Tjenesteydelse> GetAllYdelse()
         {
-            List<YdelseList> ydelseLists = currentDatabaseInstance.GetAllTjenesteydelse();
+            List<Tjenesteydelse> ydelseLists = currentDatabaseInstance.GetAllTjenesteydelse();
             return ydelseLists;
         }
         public static List<YdelseType> GetAllYdelseType()
@@ -112,13 +112,11 @@ namespace BusinessLogic
             return GetItems;
         }
 
-       
 
         public static List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)
         {
             return currentDatabaseInstance.GetAllAdvokatFromYdelse(ydelsesTypeNr);
         }
-
 
     }
 }
