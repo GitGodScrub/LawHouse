@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using DataAccess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DataAccess.Properties;
+using DataClassLib;
 using Unit_Testing.Properties;
 
 namespace UnitTestLawHouse
