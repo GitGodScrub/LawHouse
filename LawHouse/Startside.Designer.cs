@@ -427,7 +427,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(109, 234);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 17;
@@ -453,11 +453,11 @@
             // lbl_SpecialeNavn
             // 
             this.lbl_SpecialeNavn.AutoSize = true;
-            this.lbl_SpecialeNavn.Location = new System.Drawing.Point(269, 334);
+            this.lbl_SpecialeNavn.Location = new System.Drawing.Point(257, 337);
             this.lbl_SpecialeNavn.Name = "lbl_SpecialeNavn";
-            this.lbl_SpecialeNavn.Size = new System.Drawing.Size(103, 17);
+            this.lbl_SpecialeNavn.Size = new System.Drawing.Size(116, 17);
             this.lbl_SpecialeNavn.TabIndex = 14;
-            this.lbl_SpecialeNavn.Text = "Speciale Navn:";
+            this.lbl_SpecialeNavn.Text = "Efteruddannelse:";
             // 
             // lbl_AdvokatId
             // 
@@ -492,7 +492,7 @@
             this.btn_AddSpecialToAdvokat.Name = "btn_AddSpecialToAdvokat";
             this.btn_AddSpecialToAdvokat.Size = new System.Drawing.Size(133, 76);
             this.btn_AddSpecialToAdvokat.TabIndex = 10;
-            this.btn_AddSpecialToAdvokat.Text = "Tilføj Speciale";
+            this.btn_AddSpecialToAdvokat.Text = "Tilføj Efteruddannelse";
             this.btn_AddSpecialToAdvokat.UseVisualStyleBackColor = true;
             this.btn_AddSpecialToAdvokat.Click += new System.EventHandler(this.btn_AddSpecialToAdvokat_Click);
             // 
@@ -528,7 +528,7 @@
             // bnt_Klient_Opret
             // 
             this.bnt_Klient_Opret.Location = new System.Drawing.Point(161, 356);
-            this.bnt_Klient_Opret.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_Klient_Opret.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_Klient_Opret.Name = "bnt_Klient_Opret";
             this.bnt_Klient_Opret.Size = new System.Drawing.Size(221, 28);
             this.bnt_Klient_Opret.TabIndex = 13;
@@ -569,7 +569,7 @@
             // Txt_Klient_TelefonNr
             // 
             this.Txt_Klient_TelefonNr.Location = new System.Drawing.Point(161, 297);
-            this.Txt_Klient_TelefonNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Klient_TelefonNr.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Klient_TelefonNr.Name = "Txt_Klient_TelefonNr";
             this.Txt_Klient_TelefonNr.Size = new System.Drawing.Size(132, 22);
             this.Txt_Klient_TelefonNr.TabIndex = 9;
@@ -577,7 +577,7 @@
             // Txt_Klient_Adresse
             // 
             this.Txt_Klient_Adresse.Location = new System.Drawing.Point(161, 242);
-            this.Txt_Klient_Adresse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Klient_Adresse.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Klient_Adresse.Name = "Txt_Klient_Adresse";
             this.Txt_Klient_Adresse.Size = new System.Drawing.Size(132, 22);
             this.Txt_Klient_Adresse.TabIndex = 8;
@@ -585,7 +585,7 @@
             // Txt_Klient_navn
             // 
             this.Txt_Klient_navn.Location = new System.Drawing.Point(161, 190);
-            this.Txt_Klient_navn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Klient_navn.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Klient_navn.Name = "Txt_Klient_navn";
             this.Txt_Klient_navn.Size = new System.Drawing.Size(132, 22);
             this.Txt_Klient_navn.TabIndex = 7;
@@ -970,7 +970,7 @@
             // Btn_CreateKlient
             // 
             this.Btn_CreateKlient.Location = new System.Drawing.Point(12, 91);
-            this.Btn_CreateKlient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_CreateKlient.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_CreateKlient.Name = "Btn_CreateKlient";
             this.Btn_CreateKlient.Size = new System.Drawing.Size(161, 28);
             this.Btn_CreateKlient.TabIndex = 54;
@@ -981,7 +981,7 @@
             // btn_GåtilYdelse
             // 
             this.btn_GåtilYdelse.Location = new System.Drawing.Point(12, 142);
-            this.btn_GåtilYdelse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_GåtilYdelse.Margin = new System.Windows.Forms.Padding(4);
             this.btn_GåtilYdelse.Name = "btn_GåtilYdelse";
             this.btn_GåtilYdelse.Size = new System.Drawing.Size(161, 28);
             this.btn_GåtilYdelse.TabIndex = 55;
@@ -1003,7 +1003,7 @@
             // Btn_Help
             // 
             this.Btn_Help.Location = new System.Drawing.Point(12, 551);
-            this.Btn_Help.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Help.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Size = new System.Drawing.Size(63, 28);
             this.Btn_Help.TabIndex = 58;
@@ -1013,7 +1013,7 @@
             // btn_opretsag
             // 
             this.btn_opretsag.Location = new System.Drawing.Point(13, 185);
-            this.btn_opretsag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_opretsag.Margin = new System.Windows.Forms.Padding(4);
             this.btn_opretsag.Name = "btn_opretsag";
             this.btn_opretsag.Size = new System.Drawing.Size(161, 28);
             this.btn_opretsag.TabIndex = 59;
