@@ -2,11 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ObjectListView.Official" Version="2.9.1" />
-  </ItemGroup>
 
 </Project>
