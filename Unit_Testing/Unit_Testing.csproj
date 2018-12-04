@@ -78,6 +78,10 @@
       <Project>{a46d458f-18ff-466a-bfa9-687b1c61c885}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataClassLibrary\DataClassLibrary.csproj">
+      <Project>{e1387d1c-1e78-427e-bf60-bf5d3af7eb45}</Project>
+      <Name>DataClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LawHouse\GUI.csproj">
       <Project>{e8f6db1b-647c-4daa-832c-f8e7792b1817}</Project>
       <Name>GUI</Name>

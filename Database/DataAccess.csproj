@@ -43,21 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Advokat.cs" />
     <Compile Include="DummyDatabase.cs" />
-    <Compile Include="Sag.cs" />
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="IDatabase.cs" />
-    <Compile Include="Klient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ListItems.cs" />
     <Compile Include="SqlReader.cs" />
-    <Compile Include="Ydelse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -69,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DummyDatabaseXML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataClassLibrary\DataClassLibrary.csproj">
+      <Project>{e1387d1c-1e78-427e-bf60-bf5d3af7eb45}</Project>
+      <Name>DataClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

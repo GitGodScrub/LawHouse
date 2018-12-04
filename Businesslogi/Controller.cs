@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
- 
+using DataClassLibrary;
+
 
 namespace BusinessLogic
 {
 
     public class Controller
     {
-        //private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance(); //Sql Database
-        private static IDatabase currentDatabaseInstance = new DummyDatabase(); //Xml Database
+        private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance(); //Sql Database
+        //private static IDatabase currentDatabaseInstance = new DummyDatabase(); //Xml Database
 
         //Eksempel: private IDatabase _myDataBase = BadDataBase();
         // BadDataBase : IDatabase
