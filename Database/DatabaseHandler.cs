@@ -20,7 +20,6 @@ namespace DataAccess
             if (_database == null)
             {
                 _database = new DatabaseHandler();
-
             }
             return _database;
         }
@@ -46,12 +45,12 @@ namespace DataAccess
             }
         }
 
-        public void CreateSag(Sag @sag)// By Daniella
+        public void CreateSag(Sag sag)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
             string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
             RunSqlCommand(sqlString);
         }
-        public void UpdateSag(Sag @sag)// By Daniella, refactored by Julius
+        public void UpdateSag(Sag sag)// By Daniella, refactored by Julius
         {
             string sqlString =
                 $"UPDATE Sag SET Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = {sag.KlientNr}, AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
@@ -87,27 +86,16 @@ namespace DataAccess
             return listOfSag;
         }
 
-        public void CreateKlient(Klient @klient)//By Thomas
+        public void CreateKlient(Klient klient)//By Thomas
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            {
-                using (SqlCommand com = new SqlCommand())
-                {
-                    com.Connection = conn;
-                    conn.Open();
-
-                    string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{klient.Navn}', '{klient.Adresse}', '{klient.TelefonNr}')";
-
-                    com.CommandText = sqlString;
-                    com.ExecuteNonQuery();
-                }
-            }
+            string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{klient.Navn}', '{klient.Adresse}', '{klient.TelefonNr}')";
+            RunSqlCommand(sqlString);
         }
-        public void UpdateKlient(Klient KL) // By Thomas
+        public void UpdateKlient(Klient klient) // By Thomas
         {
             string sqlString =
-                $"UPDATE Klient SET Navn ='{KL.Navn}', Adresse = '{KL.Adresse}', TelefonNr = '{KL.TelefonNr}' " +
-                $"WHERE KlientNr = {KL.KlientNr}";
+                $"UPDATE Klient SET Navn ='{klient.Navn}', Adresse = '{klient.Adresse}', TelefonNr = '{klient.TelefonNr}' " +
+                $"WHERE KlientNr = {klient.KlientNr}";
             RunSqlCommand(sqlString);
         }
         public List<Klient> GetAllKlient()// By Daniella //By Julius
@@ -131,7 +119,7 @@ namespace DataAccess
         }
 
 
-        public void CreateAdvokat(Advokat @advokat)// By Dennie
+        public void CreateAdvokat(Advokat advokat)// By Dennie
         {
             string sqlString = $"INSERT INTO Advokat(Navn) VALUES ('{advokat.Navn}')";
             RunSqlCommand(sqlString);
@@ -140,12 +128,12 @@ namespace DataAccess
              * Havde forstillet mig, at man i vores ViewListe skal kunne vælge "vis advokater" og derinde så tilføje efteruddannelse ud fra en "valgt" advokats id.
              - Dennie 
         */
-        public void UpdateAdvokat(Advokat ad) // by Thomas
+        public void UpdateAdvokat(Advokat advokat) // by Thomas
         {
 
             String sqlString =
-                $"UPDATE Advokat SET Navn = '{ad.Navn}'" +
-                 $"WHERE AdvokatID ={ad.AdvokatId}";
+                $"UPDATE Advokat SET Navn = '{advokat.Navn}'" +
+                 $"WHERE AdvokatID ={advokat.AdvokatId}";
             RunSqlCommand(sqlString);
 
         }
@@ -243,7 +231,7 @@ namespace DataAccess
         }
 
 
-        public void CreateYdelse(Ydelse @ydelse)
+        public void CreateYdelse(Ydelse ydelse)
         {
             {
                 string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
