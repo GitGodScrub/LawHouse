@@ -60,44 +60,6 @@ namespace DataAccess
         }
         public List<Sag> GetAllSag()// By Daniella
         {
-            return NewGetAllSag();
-            string sqlString = "select * from Sag " +
-               "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
-            " join Klient on Sag.KlientNr = Klient.KlientNr";
-
-            List<Sag> Alle = new List<Sag>();
-
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
-            {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Sag @sag = new Sag();
-                            @sag.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
-                            @sag.Arbejdstitel = sqld["Arbejdstitel"].ToString();
-                            @sag.StartDato = sqld["StartDato"].ToString();
-                            @sag.SlutDato = sqld["SlutDato"].ToString();
-                            @sag.Kørselstimer = sqld["Kørselstimer"].ToString();
-                            @sag.TimeEstimat = sqld["TimeEstimat"].ToString();
-                            @sag.SagsBeskrivelse = sqld["SagsBeskrivelse"].ToString();
-                            @sag.InterneNoter = sqld["InterneNoter"].ToString();
-                            @sag.KlientNr = Convert.ToInt32(sqld["Klientnr"]);
-                            @sag.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            @sag.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            Alle.Add(@sag);
-                        }
-                    return Alle;
-                }
-            }
-
-        }
-
-        private List<Sag> NewGetAllSag() //julius
-        {
             string sqlString = "select * from Sag " +
                                "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
                                " join Klient on Sag.KlientNr = Klient.KlientNr";
@@ -110,7 +72,7 @@ namespace DataAccess
             foreach (List<string> x in rawReadValue)
             {
                 Sag @sag = new Sag();
-                @sag.SagsNr = Convert.ToInt32(x[0]); 
+                @sag.SagsNr = Convert.ToInt32(x[0]);
                 @sag.Arbejdstitel = x[1];
                 @sag.StartDato = x[2];
                 @sag.SlutDato = x[3];
