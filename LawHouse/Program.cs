@@ -21,7 +21,7 @@ namespace GUI
                 switch (args[0])
                 {
                     case "Ny GUI":
-                        Application.Run(new Startside());
+                        Application.Run(new UnifiedGuiForm());
                         break;
                     case "Gammel GUI":
                         Application.Run(new New_case());
@@ -41,7 +41,7 @@ namespace GUI
 
         static void DefaultRun()
         {
-            Application.Run(new Startside());//sæt til at køre via en app.config specificeret fil i stedet for
+            Application.Run(new UnifiedGuiForm());//sæt til at køre via en app.config specificeret fil i stedet for
         }
     }
 }

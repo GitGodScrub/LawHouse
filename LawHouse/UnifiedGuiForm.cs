@@ -14,16 +14,16 @@ using DataClassLib;
 
 namespace GUI
 {
-    public partial class Startside : Form
+    public partial class UnifiedGuiForm : Form
     {         
-        public Startside()
+        public UnifiedGuiForm()
         {
             InitializeComponent();
 
             //Denne kode er til at oprette sag
             txt_Sag_StartDato.Text = DateTime.Now.ToString("dd-MM-yyyy");
-           // txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
-          //  txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
+            // txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
+            // txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
             Datetimepicker_Sag_slutdato.Format = DateTimePickerFormat.Custom;
             Datetimepicker_Sag_slutdato.MinDate = DateTime.Today;
             Datetimepicker_Sag_slutdato.CustomFormat = " ";
@@ -67,8 +67,8 @@ namespace GUI
 
             private void button2_Click(object sender, EventArgs e)
             {
-                Startside startside = new Startside();
-                startside.Show();
+                UnifiedGuiForm unifiedGuiForm = new UnifiedGuiForm();
+                unifiedGuiForm.Show();
             
         }
 

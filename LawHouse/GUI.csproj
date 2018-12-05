@@ -105,11 +105,11 @@
     <Compile Include="OpretYdelse.Designer.cs">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Startside.cs">
+    <Compile Include="UnifiedGuiForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Startside.Designer.cs">
-      <DependentUpon>Startside.cs</DependentUpon>
+    <Compile Include="UnifiedGuiForm.Designer.cs">
+      <DependentUpon>UnifiedGuiForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CreateAdvokatTester.resx">
       <DependentUpon>CreateAdvokatTester.cs</DependentUpon>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="OpretYdelse.resx">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Startside.resx">
-      <DependentUpon>Startside.cs</DependentUpon>
+    <EmbeddedResource Include="UnifiedGuiForm.resx">
+      <DependentUpon>UnifiedGuiForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetDrop.xsc">
       <DependentUpon>DataSetDrop.xsd</DependentUpon>

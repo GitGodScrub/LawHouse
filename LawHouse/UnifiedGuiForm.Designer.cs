@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Startside
+    partial class UnifiedGuiForm
     {
         /// <summary>
         /// Required designer variable.
@@ -1042,7 +1042,7 @@
             this.Controls.Add(this.btn_GoToFormCreateAdvokat);
             this.Controls.Add(this.DynamicTabControl);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Startside";
+            this.Name = "UnifiedGuiForm";
             this.Text = "Startside";
             this.DynamicTabControl.ResumeLayout(false);
             this.tabStart.ResumeLayout(false);
