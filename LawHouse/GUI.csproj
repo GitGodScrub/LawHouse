@@ -79,7 +79,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDrop.xsd</DependentUpon>
     </Compile>
-    <Compile Include="IGUI.cs" />
     <Compile Include="New_case.cs">
       <SubType>Form</SubType>
     </Compile>
