@@ -29,7 +29,9 @@ namespace GUI
                     case "":
                         DefaultRun();
                         break;
-                }//command argument [0] er det første ord, efter kommandoen, før mellemrum nr 2
+                }
+                //command argument [0] er det første ord, efter kommandoen, før mellemrum nr 2
+                //sæt evt alle mulighederne som værende muligheder specificeret i app.config
             }
             else
             {
@@ -39,7 +41,7 @@ namespace GUI
 
         static void DefaultRun()
         {
-            Application.Run(new Startside());
+            Application.Run(new Startside());//sæt til at køre via en app.config specificeret fil i stedet for
         }
     }
 }

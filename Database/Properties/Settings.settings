@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=den1.mssql8.gear.host;Initial Catalog=goodboysplus1v2;Persist Security Info=True;User ID=goodboysplus1v2;Password=Kr995B7kts!_</Value>
     </Setting>
+    <Setting Name="DefaultGui" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
