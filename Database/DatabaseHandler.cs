@@ -48,21 +48,21 @@ namespace DataAccess
 
         public void CreateSag(Sag @sag)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
-            string sqlString = $"insert into Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
+            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
             RunSqlCommand(sqlString);
         }
         public void UpdateSag(Sag @sag)// By Daniella, refactored by Julius
         {
             string sqlString =
-                $"update Sag set Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = {sag.KlientNr}, AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
-                $"where SagsNr = {sag.SagsNr}";
+                $"UPDATE Sag SET Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = {sag.KlientNr}, AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
+                $"WHERE SagsNr = {sag.SagsNr}";
             RunSqlCommand(sqlString);
         }
         public List<Sag> GetAllSag()// By Daniella //By Julius
         {
-            string sqlString = "select * from Sag " +
-                               "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
-                               " join Klient on Sag.KlientNr = Klient.KlientNr";
+            string sqlString = "SELECT * FROM Sag " +
+                               "JOIN Advokat ON Sag.AdvokatID = Advokat.AdvokatId" +
+                               " JOIN Klient ON Sag.KlientNr = Klient.KlientNr";
             List<Sag> listOfSag = new List<Sag>();
 
             SqlReader sqRead = new SqlReader();
@@ -106,13 +106,13 @@ namespace DataAccess
         public void UpdateKlient(Klient KL) // By Thomas
         {
             string sqlString =
-                $"update Klient set Navn ='{KL.Navn}', Adresse = '{KL.Adresse}', TelefonNr = '{KL.TelefonNr}' " +
-                $"where KlientNr = {KL.KlientNr}";
+                $"UPDATE Klient SET Navn ='{KL.Navn}', Adresse = '{KL.Adresse}', TelefonNr = '{KL.TelefonNr}' " +
+                $"WHERE KlientNr = {KL.KlientNr}";
             RunSqlCommand(sqlString);
         }
         public List<Klient> GetAllKlient()// By Daniella //By Julius
         {
-            string sqlString = "select * from Klient";
+            string sqlString = "SELECT * FROM Klient";
             List<Klient> listOfKlient = new List<Klient>();
 
             SqlReader sqRead = new SqlReader();
@@ -144,14 +144,14 @@ namespace DataAccess
         {
 
             String sqlString =
-                $"update Advokat set Navn = '{ad.Navn}'" +
-                 $"where AdvokatID ={ad.AdvokatId}";
+                $"UPDATE Advokat SET Navn = '{ad.Navn}'" +
+                 $"WHERE AdvokatID ={ad.AdvokatId}";
             RunSqlCommand(sqlString);
 
         }
         public List<Advokat> GetAllAdvokat()// By Daniella //By Julius
         {
-            string sqlString = "select * from Advokat";
+            string sqlString = "SELECT * FROM Advokat";
             List<Advokat> listOfAdvokat = new List<Advokat>();
 
             SqlReader sqRead = new SqlReader();
@@ -165,12 +165,6 @@ namespace DataAccess
                 listOfAdvokat.Add(@advokat);
             }
             return listOfAdvokat;
-        }
-
-        public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
-        {
-            string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
-            RunSqlCommand(sqlString);
         }
 
         public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella //By Julius
@@ -196,7 +190,7 @@ namespace DataAccess
         
         public List<Tjenesteydelse> GetAllTjenesteydelse()// By Daniella //By Julius
         {
-            string sqlString = "select * from Tjenesteydelse";
+            string sqlString = "SELECT * FROM Tjenesteydelse";
             List<Tjenesteydelse> listOfTjenesteydelse = new List<Tjenesteydelse>();
 
             SqlReader sqRead = new SqlReader();
@@ -214,7 +208,7 @@ namespace DataAccess
 
         public List<YdelseType> GetAllYdelseType()// By Daniella //By Julius
         {
-            string sqlString = "select * from YdelseType";
+            string sqlString = "SELECT * FROM YdelseType";
             List<YdelseType> listOfYdelsetype = new List<YdelseType>();
 
             SqlReader sqRead = new SqlReader();
@@ -232,7 +226,7 @@ namespace DataAccess
 
         public List<ListItems> GetAllList()// By Daniella //By Julius
         {
-            string sqlString = "select * from List";
+            string sqlString = "SELECT * FROM List";
             List<ListItems> listOfListItems = new List<ListItems>();
 
             SqlReader sqRead = new SqlReader();
@@ -248,23 +242,24 @@ namespace DataAccess
             return listOfListItems;
         }
 
+
         public void CreateYdelse(Ydelse @ydelse)
         {
             {
-                string sqlString = $"insert into Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
+                string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
                 RunSqlCommand(sqlString);
             }
         }
         public void UpdateYdelse(Ydelse ydelse)
         {
             string sqlString =
-                $"update Ydelse set Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}',Timer = '{ydelse.Timer}', SagsNr = {ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" +
-                $"where YdelsesNr ={ydelse.YdelsesNr}";
+                $"UPDATE Ydelse SET Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}',Timer = '{ydelse.Timer}', SagsNr = {ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" +
+                $"WHERE YdelsesNr ={ydelse.YdelsesNr}";
             RunSqlCommand(sqlString);
         }
         public List<Ydelse> GetAllYdelse()// By Daniella //By Julius
         {
-            string sqlString = "select * from Ydelse";
+            string sqlString = "SELECT * FROM Ydelse";
             List<Ydelse> listOfYdelse = new List<Ydelse>();
 
             SqlReader sqRead = new SqlReader();
@@ -283,6 +278,37 @@ namespace DataAccess
                 listOfYdelse.Add(@ydelse);
             }
             return listOfYdelse;
+        }
+
+        public List<Efteruddannelse> GetAllEfteruddannelse()//By Julius
+        {
+            string sqlString = "SELECT * FROM Efteruddannelse";
+            List<Efteruddannelse> listOfEfteruddannelse = new List<Efteruddannelse>();
+
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
+            {
+                Efteruddannelse @Efteruddannelse = new Efteruddannelse();
+                @Efteruddannelse.AdvokatId = Convert.ToInt32(x[0]);
+                @Efteruddannelse.Navn = x[1];
+                listOfEfteruddannelse.Add(@Efteruddannelse);
+            }
+            return listOfEfteruddannelse;
+        }
+
+
+        public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// By DAniella
+        {
+            string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
+            RunSqlCommand(sqlString);
+        }
+
+        public void AddTjenestesydelseToAdvokat(int advokatId, int ydelsesTypeNr)//By Julius
+        {
+            string sqlString = $"INSERT INTO Tjenesteydelse(AdvokatId, YdelsesTypeNr) VALUES ('{advokatId}', {ydelsesTypeNr})";
+            RunSqlCommand(sqlString);
         }
     }
 }

@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advokat.cs" />
+    <Compile Include="Efteruddannelse.cs" />
     <Compile Include="Klient.cs" />
     <Compile Include="ListItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

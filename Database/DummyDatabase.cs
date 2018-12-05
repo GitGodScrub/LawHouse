@@ -75,7 +75,17 @@ namespace DataAccess
             return toReturn;
         }
 
+        public List<Efteruddannelse> GetAllEfteruddannelse()
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddTjenestesydelseToAdvokat(int advokatId, int ydelsesTypeNr)
         {
             throw new NotImplementedException();
         }
