@@ -16,18 +16,25 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            switch (args[0].ToString())
+            if (args.Length != 0)
             {
-                case "Ny GUI":
-                    Application.Run(new Startside());
-                    break;
-                case "Gammel GUI":
-                    Application.Run(new New_case());
-                    break;
-                case "":
-                    DefaultRun();
-                    break;
-            }//command argument [0] er det første ord, efter kommandoen, før mellemrum nr 2
+                switch (args[0])
+                {
+                    case "Ny GUI":
+                        Application.Run(new Startside());
+                        break;
+                    case "Gammel GUI":
+                        Application.Run(new New_case());
+                        break;
+                    case "":
+                        DefaultRun();
+                        break;
+                }//command argument [0] er det første ord, efter kommandoen, før mellemrum nr 2
+            }
+            else
+            {
+                DefaultRun();
+            }
         }
 
         static void DefaultRun()
