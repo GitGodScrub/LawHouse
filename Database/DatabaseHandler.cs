@@ -58,13 +58,12 @@ namespace DataAccess
                 $"where SagsNr = {sag.SagsNr}";
             RunSqlCommand(sqlString);
         }
-        public List<Sag> GetAllSag()// By Daniella
+        public List<Sag> GetAllSag()// By Daniella //By Julius
         {
             string sqlString = "select * from Sag " +
                                "join Advokat on Sag.AdvokatID = Advokat.AdvokatId" +
                                " join Klient on Sag.KlientNr = Klient.KlientNr";
-
-            List<Sag> listOfCases = new List<Sag>();
+            List<Sag> listOfSag = new List<Sag>();
 
             SqlReader sqRead = new SqlReader();
             List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
@@ -83,10 +82,9 @@ namespace DataAccess
                 @sag.KlientNr = Convert.ToInt32(x[8]);
                 @sag.AdvokatId = Convert.ToInt32(x[9]);
                 @sag.YdelsesTypeNr = Convert.ToInt32(x[10]);
-                listOfCases.Add(@sag);
+                listOfSag.Add(@sag);
             }
-
-            return listOfCases;
+            return listOfSag;
         }
 
         public void CreateKlient(Klient @klient)//By Thomas
@@ -112,30 +110,24 @@ namespace DataAccess
                 $"where KlientNr = {KL.KlientNr}";
             RunSqlCommand(sqlString);
         }
-        public List<Klient> GetAllKlient()// By Daniella
+        public List<Klient> GetAllKlient()// By Daniella //By Julius
         {
             string sqlString = "select * from Klient";
-            List<Klient> All = new List<Klient>();
+            List<Klient> listOfKlient = new List<Klient>();
 
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
             {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Klient @klient = new Klient();
-                            @klient.KlientNr = Convert.ToInt32(sqld["KlientNr"]);
-                            @klient.Navn = sqld["Navn"].ToString();
-                            @klient.Adresse = sqld["Adresse"].ToString();
-                            @klient.TelefonNr = sqld["TelefonNr"].ToString();
-                            All.Add(@klient);
-                        }
-                    return All;
-                }
+                Klient @klient = new Klient();
+                @klient.KlientNr = Convert.ToInt32(x[0]);
+                @klient.Navn = x[1];
+                @klient.Adresse = x[2];
+                @klient.TelefonNr = x[3];
+                listOfKlient.Add(@klient);
             }
+            return listOfKlient;
         }
 
 
@@ -157,27 +149,22 @@ namespace DataAccess
             RunSqlCommand(sqlString);
 
         }
-        public List<Advokat> GetAllAdvokat()// By Daniella
+        public List<Advokat> GetAllAdvokat()// By Daniella //By Julius
         {
             string sqlString = "select * from Advokat";
-            List<Advokat> All = new List<Advokat>();
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            List<Advokat> listOfAdvokat = new List<Advokat>();
+
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
             {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Advokat @advokat = new Advokat();
-                            @advokat.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            @advokat.Navn = sqld["Navn"].ToString();
-                            All.Add(@advokat);
-                        }
-                    return All;
-                }
+                Advokat @advokat = new Advokat();
+                @advokat.AdvokatId = Convert.ToInt32(x[0]);
+                @advokat.Navn = x[1];
+                listOfAdvokat.Add(@advokat);
             }
+            return listOfAdvokat;
         }
 
         public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// // By Dennie
@@ -186,101 +173,79 @@ namespace DataAccess
             RunSqlCommand(sqlString);
         }
 
-        public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella
+        public List<Advokat> GetAllAdvokatFromYdelse(int ydelsesTypeNr)// By Daniella //By Julius
         {
             string sqlString = @"SELECT * FROM ADVOKAT
                                 JOIN Tjenesteydelse ON Tjenesteydelse.AdvokatId = Advokat.AdvokatId
                                 WHERE YdelsesTypeNr = " + ydelsesTypeNr;
-            List<Advokat> All = new List<Advokat>();
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
-            {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Advokat @advokat = new Advokat();
-                            @advokat.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            @advokat.Navn = sqld["Navn"].ToString();
-                            All.Add(@advokat);
-                        }
-                    return All;
-                }
-            }
+            List<Advokat> listOfAdvokat = new List<Advokat>();
 
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
+            {
+                Advokat @advokat = new Advokat();
+                @advokat.AdvokatId = Convert.ToInt32(x[0]);
+                @advokat.Navn = x[1];
+                listOfAdvokat.Add(@advokat);
+            }
+            return listOfAdvokat;
         }
 
         
-        public List<Tjenesteydelse> GetAllTjenesteydelse()// By Daniella
+        public List<Tjenesteydelse> GetAllTjenesteydelse()// By Daniella //By Julius
         {
             string sqlString = "select * from Tjenesteydelse";
-            List<Tjenesteydelse> All = new List<Tjenesteydelse>();
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            List<Tjenesteydelse> listOfTjenesteydelse = new List<Tjenesteydelse>();
+
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
             {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Tjenesteydelse tjenesteydelse = new Tjenesteydelse();
-                            tjenesteydelse.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            tjenesteydelse.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            All.Add(tjenesteydelse);
-                        }
-                    return All;
-                }
+                Tjenesteydelse @tjenesteydelse = new Tjenesteydelse();
+                @tjenesteydelse.AdvokatId = Convert.ToInt32(x[0]);
+                @tjenesteydelse.YdelsesTypeNr = Convert.ToInt32(x[1]);
+                listOfTjenesteydelse.Add(@tjenesteydelse);
             }
+            return listOfTjenesteydelse;
         }
 
-        public List<YdelseType> GetAllYdelseType()// By Daniella
+        public List<YdelseType> GetAllYdelseType()// By Daniella //By Julius
         {
             string sqlString = "select * from YdelseType";
-            List<YdelseType> All = new List<YdelseType>();
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            List<YdelseType> listOfYdelsetype = new List<YdelseType>();
+
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
             {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            YdelseType @ydelseType = new YdelseType();
-                            @ydelseType.YdelsesTypeNr = Convert.ToInt32(sqld["YdelsesTypeNr"]);
-                            @ydelseType.YdelsesNavn = sqld["YdelsesNavn"].ToString();
-                            All.Add(@ydelseType);
-                        }
-                    return All;
-                }
+                YdelseType @ydelseType = new YdelseType();
+                @ydelseType.YdelsesTypeNr = Convert.ToInt32(x[0]);
+                @ydelseType.YdelsesNavn = x[1];
+                listOfYdelsetype.Add(@ydelseType);
             }
+            return listOfYdelsetype;
         }
 
-        public List<ListItems> GetAllList()// By Daniella
+        public List<ListItems> GetAllList()// By Daniella //By Julius
         {
             string sqlString = "select * from List";
-            List<ListItems> All = new List<ListItems>();
+            List<ListItems> listOfListItems = new List<ListItems>();
 
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
             {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            ListItems @list = new ListItems();
-                            @list.ListID = sqld["ListID"].ToString();
-                            @list.What_type = sqld["What_type"].ToString();
-                            All.Add(@list);
-                        }
-                    return All;
-                }
+                ListItems @listItems = new ListItems();
+                @listItems.ListID = x[0];
+                @listItems.What_type = x[1];
+                listOfListItems.Add(@listItems);
             }
+            return listOfListItems;
         }
 
         public void CreateYdelse(Ydelse @ydelse)
@@ -297,33 +262,27 @@ namespace DataAccess
                 $"where YdelsesNr ={ydelse.YdelsesNr}";
             RunSqlCommand(sqlString);
         }
-        public List<Ydelse> GetAllYdelse()// By Daniella
+        public List<Ydelse> GetAllYdelse()// By Daniella //By Julius
         {
             string sqlString = "select * from Ydelse";
-            List<Ydelse> All = new List<Ydelse>();
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
-            using (SqlCommand com = new SqlCommand(sqlString, conn))
-            {
-                conn.Open();
-                using (SqlDataReader sqld = com.ExecuteReader())
-                {
-                    if (sqld.HasRows)
-                        while (sqld.Read())
-                        {
-                            Ydelse ydelse = new Ydelse();
-                            ydelse.YdelsesNr = Convert.ToInt32(sqld["YdelsesNr"]);
-                            ydelse.StartDato = sqld["StartDato"].ToString();
-                            ydelse.YdelsesBeskrivelse = sqld["YdelsesBeskrivelse"].ToString();
-                            ydelse.Pris = sqld["Pris"].ToString();
-                            ydelse.Timer = sqld["Timer"].ToString();
-                            ydelse.SagsNr = Convert.ToInt32(sqld["SagsNr"]);
-                            ydelse.AdvokatId = Convert.ToInt32(sqld["AdvokatId"]);
-                            All.Add(ydelse);
-                        }
-                    return All;
-                }
-            }
+            List<Ydelse> listOfYdelse = new List<Ydelse>();
 
+            SqlReader sqRead = new SqlReader();
+            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+
+            foreach (List<string> x in rawReadValue)
+            {
+                Ydelse @ydelse = new Ydelse();
+                @ydelse.YdelsesNr = Convert.ToInt32(x[0]);
+                @ydelse.StartDato = x[1];
+                @ydelse.YdelsesBeskrivelse = x[2];
+                @ydelse.Pris = x[3];
+                @ydelse.Timer = x[4];
+                @ydelse.SagsNr = Convert.ToInt32(x[5]);
+                @ydelse.AdvokatId = Convert.ToInt32(x[6]);
+                listOfYdelse.Add(@ydelse);
+            }
+            return listOfYdelse;
         }
     }
 }
