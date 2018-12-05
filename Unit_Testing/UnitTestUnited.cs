@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using DataAccess;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DataAccess.Properties;
+﻿using System.Data.SqlClient;
 using DataClassLib;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Unit_Testing.Properties;
 
-namespace UnitTestLawHouse
+namespace Unit_Testing
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestUnited
     {
         [TestMethod]
         public void SqlConnectionTest() //Dennie 
