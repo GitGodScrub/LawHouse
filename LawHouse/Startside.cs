@@ -46,8 +46,7 @@ namespace GUI
 
        
 
-          //Tab index 1
-
+          //Tab index 1 //Hvad der sker når man klikker på tabs'ne
             private void button1_Click(object sender, EventArgs e)
             {
                 Overblik overblik = new Overblik();
