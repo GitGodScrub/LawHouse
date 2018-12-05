@@ -38,7 +38,7 @@ namespace Unit_Testing
         }
 
         [TestMethod]
-        public void CaseFillTest()
+        public void CaseFillTest() //Julius(?)
         {
             Sag @case = new Sag();
             @case.SagsNr = 1;
