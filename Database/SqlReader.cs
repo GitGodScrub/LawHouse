@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 namespace DataAccess
 {
     class SqlReader //By Julius
-    // Virker ikke
-    // Experimentiel Feature
     {
         public List<List<string>> ReadThisLastTry(string sqlString)
         {
@@ -46,7 +44,7 @@ namespace DataAccess
             return toReturn;
         }
 
-
+        /*
         public List<string[]> ReadThis(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
@@ -154,5 +152,6 @@ namespace DataAccess
             }
             return columnInfo;
         }
+        */
     }
 }
