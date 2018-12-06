@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 using BusinessLogic;
 using DataAccess;
 using DataClassLib;
@@ -135,7 +136,7 @@ namespace GUI
         //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
         //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
         //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
-        private void btn_Update_Click(object sender, EventArgs e)
+        private void btn_Update_Click(object sender, EventArgs e)//Daniella (?)
         {
             foreach (object item in objectListView1.Objects)
             {
@@ -225,15 +226,19 @@ namespace GUI
 
         
 
-        private void UnifiedGuiForm_Load(object sender, EventArgs e)
+        private void UnifiedGuiForm_Load(object sender, EventArgs e)//delete dis
         {
 
         }
 
-        private void Btn_Help_Click(object sender, EventArgs e)
+        private void Btn_Help_Click(object sender, EventArgs e)//delete dis
         {
             
         }
+
+        //Juilus Herunder
+
+        // ObjectListView myObjectListView;
 
         private void buttomAddNewObject_Click(object sender, EventArgs e)
         {
@@ -254,6 +259,51 @@ namespace GUI
                     break;
             }
             DynamicTabControl.SelectedTab = toSwitchTo;
+        }
+
+        private void buttonHelpMe_Click(object sender, EventArgs e)
+        {
+            //open help for current page
+        }
+
+        private void buttonAnnuller_Click(object sender, EventArgs e)
+        {
+            //Discard changes
+        }
+
+        private void buttomSave_Click(object sender, EventArgs e)//stjålet fra btn_Update_Click / Daniella
+        {
+            foreach (object item in myObjectListView.Objects)
+            {
+                if (item is Sag)
+                {
+                    Controller.UpdateSag(item);
+
+                }
+                else if (item is Advokat)
+                {
+                    Controller.UpdateAdvokat(item);
+                }
+                else if (item is Ydelse)
+                {
+                    Controller.UpdateYdelse(item);
+                }
+                else if (item is Klient)
+                {
+                    Controller.UpdateKLient(item);
+                }
+            }
+            MessageBox.Show("Færdig");
+        }
+
+        private void buttomRefresh_Click(object sender, EventArgs e)
+        {
+            //reload current objectViewList
+        }
+
+        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//delete dis
+        {
+
         }
     }
 }

@@ -1048,6 +1048,7 @@
             this.buttonHelpMe.TabIndex = 6;
             this.buttonHelpMe.Text = "HelpMe";
             this.buttonHelpMe.UseVisualStyleBackColor = true;
+            this.buttonHelpMe.Click += new System.EventHandler(this.buttonHelpMe_Click);
             // 
             // buttomAddNewObject
             // 
@@ -1069,6 +1070,7 @@
             this.buttonAnnuller.TabIndex = 4;
             this.buttonAnnuller.Text = "Annuller";
             this.buttonAnnuller.UseVisualStyleBackColor = true;
+            this.buttonAnnuller.Click += new System.EventHandler(this.buttonAnnuller_Click);
             // 
             // buttomSave
             // 
@@ -1079,6 +1081,7 @@
             this.buttomSave.TabIndex = 3;
             this.buttomSave.Text = "Save";
             this.buttomSave.UseVisualStyleBackColor = true;
+            this.buttomSave.Click += new System.EventHandler(this.buttomSave_Click);
             // 
             // dropdownCombobox
             // 
@@ -1099,6 +1102,7 @@
             this.buttomRefresh.TabIndex = 1;
             this.buttomRefresh.Text = "Refresh";
             this.buttomRefresh.UseVisualStyleBackColor = true;
+            this.buttomRefresh.Click += new System.EventHandler(this.buttomRefresh_Click);
             // 
             // myObjectListView
             // 
@@ -1111,6 +1115,7 @@
             this.myObjectListView.TabIndex = 0;
             this.myObjectListView.UseCompatibleStateImageBehavior = false;
             this.myObjectListView.View = System.Windows.Forms.View.Details;
+            this.myObjectListView.SelectedIndexChanged += new System.EventHandler(this.myObjectListView_SelectedIndexChanged);
             // 
             // btn_GoToFormCreateAdvokat
             // 
