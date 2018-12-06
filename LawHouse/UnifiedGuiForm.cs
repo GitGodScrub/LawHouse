@@ -39,7 +39,7 @@ namespace GUI
             Sag_drop_MedarbejderNr.SelectedIndex = -1;
 
             //Denne kode er til oversigt over sag 
-            objectListView1.SetObjects(Controller.GetAllKlient());
+            theObjectListView.SetObjects(Controller.GetAllKlient());
             combobox_hvad_type.DataSource = Controller.GetAllItems();
             combobox_hvad_type.DisplayMember = "What_type";
         } //Startup
@@ -91,7 +91,7 @@ namespace GUI
         //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
         private void btn_Update_Click(object sender, EventArgs e)//Daniella (?)
         {
-            foreach (object item in objectListView1.Objects)
+            foreach (object item in theObjectListView.Objects)
             {
 
                 if (item is Sag)
@@ -122,8 +122,8 @@ namespace GUI
             {
 
                 case "Klient":
-                    objectListView1.SetObjects(Controller.GetAllKlient());
-                    foreach (var item in objectListView1.AllColumns)
+                    theObjectListView.SetObjects(Controller.GetAllKlient());
+                    foreach (var item in theObjectListView.AllColumns)
                     {
                         item.IsVisible = false;
                     }
@@ -134,8 +134,8 @@ namespace GUI
                     break;
 
                 case "Sag":
-                    objectListView1.SetObjects(Controller.GetAllSag());
-                    foreach (var item in objectListView1.AllColumns)
+                    theObjectListView.SetObjects(Controller.GetAllSag());
+                    foreach (var item in theObjectListView.AllColumns)
                     {
                         item.IsVisible = false;
                     }
@@ -151,8 +151,8 @@ namespace GUI
                     YdelsesTypeNr.IsVisible = true;
                     break;
                 case "Advokat":
-                    objectListView1.SetObjects(Controller.GetAllAdvokat());
-                    foreach (var item in objectListView1.AllColumns)
+                    theObjectListView.SetObjects(Controller.GetAllAdvokat());
+                    foreach (var item in theObjectListView.AllColumns)
                     {
                         item.IsVisible = false;
                     }
@@ -160,8 +160,8 @@ namespace GUI
                     Advokat_navn.IsVisible = true;
                     break;
                 case "Ydelse":
-                    objectListView1.SetObjects(Controller.GetAllYdelses());
-                    foreach (var item in objectListView1.AllColumns)
+                    theObjectListView.SetObjects(Controller.GetAllYdelses());
+                    foreach (var item in theObjectListView.AllColumns)
                     {
                         item.IsVisible = false;
                     }
@@ -174,7 +174,7 @@ namespace GUI
                     AdvokatID.IsVisible = true;
                     break;
             }
-            objectListView1.RebuildColumns();
+            theObjectListView.RebuildColumns();
         }
         private void UnifiedGuiForm_Load(object sender, EventArgs e)//DO NOT (?) delete dis
         {

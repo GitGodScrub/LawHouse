@@ -92,7 +92,7 @@
             this.Se_oversigt = new System.Windows.Forms.TabPage();
             this.combobox_hvad_type = new System.Windows.Forms.ComboBox();
             this.btn_Update = new System.Windows.Forms.Button();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.theObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.SagsNr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Arbejdstitel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -134,7 +134,7 @@
             this.Opret_klient.SuspendLayout();
             this.Opret_ydelse.SuspendLayout();
             this.Se_oversigt.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theObjectListView)).BeginInit();
             this.tabClickHereFirst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).BeginInit();
             this.SuspendLayout();
@@ -776,7 +776,7 @@
             this.Se_oversigt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Se_oversigt.Controls.Add(this.combobox_hvad_type);
             this.Se_oversigt.Controls.Add(this.btn_Update);
-            this.Se_oversigt.Controls.Add(this.objectListView1);
+            this.Se_oversigt.Controls.Add(this.theObjectListView);
             this.Se_oversigt.Location = new System.Drawing.Point(4, 24);
             this.Se_oversigt.Margin = new System.Windows.Forms.Padding(2);
             this.Se_oversigt.Name = "Se_oversigt";
@@ -807,32 +807,32 @@
             this.btn_Update.UseVisualStyleBackColor = true;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // objectListView1
+            // theObjectListView
             // 
-            this.objectListView1.AllColumns.Add(this.olvColumn1);
-            this.objectListView1.AllColumns.Add(this.SagsNr);
-            this.objectListView1.AllColumns.Add(this.Arbejdstitel);
-            this.objectListView1.AllColumns.Add(this.StartDate);
-            this.objectListView1.AllColumns.Add(this.Slutdate);
-            this.objectListView1.AllColumns.Add(this.Kørselstimer);
-            this.objectListView1.AllColumns.Add(this.TimeEstimat);
-            this.objectListView1.AllColumns.Add(this.SagsBeskrivelse);
-            this.objectListView1.AllColumns.Add(this.InterneNoter);
-            this.objectListView1.AllColumns.Add(this.KlientNr);
-            this.objectListView1.AllColumns.Add(this.MedarbejderNr);
-            this.objectListView1.AllColumns.Add(this.YdelsesTypeNr);
-            this.objectListView1.AllColumns.Add(this.Navn);
-            this.objectListView1.AllColumns.Add(this.Adresse);
-            this.objectListView1.AllColumns.Add(this.TelefonNr);
-            this.objectListView1.AllColumns.Add(this.Advokat_navn);
-            this.objectListView1.AllColumns.Add(this.YdelsesNr);
-            this.objectListView1.AllColumns.Add(this.YdelseBeskrivelse);
-            this.objectListView1.AllColumns.Add(this.Pris);
-            this.objectListView1.AllColumns.Add(this.Timer);
-            this.objectListView1.AllColumns.Add(this.AdvokatID);
-            this.objectListView1.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.theObjectListView.AllColumns.Add(this.olvColumn1);
+            this.theObjectListView.AllColumns.Add(this.SagsNr);
+            this.theObjectListView.AllColumns.Add(this.Arbejdstitel);
+            this.theObjectListView.AllColumns.Add(this.StartDate);
+            this.theObjectListView.AllColumns.Add(this.Slutdate);
+            this.theObjectListView.AllColumns.Add(this.Kørselstimer);
+            this.theObjectListView.AllColumns.Add(this.TimeEstimat);
+            this.theObjectListView.AllColumns.Add(this.SagsBeskrivelse);
+            this.theObjectListView.AllColumns.Add(this.InterneNoter);
+            this.theObjectListView.AllColumns.Add(this.KlientNr);
+            this.theObjectListView.AllColumns.Add(this.MedarbejderNr);
+            this.theObjectListView.AllColumns.Add(this.YdelsesTypeNr);
+            this.theObjectListView.AllColumns.Add(this.Navn);
+            this.theObjectListView.AllColumns.Add(this.Adresse);
+            this.theObjectListView.AllColumns.Add(this.TelefonNr);
+            this.theObjectListView.AllColumns.Add(this.Advokat_navn);
+            this.theObjectListView.AllColumns.Add(this.YdelsesNr);
+            this.theObjectListView.AllColumns.Add(this.YdelseBeskrivelse);
+            this.theObjectListView.AllColumns.Add(this.Pris);
+            this.theObjectListView.AllColumns.Add(this.Timer);
+            this.theObjectListView.AllColumns.Add(this.AdvokatID);
+            this.theObjectListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.theObjectListView.CellEditUseWholeCell = false;
+            this.theObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
             this.SagsNr,
             this.Arbejdstitel,
@@ -854,20 +854,20 @@
             this.Pris,
             this.Timer,
             this.AdvokatID});
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView1.FullRowSelect = true;
-            this.objectListView1.GridLines = true;
-            this.objectListView1.HasCollapsibleGroups = false;
-            this.objectListView1.Location = new System.Drawing.Point(4, 95);
-            this.objectListView1.Margin = new System.Windows.Forms.Padding(2);
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.ShowGroups = false;
-            this.objectListView1.ShowImagesOnSubItems = true;
-            this.objectListView1.Size = new System.Drawing.Size(644, 348);
-            this.objectListView1.TabIndex = 9;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.UseFiltering = true;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.theObjectListView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.theObjectListView.FullRowSelect = true;
+            this.theObjectListView.GridLines = true;
+            this.theObjectListView.HasCollapsibleGroups = false;
+            this.theObjectListView.Location = new System.Drawing.Point(4, 95);
+            this.theObjectListView.Margin = new System.Windows.Forms.Padding(2);
+            this.theObjectListView.Name = "theObjectListView";
+            this.theObjectListView.ShowGroups = false;
+            this.theObjectListView.ShowImagesOnSubItems = true;
+            this.theObjectListView.Size = new System.Drawing.Size(644, 348);
+            this.theObjectListView.TabIndex = 9;
+            this.theObjectListView.UseCompatibleStateImageBehavior = false;
+            this.theObjectListView.UseFiltering = true;
+            this.theObjectListView.View = System.Windows.Forms.View.Details;
             // 
             // olvColumn1
             // 
@@ -1134,7 +1134,7 @@
             this.Opret_ydelse.ResumeLayout(false);
             this.Opret_ydelse.PerformLayout();
             this.Se_oversigt.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theObjectListView)).EndInit();
             this.tabClickHereFirst.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).EndInit();
             this.ResumeLayout(false);
@@ -1205,7 +1205,7 @@
         private System.Windows.Forms.TextBox txt_ydelse_startdato;
         private System.Windows.Forms.TextBox txt_ydelse_ydelsesNr;
         private System.Windows.Forms.Button btn_Update;
-        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.ObjectListView theObjectListView;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn SagsNr;
         private BrightIdeasSoftware.OLVColumn Arbejdstitel;
