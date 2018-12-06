@@ -126,12 +126,6 @@
             this.dropdownCombobox = new System.Windows.Forms.ComboBox();
             this.buttomRefresh = new System.Windows.Forms.Button();
             this.myObjectListView = new BrightIdeasSoftware.ObjectListView();
-            this.btn_GoToFormCreateAdvokat = new System.Windows.Forms.Button();
-            this.Btn_CreateKlient = new System.Windows.Forms.Button();
-            this.btn_GåtilYdelse = new System.Windows.Forms.Button();
-            this.Btn_Oversigt = new System.Windows.Forms.Button();
-            this.Btn_Help = new System.Windows.Forms.Button();
-            this.btn_opretsag = new System.Windows.Forms.Button();
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1117,80 +1111,12 @@
             this.myObjectListView.View = System.Windows.Forms.View.Details;
             this.myObjectListView.SelectedIndexChanged += new System.EventHandler(this.myObjectListView_SelectedIndexChanged);
             // 
-            // btn_GoToFormCreateAdvokat
-            // 
-            this.btn_GoToFormCreateAdvokat.Location = new System.Drawing.Point(892, 646);
-            this.btn_GoToFormCreateAdvokat.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_GoToFormCreateAdvokat.Name = "btn_GoToFormCreateAdvokat";
-            this.btn_GoToFormCreateAdvokat.Size = new System.Drawing.Size(121, 24);
-            this.btn_GoToFormCreateAdvokat.TabIndex = 53;
-            this.btn_GoToFormCreateAdvokat.Text = "Gå til: Opret Advokat";
-            this.btn_GoToFormCreateAdvokat.UseVisualStyleBackColor = true;
-            this.btn_GoToFormCreateAdvokat.Click += new System.EventHandler(this.btn_GoToFormCreateAdvokat_Click);
-            // 
-            // Btn_CreateKlient
-            // 
-            this.Btn_CreateKlient.Location = new System.Drawing.Point(757, 646);
-            this.Btn_CreateKlient.Name = "Btn_CreateKlient";
-            this.Btn_CreateKlient.Size = new System.Drawing.Size(121, 23);
-            this.Btn_CreateKlient.TabIndex = 54;
-            this.Btn_CreateKlient.Text = "Gå til: Opret Klient";
-            this.Btn_CreateKlient.UseVisualStyleBackColor = true;
-            this.Btn_CreateKlient.Click += new System.EventHandler(this.Btn_CreateKlient_Click);
-            // 
-            // btn_GåtilYdelse
-            // 
-            this.btn_GåtilYdelse.Location = new System.Drawing.Point(279, 647);
-            this.btn_GåtilYdelse.Name = "btn_GåtilYdelse";
-            this.btn_GåtilYdelse.Size = new System.Drawing.Size(121, 23);
-            this.btn_GåtilYdelse.TabIndex = 55;
-            this.btn_GåtilYdelse.Text = "Gå til: Opret Ydelse";
-            this.btn_GåtilYdelse.UseVisualStyleBackColor = true;
-            this.btn_GåtilYdelse.Click += new System.EventHandler(this.btn_GåtilYdelse_Click);
-            // 
-            // Btn_Oversigt
-            // 
-            this.Btn_Oversigt.Location = new System.Drawing.Point(631, 647);
-            this.Btn_Oversigt.Margin = new System.Windows.Forms.Padding(2);
-            this.Btn_Oversigt.Name = "Btn_Oversigt";
-            this.Btn_Oversigt.Size = new System.Drawing.Size(121, 36);
-            this.Btn_Oversigt.TabIndex = 56;
-            this.Btn_Oversigt.Text = "Se oversigt";
-            this.Btn_Oversigt.UseVisualStyleBackColor = true;
-            this.Btn_Oversigt.Click += new System.EventHandler(this.Btn_Oversigt_Click);
-            // 
-            // Btn_Help
-            // 
-            this.Btn_Help.Location = new System.Drawing.Point(556, 647);
-            this.Btn_Help.Name = "Btn_Help";
-            this.Btn_Help.Size = new System.Drawing.Size(47, 23);
-            this.Btn_Help.TabIndex = 58;
-            this.Btn_Help.Text = "?";
-            this.Btn_Help.UseVisualStyleBackColor = true;
-            this.Btn_Help.Click += new System.EventHandler(this.Btn_Help_Click);
-            // 
-            // btn_opretsag
-            // 
-            this.btn_opretsag.Location = new System.Drawing.Point(406, 647);
-            this.btn_opretsag.Name = "btn_opretsag";
-            this.btn_opretsag.Size = new System.Drawing.Size(121, 23);
-            this.btn_opretsag.TabIndex = 59;
-            this.btn_opretsag.Text = "Gå til: Opret Sag";
-            this.btn_opretsag.UseVisualStyleBackColor = true;
-            this.btn_opretsag.Click += new System.EventHandler(this.btn_opretsag_Click);
-            // 
             // UnifiedGuiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1040, 723);
-            this.Controls.Add(this.btn_opretsag);
-            this.Controls.Add(this.Btn_Help);
-            this.Controls.Add(this.Btn_Oversigt);
-            this.Controls.Add(this.btn_GåtilYdelse);
-            this.Controls.Add(this.Btn_CreateKlient);
-            this.Controls.Add(this.btn_GoToFormCreateAdvokat);
             this.Controls.Add(this.DynamicTabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UnifiedGuiForm";
@@ -1242,12 +1168,7 @@
         private System.Windows.Forms.Label lbl_Kørselstimer;
         private System.Windows.Forms.Label lbl_Start;
         private System.Windows.Forms.Label lbl_Titel;
-        private System.Windows.Forms.Button btn_GoToFormCreateAdvokat;
-        private System.Windows.Forms.Button Btn_CreateKlient;
-        private System.Windows.Forms.Button btn_GåtilYdelse;
-        private System.Windows.Forms.Button Btn_Oversigt;
         private System.Windows.Forms.Button btn_Create;
-        private System.Windows.Forms.Button Btn_Help;
         private System.Windows.Forms.TabPage Opret_klient;
         private System.Windows.Forms.TabPage Opret_ydelse;
         private System.Windows.Forms.TabPage Se_oversigt;
@@ -1261,7 +1182,6 @@
         private System.Windows.Forms.TextBox txt_Advokat_AdvokatNavn;
         private System.Windows.Forms.Button btn_AddSpecialToAdvokat;
         private System.Windows.Forms.Button btn_CreateAdvokat;
-        private System.Windows.Forms.Button btn_opretsag;
         private System.Windows.Forms.Button bnt_Klient_Opret;
         private System.Windows.Forms.Label lbl_TelefonNr;
         private System.Windows.Forms.Label lbl_Adresse;

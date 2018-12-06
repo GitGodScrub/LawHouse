@@ -42,61 +42,14 @@ namespace GUI
             objectListView1.SetObjects(Controller.GetAllKlient());
             combobox_hvad_type.DataSource = Controller.GetAllItems();
             combobox_hvad_type.DisplayMember = "What_type";
-
-            //Experimental
-            
         } //Startup
 
 
         //Tab index 1 //Hvad der sker når man klikker på tabs'ne
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Overblik overblik = new Overblik();
-            overblik.Show();
-        }
-        private void txt_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
-            Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
-            Sag_drop_MedarbejderNr.SelectedIndex = -1;
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            OpretYdelse ydelse = new OpretYdelse();
-            ydelse.Show();
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            UnifiedGuiForm unifiedGuiForm = new UnifiedGuiForm();
-            unifiedGuiForm.Show();
-
-        }
         private void btn_Create_Click(object sender, EventArgs e)
         {
             Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
             MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
-        }
-        private void btn_GoToFormCreateAdvokat_Click(object sender, EventArgs e)
-        {
-
-            DynamicTabControl.SelectedTab = Opret_advokat;
-        }
-        private void Btn_CreateKlient_Click(object sender, EventArgs e)
-        {
-
-            DynamicTabControl.SelectedTab = Opret_klient;
-        }
-        private void btn_GåtilYdelse_Click(object sender, EventArgs e)
-        {
-            DynamicTabControl.SelectedTab = Opret_ydelse;
-        }
-        private void Btn_Oversigt_Click(object sender, EventArgs e)
-        {
-            DynamicTabControl.SelectedTab = Se_oversigt;
-        }
-        private void btn_opretsag_Click(object sender, EventArgs e)
-        {
-            DynamicTabControl.SelectedTab = Opret_sag;
         }
 
         //Koden under til opret advokat
@@ -223,17 +176,9 @@ namespace GUI
             }
             objectListView1.RebuildColumns();
         }
-
-        
-
-        private void UnifiedGuiForm_Load(object sender, EventArgs e)//delete dis
+        private void UnifiedGuiForm_Load(object sender, EventArgs e)//DO NOT (?) delete dis
         {
 
-        }
-
-        private void Btn_Help_Click(object sender, EventArgs e)//delete dis
-        {
-            
         }
 
         //Juilus Herunder
@@ -318,7 +263,7 @@ namespace GUI
             //reload current objectViewList
         }
 
-        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//delete dis
+        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//delete dis (?)
         {
 
         }
