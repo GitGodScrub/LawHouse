@@ -24,7 +24,7 @@ namespace GUI
 
         private void ExperimentalForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         //Juilus Herunder
@@ -38,19 +38,19 @@ namespace GUI
             switch (DynamicTabControl.SelectedTab.Name)
             {
                 case "Sag":
-                    toSwitchTo = Opret_sag;
+                    //toSwitchTo = Opret_sag;
                     break;
                 case "Advokat":
-                    toSwitchTo = Opret_advokat;
+                    //toSwitchTo = Opret_advokat;
                     break;
                 case "Klient":
-                    toSwitchTo = Opret_klient;
+                    //toSwitchTo = Opret_klient;
                     break;
                 case "Ydelse":
-                    toSwitchTo = Opret_ydelse;
+                    //toSwitchTo = Opret_ydelse;
                     break;
             }
-            toSwitchTo = Opret_sag;//debug
+            //toSwitchTo = Opret_sag;//debug
             DynamicTabControl.SelectedTab = toSwitchTo;
         }
 
