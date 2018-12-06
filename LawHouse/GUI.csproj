@@ -105,6 +105,7 @@
     <Compile Include="OpretYdelse.Designer.cs">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabPageHandler.cs" />
     <Compile Include="UnifiedGuiForm.cs">
       <SubType>Form</SubType>
     </Compile>
