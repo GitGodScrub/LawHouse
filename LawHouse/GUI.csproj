@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDrop.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ExperimentalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExperimentalForm.Designer.cs">
+      <DependentUpon>ExperimentalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="New_case.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="CreateAdvokatTester.resx">
       <DependentUpon>CreateAdvokatTester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExperimentalForm.resx">
+      <DependentUpon>ExperimentalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New_case.resx">
       <DependentUpon>New_case.cs</DependentUpon>
