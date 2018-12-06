@@ -239,9 +239,10 @@ namespace GUI
         //Juilus Herunder
 
         // ObjectListView myObjectListView;
-
-        private void buttomAddNewObject_Click(object sender, EventArgs e)
+        private void buttomAddNewObject_Click(object sender, EventArgs e) //virker ikke da den skal skifte til en ikke-eksisterende tab
         {
+            string[] tabsToHide = new string[0]; //Debug
+            hideTabs(tabsToHide); //Debug
             TabPage toSwitchTo = null;
             switch (DynamicTabControl.SelectedTab.Name)
             {
@@ -258,7 +259,23 @@ namespace GUI
                     toSwitchTo = Opret_ydelse;
                     break;
             }
+            toSwitchTo = Opret_sag;//debug
             DynamicTabControl.SelectedTab = toSwitchTo;
+        }
+
+        private void hideTabs(string[] tabsToHide)
+        {
+            //
+            tabsToHide = new string[4];
+            tabsToHide[0] = "Opret_sag";
+            tabsToHide[1] = "Opret_advokat";
+            tabsToHide[2] = "Opret_klient";
+            tabsToHide[3] = "Opret_ydelse";
+            // Temp. Debug
+            foreach (string tabKey in tabsToHide)
+            {
+                DynamicTabControl.TabPages.RemoveByKey(tabKey);
+            }
         }
 
         private void buttonHelpMe_Click(object sender, EventArgs e)

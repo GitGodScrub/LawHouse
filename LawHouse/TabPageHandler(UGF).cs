@@ -14,42 +14,14 @@ using DataClassLib;
 
 namespace GUI
 {
-    class TabPageHandler
+    public partial class UnifiedGuiForm //Julius
     {
-        //Julius - New Code
-        public void MakeNewTabs() // Proof-Of-Concept
-        {
-            TabControl thisTabControl;
-            TabPage basicTabPage;
-
-            thisTabControl = new TabControl(); // ny TabControl
-            basicTabPage = new TabPage(); // ny TabPage
-
-            //thisTabControl.Controls.Add(basicTabPage);
-
-            TabPage advancedTabPage;
-            advancedTabPage = basicTabPage; //sætter den nye til at være den samme
-            //advancedTabPage = (stuff+advancedTabPage)
-            thisTabControl.Controls.Add(advancedTabPage);
-            // [...]
-            //nu vil vi gerne opdatere
-            TabPage newAdvancedTabPage;
-            newAdvancedTabPage = basicTabPage;
-            //newAdvancedTabPage = (stuff+newAdvancedTabPage)
-            int targetLocation = thisTabControl.TabPages.IndexOf(advancedTabPage);
-            thisTabControl.TabPages.Remove(advancedTabPage);
-            thisTabControl.TabPages.Insert(targetLocation, newAdvancedTabPage);
-
-            //UnifiedGuiForm.Controls.Add(thisTabControl); //Tilføjer tabcontrol til formen
-        }
-
         public void makeNewTabPageController()
         {
-            List<string> keyOfNewTabs = new List<string>();
-            keyOfNewTabs.Add("Sag");
-            keyOfNewTabs.Add("Advokat");
-            keyOfNewTabs.Add("Klient");
-            keyOfNewTabs.Add("Ydelse");
+            List<string> keyOfNewTabs = new List<string>
+            {
+                "Sag", "Advokat", "Klient", "Ydelse"
+            };
             Dictionary<string, string> tabsToAdd = ReturnTabsToAdd(keyOfNewTabs);
 
             foreach (string currentKey in keyOfNewTabs)
@@ -74,15 +46,15 @@ namespace GUI
             int targetLocation;
             try
             {
-                targetLocation = UnifiedGuiForm.DynamicTabControl.TabPages.IndexOfKey(newPage.Name);
-                UnifiedGuiForm.DynamicTabControl.TabPages.RemoveByKey(newPage.Name);
+                targetLocation = DynamicTabControl.TabPages.IndexOfKey(newPage.Name);
+                DynamicTabControl.TabPages.RemoveByKey(newPage.Name);
             }
             catch (Exception e)
             {
-                targetLocation = UnifiedGuiForm.DynamicTabControl.TabPages.Count;
+                targetLocation = DynamicTabControl.TabPages.Count;
                 throw new Exception("No TAb Found by That Name, making new tab");
             }
-            UnifiedGuiForm.DynamicTabControl.TabPages.Insert(targetLocation, newPage);
+            DynamicTabControl.TabPages.Insert(targetLocation, newPage);
         }
         private TabPage LoadNewTabPageFromTemplate(string TabName, string TabText)
         {
@@ -90,12 +62,50 @@ namespace GUI
             TabBuilderHelper(newTabPage);
             newTabPage.Name = TabName;
             newTabPage.Text = TabText;
+            //newTabPage.TabIndex = 10; //ved ikke hvad denne gør
             return newTabPage;
         }
-        private void TabBuilderHelper(TabPage newTabPage) //Her puttes constructoren ind
-        {
-
+        private void TabBuilderHelper(TabPage newTabPage)
+        { //evt skift buttoms'nes "TabIndex"
+            newTabPage.Controls.Add(this.buttonHelpMe);
+            newTabPage.Controls.Add(this.buttomAddNewObject);
+            newTabPage.Controls.Add(this.buttonAnnuller);
+            newTabPage.Controls.Add(this.buttomSave);
+            newTabPage.Controls.Add(this.dropdownCombobox);
+            newTabPage.Controls.Add(this.buttomRefresh);
+            newTabPage.Controls.Add(this.myObjectListView);
+            newTabPage.UseVisualStyleBackColor = true;
         }
+
+
+        // Proof-Of-Concept
+        /*
+        public void MakeNewTabs() 
+        {
+            TabControl thisTabControl;
+            TabPage basicTabPage;
+
+            thisTabControl = new TabControl(); // ny TabControl
+            basicTabPage = new TabPage(); // ny TabPage
+
+            //thisTabControl.Controls.Add(basicTabPage);
+
+            TabPage advancedTabPage;
+            advancedTabPage = basicTabPage; //sætter den nye til at være den samme
+            //advancedTabPage = (stuff+advancedTabPage)
+            thisTabControl.Controls.Add(advancedTabPage);
+            // [...]
+            //nu vil vi gerne opdatere
+            TabPage newAdvancedTabPage;
+            newAdvancedTabPage = basicTabPage;
+            //newAdvancedTabPage = (stuff+newAdvancedTabPage)
+            int targetLocation = thisTabControl.TabPages.IndexOf(advancedTabPage);
+            thisTabControl.TabPages.Remove(advancedTabPage);
+            thisTabControl.TabPages.Insert(targetLocation, newAdvancedTabPage);
+
+            Controls.Add(thisTabControl); //Tilføjer tabcontrol til formen
+        }
+        */
 
 
         //Virker ikke da TabPage virker som en REFERANCE og ikke et object
