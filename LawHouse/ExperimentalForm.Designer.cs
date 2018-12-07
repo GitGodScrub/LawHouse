@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DynamicTabControl = new System.Windows.Forms.TabControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dynamicTabControl = new System.Windows.Forms.TabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
+            this.startPictureBox = new System.Windows.Forms.PictureBox();
             this.tabSag = new System.Windows.Forms.TabPage();
             this.tabAdvokat = new System.Windows.Forms.TabPage();
             this.tabKlient = new System.Windows.Forms.TabPage();
             this.tabYdelse = new System.Windows.Forms.TabPage();
-            this.tabClickHereFirst = new System.Windows.Forms.TabPage();
+            this.tabDebugTab = new System.Windows.Forms.TabPage();
             this.buttonHelpMe = new System.Windows.Forms.Button();
             this.buttomAddNewObject = new System.Windows.Forms.Button();
             this.buttonAnnuller = new System.Windows.Forms.Button();
@@ -43,32 +43,40 @@
             this.dropdownCombobox = new System.Windows.Forms.ComboBox();
             this.buttomRefresh = new System.Windows.Forms.Button();
             this.myObjectListView = new BrightIdeasSoftware.ObjectListView();
-            this.DynamicTabControl.SuspendLayout();
+            this.tabOpretSag = new System.Windows.Forms.TabPage();
+            this.tabOpretAdvokat = new System.Windows.Forms.TabPage();
+            this.tabOpretKlient = new System.Windows.Forms.TabPage();
+            this.tabOpretYdelse = new System.Windows.Forms.TabPage();
+            this.dynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabClickHereFirst.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startPictureBox)).BeginInit();
+            this.tabDebugTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).BeginInit();
             this.SuspendLayout();
             // 
-            // DynamicTabControl
+            // dynamicTabControl
             // 
-            this.DynamicTabControl.Controls.Add(this.tabStart);
-            this.DynamicTabControl.Controls.Add(this.tabSag);
-            this.DynamicTabControl.Controls.Add(this.tabAdvokat);
-            this.DynamicTabControl.Controls.Add(this.tabKlient);
-            this.DynamicTabControl.Controls.Add(this.tabYdelse);
-            this.DynamicTabControl.Controls.Add(this.tabClickHereFirst);
-            this.DynamicTabControl.ItemSize = new System.Drawing.Size(170, 20);
-            this.DynamicTabControl.Location = new System.Drawing.Point(11, 11);
-            this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(2);
-            this.DynamicTabControl.Name = "DynamicTabControl";
-            this.DynamicTabControl.SelectedIndex = 0;
-            this.DynamicTabControl.Size = new System.Drawing.Size(1002, 559);
-            this.DynamicTabControl.TabIndex = 0;
+            this.dynamicTabControl.Controls.Add(this.tabStart);
+            this.dynamicTabControl.Controls.Add(this.tabSag);
+            this.dynamicTabControl.Controls.Add(this.tabAdvokat);
+            this.dynamicTabControl.Controls.Add(this.tabKlient);
+            this.dynamicTabControl.Controls.Add(this.tabYdelse);
+            this.dynamicTabControl.Controls.Add(this.tabDebugTab);
+            this.dynamicTabControl.Controls.Add(this.tabOpretSag);
+            this.dynamicTabControl.Controls.Add(this.tabOpretAdvokat);
+            this.dynamicTabControl.Controls.Add(this.tabOpretKlient);
+            this.dynamicTabControl.Controls.Add(this.tabOpretYdelse);
+            this.dynamicTabControl.ItemSize = new System.Drawing.Size(170, 20);
+            this.dynamicTabControl.Location = new System.Drawing.Point(11, 11);
+            this.dynamicTabControl.Margin = new System.Windows.Forms.Padding(2);
+            this.dynamicTabControl.Name = "dynamicTabControl";
+            this.dynamicTabControl.SelectedIndex = 0;
+            this.dynamicTabControl.Size = new System.Drawing.Size(1002, 559);
+            this.dynamicTabControl.TabIndex = 0;
             // 
             // tabStart
             // 
-            this.tabStart.Controls.Add(this.pictureBox1);
+            this.tabStart.Controls.Add(this.startPictureBox);
             this.tabStart.Location = new System.Drawing.Point(4, 24);
             this.tabStart.Margin = new System.Windows.Forms.Padding(2);
             this.tabStart.Name = "tabStart";
@@ -77,15 +85,15 @@
             this.tabStart.Text = "Startside";
             this.tabStart.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // startPictureBox
             // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.images_første_forsøg_Tydeligt_500x500;
-            this.pictureBox1.Location = new System.Drawing.Point(238, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(499, 497);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.startPictureBox.Image = global::GUI.Properties.Resources.images_første_forsøg_Tydeligt_500x500;
+            this.startPictureBox.Location = new System.Drawing.Point(238, 15);
+            this.startPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.startPictureBox.Name = "startPictureBox";
+            this.startPictureBox.Size = new System.Drawing.Size(499, 497);
+            this.startPictureBox.TabIndex = 0;
+            this.startPictureBox.TabStop = false;
             // 
             // tabSag
             // 
@@ -123,22 +131,22 @@
             this.tabYdelse.Text = "Ydelse";
             this.tabYdelse.UseVisualStyleBackColor = true;
             // 
-            // tabClickHereFirst
+            // tabDebugTab
             // 
-            this.tabClickHereFirst.Controls.Add(this.buttonHelpMe);
-            this.tabClickHereFirst.Controls.Add(this.buttomAddNewObject);
-            this.tabClickHereFirst.Controls.Add(this.buttonAnnuller);
-            this.tabClickHereFirst.Controls.Add(this.buttomSave);
-            this.tabClickHereFirst.Controls.Add(this.dropdownCombobox);
-            this.tabClickHereFirst.Controls.Add(this.buttomRefresh);
-            this.tabClickHereFirst.Controls.Add(this.myObjectListView);
-            this.tabClickHereFirst.Location = new System.Drawing.Point(4, 24);
-            this.tabClickHereFirst.Name = "tabClickHereFirst";
-            this.tabClickHereFirst.Padding = new System.Windows.Forms.Padding(3);
-            this.tabClickHereFirst.Size = new System.Drawing.Size(994, 531);
-            this.tabClickHereFirst.TabIndex = 10;
-            this.tabClickHereFirst.Text = "ClickHereFirst";
-            this.tabClickHereFirst.UseVisualStyleBackColor = true;
+            this.tabDebugTab.Controls.Add(this.buttonHelpMe);
+            this.tabDebugTab.Controls.Add(this.buttomAddNewObject);
+            this.tabDebugTab.Controls.Add(this.buttonAnnuller);
+            this.tabDebugTab.Controls.Add(this.buttomSave);
+            this.tabDebugTab.Controls.Add(this.dropdownCombobox);
+            this.tabDebugTab.Controls.Add(this.buttomRefresh);
+            this.tabDebugTab.Controls.Add(this.myObjectListView);
+            this.tabDebugTab.Location = new System.Drawing.Point(4, 24);
+            this.tabDebugTab.Name = "tabDebugTab";
+            this.tabDebugTab.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDebugTab.Size = new System.Drawing.Size(994, 531);
+            this.tabDebugTab.TabIndex = 10;
+            this.tabDebugTab.Text = "DebugTab";
+            this.tabDebugTab.UseVisualStyleBackColor = true;
             // 
             // buttonHelpMe
             // 
@@ -217,20 +225,57 @@
             this.myObjectListView.View = System.Windows.Forms.View.Details;
             this.myObjectListView.SelectedIndexChanged += new System.EventHandler(this.myObjectListView_SelectedIndexChanged);
             // 
+            // tabOpretSag
+            // 
+            this.tabOpretSag.Location = new System.Drawing.Point(4, 24);
+            this.tabOpretSag.Name = "tabOpretSag";
+            this.tabOpretSag.Size = new System.Drawing.Size(994, 531);
+            this.tabOpretSag.TabIndex = 11;
+            this.tabOpretSag.Text = "OpretSag";
+            this.tabOpretSag.UseVisualStyleBackColor = true;
+            // 
+            // tabOpretAdvokat
+            // 
+            this.tabOpretAdvokat.Location = new System.Drawing.Point(4, 24);
+            this.tabOpretAdvokat.Name = "tabOpretAdvokat";
+            this.tabOpretAdvokat.Size = new System.Drawing.Size(994, 531);
+            this.tabOpretAdvokat.TabIndex = 12;
+            this.tabOpretAdvokat.Text = "OpretAdvokat";
+            this.tabOpretAdvokat.UseVisualStyleBackColor = true;
+            // 
+            // tabOpretKlient
+            // 
+            this.tabOpretKlient.Location = new System.Drawing.Point(4, 24);
+            this.tabOpretKlient.Name = "tabOpretKlient";
+            this.tabOpretKlient.Size = new System.Drawing.Size(994, 531);
+            this.tabOpretKlient.TabIndex = 13;
+            this.tabOpretKlient.Text = "OpretKlient";
+            this.tabOpretKlient.UseVisualStyleBackColor = true;
+            // 
+            // tabOpretYdelse
+            // 
+            this.tabOpretYdelse.Location = new System.Drawing.Point(4, 24);
+            this.tabOpretYdelse.Name = "tabOpretYdelse";
+            this.tabOpretYdelse.Size = new System.Drawing.Size(994, 531);
+            this.tabOpretYdelse.TabIndex = 14;
+            this.tabOpretYdelse.Text = "OpretYdelse";
+            this.tabOpretYdelse.UseVisualStyleBackColor = true;
+            // 
             // ExperimentalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1040, 723);
-            this.Controls.Add(this.DynamicTabControl);
+            this.Controls.Add(this.dynamicTabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ExperimentalForm";
             this.Text = "ExperimentalForm";
             this.Load += new System.EventHandler(this.ExperimentalForm_Load);
-            this.DynamicTabControl.ResumeLayout(false);
+            this.dynamicTabControl.ResumeLayout(false);
             this.tabStart.ResumeLayout(false);
-            this.tabClickHereFirst.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.startPictureBox)).EndInit();
+            this.tabDebugTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).EndInit();
             this.ResumeLayout(false);
 
@@ -238,14 +283,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl DynamicTabControl;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabControl dynamicTabControl;
+        private System.Windows.Forms.PictureBox startPictureBox;
         private System.Windows.Forms.TabPage tabStart;
         private System.Windows.Forms.TabPage tabSag;
         private System.Windows.Forms.TabPage tabAdvokat;
         private System.Windows.Forms.TabPage tabKlient;
         private System.Windows.Forms.TabPage tabYdelse;
-        private System.Windows.Forms.TabPage tabClickHereFirst;
+        private System.Windows.Forms.TabPage tabDebugTab;
         private System.Windows.Forms.ComboBox dropdownCombobox;
         private System.Windows.Forms.Button buttomRefresh;
         private BrightIdeasSoftware.ObjectListView myObjectListView;
@@ -253,5 +298,9 @@
         private System.Windows.Forms.Button buttomAddNewObject;
         private System.Windows.Forms.Button buttonAnnuller;
         private System.Windows.Forms.Button buttomSave;
+        private System.Windows.Forms.TabPage tabOpretSag;
+        private System.Windows.Forms.TabPage tabOpretAdvokat;
+        private System.Windows.Forms.TabPage tabOpretKlient;
+        private System.Windows.Forms.TabPage tabOpretYdelse;
     }
 }

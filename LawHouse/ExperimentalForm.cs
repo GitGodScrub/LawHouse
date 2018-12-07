@@ -19,53 +19,58 @@ namespace GUI
     {
         public ExperimentalForm()
         {
-            InitializeComponent();
-        }
+            InitializeComponent();//Her oprettes formen
 
+            List<string> tabsToHide = new List<string>();
+            tabsToHide.Add("Opret_sag");
+            tabsToHide.Add("Opret_advokat");
+            tabsToHide.Add("Opret_klient");
+            tabsToHide.Add("Opret_ydelse");
+            tabsToHide.Add("tabDebugTab");
+            hideTabs(tabsToHide);
+
+        }
+        //
+        //TabControler = dynamicTabControl
+        //
+        //
         private void ExperimentalForm_Load(object sender, EventArgs e)
         {
             
         }
 
-        //Juilus Herunder
-
         // ObjectListView myObjectListView;
         private void buttomAddNewObject_Click(object sender, EventArgs e) //virker ikke da den skal skifte til en ikke-eksisterende tab
         {
-            string[] tabsToHide = new string[0]; //Debug
-            hideTabs(tabsToHide); //Debug
             TabPage toSwitchTo = null;
-            switch (DynamicTabControl.SelectedTab.Name)
+            switch (dynamicTabControl.SelectedTab.Name)
             {
                 case "Sag":
-                    //toSwitchTo = Opret_sag;
+                    dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretSag);
+                    toSwitchTo = tabOpretSag;
                     break;
                 case "Advokat":
-                    //toSwitchTo = Opret_advokat;
+                    dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretAdvokat);
+                    toSwitchTo = tabOpretAdvokat;
                     break;
                 case "Klient":
-                    //toSwitchTo = Opret_klient;
+                    dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretKlient);
+                    toSwitchTo = tabOpretKlient;
                     break;
                 case "Ydelse":
-                    //toSwitchTo = Opret_ydelse;
+                    dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretYdelse);
+                    toSwitchTo = tabOpretYdelse;
                     break;
             }
-            //toSwitchTo = Opret_sag;//debug
-            DynamicTabControl.SelectedTab = toSwitchTo;
+            toSwitchTo = tabOpretSag;//debug
+            dynamicTabControl.SelectedTab = toSwitchTo;
         }
 
-        private void hideTabs(string[] tabsToHide)
+        private void hideTabs(List<string> tabsToHide)
         {
-            //
-            tabsToHide = new string[4];
-            tabsToHide[0] = "Opret_sag";
-            tabsToHide[1] = "Opret_advokat";
-            tabsToHide[2] = "Opret_klient";
-            tabsToHide[3] = "Opret_ydelse";
-            // Temp. Debug
             foreach (string tabKey in tabsToHide)
             {
-                DynamicTabControl.TabPages.RemoveByKey(tabKey);
+                dynamicTabControl.TabPages.RemoveByKey(tabKey);
             }
         }
 
@@ -109,7 +114,7 @@ namespace GUI
             //reload current objectViewList
         }
 
-        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//delete dis (?)
+        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -46,15 +46,15 @@ namespace GUI
             int targetLocation;
             try
             {
-                targetLocation = DynamicTabControl.TabPages.IndexOfKey(newPage.Name);
-                DynamicTabControl.TabPages.RemoveByKey(newPage.Name);
+                targetLocation = dynamicTabControl.TabPages.IndexOfKey(newPage.Name);
+                dynamicTabControl.TabPages.RemoveByKey(newPage.Name);
             }
             catch (Exception e)
             {
-                targetLocation = DynamicTabControl.TabPages.Count;
+                targetLocation = dynamicTabControl.TabPages.Count;
                 throw new Exception("No TAb Found by That Name, making new tab");
             }
-            DynamicTabControl.TabPages.Insert(targetLocation, newPage);
+            dynamicTabControl.TabPages.Insert(targetLocation, newPage);
         }
         private TabPage LoadNewTabPageFromTemplate(string TabName, string TabText)
         {
@@ -138,9 +138,9 @@ namespace GUI
 
         private void ReplaceTabPage(TabPage newPage)
         {
-            int targetLocation = DynamicTabControl.TabPages.IndexOfKey(newPage.Name);
-            DynamicTabControl.TabPages.RemoveByKey(newPage.Name);
-            DynamicTabControl.TabPages.Insert(targetLocation, newPage);
+            int targetLocation = dynamicTabControl.TabPages.IndexOfKey(newPage.Name);
+            dynamicTabControl.TabPages.RemoveByKey(newPage.Name);
+            dynamicTabControl.TabPages.Insert(targetLocation, newPage);
         }
         private TabPage CreateDefaultTabPage()
         {
