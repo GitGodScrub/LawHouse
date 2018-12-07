@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms; 
 using BusinessLogic;
-using DataAccess;
 using DataClassLib;
+
 
 namespace GUI
 {
     public partial class Startside : Form
-    {         
+    {   
+      //  private static IDataClassLib currentDatabseInstance = Controller.Indstance();
         public Startside()
         {
             InitializeComponent();

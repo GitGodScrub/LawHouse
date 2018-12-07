@@ -12,6 +12,16 @@ namespace BusinessLogic
 
     public class Controller
     {
+        private static Controller _controller = null;
+        private Controller () { }
+        public static Controller Indstance()
+        {
+            if (_controller == null)
+            {
+                _controller = new Controller();
+            }
+            return _controller;
+        }
         private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance(); //Sql Database
         //private static IDatabase currentDatabaseInstance = new DummyDatabase(); //Xml Database
 
