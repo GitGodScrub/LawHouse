@@ -52,23 +52,24 @@ namespace GUI
             MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
         }
 
-        //Koden under til opret advokat
-        private void btn_CreateAdvokat_Click(object sender, EventArgs e)
-        {
-            string navn = txt_Advokat_AdvokatNavn.Text;
-            Controller.CreateAdvokat(navn);
-            MessageBox.Show("Oprettet.");
-            txt_Advokat_AdvokatNavn.Clear();
-        }
-        private void btn_AddSpecialToAdvokat_Click(object sender, EventArgs e)
-        {
-            string specialeNavn = txt_Advokat_SpecialeNavn.Text;
-            int advokatId = Convert.ToInt32(txt_Advokat_AdvokatId.Text);
-            Controller.AddSpecialToAdvokat(specialeNavn, advokatId);
-            MessageBox.Show("Speciale tilføjet.");
-            txt_Advokat_SpecialeNavn.Clear();
-            txt_Advokat_AdvokatId.Clear();
-        }
+        ////Koden under til opret advokat
+        //private void btn_CreateAdvokat_Click(object sender, EventArgs e)
+        //{
+        //    string navn = txt_Advokat_AdvokatNavn.Text;
+        //    Controller.CreateAdvokat(navn);
+        //    MessageBox.Show("Oprettet.");
+        //    txt_Advokat_AdvokatNavn.Clear();
+        //}
+        //private void btn_AddSpecialToAdvokat_Click(object sender, EventArgs e)
+        //{
+        //    string specialeNavn = txt_Advokat_SpecialeNavn.Text;
+        //    int advokatId = Convert.ToInt32(txt_Advokat_AdvokatId.Text);
+        //    Controller.AddSpecialToAdvokat(specialeNavn, advokatId);
+        //    MessageBox.Show("Speciale tilføjet.");
+        //    txt_Advokat_SpecialeNavn.Clear();
+        //    txt_Advokat_AdvokatId.Clear();
+        //}
+
         //Koden under er til Klient
         private void btn_OpretKlient(object sender, EventArgs e)
         {
