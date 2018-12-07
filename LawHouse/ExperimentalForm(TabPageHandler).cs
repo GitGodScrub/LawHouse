@@ -66,7 +66,20 @@ namespace GUI
             return newTabPage;
         }
         private void TabBuilderHelper(TabPage newTabPage)
-        { //evt skift buttoms'nes "TabIndex"
+        {
+            newTabPage.Controls.Add(GetItem(, "buttonHelpMe"));
+            newTabPage.Controls.Add(GetItem(, "buttomAddNewObject"));
+            newTabPage.Controls.Add(GetItem(, "buttonAnnuller"));
+            newTabPage.Controls.Add(GetItem(, "buttomSave"));
+            newTabPage.Controls.Add(GetItem(, "dropdownCombobox"));
+            newTabPage.Controls.Add(GetItem(, "buttomRefresh"));
+            newTabPage.Controls.Add(GetItem(, "myObjectListView"));
+            newTabPage.UseVisualStyleBackColor = true;
+        }
+
+        /*
+        private void TabBuilderHelper(TabPage newTabPage) //Old Prototype
+        {
             newTabPage.Controls.Add(this.buttonHelpMe);
             newTabPage.Controls.Add(this.buttomAddNewObject);
             newTabPage.Controls.Add(this.buttonAnnuller);
@@ -76,7 +89,7 @@ namespace GUI
             newTabPage.Controls.Add(this.myObjectListView);
             newTabPage.UseVisualStyleBackColor = true;
         }
-
+        */
 
         // Proof-Of-Concept
         /*

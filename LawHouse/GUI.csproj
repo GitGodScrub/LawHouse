@@ -79,6 +79,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDrop.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ExperimentalForm%28NewItem%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ExperimentalForm%28OpretItem%29.cs">
       <SubType>Form</SubType>
     </Compile>
