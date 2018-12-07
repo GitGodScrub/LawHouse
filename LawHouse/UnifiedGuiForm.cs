@@ -45,12 +45,12 @@ namespace GUI
         } //Startup
 
 
-        //Tab index 1 //Hvad der sker når man klikker på tabs'ne
-        private void btn_Create_Click(object sender, EventArgs e)
-        {
-            Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
-            MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
-        }
+        ////Tab index 1 //Hvad der sker når man klikker på tabs'ne
+        //private void btn_Create_Click(object sender, EventArgs e)
+        //{
+        //    Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
+        //    MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
+        //}
 
         ////Koden under til opret advokat
         //private void btn_CreateAdvokat_Click(object sender, EventArgs e)
@@ -70,23 +70,25 @@ namespace GUI
         //    txt_Advokat_AdvokatId.Clear();
         //}
 
-        //Koden under er til Klient
-        private void btn_OpretKlient(object sender, EventArgs e)
-        {
-            string navn = Txt_Klient_navn.Text;
-            string Adresse = Txt_Klient_Adresse.Text;
-            string TelefonNr = Txt_Klient_TelefonNr.Text;
-            Controller.CreateKlient(navn, Adresse, TelefonNr);
-            MessageBox.Show("Oprettet");
-            Txt_Klient_navn.Clear();
-            Txt_Klient_Adresse.Clear();
-            Txt_Klient_TelefonNr.Clear();
-        }
-        private void btn_opret_ydelse(object sender, EventArgs e)
-        {
-            Controller.CreateYdelse(txt_ydelse_startdato.Text, txt_ydelse_beskrivelse.Text, txt_ydelse_Pris.Text, txt_ydelse_timer.Text, Convert.ToInt32(txt_ydelse_sagsNr.Text), Convert.ToInt32(txt_ydelse_AdvokatID.Text));
-            MessageBox.Show("Ydelsen er nu oprettet");
-        }
+        ////Koden under er til Klient
+        //private void btn_OpretKlient(object sender, EventArgs e)
+        //{
+        //    string navn = Txt_Klient_navn.Text;
+        //    string Adresse = Txt_Klient_Adresse.Text;
+        //    string TelefonNr = Txt_Klient_TelefonNr.Text;
+        //    Controller.CreateKlient(navn, Adresse, TelefonNr);
+        //    MessageBox.Show("Oprettet");
+        //    Txt_Klient_navn.Clear();
+        //    Txt_Klient_Adresse.Clear();
+        //    Txt_Klient_TelefonNr.Clear();
+        //}
+        //private void btn_opret_ydelse(object sender, EventArgs e)
+        //{
+        //    Controller.CreateYdelse(txt_ydelse_startdato.Text, txt_ydelse_beskrivelse.Text, txt_ydelse_Pris.Text, txt_ydelse_timer.Text, Convert.ToInt32(txt_ydelse_sagsNr.Text), Convert.ToInt32(txt_ydelse_AdvokatID.Text));
+        //    MessageBox.Show("Ydelsen er nu oprettet");
+        //}
+
+
         //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
         //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
         //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
@@ -116,67 +118,67 @@ namespace GUI
             }
             MessageBox.Show("færdig");
         }
-        private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e) //Daniella(?)
-        {
-            ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
-            switch (listItem.What_type)
-            {
+        //private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e) //Daniella(?)
+        //{
+        //    ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+        //    switch (listItem.What_type)
+        //    {
 
-                case "Klient":
-                    theObjectListView.SetObjects(Controller.GetAllKlient());
-                    foreach (var item in theObjectListView.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                    KlientNr.IsVisible = true;
-                    Navn.IsVisible = true;
-                    Adresse.IsVisible = true;
-                    TelefonNr.IsVisible = true;
-                    break;
+        //        case "Klient":
+        //            theObjectListView.SetObjects(Controller.GetAllKlient());
+        //            foreach (var item in theObjectListView.AllColumns)
+        //            {
+        //                item.IsVisible = false;
+        //            }
+        //            KlientNr.IsVisible = true;
+        //            Navn.IsVisible = true;
+        //            Adresse.IsVisible = true;
+        //            TelefonNr.IsVisible = true;
+        //            break;
 
-                case "Sag":
-                    theObjectListView.SetObjects(Controller.GetAllSag());
-                    foreach (var item in theObjectListView.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                    SagsNr.IsVisible = true;
-                    Arbejdstitel.IsVisible = true;
-                    StartDate.IsVisible = true;
-                    Slutdate.IsVisible = true;
-                    TimeEstimat.IsVisible = true;
-                    SagsBeskrivelse.IsVisible = true;
-                    InterneNoter.IsVisible = true;
-                    KlientNr.IsVisible = true;
-                    MedarbejderNr.IsVisible = true;
-                    YdelsesTypeNr.IsVisible = true;
-                    break;
-                case "Advokat":
-                    theObjectListView.SetObjects(Controller.GetAllAdvokat());
-                    foreach (var item in theObjectListView.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                    MedarbejderNr.IsVisible = true;
-                    Advokat_navn.IsVisible = true;
-                    break;
-                case "Ydelse":
-                    theObjectListView.SetObjects(Controller.GetAllYdelses());
-                    foreach (var item in theObjectListView.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                    YdelsesNr.IsVisible = true;
-                    StartDate.IsVisible = true;
-                    YdelseBeskrivelse.IsVisible = true;
-                    Pris.IsVisible = true;
-                    Timer.IsVisible = true;
-                    SagsNr.IsVisible = true;
-                    AdvokatID.IsVisible = true;
-                    break;
-            }
-            theObjectListView.RebuildColumns();
-        }
+        //        case "Sag":
+        //            theObjectListView.SetObjects(Controller.GetAllSag());
+        //            foreach (var item in theObjectListView.AllColumns)
+        //            {
+        //                item.IsVisible = false;
+        //            }
+        //            SagsNr.IsVisible = true;
+        //            Arbejdstitel.IsVisible = true;
+        //            StartDate.IsVisible = true;
+        //            Slutdate.IsVisible = true;
+        //            TimeEstimat.IsVisible = true;
+        //            SagsBeskrivelse.IsVisible = true;
+        //            InterneNoter.IsVisible = true;
+        //            KlientNr.IsVisible = true;
+        //            MedarbejderNr.IsVisible = true;
+        //            YdelsesTypeNr.IsVisible = true;
+        //            break;
+        //        case "Advokat":
+        //            theObjectListView.SetObjects(Controller.GetAllAdvokat());
+        //            foreach (var item in theObjectListView.AllColumns)
+        //            {
+        //                item.IsVisible = false;
+        //            }
+        //            MedarbejderNr.IsVisible = true;
+        //            Advokat_navn.IsVisible = true;
+        //            break;
+        //        case "Ydelse":
+        //            theObjectListView.SetObjects(Controller.GetAllYdelses());
+        //            foreach (var item in theObjectListView.AllColumns)
+        //            {
+        //                item.IsVisible = false;
+        //            }
+        //            YdelsesNr.IsVisible = true;
+        //            StartDate.IsVisible = true;
+        //            YdelseBeskrivelse.IsVisible = true;
+        //            Pris.IsVisible = true;
+        //            Timer.IsVisible = true;
+        //            SagsNr.IsVisible = true;
+        //            AdvokatID.IsVisible = true;
+        //            break;
+        //    }
+        //    theObjectListView.RebuildColumns();
+        //}
         private void UnifiedGuiForm_Load(object sender, EventArgs e)//DO NOT (?) delete dis
         {
 
