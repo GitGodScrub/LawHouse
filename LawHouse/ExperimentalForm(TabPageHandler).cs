@@ -59,21 +59,22 @@ namespace GUI
         private TabPage LoadNewTabPageFromTemplate(string TabName, string TabText)
         {
             TabPage newTabPage = new TabPage();
-            TabBuilderHelper(newTabPage);
             newTabPage.Name = TabName;
             newTabPage.Text = TabText;
+            TabBuilderHelper(newTabPage);
             //newTabPage.TabIndex = 10; //ved ikke hvad denne gør
             return newTabPage;
         }
         private void TabBuilderHelper(TabPage newTabPage)
         {
-            newTabPage.Controls.Add(GetItem(, "buttonHelpMe"));
-            newTabPage.Controls.Add(GetItem(, "buttomAddNewObject"));
-            newTabPage.Controls.Add(GetItem(, "buttonAnnuller"));
-            newTabPage.Controls.Add(GetItem(, "buttomSave"));
-            newTabPage.Controls.Add(GetItem(, "dropdownCombobox"));
-            newTabPage.Controls.Add(GetItem(, "buttomRefresh"));
-            newTabPage.Controls.Add(GetItem(, "myObjectListView"));
+            string currentPageName = Convert.ToString(newTabPage.Name);
+            newTabPage.Controls.Add(GetItem(currentPageName, "buttonHelpMe"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "buttomAddNewObject"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "buttonAnnuller"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "buttomSave"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "dropdownCombobox"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "buttomRefresh"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "myObjectListView"));
             newTabPage.UseVisualStyleBackColor = true;
         }
 

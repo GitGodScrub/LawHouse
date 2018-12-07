@@ -11,33 +11,34 @@ namespace GUI
     public partial class ExperimentalForm //Julius(Port) - andre(design)
     {
         //Laver nye Items til brug i GUI'en
+        //Man skal altid have "Basic Buttons"-so to say, som har events'ne på sig
         public object GetItem(string Name, string Type)//skal måske laves om
         {
             object newItem = new object();
             switch (Type)
             {
                 case "buttonHelpMe":
-                    newItem = GetButtonHelpMe(Name);
+                    newItem = GetButtonHelpMe(Name + Type);
                     break;
                 case "buttomAddNewObject":
-                    newItem = GetButtomAddNewObjectButton(Name);
+                    newItem = GetButtomAddNewObjectButton(Name + Type);
                     break;
                 case "buttonAnnuller":
-                    newItem = GetButtonAnnuller(Name);
+                    newItem = GetButtonAnnuller(Name + Type);
                     break;
                 case "buttomSave":
-                    newItem = GetButtomSave(Name);
+                    newItem = GetButtomSave(Name + Type);
                     break;
                 case "buttomRefresh":
-                    newItem = GetButtomRefresh(Name);
+                    newItem = GetButtomRefresh(Name + Type);
                     break;
 
                 case "dropdownCombobox":
-                    newItem = GetDropdownCombobox(Name);
+                    newItem = GetDropdownCombobox(Name + Type);
                     break;
 
                 case "myObjectListView":
-                    newItem = GetMyObjectListView(Name);
+                    newItem = GetMyObjectListView(Name + Type);
                     break;
             }
             return newItem;
@@ -71,14 +72,14 @@ namespace GUI
         private Button GetButtomAddNewObjectButton(string Name)
         {
             Button newButton = new Button();
-            this.buttomAddNewObject.Location = new System.Drawing.Point(395, 8);
-            this.buttomAddNewObject.Margin = new System.Windows.Forms.Padding(5);
-            this.buttomAddNewObject.Name = Name;
-            this.buttomAddNewObject.Size = new System.Drawing.Size(149, 45);
-            this.buttomAddNewObject.TabIndex = 5;
-            this.buttomAddNewObject.Text = "AddNewObject";
-            this.buttomAddNewObject.UseVisualStyleBackColor = true;
-            //this.buttomAddNewObject.Click += new System.EventHandler(this.buttomAddNewObject_Click);
+            newButton.Location = new System.Drawing.Point(395, 8);
+            newButton.Margin = new System.Windows.Forms.Padding(5);
+            newButton.Name = Name;
+            newButton.Size = new System.Drawing.Size(149, 45);
+            newButton.TabIndex = 5;
+            newButton.Text = "AddNewObject";
+            newButton.UseVisualStyleBackColor = true;
+            newButton.Click += new System.EventHandler(this.buttomAddNewObject_Click);
             return newButton;
         }
         private Button GetButtonHelpMe(string name)
@@ -91,7 +92,7 @@ namespace GUI
             newButton.TabIndex = 6;
             newButton.Text = "HelpMe";
             newButton.UseVisualStyleBackColor = true;
-            //newButton.Click += new System.EventHandler(this.buttonHelpMe_Click);
+            newButton.Click += new System.EventHandler(this.buttonHelpMe_Click);
             return newButton;
         }
 
