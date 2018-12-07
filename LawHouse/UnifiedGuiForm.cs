@@ -89,35 +89,35 @@ namespace GUI
         //}
 
 
-        //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
-        //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
-        //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
-        private void btn_Update_Click(object sender, EventArgs e)//Daniella (?)
-        {
-            foreach (object item in theObjectListView.Objects)
-            {
+        ////Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
+        ////det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
+        ////Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
+        //private void btn_Update_Click(object sender, EventArgs e)//Daniella (?)
+        //{
+        //    foreach (object item in theObjectListView.Objects)
+        //    {
 
-                if (item is Sag)
-                {
-                    Controller.UpdateSag(item);
+        //        if (item is Sag)
+        //        {
+        //            Controller.UpdateSag(item);
 
-                }
-                else if (item is Advokat)
-                {
-                    Controller.UpdateAdvokat(item);
-                }
-                else if (item is Ydelse)
-                {
-                    Controller.UpdateYdelse(item);
-                }
-                else if (item is Klient)
-                {
-                    Controller.UpdateKLient(item);
-                }
+        //        }
+        //        else if (item is Advokat)
+        //        {
+        //            Controller.UpdateAdvokat(item);
+        //        }
+        //        else if (item is Ydelse)
+        //        {
+        //            Controller.UpdateYdelse(item);
+        //        }
+        //        else if (item is Klient)
+        //        {
+        //            Controller.UpdateKLient(item);
+        //        }
 
-            }
-            MessageBox.Show("færdig");
-        }
+        //    }
+        //    MessageBox.Show("færdig");
+        //}
         //private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e) //Daniella(?)
         //{
         //    ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;

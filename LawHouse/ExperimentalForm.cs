@@ -85,8 +85,21 @@ namespace GUI
         {
             //Discard changes
         }
+        private void buttomRefresh_Click(object sender, EventArgs e)
+        {
+            //reload current objectViewList
+        }
 
-        private void buttomSave_Click(object sender, EventArgs e)//stjålet fra btn_Update_Click / Daniella
+        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//  ?
+        {
+
+        }
+
+        //Daniella's kommentarer  //Har ikke nærlæst disse
+        //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
+        //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
+        //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
+        private void buttomSave_Click(object sender, EventArgs e)// Daniella
         {
             foreach (object item in myObjectListView.Objects)
             {
@@ -110,18 +123,8 @@ namespace GUI
             }
             MessageBox.Show("Færdig");
         }//Ved ikke om den faktisk gemmer, eller om den bare refresher
-
-        private void buttomRefresh_Click(object sender, EventArgs e)
-        {
-            //reload current objectViewList
-        }
-
-        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dropdownCombobox_SelectedIndexChanged(object sender, EventArgs e) //Daniella(?)
+        //Har ikke nærlæst denne
+        private void dropdownCombobox_SelectedIndexChanged(object sender, EventArgs e) //Daniella?
         {
             ListItems listItem = (ListItems)dropdownCombobox.SelectedItem;
             switch (listItem.What_type)
@@ -231,5 +234,5 @@ namespace GUI
             Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
             MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
         }
-    }
+    }//Har ikke nærlæst denne
 }

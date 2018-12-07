@@ -111,7 +111,7 @@
     <Compile Include="OpretYdelse.Designer.cs">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPageHandler%28Partial%29.cs">
+    <Compile Include="ExperimentalForm%28TabPageHandler%29.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UnifiedGuiForm.cs">
