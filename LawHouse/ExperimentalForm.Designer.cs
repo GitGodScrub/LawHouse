@@ -200,6 +200,7 @@
             this.dropdownCombobox.Name = "dropdownCombobox";
             this.dropdownCombobox.Size = new System.Drawing.Size(121, 21);
             this.dropdownCombobox.TabIndex = 2;
+            this.dropdownCombobox.SelectedIndexChanged += new System.EventHandler(this.dropdownCombobox_SelectedIndexChanged);
             // 
             // buttomRefresh
             // 

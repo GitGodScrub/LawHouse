@@ -17,17 +17,18 @@ namespace GUI
 {
     public partial class ExperimentalForm : Form
     {
+        private List<string> tabsToHideAtStartup;
         public ExperimentalForm()
         {
             InitializeComponent();//Her oprettes formen
 
-            List<string> tabsToHide = new List<string>();
-            tabsToHide.Add("Opret_sag");
-            tabsToHide.Add("Opret_advokat");
-            tabsToHide.Add("Opret_klient");
-            tabsToHide.Add("Opret_ydelse");
-            tabsToHide.Add("tabDebugTab");
-            hideTabs(tabsToHide);
+            tabsToHideAtStartup = new List<string>();
+            tabsToHideAtStartup.Add("Opret_sag");
+            tabsToHideAtStartup.Add("Opret_advokat");
+            tabsToHideAtStartup.Add("Opret_klient");
+            tabsToHideAtStartup.Add("Opret_ydelse");
+            tabsToHideAtStartup.Add("tabDebugTab");
+            hideTabs(tabsToHideAtStartup);
 
         }
         //
@@ -40,7 +41,7 @@ namespace GUI
         }
 
         // ObjectListView myObjectListView;
-        private void buttomAddNewObject_Click(object sender, EventArgs e) //virker ikke da den skal skifte til en ikke-eksisterende tab
+        private void buttomAddNewObject_Click(object sender, EventArgs e)
         {
             TabPage toSwitchTo = null;
             switch (dynamicTabControl.SelectedTab.Name)
@@ -62,6 +63,7 @@ namespace GUI
                     toSwitchTo = tabOpretYdelse;
                     break;
             }
+            dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretSag); //Debug
             toSwitchTo = tabOpretSag;//debug
             dynamicTabControl.SelectedTab = toSwitchTo;
         }
@@ -107,7 +109,7 @@ namespace GUI
                 }
             }
             MessageBox.Show("Færdig");
-        }
+        }//Ved ikke om den faktisk gemmer, eller om den bare refresher
 
         private void buttomRefresh_Click(object sender, EventArgs e)
         {
@@ -118,5 +120,68 @@ namespace GUI
         {
 
         }
+
+        private void dropdownCombobox_SelectedIndexChanged(object sender, EventArgs e) //Daniella(?)
+        {
+            ListItems listItem = (ListItems)dropdownCombobox.SelectedItem;
+            switch (listItem.What_type)
+            {
+
+                case "Klient":
+                    myObjectListView.SetObjects(Controller.GetAllKlient());
+                    foreach (var item in myObjectListView.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    KlientNr.IsVisible = true;
+                    Navn.IsVisible = true;
+                    Adresse.IsVisible = true;
+                    TelefonNr.IsVisible = true;
+                    break;
+
+                case "Sag":
+                    myObjectListView.SetObjects(Controller.GetAllSag());
+                    foreach (var item in myObjectListView.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    SagsNr.IsVisible = true;
+                    Arbejdstitel.IsVisible = true;
+                    StartDate.IsVisible = true;
+                    Slutdate.IsVisible = true;
+                    TimeEstimat.IsVisible = true;
+                    SagsBeskrivelse.IsVisible = true;
+                    InterneNoter.IsVisible = true;
+                    KlientNr.IsVisible = true;
+                    MedarbejderNr.IsVisible = true;
+                    YdelsesTypeNr.IsVisible = true;
+                    break;
+                case "Advokat":
+                    myObjectListView.SetObjects(Controller.GetAllAdvokat());
+                    foreach (var item in myObjectListView.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    MedarbejderNr.IsVisible = true;
+                    Advokat_navn.IsVisible = true;
+                    break;
+                case "Ydelse":
+                    myObjectListView.SetObjects(Controller.GetAllYdelses());
+                    foreach (var item in myObjectListView.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    YdelsesNr.IsVisible = true;
+                    StartDate.IsVisible = true;
+                    YdelseBeskrivelse.IsVisible = true;
+                    Pris.IsVisible = true;
+                    Timer.IsVisible = true;
+                    SagsNr.IsVisible = true;
+                    AdvokatID.IsVisible = true;
+                    break;
+            }
+            myObjectListView.RebuildColumns();
+        }//Har ikke nærlæst denne
+
     }
 }
