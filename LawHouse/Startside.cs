@@ -16,8 +16,7 @@ namespace GUI
 {
     public partial class Startside : Form
     {   
-      //  private static IDataClassLib currentDatabseInstance = Controller.Indstance();
-        public Startside()
+         public Startside()
         {
             InitializeComponent();
 
