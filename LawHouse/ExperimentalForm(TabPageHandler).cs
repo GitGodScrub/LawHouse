@@ -52,7 +52,7 @@ namespace GUI
             catch (Exception e)
             {
                 targetLocation = dynamicTabControl.TabPages.Count;
-                throw new Exception("No TAb Found by That Name, making new tab");
+                throw new Exception("No tab found by that name, making new tab");
             }
             dynamicTabControl.TabPages.Insert(targetLocation, newPage);
         }
