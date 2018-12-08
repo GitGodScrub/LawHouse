@@ -30,6 +30,7 @@ namespace DataAccess
             {
                 using (SqlCommand com = new SqlCommand())
                 {
+                    
                     com.Connection = conn;
                     try
                     {
@@ -47,8 +48,25 @@ namespace DataAccess
 
         public void CreateSag(Sag sag)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
-            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values('{sag.Arbejdstitel}' , '{sag.StartDato}' ,'{sag.SlutDato}' ,'{sag.Kørselstimer}' ,'{sag.TimeEstimat}' , '{sag.SagsBeskrivelse}',  '{sag.InterneNoter}' , '{sag.KlientNr}', {sag.AdvokatId}, {sag.YdelsesTypeNr})";
-            RunSqlCommand(sqlString);
+            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values(@Arbejdstitel , @Startdato , @SlutDato , @sag.Kørselstimer , @sag.TimeEstimat ,  @sag.SagsBeskrivelse,   @sag.InterneNoter ,  @sag.KlientNr,  @sag.AdvokatId,  @sag.YdelsesTypeNr)";
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
+            {
+                using (SqlCommand com = new SqlCommand(sqlString,conn))
+                {
+                    conn.Open();
+                    com.Parameters.Add(new SqlParameter("Arbejdstitel", sag.Arbejdstitel));
+                    com.Parameters.Add(new SqlParameter("Startdato", sag.StartDato));
+                    com.Parameters.Add(new SqlParameter("SlutDato", sag.SlutDato));
+                    com.Parameters.Add(new SqlParameter("Kørselstimer", sag.Kørselstimer));
+                    com.Parameters.Add(new SqlParameter("TimeEstimat", sag.TimeEstimat));
+                    com.Parameters.Add(new SqlParameter("SagsBeskrivelse", sag.SagsBeskrivelse));
+                    com.Parameters.Add(new SqlParameter("InterneNoter", sag.InterneNoter));
+                    com.Parameters.Add(new SqlParameter("KlientNr", sag.KlientNr));
+                    com.Parameters.Add(new SqlParameter("AdvokatId", sag.AdvokatId));
+                    com.Parameters.Add(new SqlParameter("YdelsesTypeNr", sag.YdelsesTypeNr));
+                }
+            }
+                    RunSqlCommand(sqlString);
         }
         public void UpdateSag(Sag sag)// By Daniella, refactored by Julius
         {
@@ -66,23 +84,23 @@ namespace DataAccess
 
             SqlReader sqRead = new SqlReader();
             List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
-
-            foreach (List<string> x in rawReadValue)
-            {
-                Sag @sag = new Sag();
-                @sag.SagsNr = Convert.ToInt32(x[0]);
-                @sag.Arbejdstitel = x[1];
-                @sag.StartDato = x[2];
-                @sag.SlutDato = x[3];
-                @sag.Kørselstimer = x[4];
-                @sag.TimeEstimat = x[5];
-                @sag.SagsBeskrivelse = x[6];
-                @sag.InterneNoter = x[7];
-                @sag.KlientNr = Convert.ToInt32(x[8]);
-                @sag.AdvokatId = Convert.ToInt32(x[9]);
-                @sag.YdelsesTypeNr = Convert.ToInt32(x[10]);
-                listOfSag.Add(@sag);
-            }
+            
+                foreach (List<string> x in rawReadValue)
+                {
+                    Sag @sag = new Sag();
+                    @sag.SagsNr = Convert.ToInt32(x[0]);
+                    @sag.Arbejdstitel = x[1];
+                    @sag.StartDato = x[2];
+                    @sag.SlutDato = x[3];
+                    @sag.Kørselstimer = x[4];
+                    @sag.TimeEstimat = x[5];
+                    @sag.SagsBeskrivelse = x[6];
+                    @sag.InterneNoter = x[7];
+                    @sag.KlientNr = Convert.ToInt32(x[8]);
+                    @sag.AdvokatId = Convert.ToInt32(x[9]);
+                    @sag.YdelsesTypeNr = Convert.ToInt32(x[10]);
+                    listOfSag.Add(@sag);
+                }
             return listOfSag;
         }
 
@@ -90,6 +108,7 @@ namespace DataAccess
         {
             string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{klient.Navn}', '{klient.Adresse}', '{klient.TelefonNr}')";
             RunSqlCommand(sqlString);
+          
         }
         public void UpdateKlient(Klient klient) // By Thomas
         {
