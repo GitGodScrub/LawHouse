@@ -48,7 +48,7 @@ namespace DataAccess
 
         public void CreateSag(Sag sag)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
-            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values(@Arbejdstitel , @Startdato , @SlutDato , @sag.Kørselstimer , @sag.TimeEstimat ,  @sag.SagsBeskrivelse,   @sag.InterneNoter ,  @sag.KlientNr,  @sag.AdvokatId,  @sag.YdelsesTypeNr)";
+            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values(@Arbejdstitel , @Startdato , @SlutDato , @Kørselstimer , @TimeEstimat ,  @SagsBeskrivelse,   @InterneNoter ,  @KlientNr,  @AdvokatId,  @YdelsesTypeNr)";
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
                 using (SqlCommand com = new SqlCommand(sqlString,conn))
@@ -64,9 +64,10 @@ namespace DataAccess
                     com.Parameters.Add(new SqlParameter("KlientNr", sag.KlientNr));
                     com.Parameters.Add(new SqlParameter("AdvokatId", sag.AdvokatId));
                     com.Parameters.Add(new SqlParameter("YdelsesTypeNr", sag.YdelsesTypeNr));
+                    com.ExecuteNonQuery();
                 }
             }
-                    RunSqlCommand(sqlString);
+                  //  RunSqlCommand(sqlString);
         }
         public void UpdateSag(Sag sag)// By Daniella, refactored by Julius
         {

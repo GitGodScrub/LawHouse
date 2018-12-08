@@ -27,12 +27,13 @@ namespace GUI
             Datetimepicker_Sag_slutdato.Format = DateTimePickerFormat.Custom;
             Datetimepicker_Sag_slutdato.MinDate = DateTime.Today;
             Datetimepicker_Sag_slutdato.CustomFormat = " ";
+            
 
             Sag_drop_YdelseTypeNr.DataSource = Controller.GetAllYdelseType();
             Sag_drop_YdelseTypeNr.DisplayMember = "YdelsesNavn";
-            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+         //   YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
             Sag_drop_YdelseTypeNr.ValueMember = "YdelsesTypeNr";
-            Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+        //    Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
             Sag_drop_MedarbejderNr.DisplayMember = "Navn";
             Sag_drop_MedarbejderNr.ValueMember = "AdvokatId";
             Sag_drop_MedarbejderNr.SelectedIndex = -1;
@@ -47,35 +48,37 @@ namespace GUI
        
 
           //Tab index 1 //Hvad der sker når man klikker på tabs'ne
-            private void button1_Click(object sender, EventArgs e)
-            {
-                Overblik overblik = new Overblik();
-                overblik.Show();
-            }                  
+                          
             private void txt_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
             {
                 YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
                 Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
                 Sag_drop_MedarbejderNr.SelectedIndex = -1;
-            }
-
-            private void button1_Click_1(object sender, EventArgs e)
-            {
-                OpretYdelse ydelse = new OpretYdelse();
-                ydelse.Show();
-            }
-
-            private void button2_Click(object sender, EventArgs e)
-            {
-                Startside startside = new Startside();
-                startside.Show();
-            
-        }
+            }                    
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
-            Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
-            MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
+            try
+            {
+                Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
+
+                txt_Sag_titel.Clear();
+                txt_Sag_StartDato.Clear();
+                txt_Sag_kørsel.Clear();
+                txt_Sag_kørsel.Clear();
+                txt_Sag_time.Clear();
+                txt_Sag_SagsBeskrivelse.Clear();
+                txt_Sag_InterneNoter.Clear();
+                txt_Sag_KlientNr.Clear();
+                MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alle er udfyldt, vend venligst tilbage til Opret sag");
+       
+            }
+           
+            
         }
 
         private void btn_GoToFormCreateAdvokat_Click(object sender, EventArgs e)
@@ -108,39 +111,73 @@ namespace GUI
 
         private void btn_CreateAdvokat_Click(object sender, EventArgs e)
         {
-            string navn = txt_Advokat_AdvokatNavn.Text;
-            Controller.CreateAdvokat(navn);
-            MessageBox.Show("Oprettet.");
-            txt_Advokat_AdvokatNavn.Clear();
+            try
+            {
+                string navn = txt_Advokat_AdvokatNavn.Text;
+                Controller.CreateAdvokat(navn);
+                MessageBox.Show("Oprettet.");
+                txt_Advokat_AdvokatNavn.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
+
+            }
+           
         }
 
         private void btn_AddSpecialToAdvokat_Click(object sender, EventArgs e)
         {
-            string specialeNavn = txt_Advokat_SpecialeNavn.Text;
-            int advokatId = Convert.ToInt32(txt_Advokat_AdvokatId.Text);
-            Controller.AddSpecialToAdvokat(specialeNavn, advokatId);
-            MessageBox.Show("Speciale tilføjet.");
-            txt_Advokat_SpecialeNavn.Clear();
-            txt_Advokat_AdvokatId.Clear();
+            try
+            {
+
+                string specialeNavn = txt_Advokat_SpecialeNavn.Text;
+                int advokatId = Convert.ToInt32(txt_Advokat_AdvokatId.Text);
+                Controller.AddSpecialToAdvokat(specialeNavn, advokatId);
+                MessageBox.Show("Speciale tilføjet.");
+                txt_Advokat_SpecialeNavn.Clear();
+                txt_Advokat_AdvokatId.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
+
+            }
         }
         //Koden under er til Klient
 
         private void btn_OpretKlient(object sender, EventArgs e)
         {
-            string navn = Txt_Klient_navn.Text;
-            string Adresse = Txt_Klient_Adresse.Text;
-            string TelefonNr = Txt_Klient_TelefonNr.Text;
-            Controller.CreateKlient(navn, Adresse, TelefonNr);
-            MessageBox.Show("Oprettet");
-            Txt_Klient_navn.Clear();
-            Txt_Klient_Adresse.Clear();
-            Txt_Klient_TelefonNr.Clear();
+            
+            try
+            {
+                string navn = Txt_Klient_navn.Text;
+                string Adresse = Txt_Klient_Adresse.Text;
+                string TelefonNr = Txt_Klient_TelefonNr.Text;
+                Controller.CreateKlient(navn, Adresse, TelefonNr);
+                MessageBox.Show("Oprettet");
+                Txt_Klient_navn.Clear();
+                Txt_Klient_Adresse.Clear();
+                Txt_Klient_TelefonNr.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
+
+            }
         }
 
         private void btn_opret_ydelse(object sender, EventArgs e)
         {
-            Controller.CreateYdelse(txt_ydelse_startdato.Text, txt_ydelse_beskrivelse.Text, txt_ydelse_Pris.Text, txt_ydelse_timer.Text, Convert.ToInt32(txt_ydelse_sagsNr.Text), Convert.ToInt32(txt_ydelse_AdvokatID.Text));
-            MessageBox.Show("Ydelsen er nu oprettet");
+            try
+            {
+                Controller.CreateYdelse(txt_ydelse_startdato.Text, txt_ydelse_beskrivelse.Text, txt_ydelse_Pris.Text, txt_ydelse_timer.Text, Convert.ToInt32(txt_ydelse_sagsNr.Text), Convert.ToInt32(txt_ydelse_AdvokatID.Text));
+                MessageBox.Show("Ydelsen er nu oprettet");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
+            }
         }
 
 
@@ -174,7 +211,6 @@ namespace GUI
                 {
                     Controller.UpdateKLient(item);
                 }
-
             }
             MessageBox.Show("færdig");
         }
@@ -241,7 +277,19 @@ namespace GUI
                 objectListView1.RebuildColumns();
             }
 
-       
+        private void Sag_drop_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+            Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+            Sag_drop_MedarbejderNr.SelectedIndex = -1;
+        }
+
+        private void Startside_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSetDrop.Ydelse' table. You can move, or remove it, as needed.
+            this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
+
+        }
     }
 }
 
