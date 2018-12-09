@@ -80,7 +80,11 @@ namespace GUI
             newTabPage.UseVisualStyleBackColor = true;
         }
 
-        /*
+
+
+        //Julius, old code
+        //Prototype
+        /* 
         private void TabBuilderHelper(TabPage newTabPage) //Old Prototype
         {
             newTabPage.Controls.Add(this.buttonHelpMe);
@@ -93,7 +97,6 @@ namespace GUI
             newTabPage.UseVisualStyleBackColor = true;
         }
         */
-
         // Proof-Of-Concept
         /*
         public void MakeNewTabs() 
@@ -122,8 +125,6 @@ namespace GUI
             Controls.Add(thisTabControl); //Tilføjer tabcontrol til formen
         }
         */
-
-
         //Virker ikke da TabPage virker som en REFERANCE og ikke et object
         /*
         public void SetTabs()
