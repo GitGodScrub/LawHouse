@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccess
+﻿namespace DataClassLib
 {
     public class Sag
     {
@@ -22,7 +16,7 @@ namespace DataAccess
 
         public Sag() { }
         public Sag(string arbejdstitel, string startDato, string slutDato, string kørselstimer, string timeEstimat, string sagsBeskrivelse , string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
-        {
+        {//Daniella
             Arbejdstitel = arbejdstitel;
             StartDato = startDato;
             SlutDato = slutDato;

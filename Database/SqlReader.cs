@@ -9,14 +9,49 @@ using System.Threading.Tasks;
 namespace DataAccess
 {
     class SqlReader //By Julius
-    // Virker ikke
     {
-        /*public List<string[]> ReadThis(string sqlString, Type objectType)
+        public List<List<string>> ReadThisLastTry(string sqlString)
+        {
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
+            SqlCommand com = new SqlCommand(sqlString, conn);
+            List<List<string>> toReturn = new List<List<string>>();
+
+            try
+            {
+                conn.Open();
+                SqlDataReader sqld = com.ExecuteReader();
+                if (sqld.HasRows)
+                {
+                    while (sqld.Read())
+                    {
+                        List<string> collectedAttributes = new List<string>();
+                        for (int i = 0; i < sqld.FieldCount; i++)
+                        {
+                            collectedAttributes.Add(Convert.ToString(sqld.GetValue(i)));
+                        }
+                        toReturn.Add(collectedAttributes);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return toReturn;
+        }
+
+        /*
+        public List<string[]> ReadThis(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);
             List<string[]> typesToRead = getColumnInfo(conn, com);
-            List<int, string[]> returnList = new List<int, string[]>();
+            List<string[]> returnList = new List<string[]>();
+            //List<int, string[]> returnList = new List<int, string[]>(); //Experimental - new idea
             try
             {
                 conn.Open();
@@ -38,7 +73,7 @@ namespace DataAccess
                             writeToList[0] = fieldName;
                             writeToList[1] = fieldValueConverted;
                         }
-                        returnList.Add(runCount, writeToList);
+                        // returnList.Add(runCount, writeToList); //Experimental - new idea
                         runCount++;
                     }
                 }
@@ -117,5 +152,6 @@ namespace DataAccess
             }
             return columnInfo;
         }
-    */}
+        */
+    }
 }

@@ -33,16 +33,17 @@ X*
   <![CDATA[ xdxdxd ]]>
 </test>
 -->
-
+<!--
 <!DOCTYPE Root [
-  <!ELEMENT Sag (SagsNr, Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter, KlientNr, AdvokatId, YdelsesTypeNr)>
-  <!ELEMENT Advokat (AdvokatId, Navn)>
-  <!ELEMENT Ydelse (YdelsesNr, StartDato, YdelsesBeskrivelse, Pris, Timer, AdvokatId, SagsNr)>
-  <!ELEMENT Klient (KlientNr, Navn, Adresse, TelefonNr)>
-  <!ELEMENT Efteruddannelse (Navn, AdvokatId)>
-  <!ELEMENT YdelseTyper (YdelseTypeNr, YdelsesNavn, StandartPris, PrisType)>
-  <!ELEMENT Tjenesteydelser (AdvokatId, YdelsesTypeNr)>
+<!ELEMENT Sag (SagsNr, Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter, KlientNr, AdvokatId, YdelsesTypeNr)>
+<!ELEMENT Advokat (AdvokatId, Navn)>
+<!ELEMENT Ydelse (YdelsesNr, StartDato, YdelsesBeskrivelse, Pris, Timer, AdvokatId, SagsNr)>
+<!ELEMENT Klient (KlientNr, Navn, Adresse, TelefonNr)>
+<!ELEMENT Efteruddannelse (Navn, AdvokatId)>
+<!ELEMENT YdelseType (YdelseTypeNr, YdelsesNavn, StandartPris, PrisType)>
+<!ELEMENT Tjenesteydelser (AdvokatId, YdelsesTypeNr)>
 ]>
+-->
 <Root>
   <Sag>
     <SagsNr>1</SagsNr>
@@ -121,19 +122,19 @@ X*
 
     <AdvokatId>2</AdvokatId>
   </Efteruddannelse>
-
-  <YdelseTyper>
+  
+  <YdelseType>
     <YdelseTypeNr>1</YdelseTypeNr>
     <YdelsesNavn>TestYdelsesType</YdelsesNavn>
     <StandartPris>200</StandartPris>
     <PrisType>Fast Pris</PrisType>
-  </YdelseTyper>
-  <YdelseTyper>
+  </YdelseType>
+  <YdelseType>
     <YdelseTypeNr>2</YdelseTypeNr>
     <YdelsesNavn>NyType</YdelsesNavn>
     <StandartPris>500</StandartPris>
     <PrisType>Time Pris</PrisType>
-  </YdelseTyper>
+  </YdelseType>
 
   <Tjenesteydelser>
 
