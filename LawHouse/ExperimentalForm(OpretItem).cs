@@ -16,6 +16,7 @@ namespace GUI
 {
     public partial class ExperimentalForm //Daniella unlese othervise noted
     {
+        /*
         //Kode til Opret*
 
         //Koden under til opret advokat
@@ -61,5 +62,6 @@ namespace GUI
             Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
             MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
         }
+        */
     }//Har ikke nærlæst denne
 }

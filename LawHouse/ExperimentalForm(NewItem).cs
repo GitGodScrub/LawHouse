@@ -12,7 +12,7 @@ namespace GUI
     {
         //Laver nye Items til brug i GUI'en
         //Man skal altid have "Basic Buttons"-so to say, som har events'ne på sig
-        public object GetItem(string Name, string Type)//skal måske laves om
+        public object GetItem(string Name, string Type)//skal måske laves om, ny returtype
         {
             object newItem = new object();
             switch (Type)
@@ -95,28 +95,5 @@ namespace GUI
             newButton.Click += new System.EventHandler(this.buttonHelpMe_Click);
             return newButton;
         }
-
-
-
-        /*
-        public Button GetButton(string Name, string ButtonType)//Old
-        {
-            Button newButton = new Button();
-            switch (ButtonType)
-            {
-                case "GetHelpButton":
-                    break;
-                case "buttomAddNewObject":
-                    break;
-                case "buttonAnnuller":
-                    break;
-                case "buttomSave":
-                    break;
-                case "buttomRefresh":
-                    break;
-            }
-            return newButton;
-        }
-        */
     }
 }

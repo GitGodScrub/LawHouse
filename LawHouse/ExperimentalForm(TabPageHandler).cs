@@ -67,6 +67,7 @@ namespace GUI
         }
         private void TabBuilderHelper(TabPage newTabPage)
         {
+            /*
             string currentPageName = Convert.ToString(newTabPage.Name);
             newTabPage.Controls.Add(GetItem(currentPageName, "buttonHelpMe"));
             newTabPage.Controls.Add(GetItem(currentPageName, "buttomAddNewObject"));
@@ -75,6 +76,7 @@ namespace GUI
             newTabPage.Controls.Add(GetItem(currentPageName, "dropdownCombobox"));
             newTabPage.Controls.Add(GetItem(currentPageName, "buttomRefresh"));
             newTabPage.Controls.Add(GetItem(currentPageName, "myObjectListView"));
+            */
             newTabPage.UseVisualStyleBackColor = true;
         }
 

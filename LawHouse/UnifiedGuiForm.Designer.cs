@@ -243,7 +243,7 @@
             this.btn_Create.TabIndex = 57;
             this.btn_Create.Text = "Opret Sag";
             this.btn_Create.UseVisualStyleBackColor = true;
-            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
+            //this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // lbl_Sags
             // 
@@ -518,7 +518,7 @@
             this.btn_AddSpecialToAdvokat.TabIndex = 10;
             this.btn_AddSpecialToAdvokat.Text = "Tilføj Efteruddannelse";
             this.btn_AddSpecialToAdvokat.UseVisualStyleBackColor = true;
-            this.btn_AddSpecialToAdvokat.Click += new System.EventHandler(this.btn_AddSpecialToAdvokat_Click);
+            //this.btn_AddSpecialToAdvokat.Click += new System.EventHandler(this.btn_AddSpecialToAdvokat_Click);
             // 
             // btn_CreateAdvokat
             // 
@@ -529,7 +529,7 @@
             this.btn_CreateAdvokat.TabIndex = 9;
             this.btn_CreateAdvokat.Text = "Opret Advokat";
             this.btn_CreateAdvokat.UseVisualStyleBackColor = true;
-            this.btn_CreateAdvokat.Click += new System.EventHandler(this.btn_CreateAdvokat_Click);
+            //this.btn_CreateAdvokat.Click += new System.EventHandler(this.btn_CreateAdvokat_Click);
             // 
             // Opret_klient
             // 
@@ -557,7 +557,7 @@
             this.bnt_Klient_Opret.TabIndex = 13;
             this.bnt_Klient_Opret.Text = "Opret Klient";
             this.bnt_Klient_Opret.UseVisualStyleBackColor = true;
-            this.bnt_Klient_Opret.Click += new System.EventHandler(this.btn_OpretKlient);
+            //this.bnt_Klient_Opret.Click += new System.EventHandler(this.btn_OpretKlient);
             // 
             // lbl_TelefonNr
             // 
@@ -642,7 +642,7 @@
             this.bnt_Ydelse_tilføj.TabIndex = 29;
             this.bnt_Ydelse_tilføj.Text = "Tilføj ydelse";
             this.bnt_Ydelse_tilføj.UseVisualStyleBackColor = true;
-            this.bnt_Ydelse_tilføj.Click += new System.EventHandler(this.btn_opret_ydelse);
+            //this.bnt_Ydelse_tilføj.Click += new System.EventHandler(this.btn_opret_ydelse);
             // 
             // label1
             // 
@@ -794,7 +794,7 @@
             this.combobox_hvad_type.Name = "combobox_hvad_type";
             this.combobox_hvad_type.Size = new System.Drawing.Size(83, 21);
             this.combobox_hvad_type.TabIndex = 12;
-            this.combobox_hvad_type.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
+            //this.combobox_hvad_type.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
             // 
             // btn_Update
             // 
@@ -805,7 +805,7 @@
             this.btn_Update.TabIndex = 8;
             this.btn_Update.Text = "Gem ændring";
             this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            //this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // theObjectListView
             // 
@@ -1042,7 +1042,7 @@
             this.buttonHelpMe.TabIndex = 6;
             this.buttonHelpMe.Text = "HelpMe";
             this.buttonHelpMe.UseVisualStyleBackColor = true;
-            this.buttonHelpMe.Click += new System.EventHandler(this.buttonHelpMe_Click);
+            //this.buttonHelpMe.Click += new System.EventHandler(this.buttonHelpMe_Click);
             // 
             // buttomAddNewObject
             // 
@@ -1053,7 +1053,7 @@
             this.buttomAddNewObject.TabIndex = 5;
             this.buttomAddNewObject.Text = "AddNewObject";
             this.buttomAddNewObject.UseVisualStyleBackColor = true;
-            this.buttomAddNewObject.Click += new System.EventHandler(this.buttomAddNewObject_Click);
+            //this.buttomAddNewObject.Click += new System.EventHandler(this.buttomAddNewObject_Click);
             // 
             // buttonAnnuller
             // 
@@ -1064,7 +1064,7 @@
             this.buttonAnnuller.TabIndex = 4;
             this.buttonAnnuller.Text = "Annuller";
             this.buttonAnnuller.UseVisualStyleBackColor = true;
-            this.buttonAnnuller.Click += new System.EventHandler(this.buttonAnnuller_Click);
+            //this.buttonAnnuller.Click += new System.EventHandler(this.buttonAnnuller_Click);
             // 
             // buttomSave
             // 
@@ -1075,7 +1075,7 @@
             this.buttomSave.TabIndex = 3;
             this.buttomSave.Text = "Save";
             this.buttomSave.UseVisualStyleBackColor = true;
-            this.buttomSave.Click += new System.EventHandler(this.buttomSave_Click);
+            //this.buttomSave.Click += new System.EventHandler(this.buttomSave_Click);
             // 
             // dropdownCombobox
             // 
@@ -1085,7 +1085,7 @@
             this.dropdownCombobox.Name = "dropdownCombobox";
             this.dropdownCombobox.Size = new System.Drawing.Size(121, 21);
             this.dropdownCombobox.TabIndex = 2;
-            this.dropdownCombobox.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
+            //this.dropdownCombobox.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
             // 
             // buttomRefresh
             // 
@@ -1096,7 +1096,7 @@
             this.buttomRefresh.TabIndex = 1;
             this.buttomRefresh.Text = "Refresh";
             this.buttomRefresh.UseVisualStyleBackColor = true;
-            this.buttomRefresh.Click += new System.EventHandler(this.buttomRefresh_Click);
+            //this.buttomRefresh.Click += new System.EventHandler(this.buttomRefresh_Click);
             // 
             // myObjectListView
             // 
@@ -1109,7 +1109,7 @@
             this.myObjectListView.TabIndex = 0;
             this.myObjectListView.UseCompatibleStateImageBehavior = false;
             this.myObjectListView.View = System.Windows.Forms.View.Details;
-            this.myObjectListView.SelectedIndexChanged += new System.EventHandler(this.myObjectListView_SelectedIndexChanged);
+            //this.myObjectListView.SelectedIndexChanged += new System.EventHandler(this.myObjectListView_SelectedIndexChanged);
             // 
             // UnifiedGuiForm
             // 

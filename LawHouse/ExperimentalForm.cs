@@ -126,6 +126,7 @@ namespace GUI
         //Har ikke nærlæst denne
         private void dropdownCombobox_SelectedIndexChanged(object sender, EventArgs e) //Daniella?
         {
+            /*
             ListItems listItem = (ListItems)dropdownCombobox.SelectedItem;
             switch (listItem.What_type)
             {
@@ -184,7 +185,7 @@ namespace GUI
                     break;
             }
             myObjectListView.RebuildColumns();
+            */
         }//Har ikke nærlæst denne
-
     }
 }
