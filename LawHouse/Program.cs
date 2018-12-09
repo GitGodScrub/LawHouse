@@ -12,7 +12,7 @@ namespace GUI
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] eventArgs)
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
