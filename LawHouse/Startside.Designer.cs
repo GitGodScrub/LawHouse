@@ -119,17 +119,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Dybber_Overblik = new System.Windows.Forms.TabControl();
             this.Sag = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.Advokat = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.Klient = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.Ydelse = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.Btn_Oversigt = new System.Windows.Forms.Button();
             this.Btn_Help = new System.Windows.Forms.Button();
             this.dataSetDrop = new GUI.DataSetDrop();
             this.ydelseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -896,7 +896,7 @@
             this.Arbejdstitel.IsEditable = false;
             this.Arbejdstitel.MinimumWidth = 50;
             this.Arbejdstitel.Text = "Arbejdstitel";
-            this.Arbejdstitel.Width = 150;
+            this.Arbejdstitel.Width = 152;
             // 
             // StartDate
             // 
@@ -1059,6 +1059,15 @@
             this.Sag.Text = "Sag";
             this.Sag.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(91, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Test af sag";
+            // 
             // Advokat
             // 
             this.Advokat.Controls.Add(this.label4);
@@ -1070,6 +1079,15 @@
             this.Advokat.Text = "Advokat";
             this.Advokat.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(132, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Test af advokat";
+            // 
             // Klient
             // 
             this.Klient.Controls.Add(this.label5);
@@ -1080,6 +1098,15 @@
             this.Klient.Text = "Klient";
             this.Klient.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(98, 63);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Test af Klient";
+            // 
             // Ydelse
             // 
             this.Ydelse.Controls.Add(this.label6);
@@ -1089,6 +1116,15 @@
             this.Ydelse.TabIndex = 3;
             this.Ydelse.Text = "Ydelse";
             this.Ydelse.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(52, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Test af ydelse";
             // 
             // Btn_Oversigt
             // 
@@ -1120,42 +1156,6 @@
             // 
             this.ydelseBindingSource.DataMember = "Ydelse";
             this.ydelseBindingSource.DataSource = this.dataSetDrop;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Test af sag";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Test af advokat";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(98, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Test af Klient";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(52, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Test af ydelse";
             // 
             // Startside
             // 
