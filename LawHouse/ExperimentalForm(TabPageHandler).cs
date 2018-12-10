@@ -14,7 +14,7 @@ using DataClassLib;
 
 namespace GUI
 {
-    public partial class ExperimentalForm //Julius
+    public partial class ExperimentalForm //Julius //skal også indlæse relevant data
     {
         public void makeNewTabPageController()
         {

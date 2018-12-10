@@ -45,7 +45,7 @@ namespace GUI
             }
         }
 
-        private void buttomAddNewObject_Click(object sender, EventArgs e)
+        private void buttomAddNewObject_Click(object sender, EventArgs e) //got debug
         {
             TabPage toSwitchTo = null;
             string currentTabName = dynamicTabControl.SelectedTab.Name;
@@ -72,13 +72,13 @@ namespace GUI
             toSwitchTo = tabOpretSag;//debug
             dynamicTabControl.SelectedTab = toSwitchTo;
         }
-        private void buttonHelpMe_Click(object sender, EventArgs e)
+        private void buttonHelpMe_Click(object sender, EventArgs e) //open help for current page
         {
-            //open help for current page
+            
         }
-        private void buttonAnnuller_Click(object sender, EventArgs e)
+        private void buttonAnnuller_Click(object sender, EventArgs e) //Discard changes
         {
-            //Discard changes
+            
         }
         private void buttomRefresh_Click(object sender, EventArgs e)
         {
