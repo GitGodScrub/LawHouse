@@ -21,15 +21,23 @@ namespace GUI
         {
             InitializeComponent();//Her oprettes formen
             List<string> tabsToHideAtStartup = new List<string>();
-            tabsToHideAtStartup.Add("OpretSag");
-            tabsToHideAtStartup.Add("OpretAdvokat");
-            tabsToHideAtStartup.Add("OpretKlient");
-            tabsToHideAtStartup.Add("OpretYdelse");
+            tabsToHideAtStartup.Add("tabOpretSag");
+            tabsToHideAtStartup.Add("tabOpretAdvokat");
+            tabsToHideAtStartup.Add("tabOpretKlient");
+            tabsToHideAtStartup.Add("tabOpretYdelse");
             hideTabs(tabsToHideAtStartup);
         }
         private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
         {
+            /*
+            this.myObjectListView = GetMyObjectListView("myObjectListView");
             this.comboboxOversigt = GetCombobox("comboboxOversigt");
+            this.buttomAddNewObject = GetButtomAddNewObjectButton("buttomAddNewObject");
+            this.buttomRefresh = GetButtomRefresh("buttomRefresh");
+            this.buttomSave = GetButtomSave("buttomSave");
+            this.buttonAnnuller = GetButtonAnnuller("buttonAnnuller");
+            this.buttonHelpMe = GetButtonHelpMe("buttonHelpMe");
+            */
         }
         
         private void hideTabs(List<string> tabsToHide)

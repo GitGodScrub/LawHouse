@@ -12,7 +12,8 @@ namespace GUI
     public partial class ExperimentalForm //Julius(Port) - Design of items by others
     {
         //Laver nye Items til brug i GUI'en
-        private ObjectListView GetMyObjectListView(string name)//Design by Daniella, Ported by Julius
+        //Bugged, tror jeg har misforstået noget
+        private ObjectListView GetMyObjectListView(string name)
         {
             ObjectListView newObjectListView = new ObjectListView();
             newObjectListView.AllColumns.Add(olvColumn1);
@@ -83,7 +84,7 @@ namespace GUI
 
             switch (name)
             {
-                case "comboboxYdelseType"://?
+                case "comboboxYdelseType"://notInUse
                     newComboBox.DataSource = Controller.GetAllYdelseType(); //Hvor den får sine mugligheder fra
                     newComboBox.DisplayMember = "YdelsesNavn"; //Hvad muglighederne skal vises som
                     newComboBox.ValueMember = "YdelsesTypeNr"; //Hvilken værdi hver valgmuglighed representere
@@ -101,7 +102,7 @@ namespace GUI
                     newComboBox.TabIndex = 2;
                     newComboBox.SelectedIndexChanged += (comboboxOversigt_SelectedIndexChanged);
                     break;
-                case "comboboxAdvokat"://?  - Er denne rigtig?
+                case "comboboxAdvokat"://notInUse
                     newComboBox.DataSource = Controller.GetAllItems();
                     newComboBox.DisplayMember = "Navn";
                     newComboBox.ValueMember = "AdvokatId";
