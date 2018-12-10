@@ -292,6 +292,57 @@ namespace GUI
           //  this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
 
         }
+
+        private void objectListView1_DoubleClick(object sender, EventArgs e)
+        {
+
+             
+              ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+            switch (listItem.What_type)
+            {
+
+                case "Klient":
+                    foreach (var selectedObject in objectListView1.SelectedObjects)
+                    {
+sag
+                    }
+                /*    objectListView1.SetObjects(Controller.GetAllKlient());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                  */  
+                    break;
+
+                case "Sag":
+                    objectListView1.SetObjects(Controller.GetAllSag());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                     
+                    break;
+                case "Advokat":
+                    objectListView1.SetObjects(Controller.GetAllAdvokat());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                     
+                    break;
+                case "Ydelse":
+                    objectListView1.SetObjects(Controller.GetAllYdelses());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                     
+                    break;
+
+
+            }
+        }
+ 
     }
 }
 

@@ -116,10 +116,20 @@
             this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Dybber_Overblik = new System.Windows.Forms.TabControl();
+            this.Sag = new System.Windows.Forms.TabPage();
+            this.Advokat = new System.Windows.Forms.TabPage();
+            this.Klient = new System.Windows.Forms.TabPage();
+            this.Ydelse = new System.Windows.Forms.TabPage();
             this.Btn_Oversigt = new System.Windows.Forms.Button();
             this.Btn_Help = new System.Windows.Forms.Button();
             this.dataSetDrop = new GUI.DataSetDrop();
             this.ydelseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,6 +139,12 @@
             this.Opret_ydelse.SuspendLayout();
             this.Se_oversigt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.Dybber_Overblik.SuspendLayout();
+            this.Sag.SuspendLayout();
+            this.Advokat.SuspendLayout();
+            this.Klient.SuspendLayout();
+            this.Ydelse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ydelseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +157,7 @@
             this.DynamicTabControl.Controls.Add(this.Opret_klient);
             this.DynamicTabControl.Controls.Add(this.Opret_ydelse);
             this.DynamicTabControl.Controls.Add(this.Se_oversigt);
+            this.DynamicTabControl.Controls.Add(this.tabPage1);
             this.DynamicTabControl.ItemSize = new System.Drawing.Size(170, 40);
             this.DynamicTabControl.Location = new System.Drawing.Point(12, 11);
             this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -155,7 +172,7 @@
             this.tabStart.Location = new System.Drawing.Point(4, 44);
             this.tabStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabStart.Name = "tabStart";
-            this.tabStart.Size = new System.Drawing.Size(770, 593);
+            this.tabStart.Size = new System.Drawing.Size(809, 593);
             this.tabStart.TabIndex = 5;
             this.tabStart.Text = "Startside";
             this.tabStart.UseVisualStyleBackColor = true;
@@ -200,7 +217,7 @@
             this.Opret_sag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_sag.Name = "Opret_sag";
             this.Opret_sag.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_sag.Size = new System.Drawing.Size(770, 593);
+            this.Opret_sag.Size = new System.Drawing.Size(809, 593);
             this.Opret_sag.TabIndex = 0;
             this.Opret_sag.Text = "Sag";
             this.Opret_sag.UseVisualStyleBackColor = true;
@@ -433,7 +450,7 @@
             this.Opret_advokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_advokat.Name = "Opret_advokat";
             this.Opret_advokat.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_advokat.Size = new System.Drawing.Size(770, 593);
+            this.Opret_advokat.Size = new System.Drawing.Size(809, 593);
             this.Opret_advokat.TabIndex = 1;
             this.Opret_advokat.Text = "Advokat";
             // 
@@ -533,7 +550,7 @@
             this.Opret_klient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_klient.Name = "Opret_klient";
             this.Opret_klient.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_klient.Size = new System.Drawing.Size(770, 593);
+            this.Opret_klient.Size = new System.Drawing.Size(809, 593);
             this.Opret_klient.TabIndex = 2;
             this.Opret_klient.Text = "Klient";
             this.Opret_klient.UseVisualStyleBackColor = true;
@@ -624,7 +641,7 @@
             this.Opret_ydelse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_ydelse.Name = "Opret_ydelse";
             this.Opret_ydelse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_ydelse.Size = new System.Drawing.Size(770, 593);
+            this.Opret_ydelse.Size = new System.Drawing.Size(809, 593);
             this.Opret_ydelse.TabIndex = 3;
             this.Opret_ydelse.Text = "Ydelse";
             this.Opret_ydelse.UseVisualStyleBackColor = true;
@@ -857,6 +874,7 @@
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.UseFiltering = true;
             this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.objectListView1.DoubleClick += new System.EventHandler(this.objectListView1_DoubleClick);
             // 
             // olvColumn1
             // 
@@ -969,6 +987,70 @@
             this.AdvokatID.AspectName = "AdvokatId";
             this.AdvokatID.Text = "AdvokatId";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.Dybber_Overblik);
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(809, 593);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "Side";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Dybber_Overblik
+            // 
+            this.Dybber_Overblik.Controls.Add(this.Sag);
+            this.Dybber_Overblik.Controls.Add(this.Advokat);
+            this.Dybber_Overblik.Controls.Add(this.Klient);
+            this.Dybber_Overblik.Controls.Add(this.Ydelse);
+            this.Dybber_Overblik.Location = new System.Drawing.Point(19, 116);
+            this.Dybber_Overblik.Name = "Dybber_Overblik";
+            this.Dybber_Overblik.SelectedIndex = 0;
+            this.Dybber_Overblik.Size = new System.Drawing.Size(790, 247);
+            this.Dybber_Overblik.TabIndex = 0;
+            // 
+            // Sag
+            // 
+            this.Sag.Controls.Add(this.label3);
+            this.Sag.Location = new System.Drawing.Point(4, 25);
+            this.Sag.Name = "Sag";
+            this.Sag.Padding = new System.Windows.Forms.Padding(3);
+            this.Sag.Size = new System.Drawing.Size(782, 218);
+            this.Sag.TabIndex = 0;
+            this.Sag.Text = "Sag";
+            this.Sag.UseVisualStyleBackColor = true;
+            // 
+            // Advokat
+            // 
+            this.Advokat.Controls.Add(this.label4);
+            this.Advokat.Location = new System.Drawing.Point(4, 25);
+            this.Advokat.Name = "Advokat";
+            this.Advokat.Padding = new System.Windows.Forms.Padding(3);
+            this.Advokat.Size = new System.Drawing.Size(782, 218);
+            this.Advokat.TabIndex = 1;
+            this.Advokat.Text = "Advokat";
+            this.Advokat.UseVisualStyleBackColor = true;
+            // 
+            // Klient
+            // 
+            this.Klient.Controls.Add(this.label5);
+            this.Klient.Location = new System.Drawing.Point(4, 25);
+            this.Klient.Name = "Klient";
+            this.Klient.Size = new System.Drawing.Size(782, 218);
+            this.Klient.TabIndex = 2;
+            this.Klient.Text = "Klient";
+            this.Klient.UseVisualStyleBackColor = true;
+            // 
+            // Ydelse
+            // 
+            this.Ydelse.Controls.Add(this.label6);
+            this.Ydelse.Location = new System.Drawing.Point(4, 25);
+            this.Ydelse.Name = "Ydelse";
+            this.Ydelse.Size = new System.Drawing.Size(782, 218);
+            this.Ydelse.TabIndex = 3;
+            this.Ydelse.Text = "Ydelse";
+            this.Ydelse.UseVisualStyleBackColor = true;
+            // 
             // Btn_Oversigt
             // 
             this.Btn_Oversigt.Location = new System.Drawing.Point(831, 479);
@@ -1000,6 +1082,42 @@
             this.ydelseBindingSource.DataMember = "Ydelse";
             this.ydelseBindingSource.DataSource = this.dataSetDrop;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(91, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Test af sag";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(132, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Test af advokat";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(98, 63);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Test af Klient";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(52, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Test af ydelse";
+            // 
             // Startside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1026,6 +1144,16 @@
             this.Opret_ydelse.PerformLayout();
             this.Se_oversigt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.Dybber_Overblik.ResumeLayout(false);
+            this.Sag.ResumeLayout(false);
+            this.Sag.PerformLayout();
+            this.Advokat.ResumeLayout(false);
+            this.Advokat.PerformLayout();
+            this.Klient.ResumeLayout(false);
+            this.Klient.PerformLayout();
+            this.Ydelse.ResumeLayout(false);
+            this.Ydelse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ydelseBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1125,5 +1253,15 @@
         private DataSetDrop dataSetDrop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource ydelseBindingSource;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl Dybber_Overblik;
+        private System.Windows.Forms.TabPage Sag;
+        private System.Windows.Forms.TabPage Advokat;
+        private System.Windows.Forms.TabPage Klient;
+        private System.Windows.Forms.TabPage Ydelse;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
