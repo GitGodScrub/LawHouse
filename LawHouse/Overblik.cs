@@ -45,7 +45,7 @@ namespace GUI
                 }
                 else if (item is Klient)
                 {
-                    Controller.UpdateKLient(item);
+                    Controller.UpdateKlient(item);
                 }
 
             }

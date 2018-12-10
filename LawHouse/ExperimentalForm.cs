@@ -29,14 +29,15 @@ namespace GUI
             hideTabs(tabsToHideAtStartup);
 
         }
-        private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
-        {
-
-        }
         //
         //TabControler = dynamicTabControl
         //ObjectListView myObjectListView;
         //
+        private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
+        {
+
+        }
+        
         private void hideTabs(List<string> tabsToHide)
         {
             foreach (string tabKey in tabsToHide)
@@ -44,6 +45,30 @@ namespace GUI
                 dynamicTabControl.TabPages.RemoveByKey(tabKey);
             }
         }
+
+        private void CommitObjectViewListChanges()//Daniella
+        {
+            foreach (object item in myObjectListView.Objects)
+            {
+                if (item is Sag)
+                {
+                    Controller.UpdateSag(item);
+                }
+                else if (item is Advokat)
+                {
+                    Controller.UpdateAdvokat(item);
+                }
+                else if (item is Ydelse)
+                {
+                    Controller.UpdateYdelse(item);
+                }
+                else if (item is Klient)
+                {
+                    Controller.UpdateKlient(item);
+                }
+            }
+        }
+
 
         private void buttomAddNewObject_Click(object sender, EventArgs e) //got debug
         {
@@ -105,7 +130,7 @@ namespace GUI
                 }
                 else if (item is Klient)
                 {
-                    Controller.UpdateKLient(item);
+                    Controller.UpdateKlient(item);
                 }
             }
             MessageBox.Show("Færdig");
