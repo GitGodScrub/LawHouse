@@ -54,7 +54,7 @@ namespace GUI
             throw new NotImplementedException();
         }
 
-        private Button GetButtomRefresh(string name)
+        private Button GetButtomRefresh(string name) //load form //bliver kaldt fra update som det er nu
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(8, 8);
@@ -68,7 +68,7 @@ namespace GUI
             return newButton;
         }
 
-        private Button GetButtomSave(string name)
+        private Button GetButtomSave(string name) //update
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(107, 8);
@@ -82,7 +82,7 @@ namespace GUI
             return newButton;
         }
 
-        private Button GetButtonAnnuller(string name)
+        private Button GetButtonAnnuller(string name) //basically refresh
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(238, 8);
@@ -96,7 +96,7 @@ namespace GUI
             return newButton;
         }
 
-        private Button GetButtomAddNewObjectButton(string name)
+        private Button GetButtomAddNewObjectButton(string name) //skal måske cuttes, er måske overflødig
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(395, 8);
@@ -109,7 +109,7 @@ namespace GUI
             newButton.Click += new System.EventHandler(this.buttomAddNewObject_Click);
             return newButton;
         }
-        private Button GetButtonHelpMe(string name)
+        private Button GetButtonHelpMe(string name) //gud
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(554, 8);
