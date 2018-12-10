@@ -304,7 +304,7 @@ namespace GUI
                 case "Klient":
                     foreach (var selectedObject in objectListView1.SelectedObjects)
                     {
-sag
+
                     }
                 /*    objectListView1.SetObjects(Controller.GetAllKlient());
                     foreach (var item in objectListView1.AllColumns)

@@ -163,7 +163,8 @@
             this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DynamicTabControl.Name = "DynamicTabControl";
             this.DynamicTabControl.SelectedIndex = 0;
-            this.DynamicTabControl.Size = new System.Drawing.Size(817, 641);
+            this.DynamicTabControl.Size = new System.Drawing.Size(1200, 641);
+            this.DynamicTabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.DynamicTabControl.TabIndex = 0;
             // 
             // tabStart
@@ -172,7 +173,7 @@
             this.tabStart.Location = new System.Drawing.Point(4, 44);
             this.tabStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabStart.Name = "tabStart";
-            this.tabStart.Size = new System.Drawing.Size(809, 593);
+            this.tabStart.Size = new System.Drawing.Size(1192, 593);
             this.tabStart.TabIndex = 5;
             this.tabStart.Text = "Startside";
             this.tabStart.UseVisualStyleBackColor = true;
@@ -217,7 +218,7 @@
             this.Opret_sag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_sag.Name = "Opret_sag";
             this.Opret_sag.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_sag.Size = new System.Drawing.Size(809, 593);
+            this.Opret_sag.Size = new System.Drawing.Size(1192, 593);
             this.Opret_sag.TabIndex = 0;
             this.Opret_sag.Text = "Sag";
             this.Opret_sag.UseVisualStyleBackColor = true;
@@ -450,7 +451,7 @@
             this.Opret_advokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_advokat.Name = "Opret_advokat";
             this.Opret_advokat.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_advokat.Size = new System.Drawing.Size(809, 593);
+            this.Opret_advokat.Size = new System.Drawing.Size(1192, 593);
             this.Opret_advokat.TabIndex = 1;
             this.Opret_advokat.Text = "Advokat";
             // 
@@ -550,7 +551,7 @@
             this.Opret_klient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_klient.Name = "Opret_klient";
             this.Opret_klient.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_klient.Size = new System.Drawing.Size(809, 593);
+            this.Opret_klient.Size = new System.Drawing.Size(1192, 593);
             this.Opret_klient.TabIndex = 2;
             this.Opret_klient.Text = "Klient";
             this.Opret_klient.UseVisualStyleBackColor = true;
@@ -641,7 +642,7 @@
             this.Opret_ydelse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_ydelse.Name = "Opret_ydelse";
             this.Opret_ydelse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_ydelse.Size = new System.Drawing.Size(809, 593);
+            this.Opret_ydelse.Size = new System.Drawing.Size(1192, 593);
             this.Opret_ydelse.TabIndex = 3;
             this.Opret_ydelse.Text = "Ydelse";
             this.Opret_ydelse.UseVisualStyleBackColor = true;
@@ -787,7 +788,7 @@
             this.Se_oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Se_oversigt.Name = "Se_oversigt";
             this.Se_oversigt.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Se_oversigt.Size = new System.Drawing.Size(809, 593);
+            this.Se_oversigt.Size = new System.Drawing.Size(1192, 593);
             this.Se_oversigt.TabIndex = 4;
             this.Se_oversigt.Text = "Oversigt";
             this.Se_oversigt.UseVisualStyleBackColor = true;
@@ -869,7 +870,7 @@
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowGroups = false;
             this.objectListView1.ShowImagesOnSubItems = true;
-            this.objectListView1.Size = new System.Drawing.Size(857, 427);
+            this.objectListView1.Size = new System.Drawing.Size(1160, 427);
             this.objectListView1.TabIndex = 9;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.UseFiltering = true;
@@ -885,106 +886,136 @@
             // 
             this.SagsNr.AspectName = "SagsNr";
             this.SagsNr.IsEditable = false;
+            this.SagsNr.MinimumWidth = 50;
             this.SagsNr.Text = "SagsNr";
+            this.SagsNr.Width = 50;
             // 
             // Arbejdstitel
             // 
             this.Arbejdstitel.AspectName = "Arbejdstitel";
             this.Arbejdstitel.IsEditable = false;
+            this.Arbejdstitel.MinimumWidth = 50;
             this.Arbejdstitel.Text = "Arbejdstitel";
+            this.Arbejdstitel.Width = 150;
             // 
             // StartDate
             // 
             this.StartDate.AspectName = "StartDato";
             this.StartDate.IsEditable = false;
+            this.StartDate.MinimumWidth = 50;
             this.StartDate.Text = "StartDato";
+            this.StartDate.Width = 93;
             // 
             // Slutdate
             // 
             this.Slutdate.AspectName = "SlutDato";
+            this.Slutdate.MinimumWidth = 70;
             this.Slutdate.Text = "SlutDato";
+            this.Slutdate.Width = 70;
             // 
             // Kørselstimer
             // 
             this.Kørselstimer.AspectName = "Kørselstimer";
+            this.Kørselstimer.MinimumWidth = 70;
             this.Kørselstimer.Text = "Kørselstimer";
+            this.Kørselstimer.Width = 70;
             // 
             // TimeEstimat
             // 
             this.TimeEstimat.AspectName = "TimeEstimat";
+            this.TimeEstimat.MinimumWidth = 70;
             this.TimeEstimat.Text = "TimeEstimat";
+            this.TimeEstimat.Width = 70;
             // 
             // SagsBeskrivelse
             // 
             this.SagsBeskrivelse.AspectName = "SagsBeskrivelse";
+            this.SagsBeskrivelse.MinimumWidth = 100;
             this.SagsBeskrivelse.Text = "SagsBeskrivelse";
-            this.SagsBeskrivelse.Width = 90;
+            this.SagsBeskrivelse.Width = 100;
             // 
             // InterneNoter
             // 
             this.InterneNoter.AspectName = "InterneNoter";
+            this.InterneNoter.MinimumWidth = 100;
             this.InterneNoter.Text = "InterneNoter";
+            this.InterneNoter.Width = 100;
             // 
             // KlientNr
             // 
             this.KlientNr.AspectName = "KlientNr";
             this.KlientNr.IsEditable = false;
+            this.KlientNr.MinimumWidth = 70;
             this.KlientNr.Text = "KlientNr";
+            this.KlientNr.Width = 70;
             // 
             // MedarbejderNr
             // 
             this.MedarbejderNr.AspectName = "AdvokatId";
+            this.MedarbejderNr.MinimumWidth = 70;
             this.MedarbejderNr.Text = "AdvokatId";
-            this.MedarbejderNr.Width = 107;
+            this.MedarbejderNr.Width = 70;
             // 
             // YdelsesTypeNr
             // 
             this.YdelsesTypeNr.AspectName = "YdelsesTypeNr";
+            this.YdelsesTypeNr.MinimumWidth = 70;
             this.YdelsesTypeNr.Text = "YdelsesTypeNr";
+            this.YdelsesTypeNr.Width = 70;
             // 
             // Navn
             // 
             this.Navn.AspectName = "Navn";
+            this.Navn.MinimumWidth = 100;
             this.Navn.Text = "Klient Navn";
+            this.Navn.Width = 100;
             // 
             // Adresse
             // 
             this.Adresse.AspectName = "Adresse";
+            this.Adresse.MaximumWidth = 150;
             this.Adresse.Text = "Adresse";
             // 
             // TelefonNr
             // 
             this.TelefonNr.AspectName = "TelefonNr";
+            this.TelefonNr.MaximumWidth = 200;
             this.TelefonNr.Text = "TelefonNr";
             // 
             // Advokat_navn
             // 
             this.Advokat_navn.AspectName = "Navn";
+            this.Advokat_navn.MaximumWidth = 150;
             this.Advokat_navn.Text = "Advokat Navn";
             // 
             // YdelsesNr
             // 
             this.YdelsesNr.AspectName = "YdelsesNr";
+            this.YdelsesNr.MaximumWidth = 150;
             this.YdelsesNr.Text = "Ydelses Nr";
             // 
             // YdelseBeskrivelse
             // 
             this.YdelseBeskrivelse.AspectName = "YdelsesBeskrivelse";
+            this.YdelseBeskrivelse.MaximumWidth = 150;
             this.YdelseBeskrivelse.Text = "Ydelse Beskrivelse";
             // 
             // Pris
             // 
             this.Pris.AspectName = "Pris";
+            this.Pris.MaximumWidth = 150;
             this.Pris.Text = "Pris";
             // 
             // Timer
             // 
             this.Timer.AspectName = "Timer";
+            this.Timer.MaximumWidth = 150;
             this.Timer.Text = "Timer";
             // 
             // AdvokatID
             // 
             this.AdvokatID.AspectName = "AdvokatId";
+            this.AdvokatID.MaximumWidth = 150;
             this.AdvokatID.Text = "AdvokatId";
             // 
             // tabPage1
@@ -992,7 +1023,7 @@
             this.tabPage1.Controls.Add(this.Dybber_Overblik);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(809, 593);
+            this.tabPage1.Size = new System.Drawing.Size(1192, 593);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Side";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1053,7 +1084,7 @@
             // 
             // Btn_Oversigt
             // 
-            this.Btn_Oversigt.Location = new System.Drawing.Point(831, 479);
+            this.Btn_Oversigt.Location = new System.Drawing.Point(1249, 479);
             this.Btn_Oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btn_Oversigt.Name = "Btn_Oversigt";
             this.Btn_Oversigt.Size = new System.Drawing.Size(161, 121);
@@ -1064,7 +1095,7 @@
             // 
             // Btn_Help
             // 
-            this.Btn_Help.Location = new System.Drawing.Point(831, 11);
+            this.Btn_Help.Location = new System.Drawing.Point(1249, 63);
             this.Btn_Help.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Size = new System.Drawing.Size(63, 28);
@@ -1123,7 +1154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(995, 645);
+            this.ClientSize = new System.Drawing.Size(1424, 845);
             this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.Btn_Oversigt);
             this.Controls.Add(this.DynamicTabControl);
