@@ -113,8 +113,10 @@ namespace GUI
         {
             try
             {
-                string navn = txt_Advokat_AdvokatNavn.Text;
-                Controller.CreateAdvokat(navn);
+               // Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
+
+              //  string navn = txt_Advokat_AdvokatNavn.Text;
+                Controller.CreateAdvokat(txt_Advokat_AdvokatNavn.Text);
                 MessageBox.Show("Oprettet.");
                 txt_Advokat_AdvokatNavn.Clear();
             }

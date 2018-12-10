@@ -119,7 +119,6 @@
             this.Btn_Oversigt = new System.Windows.Forms.Button();
             this.Btn_Help = new System.Windows.Forms.Button();
             this.dataSetDrop = new GUI.DataSetDrop();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.ydelseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ydelseTableAdapter = new GUI.DataSetDropTableAdapters.YdelseTableAdapter();
             this.DynamicTabControl.SuspendLayout();
@@ -607,7 +606,6 @@
             // 
             // Opret_ydelse
             // 
-            this.Opret_ydelse.Controls.Add(this.listBox1);
             this.Opret_ydelse.Controls.Add(this.bnt_Ydelse_tilføj);
             this.Opret_ydelse.Controls.Add(this.label1);
             this.Opret_ydelse.Controls.Add(this.lbl_sagsnr);
@@ -998,19 +996,6 @@
             this.dataSetDrop.DataSetName = "DataSetDrop";
             this.dataSetDrop.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // listBox1
-            // 
-            this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ydelseBindingSource, "YdelsesNr", true));
-            this.listBox1.DataSource = this.ydelseBindingSource;
-            this.listBox1.DisplayMember = "YdelsesBeskrivelse";
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(399, 118);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(201, 100);
-            this.listBox1.TabIndex = 31;
-            this.listBox1.ValueMember = "YdelsesNr";
-            // 
             // ydelseBindingSource
             // 
             this.ydelseBindingSource.DataMember = "Ydelse";
@@ -1144,7 +1129,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private DataSetDrop dataSetDrop;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.BindingSource ydelseBindingSource;
         private DataSetDropTableAdapters.YdelseTableAdapter ydelseTableAdapter;
     }

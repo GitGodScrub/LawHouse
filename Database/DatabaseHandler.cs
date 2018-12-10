@@ -24,11 +24,11 @@ namespace DataAccess
             return _database;
         }
 
-        private void RunSqlCommand(string commandToRun) //By Daniella, refactored by Julius
+        private void RunSqlCommand(string commandToRun, SqlCommand com) //By Daniella, refactored by Julius
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
-                using (SqlCommand com = new SqlCommand())
+                using ( com )
                 {
                     
                     com.Connection = conn;
@@ -69,12 +69,23 @@ namespace DataAccess
             }
                   //  RunSqlCommand(sqlString);
         }
-        public void UpdateSag(Sag sag)// By Daniella, refactored by Julius
+        public void UpdateSag(Sag sag )// By Daniella, refactored by Julius
         {
             string sqlString =
-                $"UPDATE Sag SET Arbejdstitel = '{sag.Arbejdstitel}', StartDato = '{sag.StartDato}', SlutDato = '{sag.SlutDato}', Kørselstimer = '{sag.Kørselstimer}', TimeEstimat = '{sag.TimeEstimat}', SagsBeskrivelse = '{sag.SagsBeskrivelse}', InterneNoter = '{sag.InterneNoter}', KlientNr = {sag.KlientNr}, AdvokatId = {sag.AdvokatId}, YdelsesTypeNr = {sag.YdelsesTypeNr}" +
+                $"UPDATE Sag SET Arbejdstitel = @Arbejdstitel, StartDato = @StartDato , SlutDato = @SlutDato , Kørselstimer = @Kørselstimer , TimeEstimat = @TimeEstimat , SagsBeskrivelse = @SagsBeskrivelse , InterneNoter = @InterneNoter , KlientNr = @KlientNr , AdvokatId = @AdvokatId , YdelsesTypeNr = @YdelsesTypeNr " +
                 $"WHERE SagsNr = {sag.SagsNr}";
-            RunSqlCommand(sqlString);
+            SqlCommand com = new SqlCommand();
+            com.Parameters.Add(new SqlParameter("Arbejdstitel", sag.Arbejdstitel));
+            com.Parameters.Add(new SqlParameter("Startdato", sag.StartDato));
+            com.Parameters.Add(new SqlParameter("SlutDato", sag.SlutDato));
+            com.Parameters.Add(new SqlParameter("Kørselstimer", sag.Kørselstimer));
+            com.Parameters.Add(new SqlParameter("TimeEstimat", sag.TimeEstimat));
+            com.Parameters.Add(new SqlParameter("SagsBeskrivelse", sag.SagsBeskrivelse));
+            com.Parameters.Add(new SqlParameter("InterneNoter", sag.InterneNoter));
+            com.Parameters.Add(new SqlParameter("KlientNr", sag.KlientNr));
+            com.Parameters.Add(new SqlParameter("AdvokatId", sag.AdvokatId));
+            com.Parameters.Add(new SqlParameter("YdelsesTypeNr", sag.YdelsesTypeNr));
+            RunSqlCommand(sqlString, com);
         }
         public List<Sag> GetAllSag()// By Daniella //By Julius
         {
@@ -107,16 +118,18 @@ namespace DataAccess
 
         public void CreateKlient(Klient klient)//By Thomas
         {
-            string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES ('{klient.Navn}', '{klient.Adresse}', '{klient.TelefonNr}')";
-            RunSqlCommand(sqlString);
+            SqlCommand com = new SqlCommand();
+            string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES (@Navn , @Adresse , @TelefonNr)";
+            RunSqlCommand(sqlString, com);
           
         }
         public void UpdateKlient(Klient klient) // By Thomas
         {
+            SqlCommand com = new SqlCommand();
             string sqlString =
-                $"UPDATE Klient SET Navn ='{klient.Navn}', Adresse = '{klient.Adresse}', TelefonNr = '{klient.TelefonNr}' " +
+                $"UPDATE Klient SET Navn =@Navn, Adresse = @Adresse, TelefonNr = @TelefonNr " +
                 $"WHERE KlientNr = {klient.KlientNr}";
-            RunSqlCommand(sqlString);
+            RunSqlCommand(sqlString, com);
         }
         public List<Klient> GetAllKlient()// By Daniella //By Julius
         {
@@ -141,8 +154,9 @@ namespace DataAccess
 
         public void CreateAdvokat(Advokat advokat)// By Dennie
         {
-            string sqlString = $"INSERT INTO Advokat(Navn) VALUES ('{advokat.Navn}')";
-            RunSqlCommand(sqlString);
+            SqlCommand com = new SqlCommand();
+            string sqlString = $"INSERT INTO Advokat(Navn) VALUES (@Navn)";
+            RunSqlCommand(sqlString, com);
         }
         /* Når en advokat skal have tilføjet et speciale/efteruddannelse, skal man i vores database bare indtaste et "navn" på specialet + "advokat id'et", som skal have denne efteruddannelse.
              * Havde forstillet mig, at man i vores ViewListe skal kunne vælge "vis advokater" og derinde så tilføje efteruddannelse ud fra en "valgt" advokats id.
@@ -150,11 +164,11 @@ namespace DataAccess
         */
         public void UpdateAdvokat(Advokat advokat) // by Thomas
         {
-
+            SqlCommand com = new SqlCommand();
             String sqlString =
-                $"UPDATE Advokat SET Navn = '{advokat.Navn}'" +
-                 $"WHERE AdvokatID ={advokat.AdvokatId}";
-            RunSqlCommand(sqlString);
+                $"UPDATE Advokat SET Navn = @Navn" +
+                 $"WHERE AdvokatID =@AdvokatId";
+            RunSqlCommand(sqlString, com);
 
         }
         public List<Advokat> GetAllAdvokat()// By Daniella //By Julius
@@ -254,16 +268,18 @@ namespace DataAccess
         public void CreateYdelse(Ydelse ydelse)
         {
             {
-                string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( '{ydelse.StartDato}' ,'{ydelse.YdelsesBeskrivelse}' ,'{ydelse.Pris}' ,'{ydelse.Timer}' , {ydelse.SagsNr}, {ydelse.AdvokatId})";
-                RunSqlCommand(sqlString);
+                SqlCommand com = new SqlCommand();
+                string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( @StartDato , @YdelsesBeskrivelse ,@ydelse.Pris  ,@Timer , @SagsNr , @AdvokatId )";
+                RunSqlCommand(sqlString, com);
             }
         }
         public void UpdateYdelse(Ydelse ydelse)
         {
+            SqlCommand com = new SqlCommand();
             string sqlString =
-                $"UPDATE Ydelse SET Startdato = '{ydelse.StartDato}', YdelsesBeskrivelse ='{ydelse.YdelsesBeskrivelse}', Pris = '{ydelse.Pris}',Timer = '{ydelse.Timer}', SagsNr = {ydelse.SagsNr}, AdvokatId = {ydelse.AdvokatId}" +
+                $"UPDATE Ydelse SET Startdato = @StartDato , YdelsesBeskrivelse =@YdelsesBeskrivelse , Pris = @Pris ,Timer = @Timer , SagsNr = @SagsNr , AdvokatId = @AdvokatId " +
                 $"WHERE YdelsesNr ={ydelse.YdelsesNr}";
-            RunSqlCommand(sqlString);
+            RunSqlCommand(sqlString, com);
         }
         public List<Ydelse> GetAllYdelse()// By Daniella //By Julius
         {
@@ -309,14 +325,16 @@ namespace DataAccess
 
         public void AddEfteruddannelseToAdvokat(string efteruddannelse, int advokatId)// By DAniella
         {
-            string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES ('{efteruddannelse}', {advokatId})";
-            RunSqlCommand(sqlString);
+            SqlCommand com = new SqlCommand();
+            string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES (@efteruddannelse, @advokatId)";
+            RunSqlCommand(sqlString, com);
         }
 
         public void AddTjenestesydelseToAdvokat(int advokatId, int ydelsesTypeNr)//By Julius
         {
-            string sqlString = $"INSERT INTO Tjenesteydelse(AdvokatId, YdelsesTypeNr) VALUES ('{advokatId}', {ydelsesTypeNr})";
-            RunSqlCommand(sqlString);
+            SqlCommand com = new SqlCommand();
+            string sqlString = $"INSERT INTO Tjenesteydelse(AdvokatId, YdelsesTypeNr) VALUES (@advokatId, @ydelsesTypeNr)";
+            RunSqlCommand(sqlString, com);
         }
     }
 }
