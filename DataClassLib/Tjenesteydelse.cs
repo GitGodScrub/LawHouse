@@ -1,6 +1,8 @@
 ﻿namespace DataClassLib
 {
     public class Tjenesteydelse
+    //Daniella
+
     {
         public int AdvokatId { get; set; }
         public int YdelsesTypeNr { get; set; }

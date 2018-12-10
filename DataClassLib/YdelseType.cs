@@ -1,6 +1,7 @@
 ﻿namespace DataClassLib
 {
     public class YdelseType
+        //Daniella
     {
         public int YdelsesTypeNr { get; set; }
         public string YdelsesNavn { get; set; }
