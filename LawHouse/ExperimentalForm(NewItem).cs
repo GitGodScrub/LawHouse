@@ -54,27 +54,54 @@ namespace GUI
             throw new NotImplementedException();
         }
 
-        private Button GetButtomRefresh(string name)
+        private Button GetButtomRefresh(string name) //load form //bliver kaldt fra update som det er nu
         {
-            throw new NotImplementedException();
+            Button newButton = new Button();
+            newButton.Location = new System.Drawing.Point(8, 8);
+            newButton.Margin = new System.Windows.Forms.Padding(5);
+            newButton.Name = name;
+            newButton.Size = new System.Drawing.Size(89, 76);
+            newButton.TabIndex = 1;
+            newButton.Text = "Refresh";
+            newButton.UseVisualStyleBackColor = true;
+            newButton.Click += new System.EventHandler(this.buttomRefresh_Click);
+            return newButton;
         }
 
-        private Button GetButtomSave(string name)
+        private Button GetButtomSave(string name) //update
         {
-            throw new NotImplementedException();
+            Button newButton = new Button();
+            newButton.Location = new System.Drawing.Point(107, 8);
+            newButton.Margin = new System.Windows.Forms.Padding(5);
+            newButton.Name = name;
+            newButton.Size = new System.Drawing.Size(121, 45);
+            newButton.TabIndex = 3;
+            newButton.Text = "Save";
+            newButton.UseVisualStyleBackColor = true;
+            newButton.Click += new System.EventHandler(this.buttomSave_Click);
+            return newButton;
         }
 
-        private Button GetButtonAnnuller(string name)
+        private Button GetButtonAnnuller(string name) //basically refresh
         {
-            throw new NotImplementedException();
+            Button newButton = new Button();
+            newButton.Location = new System.Drawing.Point(238, 8);
+            newButton.Margin = new System.Windows.Forms.Padding(5);
+            newButton.Name = name;
+            newButton.Size = new System.Drawing.Size(147, 45);
+            newButton.TabIndex = 4;
+            newButton.Text = "Annuller";
+            newButton.UseVisualStyleBackColor = true;
+            newButton.Click += new System.EventHandler(this.buttonAnnuller_Click);
+            return newButton;
         }
 
-        private Button GetButtomAddNewObjectButton(string Name)
+        private Button GetButtomAddNewObjectButton(string name) //skal måske cuttes, er måske overflødig
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(395, 8);
             newButton.Margin = new System.Windows.Forms.Padding(5);
-            newButton.Name = Name;
+            newButton.Name = name;
             newButton.Size = new System.Drawing.Size(149, 45);
             newButton.TabIndex = 5;
             newButton.Text = "AddNewObject";
@@ -82,7 +109,7 @@ namespace GUI
             newButton.Click += new System.EventHandler(this.buttomAddNewObject_Click);
             return newButton;
         }
-        private Button GetButtonHelpMe(string name)
+        private Button GetButtonHelpMe(string name) //gud
         {
             Button newButton = new Button();
             newButton.Location = new System.Drawing.Point(554, 8);
