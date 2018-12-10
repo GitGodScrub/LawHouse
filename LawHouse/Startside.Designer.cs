@@ -146,7 +146,7 @@
             this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DynamicTabControl.Name = "DynamicTabControl";
             this.DynamicTabControl.SelectedIndex = 0;
-            this.DynamicTabControl.Size = new System.Drawing.Size(778, 641);
+            this.DynamicTabControl.Size = new System.Drawing.Size(817, 641);
             this.DynamicTabControl.TabIndex = 0;
             // 
             // tabStart
@@ -770,7 +770,7 @@
             this.Se_oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Se_oversigt.Name = "Se_oversigt";
             this.Se_oversigt.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Se_oversigt.Size = new System.Drawing.Size(770, 593);
+            this.Se_oversigt.Size = new System.Drawing.Size(809, 593);
             this.Se_oversigt.TabIndex = 4;
             this.Se_oversigt.Text = "Oversigt";
             this.Se_oversigt.UseVisualStyleBackColor = true;
@@ -971,7 +971,7 @@
             // 
             // Btn_Oversigt
             // 
-            this.Btn_Oversigt.Location = new System.Drawing.Point(808, 513);
+            this.Btn_Oversigt.Location = new System.Drawing.Point(831, 479);
             this.Btn_Oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btn_Oversigt.Name = "Btn_Oversigt";
             this.Btn_Oversigt.Size = new System.Drawing.Size(161, 121);
@@ -982,7 +982,7 @@
             // 
             // Btn_Help
             // 
-            this.Btn_Help.Location = new System.Drawing.Point(808, 11);
+            this.Btn_Help.Location = new System.Drawing.Point(831, 11);
             this.Btn_Help.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Size = new System.Drawing.Size(63, 28);
