@@ -33,8 +33,8 @@ namespace GUI
                     newItem = GetButtomRefresh(Name + Type);
                     break;
 
-                case "dropdownCombobox":
-                    newItem = GetDropdownCombobox(Name + Type);
+                case "comboboxSelectOversigt":
+                    newItem = GetCombobox(Name + Type);
                     break;
 
                 case "myObjectListView":
@@ -49,7 +49,7 @@ namespace GUI
             throw new NotImplementedException();
         }
 
-        private ComboBox GetDropdownCombobox(string name)
+        private ComboBox GetCombobox(string name)
         {
             throw new NotImplementedException();
         }

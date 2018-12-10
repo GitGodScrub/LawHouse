@@ -17,13 +17,13 @@ namespace GUI
 {
     public partial class ExperimentalForm
     {
-        private void buttomAddNewObject_Click(object sender, EventArgs e) //got debug
+        private void buttomAddNewObject_Click(object sender, EventArgs e)
         {
             TabPage toSwitchTo = null;
-            string currentTabName = dynamicTabControl.SelectedTab.Name;
-            //string currentSelectedTable = 
+            //string currentTabName = dynamicTabControl.SelectedTab.Name;
+            string currentSelectedTable = myObjectListView.
             //denne er bedre (den udkommenterede)
-            switch (currentTabName)
+            switch (currentSelectedTable)
             {
                 case "Sag":
                     dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretSag);
@@ -90,7 +90,7 @@ namespace GUI
         private void dropdownCombobox_SelectedIndexChanged(object sender, EventArgs e) //Daniella?
         {
             /*
-            ListItems listItem = (ListItems)dropdownCombobox.SelectedItem;
+            ListItems listItem = (ListItems)comboboxSelectOversigt.SelectedItem;
             switch (listItem.What_type)
             {
 

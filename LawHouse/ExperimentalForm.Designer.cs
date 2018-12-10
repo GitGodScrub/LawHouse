@@ -40,7 +40,7 @@
             this.buttomAddNewObject = new System.Windows.Forms.Button();
             this.buttonAnnuller = new System.Windows.Forms.Button();
             this.buttomSave = new System.Windows.Forms.Button();
-            this.dropdownCombobox = new System.Windows.Forms.ComboBox();
+            this.comboboxSelectOversigt = new System.Windows.Forms.ComboBox();
             this.buttomRefresh = new System.Windows.Forms.Button();
             this.myObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.tabOpretSag = new System.Windows.Forms.TabPage();
@@ -137,7 +137,7 @@
             this.tabOversigt.Controls.Add(this.buttomAddNewObject);
             this.tabOversigt.Controls.Add(this.buttonAnnuller);
             this.tabOversigt.Controls.Add(this.buttomSave);
-            this.tabOversigt.Controls.Add(this.dropdownCombobox);
+            this.tabOversigt.Controls.Add(this.comboboxSelectOversigt);
             this.tabOversigt.Controls.Add(this.buttomRefresh);
             this.tabOversigt.Controls.Add(this.myObjectListView);
             this.tabOversigt.Location = new System.Drawing.Point(4, 24);
@@ -192,15 +192,15 @@
             this.buttomSave.UseVisualStyleBackColor = true;
             this.buttomSave.Click += new System.EventHandler(this.buttomSave_Click);
             // 
-            // dropdownCombobox
+            // comboboxSelectOversigt
             // 
-            this.dropdownCombobox.FormattingEnabled = true;
-            this.dropdownCombobox.Location = new System.Drawing.Point(107, 60);
-            this.dropdownCombobox.Margin = new System.Windows.Forms.Padding(2);
-            this.dropdownCombobox.Name = "dropdownCombobox";
-            this.dropdownCombobox.Size = new System.Drawing.Size(121, 21);
-            this.dropdownCombobox.TabIndex = 2;
-            this.dropdownCombobox.SelectedIndexChanged += new System.EventHandler(this.dropdownCombobox_SelectedIndexChanged);
+            this.comboboxSelectOversigt.FormattingEnabled = true;
+            this.comboboxSelectOversigt.Location = new System.Drawing.Point(107, 60);
+            this.comboboxSelectOversigt.Margin = new System.Windows.Forms.Padding(2);
+            this.comboboxSelectOversigt.Name = "comboboxSelectOversigt";
+            this.comboboxSelectOversigt.Size = new System.Drawing.Size(121, 21);
+            this.comboboxSelectOversigt.TabIndex = 2;
+            this.comboboxSelectOversigt.SelectedIndexChanged += new System.EventHandler(this.dropdownCombobox_SelectedIndexChanged);
             // 
             // buttomRefresh
             // 
@@ -292,7 +292,7 @@
         private System.Windows.Forms.TabPage tabKlient;
         private System.Windows.Forms.TabPage tabYdelse;
         private System.Windows.Forms.TabPage tabOversigt;
-        private System.Windows.Forms.ComboBox dropdownCombobox;
+        private System.Windows.Forms.ComboBox comboboxSelectOversigt;
         private System.Windows.Forms.Button buttomRefresh;
         private BrightIdeasSoftware.ObjectListView myObjectListView;
         private System.Windows.Forms.Button buttonHelpMe;

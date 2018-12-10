@@ -73,7 +73,7 @@ namespace GUI
             newTabPage.Controls.Add(GetItem(currentPageName, "buttomAddNewObject"));
             newTabPage.Controls.Add(GetItem(currentPageName, "buttonAnnuller"));
             newTabPage.Controls.Add(GetItem(currentPageName, "buttomSave"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "dropdownCombobox"));
+            newTabPage.Controls.Add(GetItem(currentPageName, "comboboxSelectOversigt"));
             newTabPage.Controls.Add(GetItem(currentPageName, "buttomRefresh"));
             newTabPage.Controls.Add(GetItem(currentPageName, "myObjectListView"));
             */
@@ -99,7 +99,8 @@ namespace GUI
             newTabPage.Controls.Add(this.buttomAddNewObject);
             newTabPage.Controls.Add(this.buttonAnnuller);
             newTabPage.Controls.Add(this.buttomSave);
-            newTabPage.Controls.Add(this.dropdownCombobox);
+            newTabPage.Controls.Add(this.
+            Combobox);
             newTabPage.Controls.Add(this.buttomRefresh);
             newTabPage.Controls.Add(this.myObjectListView);
             newTabPage.UseVisualStyleBackColor = true;
