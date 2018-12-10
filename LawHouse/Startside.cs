@@ -29,19 +29,19 @@ namespace GUI
             Datetimepicker_Sag_slutdato.CustomFormat = " ";
             
 
-            Sag_drop_YdelseTypeNr.DataSource = Controller.GetAllYdelseType();
-            Sag_drop_YdelseTypeNr.DisplayMember = "YdelsesNavn";
-         //   YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
-            Sag_drop_YdelseTypeNr.ValueMember = "YdelsesTypeNr";
-        //    Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
-            Sag_drop_MedarbejderNr.DisplayMember = "Navn";
-            Sag_drop_MedarbejderNr.ValueMember = "AdvokatId";
-            Sag_drop_MedarbejderNr.SelectedIndex = -1;
+            combobox_SagSagsType.DataSource = Controller.GetAllYdelseType();
+            combobox_SagSagsType.DisplayMember = "YdelsesNavn";
+         //   YdelseType ydelseType = (YdelseType)combobox_SagSagsType.SelectedItem;
+            combobox_SagSagsType.ValueMember = "YdelsesTypeNr";
+        //    combobox_SagMedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+            combobox_SagMedarbejderNr.DisplayMember = "Navn";
+            combobox_SagMedarbejderNr.ValueMember = "AdvokatId";
+            combobox_SagMedarbejderNr.SelectedIndex = -1;
 
             //Denne kode er til oversigt over sag 
-            objectListView1.SetObjects(Controller.GetAllKlient());
-            combobox_hvad_type.DataSource = Controller.GetAllItems();
-            combobox_hvad_type.DisplayMember = "What_type";
+            myObjectListView.SetObjects(Controller.GetAllKlient());
+            combobox_OversigtYdelseType.DataSource = Controller.GetAllItems();
+            combobox_OversigtYdelseType.DisplayMember = "What_type";
 
         }
 
@@ -51,16 +51,16 @@ namespace GUI
                           
             private void txt_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
             {
-                YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
-                Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
-                Sag_drop_MedarbejderNr.SelectedIndex = -1;
+                YdelseType ydelseType = (YdelseType)combobox_SagSagsType.SelectedItem;
+                combobox_SagMedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+                combobox_SagMedarbejderNr.SelectedIndex = -1;
             }                    
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
             try
             {
-                Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
+                Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)combobox_SagMedarbejderNr.SelectedValue, (int)combobox_SagSagsType.SelectedValue);
 
                 txt_Sag_titel.Clear();
                 txt_Sag_StartDato.Clear();
@@ -84,27 +84,27 @@ namespace GUI
         private void btn_GoToFormCreateAdvokat_Click(object sender, EventArgs e)
         {
             
-            DynamicTabControl.SelectedTab = Opret_advokat;
+            dynamicTabControl.SelectedTab = tab_OpretAdvokat;
         }
 
         private void Btn_CreateKlient_Click(object sender, EventArgs e)
         {
              
-            DynamicTabControl.SelectedTab = Opret_klient;
+            dynamicTabControl.SelectedTab = tab_OpretKlient;
         }
 
         private void btn_GåtilYdelse_Click(object sender, EventArgs e)
         {
-            DynamicTabControl.SelectedTab = Opret_ydelse;
+            dynamicTabControl.SelectedTab = tab_OpretYdelse;
         }
 
         private void Btn_Oversigt_Click(object sender, EventArgs e)
         {
-            DynamicTabControl.SelectedTab = Se_oversigt;
+            dynamicTabControl.SelectedTab = tab_Oversigt;
         }
         private void btn_opretsag_Click(object sender, EventArgs e)
         {
-            DynamicTabControl.SelectedTab = Opret_sag;
+            dynamicTabControl.SelectedTab = tabOpretSag;
         }
 
         //Koden under til opret advokat
@@ -113,7 +113,7 @@ namespace GUI
         {
             try
             {
-               // Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
+               // Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)combobox_SagMedarbejderNr.SelectedValue, (int)combobox_SagSagsType.SelectedValue);
 
               //  string navn = txt_Advokat_AdvokatNavn.Text;
                 Controller.CreateAdvokat(txt_Advokat_AdvokatNavn.Text);
@@ -193,7 +193,7 @@ namespace GUI
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            foreach (object item in objectListView1.Objects)
+            foreach (object item in myObjectListView.Objects)
             {
 
                 if (item is Sag)
@@ -219,13 +219,13 @@ namespace GUI
 
         private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-                ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+                ListItems listItem = (ListItems)combobox_OversigtYdelseType.SelectedItem;
                 switch (listItem.What_type)
                 {
 
                     case "Klient":
-                        objectListView1.SetObjects(Controller.GetAllKlient());
-                        foreach (var item in objectListView1.AllColumns)
+                        myObjectListView.SetObjects(Controller.GetAllKlient());
+                        foreach (var item in myObjectListView.AllColumns)
                         {
                             item.IsVisible = false;
                         }
@@ -236,8 +236,8 @@ namespace GUI
                         break;
 
                     case "Sag":
-                        objectListView1.SetObjects(Controller.GetAllSag());
-                        foreach (var item in objectListView1.AllColumns)
+                        myObjectListView.SetObjects(Controller.GetAllSag());
+                        foreach (var item in myObjectListView.AllColumns)
                         {
                             item.IsVisible = false;
                         }
@@ -253,8 +253,8 @@ namespace GUI
                         YdelsesTypeNr.IsVisible = true;
                         break;
                     case "Advokat":
-                        objectListView1.SetObjects(Controller.GetAllAdvokat());
-                        foreach (var item in objectListView1.AllColumns)
+                        myObjectListView.SetObjects(Controller.GetAllAdvokat());
+                        foreach (var item in myObjectListView.AllColumns)
                         {
                             item.IsVisible = false;
                         }
@@ -262,8 +262,8 @@ namespace GUI
                         Advokat_navn.IsVisible = true;
                         break;
                     case "Ydelse":
-                        objectListView1.SetObjects(Controller.GetAllYdelses());
-                        foreach (var item in objectListView1.AllColumns)
+                        myObjectListView.SetObjects(Controller.GetAllYdelses());
+                        foreach (var item in myObjectListView.AllColumns)
                         {
                             item.IsVisible = false;
                         }
@@ -276,14 +276,14 @@ namespace GUI
                         AdvokatID.IsVisible = true;
                         break;
                 }
-                objectListView1.RebuildColumns();
+                myObjectListView.RebuildColumns();
             }
 
         private void Sag_drop_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
         {
-            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
-            Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
-            Sag_drop_MedarbejderNr.SelectedIndex = -1;
+            YdelseType ydelseType = (YdelseType)combobox_SagSagsType.SelectedItem;
+            combobox_SagMedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+            combobox_SagMedarbejderNr.SelectedIndex = -1;
         }
 
         private void Startside_Load(object sender, EventArgs e)
@@ -301,26 +301,26 @@ namespace GUI
         private void objectListView1_DoubleClick(object sender, EventArgs e)
         {
 
-        ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+        ListItems listItem = (ListItems)combobox_OversigtYdelseType.SelectedItem;
         switch (listItem.What_type)
         {
 
             case "Klient":
-                DynamicTabControl.SelectedTab = Side;
-                Dybber_Overblik.SelectedTab = Klient;
+                dynamicTabControl.SelectedTab = tabDybere;
+                tabDybereOverblik.SelectedTab = Klient;
                 break;
 
             case "Sag":
-                    DynamicTabControl.SelectedTab = Side;
-                    Dybber_Overblik.SelectedTab = Sag;
+                    dynamicTabControl.SelectedTab = tabDybere;
+                    tabDybereOverblik.SelectedTab = Sag;
                     break;
             case "Advokat":
-                    DynamicTabControl.SelectedTab = Side;
-                    Dybber_Overblik.SelectedTab = Advokat;
+                    dynamicTabControl.SelectedTab = tabDybere;
+                    tabDybereOverblik.SelectedTab = Advokat;
                     break;
             case "Ydelse":
-                    DynamicTabControl.SelectedTab = Side;
-                    Dybber_Overblik.SelectedTab = Ydelse;
+                    dynamicTabControl.SelectedTab = tabDybere;
+                    tabDybereOverblik.SelectedTab = Ydelse;
                     break;
 
         }
