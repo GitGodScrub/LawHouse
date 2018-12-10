@@ -90,10 +90,5 @@ namespace GUI
             OversigtRefresh();
         }
 
-        //private void comboboxYdelsesType_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //
-        //}
-
     }
 }
