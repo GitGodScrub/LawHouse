@@ -50,15 +50,17 @@
             this.YdelseBeskrivelse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btn_Update = new System.Windows.Forms.Button();
             this.dataSetDropBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetDrop = new GUI.DataSetDrop();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Btn_Help = new System.Windows.Forms.Button();
-            this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.objectListView2 = new BrightIdeasSoftware.ObjectListView();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDropBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView2)).BeginInit();
             this.SuspendLayout();
             // 
             // objectListView1
@@ -112,12 +114,12 @@
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.GridLines = true;
             this.objectListView1.HasCollapsibleGroups = false;
-            this.objectListView1.Location = new System.Drawing.Point(44, 78);
+            this.objectListView1.Location = new System.Drawing.Point(115, 78);
             this.objectListView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowGroups = false;
             this.objectListView1.ShowImagesOnSubItems = true;
-            this.objectListView1.Size = new System.Drawing.Size(1219, 427);
+            this.objectListView1.Size = new System.Drawing.Size(319, 427);
             this.objectListView1.TabIndex = 1;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.UseFiltering = true;
@@ -229,6 +231,11 @@
             this.Timer.AspectName = "Timer";
             this.Timer.Text = "Timer";
             // 
+            // AdvokatID
+            // 
+            this.AdvokatID.AspectName = "AdvokatId";
+            this.AdvokatID.Text = "AdvokatId";
+            // 
             // btn_Update
             // 
             this.btn_Update.Location = new System.Drawing.Point(44, 12);
@@ -270,16 +277,22 @@
             this.Btn_Help.Text = "?";
             this.Btn_Help.UseVisualStyleBackColor = true;
             // 
-            // AdvokatID
+            // objectListView2
             // 
-            this.AdvokatID.AspectName = "AdvokatId";
-            this.AdvokatID.Text = "AdvokatId";
+            this.objectListView2.CellEditUseWholeCell = false;
+            this.objectListView2.Location = new System.Drawing.Point(477, 78);
+            this.objectListView2.Name = "objectListView2";
+            this.objectListView2.Size = new System.Drawing.Size(421, 387);
+            this.objectListView2.TabIndex = 8;
+            this.objectListView2.UseCompatibleStateImageBehavior = false;
+            this.objectListView2.View = System.Windows.Forms.View.Details;
             // 
             // Overblik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 530);
+            this.Controls.Add(this.objectListView2);
             this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_Update);
@@ -290,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDropBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,5 +337,6 @@
         private BrightIdeasSoftware.OLVColumn Timer;
         private BrightIdeasSoftware.OLVColumn YdelsesNr;
         private BrightIdeasSoftware.OLVColumn AdvokatID;
+        private BrightIdeasSoftware.ObjectListView objectListView2;
     }
 }

@@ -188,7 +188,7 @@ namespace GUI
         //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
         //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
         
-
+         
            
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -288,61 +288,43 @@ namespace GUI
 
         private void Startside_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSetDrop.YdelseType' table. You can move, or remove it, as needed.
+            this.ydelseTypeTableAdapter.Fill(this.dataSetDrop.YdelseType);
             // TODO: This line of code loads data into the 'dataSetDrop.Ydelse' table. You can move, or remove it, as needed.
-          //  this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
+            this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
+            // TODO: This line of code loads data into the 'dataSetDrop.Ydelse' table. You can move, or remove it, as needed.
+            //  this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
 
         }
+
 
         private void objectListView1_DoubleClick(object sender, EventArgs e)
         {
 
-             
-              ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
-            switch (listItem.What_type)
-            {
+        ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+        switch (listItem.What_type)
+        {
 
-                case "Klient":
-                    foreach (var selectedObject in objectListView1.SelectedObjects)
-                    {
+            case "Klient":
+                DynamicTabControl.SelectedTab = Side;
+                Dybber_Overblik.SelectedTab = Klient;
+                break;
 
-                    }
-                /*    objectListView1.SetObjects(Controller.GetAllKlient());
-                    foreach (var item in objectListView1.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                  */  
+            case "Sag":
+                    DynamicTabControl.SelectedTab = Side;
+                    Dybber_Overblik.SelectedTab = Sag;
+                    break;
+            case "Advokat":
+                    DynamicTabControl.SelectedTab = Side;
+                    Dybber_Overblik.SelectedTab = Advokat;
+                    break;
+            case "Ydelse":
+                    DynamicTabControl.SelectedTab = Side;
+                    Dybber_Overblik.SelectedTab = Ydelse;
                     break;
 
-                case "Sag":
-                    objectListView1.SetObjects(Controller.GetAllSag());
-                    foreach (var item in objectListView1.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                     
-                    break;
-                case "Advokat":
-                    objectListView1.SetObjects(Controller.GetAllAdvokat());
-                    foreach (var item in objectListView1.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                     
-                    break;
-                case "Ydelse":
-                    objectListView1.SetObjects(Controller.GetAllYdelses());
-                    foreach (var item in objectListView1.AllColumns)
-                    {
-                        item.IsVisible = false;
-                    }
-                     
-                    break;
-
-
-            }
         }
- 
+        }
     }
 }
 

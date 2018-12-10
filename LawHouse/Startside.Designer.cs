@@ -116,7 +116,7 @@
             this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Side = new System.Windows.Forms.TabPage();
             this.Dybber_Overblik = new System.Windows.Forms.TabControl();
             this.Sag = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -129,7 +129,10 @@
             this.Btn_Oversigt = new System.Windows.Forms.Button();
             this.Btn_Help = new System.Windows.Forms.Button();
             this.dataSetDrop = new GUI.DataSetDrop();
-            this.ydelseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ydelseTableAdapter = new GUI.DataSetDropTableAdapters.YdelseTableAdapter();
+            this.ydelseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ydelseTypeTableAdapter = new GUI.DataSetDropTableAdapters.YdelseTypeTableAdapter();
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,14 +142,14 @@
             this.Opret_ydelse.SuspendLayout();
             this.Se_oversigt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.Side.SuspendLayout();
             this.Dybber_Overblik.SuspendLayout();
             this.Sag.SuspendLayout();
             this.Advokat.SuspendLayout();
             this.Klient.SuspendLayout();
             this.Ydelse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ydelseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ydelseTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DynamicTabControl
@@ -157,7 +160,7 @@
             this.DynamicTabControl.Controls.Add(this.Opret_klient);
             this.DynamicTabControl.Controls.Add(this.Opret_ydelse);
             this.DynamicTabControl.Controls.Add(this.Se_oversigt);
-            this.DynamicTabControl.Controls.Add(this.tabPage1);
+            this.DynamicTabControl.Controls.Add(this.Side);
             this.DynamicTabControl.ItemSize = new System.Drawing.Size(170, 40);
             this.DynamicTabControl.Location = new System.Drawing.Point(12, 11);
             this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -837,7 +840,7 @@
             this.objectListView1.AllColumns.Add(this.Pris);
             this.objectListView1.AllColumns.Add(this.Timer);
             this.objectListView1.AllColumns.Add(this.AdvokatID);
-            this.objectListView1.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.objectListView1.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
             this.objectListView1.CellEditUseWholeCell = false;
             this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
@@ -863,12 +866,9 @@
             this.AdvokatID});
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView1.FullRowSelect = true;
-            this.objectListView1.GridLines = true;
-            this.objectListView1.HasCollapsibleGroups = false;
             this.objectListView1.Location = new System.Drawing.Point(5, 117);
             this.objectListView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.objectListView1.Name = "objectListView1";
-            this.objectListView1.ShowGroups = false;
             this.objectListView1.ShowImagesOnSubItems = true;
             this.objectListView1.Size = new System.Drawing.Size(1160, 427);
             this.objectListView1.TabIndex = 9;
@@ -894,6 +894,7 @@
             // 
             this.Arbejdstitel.AspectName = "Arbejdstitel";
             this.Arbejdstitel.IsEditable = false;
+            this.Arbejdstitel.IsTileViewColumn = true;
             this.Arbejdstitel.MinimumWidth = 50;
             this.Arbejdstitel.Text = "Arbejdstitel";
             this.Arbejdstitel.Width = 152;
@@ -930,6 +931,7 @@
             // SagsBeskrivelse
             // 
             this.SagsBeskrivelse.AspectName = "SagsBeskrivelse";
+            this.SagsBeskrivelse.IsTileViewColumn = true;
             this.SagsBeskrivelse.MinimumWidth = 100;
             this.SagsBeskrivelse.Text = "SagsBeskrivelse";
             this.SagsBeskrivelse.Width = 100;
@@ -1026,15 +1028,15 @@
             this.AdvokatID.Text = "AdvokatId";
             this.AdvokatID.Width = 70;
             // 
-            // tabPage1
+            // Side
             // 
-            this.tabPage1.Controls.Add(this.Dybber_Overblik);
-            this.tabPage1.Location = new System.Drawing.Point(4, 44);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1192, 593);
-            this.tabPage1.TabIndex = 6;
-            this.tabPage1.Text = "Side";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Side.Controls.Add(this.Dybber_Overblik);
+            this.Side.Location = new System.Drawing.Point(4, 44);
+            this.Side.Name = "Side";
+            this.Side.Size = new System.Drawing.Size(1192, 593);
+            this.Side.TabIndex = 6;
+            this.Side.Text = "Side";
+            this.Side.UseVisualStyleBackColor = true;
             // 
             // Dybber_Overblik
             // 
@@ -1109,6 +1111,7 @@
             // 
             // Ydelse
             // 
+            this.Ydelse.Controls.Add(this.listBox1);
             this.Ydelse.Controls.Add(this.label6);
             this.Ydelse.Location = new System.Drawing.Point(4, 25);
             this.Ydelse.Name = "Ydelse";
@@ -1152,10 +1155,29 @@
             this.dataSetDrop.DataSetName = "DataSetDrop";
             this.dataSetDrop.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ydelseBindingSource
+            // listBox1
             // 
-            this.ydelseBindingSource.DataMember = "Ydelse";
-            this.ydelseBindingSource.DataSource = this.dataSetDrop;
+            this.listBox1.DataSource = this.ydelseTypeBindingSource;
+            this.listBox1.DisplayMember = "YdelsesNavn";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(254, 10);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(187, 84);
+            this.listBox1.TabIndex = 1;
+            // 
+            // ydelseTableAdapter
+            // 
+            this.ydelseTableAdapter.ClearBeforeFill = true;
+            // 
+            // ydelseTypeBindingSource
+            // 
+            this.ydelseTypeBindingSource.DataMember = "YdelseType";
+            this.ydelseTypeBindingSource.DataSource = this.dataSetDrop;
+            // 
+            // ydelseTypeTableAdapter
+            // 
+            this.ydelseTypeTableAdapter.ClearBeforeFill = true;
             // 
             // Startside
             // 
@@ -1184,7 +1206,7 @@
             this.Opret_ydelse.PerformLayout();
             this.Se_oversigt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
-            this.tabPage1.ResumeLayout(false);
+            this.Side.ResumeLayout(false);
             this.Dybber_Overblik.ResumeLayout(false);
             this.Sag.ResumeLayout(false);
             this.Sag.PerformLayout();
@@ -1195,7 +1217,7 @@
             this.Ydelse.ResumeLayout(false);
             this.Ydelse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDrop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ydelseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ydelseTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1292,8 +1314,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private DataSetDrop dataSetDrop;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource ydelseBindingSource;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage Side;
         private System.Windows.Forms.TabControl Dybber_Overblik;
         private System.Windows.Forms.TabPage Sag;
         private System.Windows.Forms.TabPage Advokat;
@@ -1303,5 +1324,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox1;
+        private DataSetDropTableAdapters.YdelseTableAdapter ydelseTableAdapter;
+        private System.Windows.Forms.BindingSource ydelseTypeBindingSource;
+        private DataSetDropTableAdapters.YdelseTypeTableAdapter ydelseTypeTableAdapter;
     }
 }
