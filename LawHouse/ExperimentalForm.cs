@@ -17,12 +17,10 @@ namespace GUI
 {
     public partial class ExperimentalForm : Form
     {
-        private List<string> tabsToHideAtStartup;
         public ExperimentalForm()
         {
             InitializeComponent();//Her oprettes formen
-
-            tabsToHideAtStartup = new List<string>();
+            List<string> tabsToHideAtStartup = new List<string>();
             tabsToHideAtStartup.Add("Opret_sag");
             tabsToHideAtStartup.Add("Opret_advokat");
             tabsToHideAtStartup.Add("Opret_klient");
@@ -31,20 +29,27 @@ namespace GUI
             hideTabs(tabsToHideAtStartup);
 
         }
+        private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
+        {
+
+        }
         //
         //TabControler = dynamicTabControl
+        //ObjectListView myObjectListView;
         //
-        //
-        private void ExperimentalForm_Load(object sender, EventArgs e)
+        private void hideTabs(List<string> tabsToHide)
         {
-            
+            foreach (string tabKey in tabsToHide)
+            {
+                dynamicTabControl.TabPages.RemoveByKey(tabKey);
+            }
         }
 
-        // ObjectListView myObjectListView;
         private void buttomAddNewObject_Click(object sender, EventArgs e)
         {
             TabPage toSwitchTo = null;
-            switch (dynamicTabControl.SelectedTab.Name)
+            string currentTabName = dynamicTabControl.SelectedTab.Name;
+            switch (currentTabName)
             {
                 case "Sag":
                     dynamicTabControl.TabPages.Insert(dynamicTabControl.TabPages.Count, tabOpretSag);
@@ -67,20 +72,10 @@ namespace GUI
             toSwitchTo = tabOpretSag;//debug
             dynamicTabControl.SelectedTab = toSwitchTo;
         }
-
-        private void hideTabs(List<string> tabsToHide)
-        {
-            foreach (string tabKey in tabsToHide)
-            {
-                dynamicTabControl.TabPages.RemoveByKey(tabKey);
-            }
-        }
-
         private void buttonHelpMe_Click(object sender, EventArgs e)
         {
             //open help for current page
         }
-
         private void buttonAnnuller_Click(object sender, EventArgs e)
         {
             //Discard changes
@@ -89,17 +84,7 @@ namespace GUI
         {
             //reload current objectViewList
         }
-
-        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//  ?
-        {
-
-        }
-
-        //Daniella's kommentarer  //Har ikke nærlæst disse
-        //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
-        //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
-        //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
-        private void buttomSave_Click(object sender, EventArgs e)// Daniella
+        private void buttomSave_Click(object sender, EventArgs e)// Daniella //Ved ikke om den faktisk gemmer, eller om den bare refresher
         {
             foreach (object item in myObjectListView.Objects)
             {
@@ -122,8 +107,12 @@ namespace GUI
                 }
             }
             MessageBox.Show("Færdig");
-        }//Ved ikke om den faktisk gemmer, eller om den bare refresher
-        //Har ikke nærlæst denne
+        }
+
+        private void myObjectListView_SelectedIndexChanged(object sender, EventArgs e)//  ?
+        {
+
+        }
         private void dropdownCombobox_SelectedIndexChanged(object sender, EventArgs e) //Daniella?
         {
             /*
