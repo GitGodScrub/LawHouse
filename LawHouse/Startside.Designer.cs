@@ -120,7 +120,6 @@
             this.Btn_Help = new System.Windows.Forms.Button();
             this.dataSetDrop = new GUI.DataSetDrop();
             this.ydelseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ydelseTableAdapter = new GUI.DataSetDropTableAdapters.YdelseTableAdapter();
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -142,7 +141,7 @@
             this.DynamicTabControl.Controls.Add(this.Opret_klient);
             this.DynamicTabControl.Controls.Add(this.Opret_ydelse);
             this.DynamicTabControl.Controls.Add(this.Se_oversigt);
-            this.DynamicTabControl.ItemSize = new System.Drawing.Size(170, 20);
+            this.DynamicTabControl.ItemSize = new System.Drawing.Size(170, 40);
             this.DynamicTabControl.Location = new System.Drawing.Point(12, 11);
             this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DynamicTabControl.Name = "DynamicTabControl";
@@ -153,10 +152,10 @@
             // tabStart
             // 
             this.tabStart.Controls.Add(this.pictureBox1);
-            this.tabStart.Location = new System.Drawing.Point(4, 24);
+            this.tabStart.Location = new System.Drawing.Point(4, 44);
             this.tabStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabStart.Name = "tabStart";
-            this.tabStart.Size = new System.Drawing.Size(770, 613);
+            this.tabStart.Size = new System.Drawing.Size(770, 593);
             this.tabStart.TabIndex = 5;
             this.tabStart.Text = "Startside";
             this.tabStart.UseVisualStyleBackColor = true;
@@ -197,11 +196,11 @@
             this.Opret_sag.Controls.Add(this.lbl_Kørselstimer);
             this.Opret_sag.Controls.Add(this.lbl_Start);
             this.Opret_sag.Controls.Add(this.lbl_Titel);
-            this.Opret_sag.Location = new System.Drawing.Point(4, 24);
+            this.Opret_sag.Location = new System.Drawing.Point(4, 44);
             this.Opret_sag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_sag.Name = "Opret_sag";
             this.Opret_sag.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_sag.Size = new System.Drawing.Size(770, 613);
+            this.Opret_sag.Size = new System.Drawing.Size(770, 593);
             this.Opret_sag.TabIndex = 0;
             this.Opret_sag.Text = "Sag";
             this.Opret_sag.UseVisualStyleBackColor = true;
@@ -430,11 +429,11 @@
             this.Opret_advokat.Controls.Add(this.txt_Advokat_AdvokatNavn);
             this.Opret_advokat.Controls.Add(this.btn_AddSpecialToAdvokat);
             this.Opret_advokat.Controls.Add(this.btn_CreateAdvokat);
-            this.Opret_advokat.Location = new System.Drawing.Point(4, 24);
+            this.Opret_advokat.Location = new System.Drawing.Point(4, 44);
             this.Opret_advokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_advokat.Name = "Opret_advokat";
             this.Opret_advokat.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_advokat.Size = new System.Drawing.Size(770, 613);
+            this.Opret_advokat.Size = new System.Drawing.Size(770, 593);
             this.Opret_advokat.TabIndex = 1;
             this.Opret_advokat.Text = "Advokat";
             // 
@@ -530,11 +529,11 @@
             this.Opret_klient.Controls.Add(this.Txt_Klient_TelefonNr);
             this.Opret_klient.Controls.Add(this.Txt_Klient_Adresse);
             this.Opret_klient.Controls.Add(this.Txt_Klient_navn);
-            this.Opret_klient.Location = new System.Drawing.Point(4, 24);
+            this.Opret_klient.Location = new System.Drawing.Point(4, 44);
             this.Opret_klient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_klient.Name = "Opret_klient";
             this.Opret_klient.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_klient.Size = new System.Drawing.Size(770, 613);
+            this.Opret_klient.Size = new System.Drawing.Size(770, 593);
             this.Opret_klient.TabIndex = 2;
             this.Opret_klient.Text = "Klient";
             this.Opret_klient.UseVisualStyleBackColor = true;
@@ -621,11 +620,11 @@
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_beskrivelse);
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_startdato);
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_ydelsesNr);
-            this.Opret_ydelse.Location = new System.Drawing.Point(4, 24);
+            this.Opret_ydelse.Location = new System.Drawing.Point(4, 44);
             this.Opret_ydelse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_ydelse.Name = "Opret_ydelse";
             this.Opret_ydelse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_ydelse.Size = new System.Drawing.Size(770, 613);
+            this.Opret_ydelse.Size = new System.Drawing.Size(770, 593);
             this.Opret_ydelse.TabIndex = 3;
             this.Opret_ydelse.Text = "Ydelse";
             this.Opret_ydelse.UseVisualStyleBackColor = true;
@@ -767,11 +766,11 @@
             this.Se_oversigt.Controls.Add(this.combobox_hvad_type);
             this.Se_oversigt.Controls.Add(this.btn_Update);
             this.Se_oversigt.Controls.Add(this.objectListView1);
-            this.Se_oversigt.Location = new System.Drawing.Point(4, 24);
+            this.Se_oversigt.Location = new System.Drawing.Point(4, 44);
             this.Se_oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Se_oversigt.Name = "Se_oversigt";
             this.Se_oversigt.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Se_oversigt.Size = new System.Drawing.Size(770, 613);
+            this.Se_oversigt.Size = new System.Drawing.Size(770, 593);
             this.Se_oversigt.TabIndex = 4;
             this.Se_oversigt.Text = "Oversigt";
             this.Se_oversigt.UseVisualStyleBackColor = true;
@@ -1001,10 +1000,6 @@
             this.ydelseBindingSource.DataMember = "Ydelse";
             this.ydelseBindingSource.DataSource = this.dataSetDrop;
             // 
-            // ydelseTableAdapter
-            // 
-            this.ydelseTableAdapter.ClearBeforeFill = true;
-            // 
             // Startside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1130,6 +1125,5 @@
         private DataSetDrop dataSetDrop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource ydelseBindingSource;
-        private DataSetDropTableAdapters.YdelseTableAdapter ydelseTableAdapter;
     }
 }

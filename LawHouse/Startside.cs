@@ -289,7 +289,7 @@ namespace GUI
         private void Startside_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSetDrop.Ydelse' table. You can move, or remove it, as needed.
-            this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
+          //  this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
 
         }
     }
