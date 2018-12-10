@@ -973,50 +973,58 @@
             // Adresse
             // 
             this.Adresse.AspectName = "Adresse";
-            this.Adresse.MaximumWidth = 150;
+            this.Adresse.MinimumWidth = 100;
             this.Adresse.Text = "Adresse";
+            this.Adresse.Width = 100;
             // 
             // TelefonNr
             // 
             this.TelefonNr.AspectName = "TelefonNr";
-            this.TelefonNr.MaximumWidth = 200;
+            this.TelefonNr.MinimumWidth = 150;
             this.TelefonNr.Text = "TelefonNr";
+            this.TelefonNr.Width = 200;
             // 
             // Advokat_navn
             // 
             this.Advokat_navn.AspectName = "Navn";
-            this.Advokat_navn.MaximumWidth = 150;
+            this.Advokat_navn.MinimumWidth = 100;
             this.Advokat_navn.Text = "Advokat Navn";
+            this.Advokat_navn.Width = 100;
             // 
             // YdelsesNr
             // 
             this.YdelsesNr.AspectName = "YdelsesNr";
-            this.YdelsesNr.MaximumWidth = 150;
+            this.YdelsesNr.MinimumWidth = 70;
             this.YdelsesNr.Text = "Ydelses Nr";
+            this.YdelsesNr.Width = 70;
             // 
             // YdelseBeskrivelse
             // 
             this.YdelseBeskrivelse.AspectName = "YdelsesBeskrivelse";
-            this.YdelseBeskrivelse.MaximumWidth = 150;
+            this.YdelseBeskrivelse.MinimumWidth = 150;
             this.YdelseBeskrivelse.Text = "Ydelse Beskrivelse";
+            this.YdelseBeskrivelse.Width = 150;
             // 
             // Pris
             // 
             this.Pris.AspectName = "Pris";
-            this.Pris.MaximumWidth = 150;
+            this.Pris.MinimumWidth = 70;
             this.Pris.Text = "Pris";
+            this.Pris.Width = 70;
             // 
             // Timer
             // 
             this.Timer.AspectName = "Timer";
-            this.Timer.MaximumWidth = 150;
+            this.Timer.MinimumWidth = 70;
             this.Timer.Text = "Timer";
+            this.Timer.Width = 70;
             // 
             // AdvokatID
             // 
             this.AdvokatID.AspectName = "AdvokatId";
-            this.AdvokatID.MaximumWidth = 150;
+            this.AdvokatID.MinimumWidth = 70;
             this.AdvokatID.Text = "AdvokatId";
+            this.AdvokatID.Width = 70;
             // 
             // tabPage1
             // 
@@ -1153,6 +1161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1424, 845);
             this.Controls.Add(this.Btn_Help);
