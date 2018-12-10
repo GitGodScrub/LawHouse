@@ -21,16 +21,16 @@ namespace GUI
             InitializeComponent();
 
             //Denne kode er til at oprette sag
-            txt_Sag_StartDato.Text = DateTime.Now.ToString("dd-MM-yyyy");
-           // txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
-          //  txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
-            Datetimepicker_Sag_slutdato.Format = DateTimePickerFormat.Custom;
+            txt_Sag_StartDato.Text = DateTime.Now.ToString("dd-MM-yyyy"); //bruges i opretSag
+            //txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
+            //txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
+            Datetimepicker_Sag_slutdato.Format = DateTimePickerFormat.Custom; //slutdato knap kode
             Datetimepicker_Sag_slutdato.MinDate = DateTime.Today;
             Datetimepicker_Sag_slutdato.CustomFormat = " ";
 
             Sag_drop_YdelseTypeNr.DataSource = Controller.GetAllYdelseType();
             Sag_drop_YdelseTypeNr.DisplayMember = "YdelsesNavn";
-            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;//???? whoops
             Sag_drop_YdelseTypeNr.ValueMember = "YdelsesTypeNr";
             Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
             Sag_drop_MedarbejderNr.DisplayMember = "Navn";
@@ -70,7 +70,7 @@ namespace GUI
                 Startside startside = new Startside();
                 startside.Show();
             
-        }
+            }
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
@@ -179,15 +179,15 @@ namespace GUI
             MessageBox.Show("færdig");
         }
 
-        private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e)
+        private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e)//når den ændres så xx
         {
-                ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+                ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;//den valgte ting hentes fra listitem
                 switch (listItem.What_type)
                 {
-
-                    case "Klient":
+                    //object view list har altid alt data på sig
+                    case "Klient"://tager hver klient i denne liste og putter dem som det nye data
                         objectListView1.SetObjects(Controller.GetAllKlient());
-                        foreach (var item in objectListView1.AllColumns)
+                        foreach (var item in objectListView1.AllColumns)//gør alle kolonner kolonner usynlige
                         {
                             item.IsVisible = false;
                         }
@@ -238,15 +238,15 @@ namespace GUI
                         AdvokatID.IsVisible = true;
                         break;
                 }
-                objectListView1.RebuildColumns();
+                objectListView1.RebuildColumns(); //opdatere hvordan den ser ud, baseret på dets data
             }
  
 
-        private void Sag_drop_YdelseTypeNr_SelectedIndexChange(object sender, EventArgs e)
+        private void Sag_drop_YdelseTypeNr_SelectedIndexChange(object sender, EventArgs e)//når man vælger en item i combobox
         {
-            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;//laver en ny(?) ydelsestype
             Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
-            Sag_drop_MedarbejderNr.SelectedIndex = -1;
+            Sag_drop_MedarbejderNr.SelectedIndex = -1; //gør sådan at ingenting er valgt
         }
     }
 }
