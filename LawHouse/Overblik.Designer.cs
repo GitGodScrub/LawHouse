@@ -50,6 +50,7 @@
             this.YdelseBeskrivelse = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btn_Update = new System.Windows.Forms.Button();
             this.dataSetDropBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetDrop = new GUI.DataSetDrop();
@@ -140,13 +141,13 @@
             this.Arbejdstitel.IsEditable = false;
             this.Arbejdstitel.Text = "Arbejdstitel";
             // 
-            // StartDato
+            // StartDate
             // 
             this.StartDato.AspectName = "StartDato";
             this.StartDato.IsEditable = false;
             this.StartDato.Text = "StartDato";
             // 
-            // SlutDato
+            // Slutdate
             // 
             this.SlutDato.AspectName = "SlutDato";
             this.SlutDato.Text = "SlutDato";
@@ -165,6 +166,7 @@
             // 
             this.SagsBeskrivelse.AspectName = "SagsBeskrivelse";
             this.SagsBeskrivelse.Text = "SagsBeskrivelse";
+            this.SagsBeskrivelse.Width = 90;
             // 
             // InterneNoter
             // 
@@ -180,7 +182,7 @@
             // MedarbejderNr
             // 
             this.MedarbejderNr.AspectName = "AdvokatId";
-            this.MedarbejderNr.Text = "MedarbejderNr";
+            this.MedarbejderNr.Text = "AdvokatId";
             this.MedarbejderNr.Width = 107;
             // 
             // YdelsesTypeNr
@@ -201,7 +203,6 @@
             // TelefonNr
             // 
             this.TelefonNr.AspectName = "TelefonNr";
-            this.TelefonNr.IsEditable = false;
             this.TelefonNr.Text = "TelefonNr";
             // 
             // Advokat_navn
@@ -228,6 +229,11 @@
             // 
             this.Timer.AspectName = "Timer";
             this.Timer.Text = "Timer";
+            // 
+            // AdvokatID
+            // 
+            this.AdvokatID.AspectName = "AdvokatId";
+            this.AdvokatID.Text = "AdvokatId";
             // 
             // btn_Update
             // 
@@ -270,11 +276,6 @@
             this.Btn_Help.Text = "?";
             this.Btn_Help.UseVisualStyleBackColor = true;
             // 
-            // AdvokatID
-            // 
-            this.AdvokatID.AspectName = "AdvokatId";
-            this.AdvokatID.Text = "AdvokatId";
-            // 
             // Overblik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,6 +298,7 @@
         #endregion
 
         private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn SagsNr;
         private BrightIdeasSoftware.OLVColumn Arbejdstitel;
         private BrightIdeasSoftware.OLVColumn StartDato;
@@ -307,21 +309,21 @@
         private BrightIdeasSoftware.OLVColumn InterneNoter;
         private BrightIdeasSoftware.OLVColumn KlientNr;
         private BrightIdeasSoftware.OLVColumn MedarbejderNr;
-        private System.Windows.Forms.Button btn_Update;
-        private System.Windows.Forms.BindingSource dataSetDropBindingSource;
-        private DataSetDrop dataSetDrop;
-        private System.Windows.Forms.ComboBox comboBox1;
         private BrightIdeasSoftware.OLVColumn YdelsesTypeNr;
-        private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn Navn;
         private BrightIdeasSoftware.OLVColumn Adresse;
         private BrightIdeasSoftware.OLVColumn TelefonNr;
         private BrightIdeasSoftware.OLVColumn Advokat_navn;
-        private System.Windows.Forms.Button Btn_Help;
+        private BrightIdeasSoftware.OLVColumn YdelsesNr;
         private BrightIdeasSoftware.OLVColumn YdelseBeskrivelse;
         private BrightIdeasSoftware.OLVColumn Pris;
         private BrightIdeasSoftware.OLVColumn Timer;
-        private BrightIdeasSoftware.OLVColumn YdelsesNr;
         private BrightIdeasSoftware.OLVColumn AdvokatID;
+
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.BindingSource dataSetDropBindingSource;
+        private DataSetDrop dataSetDrop;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Btn_Help;
     }
 }

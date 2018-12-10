@@ -15,27 +15,21 @@ using DataClassLib;
 
 namespace GUI
 {
-    public partial class ExperimentalForm : Form
+    public partial class ExperimentalForm : Form //GUI Remake, by Julius
     {
         public ExperimentalForm()
         {
             InitializeComponent();//Her oprettes formen
             List<string> tabsToHideAtStartup = new List<string>();
-            tabsToHideAtStartup.Add("Opret_sag");
-            tabsToHideAtStartup.Add("Opret_advokat");
-            tabsToHideAtStartup.Add("Opret_klient");
-            tabsToHideAtStartup.Add("Opret_ydelse");
-            tabsToHideAtStartup.Add("tabOversigt");
+            tabsToHideAtStartup.Add("OpretSag");
+            tabsToHideAtStartup.Add("OpretAdvokat");
+            tabsToHideAtStartup.Add("OpretKlient");
+            tabsToHideAtStartup.Add("OpretYdelse");
             hideTabs(tabsToHideAtStartup);
-
         }
-        //
-        //TabControler = dynamicTabControl
-        //ObjectListView myObjectListView;
-        //
         private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
         {
-
+            this.comboboxOversigt = GetCombobox("comboboxOversigt");
         }
         
         private void hideTabs(List<string> tabsToHide)
@@ -44,8 +38,12 @@ namespace GUI
             {
                 dynamicTabControl.TabPages.RemoveByKey(tabKey);
             }
+        } 
+        private ListItems oversigtGetSelectedItem()//Daniella //It just works, okay?
+        {
+            ListItems toReturn = (ListItems)comboboxOversigt.SelectedItem;
+            return toReturn;
         }
-
         private void CommitObjectViewListChanges()//Daniella
         {
             foreach (object item in myObjectListView.Objects)
@@ -67,6 +65,61 @@ namespace GUI
                     Controller.UpdateKlient(item);
                 }
             }
+        }
+
+        private void OversigtHideAllColums()//Daniella
+        {
+            foreach (var item in myObjectListView.AllColumns)
+            {
+                item.IsVisible = false;
+            }
+        }
+        private void OversigtRefresh() //Daniella //Denne reloader 
+        {
+            ListItems currentSelected = (ListItems)oversigtGetSelectedItem();
+            switch (currentSelected.What_type)
+            {
+                case "Klient":
+                    myObjectListView.SetObjects(Controller.GetAllKlient());
+                    OversigtHideAllColums();
+                    KlientNr.IsVisible = true;
+                    Navn.IsVisible = true;
+                    Adresse.IsVisible = true;
+                    TelefonNr.IsVisible = true;
+                    break;
+                case "Sag":
+                    myObjectListView.SetObjects(Controller.GetAllSag());
+                    OversigtHideAllColums();
+                    SagsNr.IsVisible = true;
+                    Arbejdstitel.IsVisible = true;
+                    StartDato.IsVisible = true;
+                    SlutDato.IsVisible = true;
+                    TimeEstimat.IsVisible = true;
+                    SagsBeskrivelse.IsVisible = true;
+                    InterneNoter.IsVisible = true;
+                    KlientNr.IsVisible = true;
+                    MedarbejderNr.IsVisible = true;
+                    YdelsesTypeNr.IsVisible = true;
+                    break;
+                case "Advokat":
+                    myObjectListView.SetObjects(Controller.GetAllAdvokat());
+                    OversigtHideAllColums();
+                    MedarbejderNr.IsVisible = true;
+                    Advokat_navn.IsVisible = true;
+                    break;
+                case "Ydelse":
+                    myObjectListView.SetObjects(Controller.GetAllYdelses());
+                    OversigtHideAllColums();
+                    YdelsesNr.IsVisible = true;
+                    StartDato.IsVisible = true;
+                    YdelseBeskrivelse.IsVisible = true;
+                    Pris.IsVisible = true;
+                    Timer.IsVisible = true; //Fuck
+                    SagsNr.IsVisible = true;
+                    AdvokatID.IsVisible = true;
+                    break;
+            }
+            myObjectListView.RebuildColumns();
         }
     }
 }

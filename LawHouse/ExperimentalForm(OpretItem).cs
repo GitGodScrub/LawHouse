@@ -63,5 +63,5 @@ namespace GUI
             MessageBox.Show("Sagen er nu oprette, du kan finde den i sags oversigt");
         }
         */
-    }//Har ikke nærlæst denne
+    }
 }

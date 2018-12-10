@@ -14,8 +14,10 @@ using DataClassLib;
 
 namespace GUI
 {
-    public partial class ExperimentalForm //Julius //skal også indlæse relevant data
-    {
+    public partial class ExperimentalForm //Julius 
+    {//skal også indlæse relevant data
+        //My old code ;_;
+        /*
         public void makeNewTabPageController()
         {
             List<string> keyOfNewTabs = new List<string>
@@ -67,19 +69,18 @@ namespace GUI
         }
         private void TabBuilderHelper(TabPage newTabPage)
         {
-            /*
-            string currentPageName = Convert.ToString(newTabPage.Name);
-            newTabPage.Controls.Add(GetItem(currentPageName, "buttonHelpMe"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "buttomAddNewObject"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "buttonAnnuller"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "buttomSave"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "comboboxSelectOversigt"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "buttomRefresh"));
-            newTabPage.Controls.Add(GetItem(currentPageName, "myObjectListView"));
-            */
+            
+            //string currentPageName = Convert.ToString(newTabPage.Name);
+            //newTabPage.Controls.Add(GetItem(currentPageName, "buttonHelpMe"));
+            //newTabPage.Controls.Add(GetItem(currentPageName, "buttomAddNewObject"));
+            //newTabPage.Controls.Add(GetItem(currentPageName, "buttonAnnuller"));
+            //newTabPage.Controls.Add(GetItem(currentPageName, "buttomSave"));
+            //newTabPage.Controls.Add(GetItem(currentPageName, "comboboxOversigtSelect"));
+            //newTabPage.Controls.Add(GetItem(currentPageName, "buttomRefresh"));
+            //newTabPage.Controls.Add(GetItem(currentPageName, "myObjectListView"));
+            
             newTabPage.UseVisualStyleBackColor = true;
         }
-
         private void LoadVariablesToUseInTabs()
         {
             //opretsag
@@ -88,7 +89,7 @@ namespace GUI
             
         }
 
-
+        */
 
         //Julius, old code
         //Prototype
