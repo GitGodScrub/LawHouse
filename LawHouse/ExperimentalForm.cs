@@ -29,6 +29,8 @@ namespace GUI
         }
         private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
         {
+            comboboxOversigt.DataSource = Controller.GetAllItems();
+            comboboxOversigt.DisplayMember = "What_type";
             /*
             this.myObjectListView = GetMyObjectListView("myObjectListView");
             this.comboboxOversigt = GetCombobox("comboboxOversigt");

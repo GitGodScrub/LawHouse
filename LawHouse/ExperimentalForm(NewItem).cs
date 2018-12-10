@@ -10,9 +10,10 @@ using BusinessLogic;
 namespace GUI
 {
     public partial class ExperimentalForm //Julius(Port) - Design of items by others
-    {
         //Laver nye Items til brug i GUI'en
-        //Bugged, tror jeg har misforstået noget
+        //Super Duper bugged, tror ikke at GUI´en reloader objecterne, eller noget
+    {
+
         private ObjectListView GetMyObjectListView(string name)
         {
             ObjectListView newObjectListView = new ObjectListView();
