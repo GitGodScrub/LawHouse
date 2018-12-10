@@ -25,7 +25,7 @@ namespace GUI
             tabsToHideAtStartup.Add("Opret_advokat");
             tabsToHideAtStartup.Add("Opret_klient");
             tabsToHideAtStartup.Add("Opret_ydelse");
-            tabsToHideAtStartup.Add("tabDebugTab");
+            tabsToHideAtStartup.Add("tabOversigt");
             hideTabs(tabsToHideAtStartup);
 
         }
@@ -49,6 +49,8 @@ namespace GUI
         {
             TabPage toSwitchTo = null;
             string currentTabName = dynamicTabControl.SelectedTab.Name;
+            //string currentSelectedTable = 
+            //denne er bedre (den udkommenterede)
             switch (currentTabName)
             {
                 case "Sag":

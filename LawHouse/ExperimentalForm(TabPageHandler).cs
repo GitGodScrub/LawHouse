@@ -80,6 +80,14 @@ namespace GUI
             newTabPage.UseVisualStyleBackColor = true;
         }
 
+        private void LoadVariablesToUseInTabs()
+        {
+            //opretsag
+            //txt_Sag_StartDato.Text =
+
+            
+        }
+
 
 
         //Julius, old code

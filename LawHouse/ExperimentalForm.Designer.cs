@@ -35,7 +35,7 @@
             this.tabAdvokat = new System.Windows.Forms.TabPage();
             this.tabKlient = new System.Windows.Forms.TabPage();
             this.tabYdelse = new System.Windows.Forms.TabPage();
-            this.tabDebugTab = new System.Windows.Forms.TabPage();
+            this.tabOversigt = new System.Windows.Forms.TabPage();
             this.buttonHelpMe = new System.Windows.Forms.Button();
             this.buttomAddNewObject = new System.Windows.Forms.Button();
             this.buttonAnnuller = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.dynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startPictureBox)).BeginInit();
-            this.tabDebugTab.SuspendLayout();
+            this.tabOversigt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.dynamicTabControl.Controls.Add(this.tabAdvokat);
             this.dynamicTabControl.Controls.Add(this.tabKlient);
             this.dynamicTabControl.Controls.Add(this.tabYdelse);
-            this.dynamicTabControl.Controls.Add(this.tabDebugTab);
+            this.dynamicTabControl.Controls.Add(this.tabOversigt);
             this.dynamicTabControl.Controls.Add(this.tabOpretSag);
             this.dynamicTabControl.Controls.Add(this.tabOpretAdvokat);
             this.dynamicTabControl.Controls.Add(this.tabOpretKlient);
@@ -131,22 +131,22 @@
             this.tabYdelse.Text = "Ydelse";
             this.tabYdelse.UseVisualStyleBackColor = true;
             // 
-            // tabDebugTab
+            // tabOversigt
             // 
-            this.tabDebugTab.Controls.Add(this.buttonHelpMe);
-            this.tabDebugTab.Controls.Add(this.buttomAddNewObject);
-            this.tabDebugTab.Controls.Add(this.buttonAnnuller);
-            this.tabDebugTab.Controls.Add(this.buttomSave);
-            this.tabDebugTab.Controls.Add(this.dropdownCombobox);
-            this.tabDebugTab.Controls.Add(this.buttomRefresh);
-            this.tabDebugTab.Controls.Add(this.myObjectListView);
-            this.tabDebugTab.Location = new System.Drawing.Point(4, 24);
-            this.tabDebugTab.Name = "tabDebugTab";
-            this.tabDebugTab.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDebugTab.Size = new System.Drawing.Size(994, 531);
-            this.tabDebugTab.TabIndex = 10;
-            this.tabDebugTab.Text = "DebugTab";
-            this.tabDebugTab.UseVisualStyleBackColor = true;
+            this.tabOversigt.Controls.Add(this.buttonHelpMe);
+            this.tabOversigt.Controls.Add(this.buttomAddNewObject);
+            this.tabOversigt.Controls.Add(this.buttonAnnuller);
+            this.tabOversigt.Controls.Add(this.buttomSave);
+            this.tabOversigt.Controls.Add(this.dropdownCombobox);
+            this.tabOversigt.Controls.Add(this.buttomRefresh);
+            this.tabOversigt.Controls.Add(this.myObjectListView);
+            this.tabOversigt.Location = new System.Drawing.Point(4, 24);
+            this.tabOversigt.Name = "tabOversigt";
+            this.tabOversigt.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOversigt.Size = new System.Drawing.Size(994, 531);
+            this.tabOversigt.TabIndex = 10;
+            this.tabOversigt.Text = "Oversigt";
+            this.tabOversigt.UseVisualStyleBackColor = true;
             // 
             // buttonHelpMe
             // 
@@ -276,7 +276,7 @@
             this.dynamicTabControl.ResumeLayout(false);
             this.tabStart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.startPictureBox)).EndInit();
-            this.tabDebugTab.ResumeLayout(false);
+            this.tabOversigt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,7 +291,7 @@
         private System.Windows.Forms.TabPage tabAdvokat;
         private System.Windows.Forms.TabPage tabKlient;
         private System.Windows.Forms.TabPage tabYdelse;
-        private System.Windows.Forms.TabPage tabDebugTab;
+        private System.Windows.Forms.TabPage tabOversigt;
         private System.Windows.Forms.ComboBox dropdownCombobox;
         private System.Windows.Forms.Button buttomRefresh;
         private BrightIdeasSoftware.ObjectListView myObjectListView;
