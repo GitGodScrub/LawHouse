@@ -240,8 +240,14 @@ namespace GUI
                 }
                 objectListView1.RebuildColumns();
             }
+ 
 
-       
+        private void Sag_drop_YdelseTypeNr_SelectedIndexChange(object sender, EventArgs e)
+        {
+            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+            Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+            Sag_drop_MedarbejderNr.SelectedIndex = -1;
+        }
     }
 }
 
