@@ -53,7 +53,7 @@ namespace GUI
         }
         private void buttomRefresh_Click(object sender, EventArgs e)
         {
-            if (comboboxOversigt.SelectedItem != null)//overflødig?
+            if (comboboxOversigt.SelectedItem != null)
             {
                 OversigtRefresh();
             }

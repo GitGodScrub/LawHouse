@@ -27,7 +27,7 @@ namespace GUI
             tabsToHideAtStartup.Add("tabOpretYdelse");
             hideTabs(tabsToHideAtStartup);
         }
-        private void ExperimentalForm_Load(object sender, EventArgs e) //idk what this does lol
+        private void ExperimentalForm_Load(object sender, EventArgs e)
         {
             comboboxOversigt.DataSource = Controller.GetAllItems();
             comboboxOversigt.DisplayMember = "What_type";
@@ -76,7 +76,6 @@ namespace GUI
                 }
             }
         }
-
         private void OversigtHideAllColums()//Daniella
         {
             foreach (var item in myObjectListView.AllColumns)
