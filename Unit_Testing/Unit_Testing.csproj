@@ -79,9 +79,9 @@
       <Project>{e3df7f9d-20e0-4ed7-8ccd-a4bf73bfc20f}</Project>
       <Name>DataClassLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LawHouse\GUI.csproj">
+    <ProjectReference Include="..\LawHouse\GuiExp.csproj">
       <Project>{e8f6db1b-647c-4daa-832c-f8e7792b1817}</Project>
-      <Name>GUI</Name>
+      <Name>GuiExp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
