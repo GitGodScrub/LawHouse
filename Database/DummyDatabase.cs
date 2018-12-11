@@ -12,7 +12,7 @@ using DataClassLib;
 
 namespace DataAccess
 {
-    public class DummyDatabase : IDatabase // By Julius
+    public partial class DummyDatabase : IDatabase // By Julius
     {
         public DummyDatabase()//i know how this works, i think -Julius
         {

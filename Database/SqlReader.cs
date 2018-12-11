@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    class SqlReader //By Julius
+    static class SqlReader //By Julius
     {
-        public List<List<string>> ReadThisLastTry(string sqlString)
+        public static List<List<string>> ReadThisSql(string sqlString)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);

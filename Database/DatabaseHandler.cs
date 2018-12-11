@@ -64,8 +64,7 @@ namespace DataAccess
                                " JOIN Klient ON Sag.KlientNr = Klient.KlientNr";
             List<Sag> listOfSag = new List<Sag>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -103,8 +102,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM Klient";
             List<Klient> listOfKlient = new List<Klient>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -142,8 +140,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM Advokat";
             List<Advokat> listOfAdvokat = new List<Advokat>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -162,8 +159,7 @@ namespace DataAccess
                                 WHERE YdelsesTypeNr = " + ydelsesTypeNr;
             List<Advokat> listOfAdvokat = new List<Advokat>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -181,8 +177,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM Tjenesteydelse";
             List<Tjenesteydelse> listOfTjenesteydelse = new List<Tjenesteydelse>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -199,8 +194,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM YdelseType";
             List<YdelseType> listOfYdelsetype = new List<YdelseType>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -217,8 +211,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM List";
             List<ListItems> listOfListItems = new List<ListItems>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -250,8 +243,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM Ydelse";
             List<Ydelse> listOfYdelse = new List<Ydelse>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -273,8 +265,7 @@ namespace DataAccess
             string sqlString = "SELECT * FROM Efteruddannelse";
             List<Efteruddannelse> listOfEfteruddannelse = new List<Efteruddannelse>();
 
-            SqlReader sqRead = new SqlReader();
-            List<List<string>> rawReadValue = sqRead.ReadThisLastTry(sqlString);
+            List<List<string>> rawReadValue = SqlReader.ReadThisSql(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
