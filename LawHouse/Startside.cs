@@ -7,7 +7,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; 
+using System.Windows.Forms;
+using BrightIdeasSoftware;
 using BusinessLogic;
 using DataClassLib;
 
@@ -15,46 +16,62 @@ using DataClassLib;
 namespace GUI
 {
     public partial class Startside : Form
-    {   
-         public Startside()
+    {
+        public Startside()
         {
             InitializeComponent();
 
             //Denne kode er til at oprette sag
+
+            //Til Dato
             txt_Sag_StartDato.Text = DateTime.Now.ToString("dd-MM-yyyy");
-           // txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
-          //  txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
+            // txt_Sag_StartDato.Text = DateTime.Today.ToString("dd-MM-yyyy-hh-mm-ss ", CultureInfo.InvariantCulture);
+            //  txt_Sag_StartDato.Text = DateTime.UtcNow.ToString("hh-mm-ss");
             Datetimepicker_Sag_slutdato.Format = DateTimePickerFormat.Custom;
             Datetimepicker_Sag_slutdato.MinDate = DateTime.Today;
             Datetimepicker_Sag_slutdato.CustomFormat = " ";
-            
 
+            //Til combobox for ydelse
             Sag_drop_YdelseTypeNr.DataSource = Controller.GetAllYdelseType();
             Sag_drop_YdelseTypeNr.DisplayMember = "YdelsesNavn";
-         //   YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+            //   YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
             Sag_drop_YdelseTypeNr.ValueMember = "YdelsesTypeNr";
-        //    Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+            //    Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+
+            //Til combobox for Medarbejder
             Sag_drop_MedarbejderNr.DisplayMember = "Navn";
             Sag_drop_MedarbejderNr.ValueMember = "AdvokatId";
             Sag_drop_MedarbejderNr.SelectedIndex = -1;
 
             //Denne kode er til oversigt over sag 
             objectListView1.SetObjects(Controller.GetAllKlient());
+
+            //Dette er til oversigt, hvor der en combobox for hvor man vil hen
             combobox_hvad_type.DataSource = Controller.GetAllItems();
             combobox_hvad_type.DisplayMember = "What_type";
 
+
+
+            //Det er til de forskellige objektkister, som hører til under sider
+ 
+            //Akvier sag
+            List<Sag> cases = objectListView1.Objects.Cast<Sag>().ToList();
+            List<Sag> doneCases = cases.Where(c => c.SlutDato != " ").ToList();
+            objectListView1.DisableObjects(doneCases);
+
+            
         }
 
-       
 
-          //Tab index 1 //Hvad der sker når man klikker på tabs'ne
-                          
-            private void txt_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
-                Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
-                Sag_drop_MedarbejderNr.SelectedIndex = -1;
-            }                    
+
+        //Tab index 1 //Hvad der sker når man klikker på tabs'ne
+
+        private void txt_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            YdelseType ydelseType = (YdelseType)Sag_drop_YdelseTypeNr.SelectedItem;
+            Sag_drop_MedarbejderNr.DataSource = Controller.GetAllAdvokatFromYdelse(ydelseType.YdelsesTypeNr);
+            Sag_drop_MedarbejderNr.SelectedIndex = -1;
+        }
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
@@ -75,21 +92,21 @@ namespace GUI
             catch (Exception)
             {
                 MessageBox.Show("Ikke alle er udfyldt, vend venligst tilbage til Opret sag");
-       
+
             }
-           
-            
+
+
         }
 
         private void btn_GoToFormCreateAdvokat_Click(object sender, EventArgs e)
         {
-            
+
             DynamicTabControl.SelectedTab = Opret_advokat;
         }
 
         private void Btn_CreateKlient_Click(object sender, EventArgs e)
         {
-             
+
             DynamicTabControl.SelectedTab = Opret_klient;
         }
 
@@ -108,14 +125,14 @@ namespace GUI
         }
 
         //Koden under til opret advokat
-
+        #region advokat
         private void btn_CreateAdvokat_Click(object sender, EventArgs e)
         {
             try
             {
-               // Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
+                // Controller.CreateSag(txt_Sag_titel.Text, txt_Sag_StartDato.Text, Datetimepicker_Sag_slutdato.Text, txt_Sag_kørsel.Text, txt_Sag_time.Text, txt_Sag_SagsBeskrivelse.Text, txt_Sag_InterneNoter.Text, Convert.ToInt32(txt_Sag_KlientNr.Text), (int)Sag_drop_MedarbejderNr.SelectedValue, (int)Sag_drop_YdelseTypeNr.SelectedValue);
 
-              //  string navn = txt_Advokat_AdvokatNavn.Text;
+                //  string navn = txt_Advokat_AdvokatNavn.Text;
                 Controller.CreateAdvokat(txt_Advokat_AdvokatNavn.Text);
                 MessageBox.Show("Oprettet.");
                 txt_Advokat_AdvokatNavn.Clear();
@@ -125,7 +142,7 @@ namespace GUI
                 MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
 
             }
-           
+
         }
 
         private void btn_AddSpecialToAdvokat_Click(object sender, EventArgs e)
@@ -146,11 +163,13 @@ namespace GUI
 
             }
         }
+        #endregion
+    
         //Koden under er til Klient
 
         private void btn_OpretKlient(object sender, EventArgs e)
         {
-            
+
             try
             {
                 string navn = Txt_Klient_navn.Text;
@@ -187,9 +206,9 @@ namespace GUI
         //Koden under er ikke noget der har med nogle funktionelle krav at gøre, 
         //det er lavt så man kan skifte visningen af kolonner, alt efter om det er sag, klient osv.
         //Der er tilføjet en ekstra kolonne, fordi man ikke kan skjule den primære kolonnen
-        
-         
-           
+
+
+
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
@@ -219,65 +238,65 @@ namespace GUI
 
         private void combobox_hvad_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-                ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
-                switch (listItem.What_type)
-                {
+            ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+            switch (listItem.What_type)
+            {
 
-                    case "Klient":
-                        objectListView1.SetObjects(Controller.GetAllKlient());
-                        foreach (var item in objectListView1.AllColumns)
-                        {
-                            item.IsVisible = false;
-                        }
-                        KlientNr.IsVisible = true;
-                        Navn.IsVisible = true;
-                        Adresse.IsVisible = true;
-                        TelefonNr.IsVisible = true;
-                        break;
+                case "Klient":
+                    objectListView1.SetObjects(Controller.GetAllKlient());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    KlientNr.IsVisible = true;
+                    Navn.IsVisible = true;
+                    Adresse.IsVisible = true;
+                    TelefonNr.IsVisible = true;
+                    break;
 
-                    case "Sag":
-                        objectListView1.SetObjects(Controller.GetAllSag());
-                        foreach (var item in objectListView1.AllColumns)
-                        {
-                            item.IsVisible = false;
-                        }
-                        SagsNr.IsVisible = true;
-                        Arbejdstitel.IsVisible = true;
-                        StartDate.IsVisible = true;
-                        Slutdate.IsVisible = true;
-                        TimeEstimat.IsVisible = true;
-                        SagsBeskrivelse.IsVisible = true;
-                        InterneNoter.IsVisible = true;
-                        KlientNr.IsVisible = true;
-                        MedarbejderNr.IsVisible = true;
-                        YdelsesTypeNr.IsVisible = true;
-                        break;
-                    case "Advokat":
-                        objectListView1.SetObjects(Controller.GetAllAdvokat());
-                        foreach (var item in objectListView1.AllColumns)
-                        {
-                            item.IsVisible = false;
-                        }
-                        MedarbejderNr.IsVisible = true;
-                        Advokat_navn.IsVisible = true;
-                        break;
-                    case "Ydelse":
-                        objectListView1.SetObjects(Controller.GetAllYdelses());
-                        foreach (var item in objectListView1.AllColumns)
-                        {
-                            item.IsVisible = false;
-                        }
-                        YdelsesNr.IsVisible = true;
-                        StartDate.IsVisible = true;
-                        YdelseBeskrivelse.IsVisible = true;
-                        Pris.IsVisible = true;
-                        Timer.IsVisible = true;
-                        SagsNr.IsVisible = true;
-                        AdvokatID.IsVisible = true;
-                        break;
-                }
-                objectListView1.RebuildColumns();
+                case "Sag":
+                    objectListView1.SetObjects(Controller.GetAllSag());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    SagsNr.IsVisible = true;
+                    Arbejdstitel.IsVisible = true;
+                    StartDate.IsVisible = true;
+                    Slutdate.IsVisible = true;
+                    /*  TimeEstimat.IsVisible = true;
+                      SagsBeskrivelse.IsVisible = true;
+                      InterneNoter.IsVisible = true;
+                      KlientNr.IsVisible = true;
+                      MedarbejderNr.IsVisible = true;
+                      YdelsesTypeNr.IsVisible = true;*/
+                    break;
+                case "Advokat":
+                    objectListView1.SetObjects(Controller.GetAllAdvokat());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    MedarbejderNr.IsVisible = true;
+                    Advokat_navn.IsVisible = true;
+                    break;
+                case "Ydelse":
+                    objectListView1.SetObjects(Controller.GetAllYdelses());
+                    foreach (var item in objectListView1.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    YdelsesNr.IsVisible = true;
+                    StartDate.IsVisible = true;
+                    YdelseBeskrivelse.IsVisible = true;
+                    Pris.IsVisible = true;
+                    Timer.IsVisible = true;
+                    SagsNr.IsVisible = true;
+                    AdvokatID.IsVisible = true;
+                    break;
             }
+            objectListView1.RebuildColumns();
+        }
 
         private void Sag_drop_YdelseTypeNr_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -286,44 +305,50 @@ namespace GUI
             Sag_drop_MedarbejderNr.SelectedIndex = -1;
         }
 
-        private void Startside_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dataSetDrop.YdelseType' table. You can move, or remove it, as needed.
-            this.ydelseTypeTableAdapter.Fill(this.dataSetDrop.YdelseType);
-            // TODO: This line of code loads data into the 'dataSetDrop.Ydelse' table. You can move, or remove it, as needed.
-            this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
-            // TODO: This line of code loads data into the 'dataSetDrop.Ydelse' table. You can move, or remove it, as needed.
-            //  this.ydelseTableAdapter.Fill(this.dataSetDrop.Ydelse);
-
-        }
-
-
         private void objectListView1_DoubleClick(object sender, EventArgs e)
         {
 
-        ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
-        switch (listItem.What_type)
-        {
 
-            case "Klient":
-                DynamicTabControl.SelectedTab = Side;
-                Dybber_Overblik.SelectedTab = Klient;
-                break;
+            ListItems listItem = (ListItems)combobox_hvad_type.SelectedItem;
+            switch (listItem.What_type)
+            {
 
-            case "Sag":
+                case "Klient":
                     DynamicTabControl.SelectedTab = Side;
-                    Dybber_Overblik.SelectedTab = Sag;
-                    break;
-            case "Advokat":
-                    DynamicTabControl.SelectedTab = Side;
-                    Dybber_Overblik.SelectedTab = Advokat;
-                    break;
-            case "Ydelse":
-                    DynamicTabControl.SelectedTab = Side;
-                    Dybber_Overblik.SelectedTab = Ydelse;
+                    Dybere_Overblik.SelectedTab = Klient;
+                    obj_Overblik_Sag.SetObjects(Controller.GetAllSag());
+                    foreach (var item in obj_Overblik_Sag.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+
+
                     break;
 
-        }
+                case "Sag":
+                    Sag selectedCase = (Sag)objectListView1.SelectedObject;
+                    DynamicTabControl.SelectedTab = Side;
+                    Dybere_Overblik.SelectedTab = Sag;
+                    obj_Overblik_Sag.ClearObjects();
+                    obj_Overblik_Sag.AddObject(selectedCase);
+                    foreach (var item in obj_Overblik_Sag.AllColumns)
+                    {
+                        item.IsVisible = false;
+                    }
+                    olvColumn_Sag_Title.IsVisible = true;
+                    olvColumn_Sag_Kørselstimer.IsVisible = true;
+                    olvColumn_Sag_StartDato.IsVisible = true;
+                    break;
+                case "Advokat":
+                    DynamicTabControl.SelectedTab = Side;
+                    Dybere_Overblik.SelectedTab = Advokat;
+                    break;
+                case "Ydelse":
+                    DynamicTabControl.SelectedTab = Side;
+                    Dybere_Overblik.SelectedTab = Ydelse;
+                    break;
+
+            }
         }
     }
 }
