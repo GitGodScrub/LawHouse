@@ -26,7 +26,7 @@ namespace GUI
                         Application.Run(new ExperimentalForm());
                         break;
                     case "Gammel GUI":
-                        Application.Run(new New_case());
+                        //Application.Run(new New_case());
                         break;
                     case "":
                         DefaultRun();
