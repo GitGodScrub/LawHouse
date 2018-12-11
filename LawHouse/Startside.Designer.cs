@@ -1016,6 +1016,7 @@
             // Pris
             // 
             this.Pris.AspectName = "Pris";
+            this.Pris.HeaderForeColor = System.Drawing.Color.DarkGreen;
             this.Pris.MinimumWidth = 70;
             this.Pris.Text = "Pris";
             this.Pris.Width = 70;
@@ -1085,7 +1086,7 @@
             this.obj_Overblik_Sag.OverlayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obj_Overblik_Sag.OverlayText.Text = "";
             this.obj_Overblik_Sag.ShowGroups = false;
-            this.obj_Overblik_Sag.Size = new System.Drawing.Size(413, 414);
+            this.obj_Overblik_Sag.Size = new System.Drawing.Size(413, 93);
             this.obj_Overblik_Sag.TabIndex = 1;
             this.obj_Overblik_Sag.TileSize = new System.Drawing.Size(228, 70);
             this.obj_Overblik_Sag.UseCompatibleStateImageBehavior = false;
@@ -1224,7 +1225,6 @@
             // olvColumn_Sag_Title
             // 
             this.olvColumn_Sag_Title.AspectName = "Arbejdstitel";
-            this.olvColumn_Sag_Title.IsTileViewColumn = true;
             this.olvColumn_Sag_Title.Text = "Arbejdstitel";
             // 
             // Startside
