@@ -69,9 +69,9 @@
     <Content Include="DummyDatabaseXML.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataClassLib\DataClassLib.csproj">
+    <ProjectReference Include="..\DataClassLib\DataClassModel.csproj">
       <Project>{e3df7f9d-20e0-4ed7-8ccd-a4bf73bfc20f}</Project>
-      <Name>DataClassLib</Name>
+      <Name>DataClassModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

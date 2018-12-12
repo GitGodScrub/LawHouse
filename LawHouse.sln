@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		KodeRegler.txt = KodeRegler.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataClassLib", "DataClassLib\DataClassLib.csproj", "{E3DF7F9D-20E0-4ED7-8CCD-A4BF73BFC20F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataClassModel", "DataClassLib\DataClassModel.csproj", "{E3DF7F9D-20E0-4ED7-8CCD-A4BF73BFC20F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
