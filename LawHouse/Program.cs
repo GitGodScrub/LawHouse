@@ -14,6 +14,8 @@ namespace GUI
         [STAThread]
         static void Main(string[] args)
         {
+            //command argument [0] er det første ord, efter kommandoen, før mellemrum nr 2
+            //sæt evt alle mulighederne som værende muligheder specificeret i app.config
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (args.Length != 0)
@@ -21,7 +23,7 @@ namespace GUI
                 switch (args[0])
                 {
                     case "Ny GUI":
-                        Application.Run(new Startside());
+                        Application.Run(new ExperimentalForm());
                         break;
                     case "Gammel GUI":
                         Application.Run(new New_case());
@@ -30,8 +32,7 @@ namespace GUI
                         DefaultRun();
                         break;
                 }
-                //command argument [0] er det første ord, efter kommandoen, før mellemrum nr 2
-                //sæt evt alle mulighederne som værende muligheder specificeret i app.config
+                
             }
             else
             {
@@ -39,9 +40,9 @@ namespace GUI
             }
         }
 
-        static void DefaultRun()
+        static void DefaultRun()//sæt til at køre via en app.config specificeret fil i stedet for
         {
-            Application.Run(new Startside());//sæt til at køre via en app.config specificeret fil i stedet for
+            Application.Run(new ExperimentalForm());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Startside
+    partial class UnifiedGuiForm
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             this.Se_oversigt = new System.Windows.Forms.TabPage();
             this.combobox_hvad_type = new System.Windows.Forms.ComboBox();
             this.btn_Update = new System.Windows.Forms.Button();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.theObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.SagsNr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Arbejdstitel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -114,12 +114,18 @@
             this.Pris = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Timer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdvokatID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.btn_GoToFormCreateAdvokat = new System.Windows.Forms.Button();
-            this.Btn_CreateKlient = new System.Windows.Forms.Button();
-            this.btn_GåtilYdelse = new System.Windows.Forms.Button();
-            this.Btn_Oversigt = new System.Windows.Forms.Button();
-            this.Btn_Help = new System.Windows.Forms.Button();
-            this.btn_opretsag = new System.Windows.Forms.Button();
+            this.tabSag = new System.Windows.Forms.TabPage();
+            this.tabAdvokat = new System.Windows.Forms.TabPage();
+            this.tabKlient = new System.Windows.Forms.TabPage();
+            this.tabYdelse = new System.Windows.Forms.TabPage();
+            this.tabClickHereFirst = new System.Windows.Forms.TabPage();
+            this.buttonHelpMe = new System.Windows.Forms.Button();
+            this.buttomAddNewObject = new System.Windows.Forms.Button();
+            this.buttonAnnuller = new System.Windows.Forms.Button();
+            this.buttomSave = new System.Windows.Forms.Button();
+            this.dropdownCombobox = new System.Windows.Forms.ComboBox();
+            this.buttomRefresh = new System.Windows.Forms.Button();
+            this.myObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,7 +134,9 @@
             this.Opret_klient.SuspendLayout();
             this.Opret_ydelse.SuspendLayout();
             this.Se_oversigt.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theObjectListView)).BeginInit();
+            this.tabClickHereFirst.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).BeginInit();
             this.SuspendLayout();
             // 
             // DynamicTabControl
@@ -139,21 +147,26 @@
             this.DynamicTabControl.Controls.Add(this.Opret_klient);
             this.DynamicTabControl.Controls.Add(this.Opret_ydelse);
             this.DynamicTabControl.Controls.Add(this.Se_oversigt);
+            this.DynamicTabControl.Controls.Add(this.tabSag);
+            this.DynamicTabControl.Controls.Add(this.tabAdvokat);
+            this.DynamicTabControl.Controls.Add(this.tabKlient);
+            this.DynamicTabControl.Controls.Add(this.tabYdelse);
+            this.DynamicTabControl.Controls.Add(this.tabClickHereFirst);
             this.DynamicTabControl.ItemSize = new System.Drawing.Size(170, 20);
-            this.DynamicTabControl.Location = new System.Drawing.Point(209, 1);
-            this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DynamicTabControl.Location = new System.Drawing.Point(11, 11);
+            this.DynamicTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.DynamicTabControl.Name = "DynamicTabControl";
             this.DynamicTabControl.SelectedIndex = 0;
-            this.DynamicTabControl.Size = new System.Drawing.Size(912, 641);
+            this.DynamicTabControl.Size = new System.Drawing.Size(1002, 559);
             this.DynamicTabControl.TabIndex = 0;
             // 
             // tabStart
             // 
             this.tabStart.Controls.Add(this.pictureBox1);
             this.tabStart.Location = new System.Drawing.Point(4, 24);
-            this.tabStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabStart.Margin = new System.Windows.Forms.Padding(2);
             this.tabStart.Name = "tabStart";
-            this.tabStart.Size = new System.Drawing.Size(904, 613);
+            this.tabStart.Size = new System.Drawing.Size(994, 531);
             this.tabStart.TabIndex = 5;
             this.tabStart.Text = "Startside";
             this.tabStart.UseVisualStyleBackColor = true;
@@ -161,10 +174,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.images_første_forsøg_Tydeligt_500x500;
-            this.pictureBox1.Location = new System.Drawing.Point(83, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(238, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(617, 575);
+            this.pictureBox1.Size = new System.Drawing.Size(499, 497);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -194,10 +207,10 @@
             this.Opret_sag.Controls.Add(this.lbl_Start);
             this.Opret_sag.Controls.Add(this.lbl_Titel);
             this.Opret_sag.Location = new System.Drawing.Point(4, 24);
-            this.Opret_sag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Opret_sag.Margin = new System.Windows.Forms.Padding(2);
             this.Opret_sag.Name = "Opret_sag";
-            this.Opret_sag.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_sag.Size = new System.Drawing.Size(904, 613);
+            this.Opret_sag.Padding = new System.Windows.Forms.Padding(2);
+            this.Opret_sag.Size = new System.Drawing.Size(994, 531);
             this.Opret_sag.TabIndex = 0;
             this.Opret_sag.Text = "Sag";
             this.Opret_sag.UseVisualStyleBackColor = true;
@@ -205,203 +218,211 @@
             // Sag_drop_YdelseTypeNr
             // 
             this.Sag_drop_YdelseTypeNr.FormattingEnabled = true;
-            this.Sag_drop_YdelseTypeNr.Location = new System.Drawing.Point(391, 25);
-            this.Sag_drop_YdelseTypeNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sag_drop_YdelseTypeNr.Location = new System.Drawing.Point(293, 20);
+            this.Sag_drop_YdelseTypeNr.Margin = new System.Windows.Forms.Padding(2);
             this.Sag_drop_YdelseTypeNr.Name = "Sag_drop_YdelseTypeNr";
-            this.Sag_drop_YdelseTypeNr.Size = new System.Drawing.Size(169, 24);
+            this.Sag_drop_YdelseTypeNr.Size = new System.Drawing.Size(128, 21);
             this.Sag_drop_YdelseTypeNr.TabIndex = 31;
-            this.Sag_drop_YdelseTypeNr.SelectedIndexChanged += new System.EventHandler(this.Sag_drop_YdelseTypeNr_SelectedIndexChange);
             // 
             // lbl_Slut
             // 
             this.lbl_Slut.AutoSize = true;
-            this.lbl_Slut.Location = new System.Drawing.Point(261, 230);
+            this.lbl_Slut.Location = new System.Drawing.Point(196, 187);
+            this.lbl_Slut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Slut.Name = "lbl_Slut";
-            this.lbl_Slut.Size = new System.Drawing.Size(64, 17);
+            this.lbl_Slut.Size = new System.Drawing.Size(49, 13);
             this.lbl_Slut.TabIndex = 58;
             this.lbl_Slut.Text = "Slut dato";
             // 
             // btn_Create
             // 
-            this.btn_Create.Location = new System.Drawing.Point(683, 519);
-            this.btn_Create.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Create.Location = new System.Drawing.Point(512, 422);
+            this.btn_Create.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(161, 28);
+            this.btn_Create.Size = new System.Drawing.Size(121, 23);
             this.btn_Create.TabIndex = 57;
             this.btn_Create.Text = "Opret Sag";
             this.btn_Create.UseVisualStyleBackColor = true;
-            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
+            //this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // lbl_Sags
             // 
             this.lbl_Sags.AutoSize = true;
-            this.lbl_Sags.Location = new System.Drawing.Point(261, 80);
+            this.lbl_Sags.Location = new System.Drawing.Point(196, 65);
+            this.lbl_Sags.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Sags.Name = "lbl_Sags";
-            this.lbl_Sags.Size = new System.Drawing.Size(57, 17);
+            this.lbl_Sags.Size = new System.Drawing.Size(43, 13);
             this.lbl_Sags.TabIndex = 57;
             this.lbl_Sags.Text = "Sags nr";
             // 
             // lbl_YdelseNr
             // 
             this.lbl_YdelseNr.AutoSize = true;
-            this.lbl_YdelseNr.Location = new System.Drawing.Point(261, 32);
-            this.lbl_YdelseNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_YdelseNr.Location = new System.Drawing.Point(196, 26);
             this.lbl_YdelseNr.Name = "lbl_YdelseNr";
-            this.lbl_YdelseNr.Size = new System.Drawing.Size(71, 17);
+            this.lbl_YdelseNr.Size = new System.Drawing.Size(54, 13);
             this.lbl_YdelseNr.TabIndex = 56;
             this.lbl_YdelseNr.Text = "Sags type";
             // 
             // lbl_Noter
             // 
             this.lbl_Noter.AutoSize = true;
-            this.lbl_Noter.Location = new System.Drawing.Point(261, 423);
+            this.lbl_Noter.Location = new System.Drawing.Point(196, 344);
+            this.lbl_Noter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Noter.Name = "lbl_Noter";
-            this.lbl_Noter.Size = new System.Drawing.Size(89, 17);
+            this.lbl_Noter.Size = new System.Drawing.Size(67, 13);
             this.lbl_Noter.TabIndex = 54;
             this.lbl_Noter.Text = "Interne noter";
             // 
             // lbl_Sagsbeskrivelse
             // 
             this.lbl_Sagsbeskrivelse.AutoSize = true;
-            this.lbl_Sagsbeskrivelse.Location = new System.Drawing.Point(261, 380);
+            this.lbl_Sagsbeskrivelse.Location = new System.Drawing.Point(196, 309);
+            this.lbl_Sagsbeskrivelse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Sagsbeskrivelse.Name = "lbl_Sagsbeskrivelse";
-            this.lbl_Sagsbeskrivelse.Size = new System.Drawing.Size(111, 17);
+            this.lbl_Sagsbeskrivelse.Size = new System.Drawing.Size(84, 13);
             this.lbl_Sagsbeskrivelse.TabIndex = 53;
             this.lbl_Sagsbeskrivelse.Text = "Sagsbeskrivelse";
             // 
             // txt_Sag_InterneNoter
             // 
-            this.txt_Sag_InterneNoter.Location = new System.Drawing.Point(391, 425);
-            this.txt_Sag_InterneNoter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_InterneNoter.Location = new System.Drawing.Point(293, 345);
+            this.txt_Sag_InterneNoter.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_InterneNoter.Name = "txt_Sag_InterneNoter";
-            this.txt_Sag_InterneNoter.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_InterneNoter.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_InterneNoter.TabIndex = 43;
             // 
             // txt_Sag_SagsBeskrivelse
             // 
-            this.txt_Sag_SagsBeskrivelse.Location = new System.Drawing.Point(391, 375);
-            this.txt_Sag_SagsBeskrivelse.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_Sag_SagsBeskrivelse.Location = new System.Drawing.Point(293, 305);
+            this.txt_Sag_SagsBeskrivelse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Sag_SagsBeskrivelse.Name = "txt_Sag_SagsBeskrivelse";
-            this.txt_Sag_SagsBeskrivelse.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_SagsBeskrivelse.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_SagsBeskrivelse.TabIndex = 42;
             // 
             // txt_Sag_StartDato
             // 
             this.txt_Sag_StartDato.Enabled = false;
-            this.txt_Sag_StartDato.Location = new System.Drawing.Point(391, 178);
-            this.txt_Sag_StartDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_StartDato.Location = new System.Drawing.Point(293, 145);
+            this.txt_Sag_StartDato.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_StartDato.Name = "txt_Sag_StartDato";
-            this.txt_Sag_StartDato.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_StartDato.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_StartDato.TabIndex = 36;
             // 
             // Sag_drop_MedarbejderNr
             // 
-            this.Sag_drop_MedarbejderNr.Location = new System.Drawing.Point(391, 475);
-            this.Sag_drop_MedarbejderNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sag_drop_MedarbejderNr.Location = new System.Drawing.Point(293, 386);
+            this.Sag_drop_MedarbejderNr.Margin = new System.Windows.Forms.Padding(2);
             this.Sag_drop_MedarbejderNr.Name = "Sag_drop_MedarbejderNr";
-            this.Sag_drop_MedarbejderNr.Size = new System.Drawing.Size(169, 24);
+            this.Sag_drop_MedarbejderNr.Size = new System.Drawing.Size(128, 21);
             this.Sag_drop_MedarbejderNr.TabIndex = 44;
             // 
             // txt_Sag_KlientNr
             // 
-            this.txt_Sag_KlientNr.Location = new System.Drawing.Point(391, 526);
-            this.txt_Sag_KlientNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_KlientNr.Location = new System.Drawing.Point(293, 427);
+            this.txt_Sag_KlientNr.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_KlientNr.Name = "txt_Sag_KlientNr";
-            this.txt_Sag_KlientNr.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_KlientNr.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_KlientNr.TabIndex = 45;
             // 
             // lbl_Medarbejder
             // 
             this.lbl_Medarbejder.AutoSize = true;
-            this.lbl_Medarbejder.Location = new System.Drawing.Point(261, 482);
+            this.lbl_Medarbejder.Location = new System.Drawing.Point(196, 392);
+            this.lbl_Medarbejder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Medarbejder.Name = "lbl_Medarbejder";
-            this.lbl_Medarbejder.Size = new System.Drawing.Size(88, 17);
+            this.lbl_Medarbejder.Size = new System.Drawing.Size(66, 13);
             this.lbl_Medarbejder.TabIndex = 49;
             this.lbl_Medarbejder.Text = "Medarbejder";
             // 
             // lbl_Klientnr
             // 
             this.lbl_Klientnr.AutoSize = true;
-            this.lbl_Klientnr.Location = new System.Drawing.Point(261, 530);
+            this.lbl_Klientnr.Location = new System.Drawing.Point(196, 431);
+            this.lbl_Klientnr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Klientnr.Name = "lbl_Klientnr";
-            this.lbl_Klientnr.Size = new System.Drawing.Size(56, 17);
+            this.lbl_Klientnr.Size = new System.Drawing.Size(42, 13);
             this.lbl_Klientnr.TabIndex = 47;
             this.lbl_Klientnr.Text = "Klientnr";
             // 
             // Datetimepicker_Sag_slutdato
             // 
-            this.Datetimepicker_Sag_slutdato.Location = new System.Drawing.Point(391, 225);
-            this.Datetimepicker_Sag_slutdato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Datetimepicker_Sag_slutdato.Location = new System.Drawing.Point(293, 183);
+            this.Datetimepicker_Sag_slutdato.Margin = new System.Windows.Forms.Padding(2);
             this.Datetimepicker_Sag_slutdato.Name = "Datetimepicker_Sag_slutdato";
-            this.Datetimepicker_Sag_slutdato.Size = new System.Drawing.Size(169, 22);
+            this.Datetimepicker_Sag_slutdato.Size = new System.Drawing.Size(128, 20);
             this.Datetimepicker_Sag_slutdato.TabIndex = 38;
             // 
             // txt_Sag_time
             // 
-            this.txt_Sag_time.Location = new System.Drawing.Point(391, 325);
-            this.txt_Sag_time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_time.Location = new System.Drawing.Point(293, 264);
+            this.txt_Sag_time.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_time.Name = "txt_Sag_time";
-            this.txt_Sag_time.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_time.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_time.TabIndex = 41;
             // 
             // txt_Sag_titel
             // 
-            this.txt_Sag_titel.Location = new System.Drawing.Point(391, 126);
-            this.txt_Sag_titel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_titel.Location = new System.Drawing.Point(293, 102);
+            this.txt_Sag_titel.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_titel.Name = "txt_Sag_titel";
-            this.txt_Sag_titel.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_titel.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_titel.TabIndex = 35;
             // 
             // txt_Sag_kørsel
             // 
-            this.txt_Sag_kørsel.Location = new System.Drawing.Point(391, 274);
-            this.txt_Sag_kørsel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_kørsel.Location = new System.Drawing.Point(293, 223);
+            this.txt_Sag_kørsel.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_kørsel.Name = "txt_Sag_kørsel";
-            this.txt_Sag_kørsel.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_kørsel.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_kørsel.TabIndex = 40;
             // 
             // txt_Sag_Sagsnr
             // 
             this.txt_Sag_Sagsnr.Enabled = false;
-            this.txt_Sag_Sagsnr.Location = new System.Drawing.Point(391, 75);
-            this.txt_Sag_Sagsnr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Sag_Sagsnr.Location = new System.Drawing.Point(293, 61);
+            this.txt_Sag_Sagsnr.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Sag_Sagsnr.Name = "txt_Sag_Sagsnr";
-            this.txt_Sag_Sagsnr.Size = new System.Drawing.Size(169, 22);
+            this.txt_Sag_Sagsnr.Size = new System.Drawing.Size(128, 20);
             this.txt_Sag_Sagsnr.TabIndex = 32;
             // 
             // lbl_TimeEstimat
             // 
             this.lbl_TimeEstimat.AutoSize = true;
-            this.lbl_TimeEstimat.Location = new System.Drawing.Point(261, 330);
+            this.lbl_TimeEstimat.Location = new System.Drawing.Point(196, 268);
+            this.lbl_TimeEstimat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TimeEstimat.Name = "lbl_TimeEstimat";
-            this.lbl_TimeEstimat.Size = new System.Drawing.Size(88, 17);
+            this.lbl_TimeEstimat.Size = new System.Drawing.Size(66, 13);
             this.lbl_TimeEstimat.TabIndex = 39;
             this.lbl_TimeEstimat.Text = "Time estimat";
             // 
             // lbl_Kørselstimer
             // 
             this.lbl_Kørselstimer.AutoSize = true;
-            this.lbl_Kørselstimer.Location = new System.Drawing.Point(261, 281);
+            this.lbl_Kørselstimer.Location = new System.Drawing.Point(196, 228);
+            this.lbl_Kørselstimer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Kørselstimer.Name = "lbl_Kørselstimer";
-            this.lbl_Kørselstimer.Size = new System.Drawing.Size(86, 17);
+            this.lbl_Kørselstimer.Size = new System.Drawing.Size(63, 13);
             this.lbl_Kørselstimer.TabIndex = 37;
             this.lbl_Kørselstimer.Text = "Kørselstimer";
             // 
             // lbl_Start
             // 
             this.lbl_Start.AutoSize = true;
-            this.lbl_Start.Location = new System.Drawing.Point(261, 183);
+            this.lbl_Start.Location = new System.Drawing.Point(196, 149);
+            this.lbl_Start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Start.Name = "lbl_Start";
-            this.lbl_Start.Size = new System.Drawing.Size(70, 17);
+            this.lbl_Start.Size = new System.Drawing.Size(53, 13);
             this.lbl_Start.TabIndex = 34;
             this.lbl_Start.Text = "Start dato";
             // 
             // lbl_Titel
             // 
             this.lbl_Titel.AutoSize = true;
-            this.lbl_Titel.Location = new System.Drawing.Point(261, 130);
+            this.lbl_Titel.Location = new System.Drawing.Point(196, 106);
+            this.lbl_Titel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Titel.Name = "lbl_Titel";
-            this.lbl_Titel.Size = new System.Drawing.Size(78, 17);
+            this.lbl_Titel.Size = new System.Drawing.Size(58, 13);
             this.lbl_Titel.TabIndex = 33;
             this.lbl_Titel.Text = "Arbejdstitel";
             // 
@@ -418,95 +439,97 @@
             this.Opret_advokat.Controls.Add(this.btn_AddSpecialToAdvokat);
             this.Opret_advokat.Controls.Add(this.btn_CreateAdvokat);
             this.Opret_advokat.Location = new System.Drawing.Point(4, 24);
-            this.Opret_advokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Opret_advokat.Margin = new System.Windows.Forms.Padding(2);
             this.Opret_advokat.Name = "Opret_advokat";
-            this.Opret_advokat.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_advokat.Size = new System.Drawing.Size(904, 613);
+            this.Opret_advokat.Padding = new System.Windows.Forms.Padding(2);
+            this.Opret_advokat.Size = new System.Drawing.Size(994, 531);
             this.Opret_advokat.TabIndex = 1;
             this.Opret_advokat.Text = "Advokat";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(109, 234);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(82, 190);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
             this.button1.Text = "?";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // txt_Advokat_SpecialeNavn
             // 
-            this.txt_Advokat_SpecialeNavn.Location = new System.Drawing.Point(379, 334);
-            this.txt_Advokat_SpecialeNavn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Advokat_SpecialeNavn.Location = new System.Drawing.Point(284, 271);
+            this.txt_Advokat_SpecialeNavn.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Advokat_SpecialeNavn.Name = "txt_Advokat_SpecialeNavn";
-            this.txt_Advokat_SpecialeNavn.Size = new System.Drawing.Size(100, 22);
+            this.txt_Advokat_SpecialeNavn.Size = new System.Drawing.Size(76, 20);
             this.txt_Advokat_SpecialeNavn.TabIndex = 16;
             // 
             // txt_Advokat_AdvokatId
             // 
-            this.txt_Advokat_AdvokatId.Location = new System.Drawing.Point(379, 292);
-            this.txt_Advokat_AdvokatId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Advokat_AdvokatId.Location = new System.Drawing.Point(284, 237);
+            this.txt_Advokat_AdvokatId.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Advokat_AdvokatId.Name = "txt_Advokat_AdvokatId";
-            this.txt_Advokat_AdvokatId.Size = new System.Drawing.Size(100, 22);
+            this.txt_Advokat_AdvokatId.Size = new System.Drawing.Size(76, 20);
             this.txt_Advokat_AdvokatId.TabIndex = 15;
             // 
             // lbl_SpecialeNavn
             // 
             this.lbl_SpecialeNavn.AutoSize = true;
-            this.lbl_SpecialeNavn.Location = new System.Drawing.Point(257, 337);
+            this.lbl_SpecialeNavn.Location = new System.Drawing.Point(193, 274);
+            this.lbl_SpecialeNavn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_SpecialeNavn.Name = "lbl_SpecialeNavn";
-            this.lbl_SpecialeNavn.Size = new System.Drawing.Size(116, 17);
+            this.lbl_SpecialeNavn.Size = new System.Drawing.Size(87, 13);
             this.lbl_SpecialeNavn.TabIndex = 14;
             this.lbl_SpecialeNavn.Text = "Efteruddannelse:";
             // 
             // lbl_AdvokatId
             // 
             this.lbl_AdvokatId.AutoSize = true;
-            this.lbl_AdvokatId.Location = new System.Drawing.Point(295, 292);
+            this.lbl_AdvokatId.Location = new System.Drawing.Point(221, 237);
+            this.lbl_AdvokatId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_AdvokatId.Name = "lbl_AdvokatId";
-            this.lbl_AdvokatId.Size = new System.Drawing.Size(78, 17);
+            this.lbl_AdvokatId.Size = new System.Drawing.Size(62, 13);
             this.lbl_AdvokatId.TabIndex = 13;
             this.lbl_AdvokatId.Text = "Advokat Id:";
             // 
             // lbl_AdvokatNavn
             // 
             this.lbl_AdvokatNavn.AutoSize = true;
-            this.lbl_AdvokatNavn.Location = new System.Drawing.Point(267, 146);
+            this.lbl_AdvokatNavn.Location = new System.Drawing.Point(200, 119);
+            this.lbl_AdvokatNavn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_AdvokatNavn.Name = "lbl_AdvokatNavn";
-            this.lbl_AdvokatNavn.Size = new System.Drawing.Size(100, 17);
+            this.lbl_AdvokatNavn.Size = new System.Drawing.Size(79, 13);
             this.lbl_AdvokatNavn.TabIndex = 12;
             this.lbl_AdvokatNavn.Text = "Advokat Navn:";
             // 
             // txt_Advokat_AdvokatNavn
             // 
-            this.txt_Advokat_AdvokatNavn.Location = new System.Drawing.Point(373, 144);
-            this.txt_Advokat_AdvokatNavn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Advokat_AdvokatNavn.Location = new System.Drawing.Point(280, 117);
+            this.txt_Advokat_AdvokatNavn.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Advokat_AdvokatNavn.Name = "txt_Advokat_AdvokatNavn";
-            this.txt_Advokat_AdvokatNavn.Size = new System.Drawing.Size(100, 22);
+            this.txt_Advokat_AdvokatNavn.Size = new System.Drawing.Size(76, 20);
             this.txt_Advokat_AdvokatNavn.TabIndex = 11;
             // 
             // btn_AddSpecialToAdvokat
             // 
-            this.btn_AddSpecialToAdvokat.Location = new System.Drawing.Point(108, 292);
-            this.btn_AddSpecialToAdvokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_AddSpecialToAdvokat.Location = new System.Drawing.Point(81, 237);
+            this.btn_AddSpecialToAdvokat.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddSpecialToAdvokat.Name = "btn_AddSpecialToAdvokat";
-            this.btn_AddSpecialToAdvokat.Size = new System.Drawing.Size(133, 76);
+            this.btn_AddSpecialToAdvokat.Size = new System.Drawing.Size(100, 62);
             this.btn_AddSpecialToAdvokat.TabIndex = 10;
             this.btn_AddSpecialToAdvokat.Text = "Tilføj Efteruddannelse";
             this.btn_AddSpecialToAdvokat.UseVisualStyleBackColor = true;
-            this.btn_AddSpecialToAdvokat.Click += new System.EventHandler(this.btn_AddSpecialToAdvokat_Click);
+            //this.btn_AddSpecialToAdvokat.Click += new System.EventHandler(this.btn_AddSpecialToAdvokat_Click);
             // 
             // btn_CreateAdvokat
             // 
-            this.btn_CreateAdvokat.Location = new System.Drawing.Point(108, 119);
-            this.btn_CreateAdvokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_CreateAdvokat.Location = new System.Drawing.Point(81, 97);
+            this.btn_CreateAdvokat.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CreateAdvokat.Name = "btn_CreateAdvokat";
-            this.btn_CreateAdvokat.Size = new System.Drawing.Size(139, 71);
+            this.btn_CreateAdvokat.Size = new System.Drawing.Size(104, 58);
             this.btn_CreateAdvokat.TabIndex = 9;
             this.btn_CreateAdvokat.Text = "Opret Advokat";
             this.btn_CreateAdvokat.UseVisualStyleBackColor = true;
-            this.btn_CreateAdvokat.Click += new System.EventHandler(this.btn_CreateAdvokat_Click);
+            //this.btn_CreateAdvokat.Click += new System.EventHandler(this.btn_CreateAdvokat_Click);
             // 
             // Opret_klient
             // 
@@ -518,77 +541,70 @@
             this.Opret_klient.Controls.Add(this.Txt_Klient_Adresse);
             this.Opret_klient.Controls.Add(this.Txt_Klient_navn);
             this.Opret_klient.Location = new System.Drawing.Point(4, 24);
-            this.Opret_klient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Opret_klient.Margin = new System.Windows.Forms.Padding(2);
             this.Opret_klient.Name = "Opret_klient";
-            this.Opret_klient.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_klient.Size = new System.Drawing.Size(904, 613);
+            this.Opret_klient.Padding = new System.Windows.Forms.Padding(2);
+            this.Opret_klient.Size = new System.Drawing.Size(994, 531);
             this.Opret_klient.TabIndex = 2;
             this.Opret_klient.Text = "Klient";
             this.Opret_klient.UseVisualStyleBackColor = true;
             // 
             // bnt_Klient_Opret
             // 
-            this.bnt_Klient_Opret.Location = new System.Drawing.Point(161, 356);
-            this.bnt_Klient_Opret.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_Klient_Opret.Location = new System.Drawing.Point(121, 289);
             this.bnt_Klient_Opret.Name = "bnt_Klient_Opret";
-            this.bnt_Klient_Opret.Size = new System.Drawing.Size(221, 28);
+            this.bnt_Klient_Opret.Size = new System.Drawing.Size(166, 23);
             this.bnt_Klient_Opret.TabIndex = 13;
             this.bnt_Klient_Opret.Text = "Opret Klient";
             this.bnt_Klient_Opret.UseVisualStyleBackColor = true;
-            this.bnt_Klient_Opret.Click += new System.EventHandler(this.btn_OpretKlient);
+            //this.bnt_Klient_Opret.Click += new System.EventHandler(this.btn_OpretKlient);
             // 
             // lbl_TelefonNr
             // 
             this.lbl_TelefonNr.AutoSize = true;
-            this.lbl_TelefonNr.Location = new System.Drawing.Point(343, 297);
-            this.lbl_TelefonNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_TelefonNr.Location = new System.Drawing.Point(257, 241);
             this.lbl_TelefonNr.Name = "lbl_TelefonNr";
-            this.lbl_TelefonNr.Size = new System.Drawing.Size(71, 17);
+            this.lbl_TelefonNr.Size = new System.Drawing.Size(54, 13);
             this.lbl_TelefonNr.TabIndex = 12;
             this.lbl_TelefonNr.Text = "TelefonNr";
             // 
             // lbl_Adresse
             // 
             this.lbl_Adresse.AutoSize = true;
-            this.lbl_Adresse.Location = new System.Drawing.Point(343, 242);
-            this.lbl_Adresse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Adresse.Location = new System.Drawing.Point(257, 197);
             this.lbl_Adresse.Name = "lbl_Adresse";
-            this.lbl_Adresse.Size = new System.Drawing.Size(60, 17);
+            this.lbl_Adresse.Size = new System.Drawing.Size(45, 13);
             this.lbl_Adresse.TabIndex = 11;
             this.lbl_Adresse.Text = "Adresse";
             // 
             // lbl_navn
             // 
             this.lbl_navn.AutoSize = true;
-            this.lbl_navn.Location = new System.Drawing.Point(343, 190);
-            this.lbl_navn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_navn.Location = new System.Drawing.Point(257, 154);
             this.lbl_navn.Name = "lbl_navn";
-            this.lbl_navn.Size = new System.Drawing.Size(41, 17);
+            this.lbl_navn.Size = new System.Drawing.Size(33, 13);
             this.lbl_navn.TabIndex = 10;
             this.lbl_navn.Text = "Navn";
             // 
             // Txt_Klient_TelefonNr
             // 
-            this.Txt_Klient_TelefonNr.Location = new System.Drawing.Point(161, 297);
-            this.Txt_Klient_TelefonNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Klient_TelefonNr.Location = new System.Drawing.Point(121, 241);
             this.Txt_Klient_TelefonNr.Name = "Txt_Klient_TelefonNr";
-            this.Txt_Klient_TelefonNr.Size = new System.Drawing.Size(132, 22);
+            this.Txt_Klient_TelefonNr.Size = new System.Drawing.Size(100, 20);
             this.Txt_Klient_TelefonNr.TabIndex = 9;
             // 
             // Txt_Klient_Adresse
             // 
-            this.Txt_Klient_Adresse.Location = new System.Drawing.Point(161, 242);
-            this.Txt_Klient_Adresse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Klient_Adresse.Location = new System.Drawing.Point(121, 197);
             this.Txt_Klient_Adresse.Name = "Txt_Klient_Adresse";
-            this.Txt_Klient_Adresse.Size = new System.Drawing.Size(132, 22);
+            this.Txt_Klient_Adresse.Size = new System.Drawing.Size(100, 20);
             this.Txt_Klient_Adresse.TabIndex = 8;
             // 
             // Txt_Klient_navn
             // 
-            this.Txt_Klient_navn.Location = new System.Drawing.Point(161, 190);
-            this.Txt_Klient_navn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Klient_navn.Location = new System.Drawing.Point(121, 154);
             this.Txt_Klient_navn.Name = "Txt_Klient_navn";
-            this.Txt_Klient_navn.Size = new System.Drawing.Size(132, 22);
+            this.Txt_Klient_navn.Size = new System.Drawing.Size(100, 20);
             this.Txt_Klient_navn.TabIndex = 7;
             // 
             // Opret_ydelse
@@ -609,143 +625,150 @@
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_startdato);
             this.Opret_ydelse.Controls.Add(this.txt_ydelse_ydelsesNr);
             this.Opret_ydelse.Location = new System.Drawing.Point(4, 24);
-            this.Opret_ydelse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Opret_ydelse.Margin = new System.Windows.Forms.Padding(2);
             this.Opret_ydelse.Name = "Opret_ydelse";
-            this.Opret_ydelse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Opret_ydelse.Size = new System.Drawing.Size(904, 613);
+            this.Opret_ydelse.Padding = new System.Windows.Forms.Padding(2);
+            this.Opret_ydelse.Size = new System.Drawing.Size(994, 531);
             this.Opret_ydelse.TabIndex = 3;
             this.Opret_ydelse.Text = "Ydelse";
             this.Opret_ydelse.UseVisualStyleBackColor = true;
             // 
             // bnt_Ydelse_tilføj
             // 
-            this.bnt_Ydelse_tilføj.Location = new System.Drawing.Point(72, 345);
-            this.bnt_Ydelse_tilføj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bnt_Ydelse_tilføj.Location = new System.Drawing.Point(54, 280);
+            this.bnt_Ydelse_tilføj.Margin = new System.Windows.Forms.Padding(2);
             this.bnt_Ydelse_tilføj.Name = "bnt_Ydelse_tilføj";
-            this.bnt_Ydelse_tilføj.Size = new System.Drawing.Size(131, 34);
+            this.bnt_Ydelse_tilføj.Size = new System.Drawing.Size(98, 28);
             this.bnt_Ydelse_tilføj.TabIndex = 29;
             this.bnt_Ydelse_tilføj.Text = "Tilføj ydelse";
             this.bnt_Ydelse_tilføj.UseVisualStyleBackColor = true;
-            this.bnt_Ydelse_tilføj.Click += new System.EventHandler(this.btn_opret_ydelse);
+            //this.bnt_Ydelse_tilføj.Click += new System.EventHandler(this.btn_opret_ydelse);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 297);
+            this.label1.Location = new System.Drawing.Point(52, 241);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 28;
             this.label1.Text = "Advokat";
             // 
             // lbl_sagsnr
             // 
             this.lbl_sagsnr.AutoSize = true;
-            this.lbl_sagsnr.Location = new System.Drawing.Point(69, 254);
+            this.lbl_sagsnr.Location = new System.Drawing.Point(52, 206);
+            this.lbl_sagsnr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_sagsnr.Name = "lbl_sagsnr";
-            this.lbl_sagsnr.Size = new System.Drawing.Size(57, 17);
+            this.lbl_sagsnr.Size = new System.Drawing.Size(43, 13);
             this.lbl_sagsnr.TabIndex = 27;
             this.lbl_sagsnr.Text = "Sags nr";
             // 
             // lbl_timer
             // 
             this.lbl_timer.AutoSize = true;
-            this.lbl_timer.Location = new System.Drawing.Point(69, 206);
+            this.lbl_timer.Location = new System.Drawing.Point(52, 167);
+            this.lbl_timer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_timer.Name = "lbl_timer";
-            this.lbl_timer.Size = new System.Drawing.Size(44, 17);
+            this.lbl_timer.Size = new System.Drawing.Size(33, 13);
             this.lbl_timer.TabIndex = 26;
             this.lbl_timer.Text = "Timer";
             // 
             // lbl_pris
             // 
             this.lbl_pris.AutoSize = true;
-            this.lbl_pris.Location = new System.Drawing.Point(69, 158);
+            this.lbl_pris.Location = new System.Drawing.Point(52, 128);
+            this.lbl_pris.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_pris.Name = "lbl_pris";
-            this.lbl_pris.Size = new System.Drawing.Size(32, 17);
+            this.lbl_pris.Size = new System.Drawing.Size(24, 13);
             this.lbl_pris.TabIndex = 25;
             this.lbl_pris.Text = "Pris";
             // 
             // lbl_Beskrivelse
             // 
             this.lbl_Beskrivelse.AutoSize = true;
-            this.lbl_Beskrivelse.Location = new System.Drawing.Point(69, 118);
+            this.lbl_Beskrivelse.Location = new System.Drawing.Point(52, 96);
+            this.lbl_Beskrivelse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Beskrivelse.Name = "lbl_Beskrivelse";
-            this.lbl_Beskrivelse.Size = new System.Drawing.Size(80, 17);
+            this.lbl_Beskrivelse.Size = new System.Drawing.Size(61, 13);
             this.lbl_Beskrivelse.TabIndex = 24;
             this.lbl_Beskrivelse.Text = "Beskrivelse";
             // 
             // lbl_startdato
             // 
             this.lbl_startdato.AutoSize = true;
-            this.lbl_startdato.Location = new System.Drawing.Point(69, 74);
+            this.lbl_startdato.Location = new System.Drawing.Point(52, 60);
+            this.lbl_startdato.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_startdato.Name = "lbl_startdato";
-            this.lbl_startdato.Size = new System.Drawing.Size(70, 17);
+            this.lbl_startdato.Size = new System.Drawing.Size(53, 13);
             this.lbl_startdato.TabIndex = 23;
             this.lbl_startdato.Text = "Start dato";
             // 
             // lbl_Nr
             // 
             this.lbl_Nr.AutoSize = true;
-            this.lbl_Nr.Location = new System.Drawing.Point(69, 28);
+            this.lbl_Nr.Location = new System.Drawing.Point(52, 23);
+            this.lbl_Nr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Nr.Name = "lbl_Nr";
-            this.lbl_Nr.Size = new System.Drawing.Size(75, 17);
+            this.lbl_Nr.Size = new System.Drawing.Size(56, 13);
             this.lbl_Nr.TabIndex = 22;
             this.lbl_Nr.Text = "Ydelses nr";
             // 
             // txt_ydelse_AdvokatID
             // 
-            this.txt_ydelse_AdvokatID.Location = new System.Drawing.Point(169, 292);
-            this.txt_ydelse_AdvokatID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_AdvokatID.Location = new System.Drawing.Point(127, 237);
+            this.txt_ydelse_AdvokatID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_AdvokatID.Name = "txt_ydelse_AdvokatID";
-            this.txt_ydelse_AdvokatID.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_AdvokatID.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_AdvokatID.TabIndex = 21;
             // 
             // txt_ydelse_sagsNr
             // 
-            this.txt_ydelse_sagsNr.Location = new System.Drawing.Point(169, 249);
-            this.txt_ydelse_sagsNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_sagsNr.Location = new System.Drawing.Point(127, 202);
+            this.txt_ydelse_sagsNr.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_sagsNr.Name = "txt_ydelse_sagsNr";
-            this.txt_ydelse_sagsNr.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_sagsNr.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_sagsNr.TabIndex = 20;
             // 
             // txt_ydelse_timer
             // 
-            this.txt_ydelse_timer.Location = new System.Drawing.Point(169, 201);
-            this.txt_ydelse_timer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_timer.Location = new System.Drawing.Point(127, 163);
+            this.txt_ydelse_timer.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_timer.Name = "txt_ydelse_timer";
-            this.txt_ydelse_timer.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_timer.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_timer.TabIndex = 19;
             // 
             // txt_ydelse_Pris
             // 
-            this.txt_ydelse_Pris.Location = new System.Drawing.Point(169, 153);
-            this.txt_ydelse_Pris.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_Pris.Location = new System.Drawing.Point(127, 124);
+            this.txt_ydelse_Pris.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_Pris.Name = "txt_ydelse_Pris";
-            this.txt_ydelse_Pris.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_Pris.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_Pris.TabIndex = 18;
             // 
             // txt_ydelse_beskrivelse
             // 
-            this.txt_ydelse_beskrivelse.Location = new System.Drawing.Point(169, 113);
-            this.txt_ydelse_beskrivelse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_beskrivelse.Location = new System.Drawing.Point(127, 92);
+            this.txt_ydelse_beskrivelse.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_beskrivelse.Name = "txt_ydelse_beskrivelse";
-            this.txt_ydelse_beskrivelse.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_beskrivelse.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_beskrivelse.TabIndex = 17;
             // 
             // txt_ydelse_startdato
             // 
-            this.txt_ydelse_startdato.Location = new System.Drawing.Point(169, 69);
-            this.txt_ydelse_startdato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_startdato.Location = new System.Drawing.Point(127, 56);
+            this.txt_ydelse_startdato.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_startdato.Name = "txt_ydelse_startdato";
-            this.txt_ydelse_startdato.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_startdato.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_startdato.TabIndex = 16;
             // 
             // txt_ydelse_ydelsesNr
             // 
             this.txt_ydelse_ydelsesNr.Enabled = false;
-            this.txt_ydelse_ydelsesNr.Location = new System.Drawing.Point(169, 23);
-            this.txt_ydelse_ydelsesNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ydelse_ydelsesNr.Location = new System.Drawing.Point(127, 19);
+            this.txt_ydelse_ydelsesNr.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ydelse_ydelsesNr.Name = "txt_ydelse_ydelsesNr";
-            this.txt_ydelse_ydelsesNr.Size = new System.Drawing.Size(97, 22);
+            this.txt_ydelse_ydelsesNr.Size = new System.Drawing.Size(74, 20);
             this.txt_ydelse_ydelsesNr.TabIndex = 15;
             // 
             // Se_oversigt
@@ -753,12 +776,12 @@
             this.Se_oversigt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Se_oversigt.Controls.Add(this.combobox_hvad_type);
             this.Se_oversigt.Controls.Add(this.btn_Update);
-            this.Se_oversigt.Controls.Add(this.objectListView1);
+            this.Se_oversigt.Controls.Add(this.theObjectListView);
             this.Se_oversigt.Location = new System.Drawing.Point(4, 24);
-            this.Se_oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Se_oversigt.Margin = new System.Windows.Forms.Padding(2);
             this.Se_oversigt.Name = "Se_oversigt";
-            this.Se_oversigt.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Se_oversigt.Size = new System.Drawing.Size(904, 613);
+            this.Se_oversigt.Padding = new System.Windows.Forms.Padding(2);
+            this.Se_oversigt.Size = new System.Drawing.Size(994, 531);
             this.Se_oversigt.TabIndex = 4;
             this.Se_oversigt.Text = "Oversigt";
             this.Se_oversigt.UseVisualStyleBackColor = true;
@@ -766,50 +789,50 @@
             // combobox_hvad_type
             // 
             this.combobox_hvad_type.FormattingEnabled = true;
-            this.combobox_hvad_type.Location = new System.Drawing.Point(5, 39);
-            this.combobox_hvad_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.combobox_hvad_type.Location = new System.Drawing.Point(4, 32);
+            this.combobox_hvad_type.Margin = new System.Windows.Forms.Padding(2);
             this.combobox_hvad_type.Name = "combobox_hvad_type";
-            this.combobox_hvad_type.Size = new System.Drawing.Size(109, 24);
+            this.combobox_hvad_type.Size = new System.Drawing.Size(83, 21);
             this.combobox_hvad_type.TabIndex = 12;
-            this.combobox_hvad_type.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
+            //this.combobox_hvad_type.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(5, 7);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Update.Location = new System.Drawing.Point(4, 6);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(124, 25);
+            this.btn_Update.Size = new System.Drawing.Size(93, 20);
             this.btn_Update.TabIndex = 8;
             this.btn_Update.Text = "Gem ændring";
             this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            //this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // objectListView1
+            // theObjectListView
             // 
-            this.objectListView1.AllColumns.Add(this.olvColumn1);
-            this.objectListView1.AllColumns.Add(this.SagsNr);
-            this.objectListView1.AllColumns.Add(this.Arbejdstitel);
-            this.objectListView1.AllColumns.Add(this.StartDate);
-            this.objectListView1.AllColumns.Add(this.Slutdate);
-            this.objectListView1.AllColumns.Add(this.Kørselstimer);
-            this.objectListView1.AllColumns.Add(this.TimeEstimat);
-            this.objectListView1.AllColumns.Add(this.SagsBeskrivelse);
-            this.objectListView1.AllColumns.Add(this.InterneNoter);
-            this.objectListView1.AllColumns.Add(this.KlientNr);
-            this.objectListView1.AllColumns.Add(this.MedarbejderNr);
-            this.objectListView1.AllColumns.Add(this.YdelsesTypeNr);
-            this.objectListView1.AllColumns.Add(this.Navn);
-            this.objectListView1.AllColumns.Add(this.Adresse);
-            this.objectListView1.AllColumns.Add(this.TelefonNr);
-            this.objectListView1.AllColumns.Add(this.Advokat_navn);
-            this.objectListView1.AllColumns.Add(this.YdelsesNr);
-            this.objectListView1.AllColumns.Add(this.YdelseBeskrivelse);
-            this.objectListView1.AllColumns.Add(this.Pris);
-            this.objectListView1.AllColumns.Add(this.Timer);
-            this.objectListView1.AllColumns.Add(this.AdvokatID);
-            this.objectListView1.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.theObjectListView.AllColumns.Add(this.olvColumn1);
+            this.theObjectListView.AllColumns.Add(this.SagsNr);
+            this.theObjectListView.AllColumns.Add(this.Arbejdstitel);
+            this.theObjectListView.AllColumns.Add(this.StartDate);
+            this.theObjectListView.AllColumns.Add(this.Slutdate);
+            this.theObjectListView.AllColumns.Add(this.Kørselstimer);
+            this.theObjectListView.AllColumns.Add(this.TimeEstimat);
+            this.theObjectListView.AllColumns.Add(this.SagsBeskrivelse);
+            this.theObjectListView.AllColumns.Add(this.InterneNoter);
+            this.theObjectListView.AllColumns.Add(this.KlientNr);
+            this.theObjectListView.AllColumns.Add(this.MedarbejderNr);
+            this.theObjectListView.AllColumns.Add(this.YdelsesTypeNr);
+            this.theObjectListView.AllColumns.Add(this.Navn);
+            this.theObjectListView.AllColumns.Add(this.Adresse);
+            this.theObjectListView.AllColumns.Add(this.TelefonNr);
+            this.theObjectListView.AllColumns.Add(this.Advokat_navn);
+            this.theObjectListView.AllColumns.Add(this.YdelsesNr);
+            this.theObjectListView.AllColumns.Add(this.YdelseBeskrivelse);
+            this.theObjectListView.AllColumns.Add(this.Pris);
+            this.theObjectListView.AllColumns.Add(this.Timer);
+            this.theObjectListView.AllColumns.Add(this.AdvokatID);
+            this.theObjectListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.theObjectListView.CellEditUseWholeCell = false;
+            this.theObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
             this.SagsNr,
             this.Arbejdstitel,
@@ -831,20 +854,20 @@
             this.Pris,
             this.Timer,
             this.AdvokatID});
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView1.FullRowSelect = true;
-            this.objectListView1.GridLines = true;
-            this.objectListView1.HasCollapsibleGroups = false;
-            this.objectListView1.Location = new System.Drawing.Point(5, 117);
-            this.objectListView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.ShowGroups = false;
-            this.objectListView1.ShowImagesOnSubItems = true;
-            this.objectListView1.Size = new System.Drawing.Size(857, 427);
-            this.objectListView1.TabIndex = 9;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.UseFiltering = true;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.theObjectListView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.theObjectListView.FullRowSelect = true;
+            this.theObjectListView.GridLines = true;
+            this.theObjectListView.HasCollapsibleGroups = false;
+            this.theObjectListView.Location = new System.Drawing.Point(4, 95);
+            this.theObjectListView.Margin = new System.Windows.Forms.Padding(2);
+            this.theObjectListView.Name = "theObjectListView";
+            this.theObjectListView.ShowGroups = false;
+            this.theObjectListView.ShowImagesOnSubItems = true;
+            this.theObjectListView.Size = new System.Drawing.Size(644, 348);
+            this.theObjectListView.TabIndex = 9;
+            this.theObjectListView.UseCompatibleStateImageBehavior = false;
+            this.theObjectListView.UseFiltering = true;
+            this.theObjectListView.View = System.Windows.Forms.View.Details;
             // 
             // olvColumn1
             // 
@@ -957,87 +980,148 @@
             this.AdvokatID.AspectName = "AdvokatId";
             this.AdvokatID.Text = "AdvokatId";
             // 
-            // btn_GoToFormCreateAdvokat
+            // tabSag
             // 
-            this.btn_GoToFormCreateAdvokat.Location = new System.Drawing.Point(12, 43);
-            this.btn_GoToFormCreateAdvokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_GoToFormCreateAdvokat.Name = "btn_GoToFormCreateAdvokat";
-            this.btn_GoToFormCreateAdvokat.Size = new System.Drawing.Size(161, 30);
-            this.btn_GoToFormCreateAdvokat.TabIndex = 53;
-            this.btn_GoToFormCreateAdvokat.Text = "Gå til: Opret Advokat";
-            this.btn_GoToFormCreateAdvokat.UseVisualStyleBackColor = true;
-            this.btn_GoToFormCreateAdvokat.Click += new System.EventHandler(this.btn_GoToFormCreateAdvokat_Click);
+            this.tabSag.Location = new System.Drawing.Point(4, 24);
+            this.tabSag.Name = "tabSag";
+            this.tabSag.Size = new System.Drawing.Size(994, 531);
+            this.tabSag.TabIndex = 6;
+            this.tabSag.Text = "Sag";
+            this.tabSag.UseVisualStyleBackColor = true;
             // 
-            // Btn_CreateKlient
+            // tabAdvokat
             // 
-            this.Btn_CreateKlient.Location = new System.Drawing.Point(12, 91);
-            this.Btn_CreateKlient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn_CreateKlient.Name = "Btn_CreateKlient";
-            this.Btn_CreateKlient.Size = new System.Drawing.Size(161, 28);
-            this.Btn_CreateKlient.TabIndex = 54;
-            this.Btn_CreateKlient.Text = "Gå til: Opret Klient";
-            this.Btn_CreateKlient.UseVisualStyleBackColor = true;
-            this.Btn_CreateKlient.Click += new System.EventHandler(this.Btn_CreateKlient_Click);
+            this.tabAdvokat.Location = new System.Drawing.Point(4, 24);
+            this.tabAdvokat.Name = "tabAdvokat";
+            this.tabAdvokat.Size = new System.Drawing.Size(994, 531);
+            this.tabAdvokat.TabIndex = 7;
+            this.tabAdvokat.Text = "Advokat";
+            this.tabAdvokat.UseVisualStyleBackColor = true;
             // 
-            // btn_GåtilYdelse
+            // tabKlient
             // 
-            this.btn_GåtilYdelse.Location = new System.Drawing.Point(12, 142);
-            this.btn_GåtilYdelse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_GåtilYdelse.Name = "btn_GåtilYdelse";
-            this.btn_GåtilYdelse.Size = new System.Drawing.Size(161, 28);
-            this.btn_GåtilYdelse.TabIndex = 55;
-            this.btn_GåtilYdelse.Text = "Gå til: Opret Ydelse";
-            this.btn_GåtilYdelse.UseVisualStyleBackColor = true;
-            this.btn_GåtilYdelse.Click += new System.EventHandler(this.btn_GåtilYdelse_Click);
+            this.tabKlient.Location = new System.Drawing.Point(4, 24);
+            this.tabKlient.Name = "tabKlient";
+            this.tabKlient.Size = new System.Drawing.Size(994, 531);
+            this.tabKlient.TabIndex = 8;
+            this.tabKlient.Text = "Klient";
+            this.tabKlient.UseVisualStyleBackColor = true;
             // 
-            // Btn_Oversigt
+            // tabYdelse
             // 
-            this.Btn_Oversigt.Location = new System.Drawing.Point(12, 398);
-            this.Btn_Oversigt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Btn_Oversigt.Name = "Btn_Oversigt";
-            this.Btn_Oversigt.Size = new System.Drawing.Size(161, 121);
-            this.Btn_Oversigt.TabIndex = 56;
-            this.Btn_Oversigt.Text = "Se oversigt";
-            this.Btn_Oversigt.UseVisualStyleBackColor = true;
-            this.Btn_Oversigt.Click += new System.EventHandler(this.Btn_Oversigt_Click);
+            this.tabYdelse.Location = new System.Drawing.Point(4, 24);
+            this.tabYdelse.Name = "tabYdelse";
+            this.tabYdelse.Size = new System.Drawing.Size(994, 531);
+            this.tabYdelse.TabIndex = 9;
+            this.tabYdelse.Text = "Ydelse";
+            this.tabYdelse.UseVisualStyleBackColor = true;
             // 
-            // Btn_Help
+            // tabClickHereFirst
             // 
-            this.Btn_Help.Location = new System.Drawing.Point(12, 551);
-            this.Btn_Help.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn_Help.Name = "Btn_Help";
-            this.Btn_Help.Size = new System.Drawing.Size(63, 28);
-            this.Btn_Help.TabIndex = 58;
-            this.Btn_Help.Text = "?";
-            this.Btn_Help.UseVisualStyleBackColor = true;
+            this.tabClickHereFirst.Controls.Add(this.buttonHelpMe);
+            this.tabClickHereFirst.Controls.Add(this.buttomAddNewObject);
+            this.tabClickHereFirst.Controls.Add(this.buttonAnnuller);
+            this.tabClickHereFirst.Controls.Add(this.buttomSave);
+            this.tabClickHereFirst.Controls.Add(this.dropdownCombobox);
+            this.tabClickHereFirst.Controls.Add(this.buttomRefresh);
+            this.tabClickHereFirst.Controls.Add(this.myObjectListView);
+            this.tabClickHereFirst.Location = new System.Drawing.Point(4, 24);
+            this.tabClickHereFirst.Name = "tabClickHereFirst";
+            this.tabClickHereFirst.Padding = new System.Windows.Forms.Padding(3);
+            this.tabClickHereFirst.Size = new System.Drawing.Size(994, 531);
+            this.tabClickHereFirst.TabIndex = 10;
+            this.tabClickHereFirst.Text = "ClickHereFirst";
+            this.tabClickHereFirst.UseVisualStyleBackColor = true;
             // 
-            // btn_opretsag
+            // buttonHelpMe
             // 
-            this.btn_opretsag.Location = new System.Drawing.Point(13, 185);
-            this.btn_opretsag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_opretsag.Name = "btn_opretsag";
-            this.btn_opretsag.Size = new System.Drawing.Size(161, 28);
-            this.btn_opretsag.TabIndex = 59;
-            this.btn_opretsag.Text = "Gå til: Opret Sag";
-            this.btn_opretsag.UseVisualStyleBackColor = true;
-            this.btn_opretsag.Click += new System.EventHandler(this.btn_opretsag_Click);
+            this.buttonHelpMe.Location = new System.Drawing.Point(554, 8);
+            this.buttonHelpMe.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonHelpMe.Name = "buttonHelpMe";
+            this.buttonHelpMe.Size = new System.Drawing.Size(76, 76);
+            this.buttonHelpMe.TabIndex = 6;
+            this.buttonHelpMe.Text = "HelpMe";
+            this.buttonHelpMe.UseVisualStyleBackColor = true;
+            //this.buttonHelpMe.Click += new System.EventHandler(this.buttonHelpMe_Click);
             // 
-            // Startside
+            // buttomAddNewObject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.buttomAddNewObject.Location = new System.Drawing.Point(395, 8);
+            this.buttomAddNewObject.Margin = new System.Windows.Forms.Padding(5);
+            this.buttomAddNewObject.Name = "buttomAddNewObject";
+            this.buttomAddNewObject.Size = new System.Drawing.Size(149, 45);
+            this.buttomAddNewObject.TabIndex = 5;
+            this.buttomAddNewObject.Text = "AddNewObject";
+            this.buttomAddNewObject.UseVisualStyleBackColor = true;
+            //this.buttomAddNewObject.Click += new System.EventHandler(this.buttomAddNewObject_Click);
+            // 
+            // buttonAnnuller
+            // 
+            this.buttonAnnuller.Location = new System.Drawing.Point(238, 8);
+            this.buttonAnnuller.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAnnuller.Name = "buttonAnnuller";
+            this.buttonAnnuller.Size = new System.Drawing.Size(147, 45);
+            this.buttonAnnuller.TabIndex = 4;
+            this.buttonAnnuller.Text = "Annuller";
+            this.buttonAnnuller.UseVisualStyleBackColor = true;
+            //this.buttonAnnuller.Click += new System.EventHandler(this.buttonAnnuller_Click);
+            // 
+            // buttomSave
+            // 
+            this.buttomSave.Location = new System.Drawing.Point(107, 8);
+            this.buttomSave.Margin = new System.Windows.Forms.Padding(5);
+            this.buttomSave.Name = "buttomSave";
+            this.buttomSave.Size = new System.Drawing.Size(121, 45);
+            this.buttomSave.TabIndex = 3;
+            this.buttomSave.Text = "Save";
+            this.buttomSave.UseVisualStyleBackColor = true;
+            //this.buttomSave.Click += new System.EventHandler(this.buttomSave_Click);
+            // 
+            // dropdownCombobox
+            // 
+            this.dropdownCombobox.FormattingEnabled = true;
+            this.dropdownCombobox.Location = new System.Drawing.Point(107, 60);
+            this.dropdownCombobox.Margin = new System.Windows.Forms.Padding(2);
+            this.dropdownCombobox.Name = "dropdownCombobox";
+            this.dropdownCombobox.Size = new System.Drawing.Size(121, 21);
+            this.dropdownCombobox.TabIndex = 2;
+            //this.dropdownCombobox.SelectedIndexChanged += new System.EventHandler(this.combobox_hvad_type_SelectedIndexChanged);
+            // 
+            // buttomRefresh
+            // 
+            this.buttomRefresh.Location = new System.Drawing.Point(8, 8);
+            this.buttomRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.buttomRefresh.Name = "buttomRefresh";
+            this.buttomRefresh.Size = new System.Drawing.Size(89, 76);
+            this.buttomRefresh.TabIndex = 1;
+            this.buttomRefresh.Text = "Refresh";
+            this.buttomRefresh.UseVisualStyleBackColor = true;
+            //this.buttomRefresh.Click += new System.EventHandler(this.buttomRefresh_Click);
+            // 
+            // myObjectListView
+            // 
+            this.myObjectListView.CellEditUseWholeCell = false;
+            this.myObjectListView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.myObjectListView.Location = new System.Drawing.Point(8, 94);
+            this.myObjectListView.Margin = new System.Windows.Forms.Padding(5);
+            this.myObjectListView.Name = "myObjectListView";
+            this.myObjectListView.Size = new System.Drawing.Size(622, 429);
+            this.myObjectListView.TabIndex = 0;
+            this.myObjectListView.UseCompatibleStateImageBehavior = false;
+            this.myObjectListView.View = System.Windows.Forms.View.Details;
+            //this.myObjectListView.SelectedIndexChanged += new System.EventHandler(this.myObjectListView_SelectedIndexChanged);
+            // 
+            // UnifiedGuiForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1229, 645);
-            this.Controls.Add(this.btn_opretsag);
-            this.Controls.Add(this.Btn_Help);
-            this.Controls.Add(this.Btn_Oversigt);
-            this.Controls.Add(this.btn_GåtilYdelse);
-            this.Controls.Add(this.Btn_CreateKlient);
-            this.Controls.Add(this.btn_GoToFormCreateAdvokat);
+            this.ClientSize = new System.Drawing.Size(1040, 723);
             this.Controls.Add(this.DynamicTabControl);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Startside";
-            this.Text = "Startside";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "UnifiedGuiForm";
+            this.Text = "Lawhouse UnifiedGui";
+            this.Load += new System.EventHandler(this.UnifiedGuiForm_Load);
             this.DynamicTabControl.ResumeLayout(false);
             this.tabStart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1050,7 +1134,9 @@
             this.Opret_ydelse.ResumeLayout(false);
             this.Opret_ydelse.PerformLayout();
             this.Se_oversigt.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theObjectListView)).EndInit();
+            this.tabClickHereFirst.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.myObjectListView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1082,12 +1168,7 @@
         private System.Windows.Forms.Label lbl_Kørselstimer;
         private System.Windows.Forms.Label lbl_Start;
         private System.Windows.Forms.Label lbl_Titel;
-        private System.Windows.Forms.Button btn_GoToFormCreateAdvokat;
-        private System.Windows.Forms.Button Btn_CreateKlient;
-        private System.Windows.Forms.Button btn_GåtilYdelse;
-        private System.Windows.Forms.Button Btn_Oversigt;
         private System.Windows.Forms.Button btn_Create;
-        private System.Windows.Forms.Button Btn_Help;
         private System.Windows.Forms.TabPage Opret_klient;
         private System.Windows.Forms.TabPage Opret_ydelse;
         private System.Windows.Forms.TabPage Se_oversigt;
@@ -1101,7 +1182,6 @@
         private System.Windows.Forms.TextBox txt_Advokat_AdvokatNavn;
         private System.Windows.Forms.Button btn_AddSpecialToAdvokat;
         private System.Windows.Forms.Button btn_CreateAdvokat;
-        private System.Windows.Forms.Button btn_opretsag;
         private System.Windows.Forms.Button bnt_Klient_Opret;
         private System.Windows.Forms.Label lbl_TelefonNr;
         private System.Windows.Forms.Label lbl_Adresse;
@@ -1125,7 +1205,7 @@
         private System.Windows.Forms.TextBox txt_ydelse_startdato;
         private System.Windows.Forms.TextBox txt_ydelse_ydelsesNr;
         private System.Windows.Forms.Button btn_Update;
-        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.ObjectListView theObjectListView;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn SagsNr;
         private BrightIdeasSoftware.OLVColumn Arbejdstitel;
@@ -1149,5 +1229,17 @@
         private BrightIdeasSoftware.OLVColumn AdvokatID;
         private System.Windows.Forms.ComboBox combobox_hvad_type;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabSag;
+        private System.Windows.Forms.TabPage tabAdvokat;
+        private System.Windows.Forms.TabPage tabKlient;
+        private System.Windows.Forms.TabPage tabYdelse;
+        private System.Windows.Forms.TabPage tabClickHereFirst;
+        private System.Windows.Forms.ComboBox dropdownCombobox;
+        private System.Windows.Forms.Button buttomRefresh;
+        private BrightIdeasSoftware.ObjectListView myObjectListView;
+        private System.Windows.Forms.Button buttonHelpMe;
+        private System.Windows.Forms.Button buttomAddNewObject;
+        private System.Windows.Forms.Button buttonAnnuller;
+        private System.Windows.Forms.Button buttomSave;
     }
 }

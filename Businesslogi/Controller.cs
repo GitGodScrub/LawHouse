@@ -55,7 +55,7 @@ namespace BusinessLogic
             Advokat advokat = (Advokat)objectToUpdate;
             currentDatabaseInstance.UpdateAdvokat(advokat);
         }
-        public static void UpdateKLient(object objectToUpdate)
+        public static void UpdateKlient(object objectToUpdate)
         {
             Klient klient = (Klient)objectToUpdate;
             currentDatabaseInstance.UpdateKlient(klient);

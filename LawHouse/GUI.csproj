@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExperimentalForm%28ClickAtions%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateAdvokatTester.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +81,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDrop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExperimentalForm%28NewItem%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExperimentalForm%28OpretItem%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExperimentalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExperimentalForm.Designer.cs">
+      <DependentUpon>ExperimentalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="New_case.cs">
       <SubType>Form</SubType>
@@ -91,12 +106,6 @@
     <Compile Include="OpretKLient.Designer.cs">
       <DependentUpon>OpretKLient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overblik.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Overblik.Designer.cs">
-      <DependentUpon>Overblik.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OpretYdelse.cs">
@@ -105,23 +114,26 @@
     <Compile Include="OpretYdelse.Designer.cs">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Startside.cs">
+    <Compile Include="ExperimentalForm%28TabPageHandler%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Startside.Designer.cs">
-      <DependentUpon>Startside.cs</DependentUpon>
+    <Compile Include="UnifiedGuiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnifiedGuiForm.Designer.cs">
+      <DependentUpon>UnifiedGuiForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CreateAdvokatTester.resx">
       <DependentUpon>CreateAdvokatTester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExperimentalForm.resx">
+      <DependentUpon>ExperimentalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New_case.resx">
       <DependentUpon>New_case.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpretKLient.resx">
       <DependentUpon>OpretKLient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Overblik.resx">
-      <DependentUpon>Overblik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,8 +148,8 @@
     <EmbeddedResource Include="OpretYdelse.resx">
       <DependentUpon>OpretYdelse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Startside.resx">
-      <DependentUpon>Startside.cs</DependentUpon>
+    <EmbeddedResource Include="UnifiedGuiForm.resx">
+      <DependentUpon>UnifiedGuiForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetDrop.xsc">
       <DependentUpon>DataSetDrop.xsd</DependentUpon>

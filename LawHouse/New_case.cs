@@ -75,8 +75,8 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Startside startside = new Startside();
-            startside.Show();
+            UnifiedGuiForm unifiedGuiForm = new UnifiedGuiForm();
+            unifiedGuiForm.Show();
         }
     }
 }
