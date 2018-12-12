@@ -44,8 +44,8 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Overblik overblik = new Overblik();
-            overblik.Show();
+            //Overblik overblik = new Overblik();
+            //overblik.Show();
         }
 
         private void btn_GoToFormCreateAdvokat_Click(object sender, EventArgs e)
