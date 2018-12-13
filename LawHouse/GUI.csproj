@@ -172,10 +172,6 @@
       <Project>{a51b7afc-8d03-4ed9-b0a3-d3e97714d17b}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Database\DataAccess.csproj">
-      <Project>{A46D458F-18FF-466A-BFA9-687B1C61C885}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataClassLib\DataClassLib.csproj">
       <Project>{e3df7f9d-20e0-4ed7-8ccd-a4bf73bfc20f}</Project>
       <Name>DataClassLib</Name>

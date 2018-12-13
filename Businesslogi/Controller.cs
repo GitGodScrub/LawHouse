@@ -9,8 +9,7 @@ using DataClassLib;
 
 namespace BusinessLogic
 {
-
-    public class Controller
+    public static class Controller
     {
         private static IDatabase currentDatabaseInstance = DatabaseHandler.Instance(); //Sql Database
         //private static IDatabase currentDatabaseInstance = new DummyDatabase(); //Xml Database
