@@ -10,6 +10,7 @@ namespace DataAccess
 {
     static class SqlReader //By Julius
     {
+        
         public static List<List<string>> ReadThisSql(string sqlString)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
@@ -43,9 +44,10 @@ namespace DataAccess
             }
             return toReturn;
         }
+        
 
         /*
-        public List<string[]> ReadThis(string sqlString, Type objectType)
+        public static List<string[]> ReadThisSqlPrototype(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);
@@ -88,7 +90,10 @@ namespace DataAccess
             }
             return returnList;
         }
-        public List<dynamic> OldReadThis(string sqlString, Type objectType)
+        */
+
+        /*
+        public static List<dynamic> SqlReadThisOld(string sqlString, Type objectType)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);
@@ -127,7 +132,10 @@ namespace DataAccess
             }
             return returnList;
         }
-        private List<string[]> getColumnInfo(SqlConnection conn, SqlCommand com)
+        */
+
+        /*
+        private static List<string[]> getColumnInfo(SqlConnection conn, SqlCommand com)
         {
             List<string[]> columnInfo = new List<string[]>();
             try
