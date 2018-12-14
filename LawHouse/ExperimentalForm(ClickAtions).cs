@@ -44,7 +44,7 @@ namespace GUI
         }
         private void buttonHelpMe_Click(object sender, EventArgs e) //open help for current page //ikke lavet
         {
-
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
         private void buttonAnnuller_Click(object sender, EventArgs e)
         {

@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BusinessLogic;
-
 using DataClassLib;
 
 namespace GUI
@@ -76,7 +75,7 @@ namespace GUI
                 }
             }
         }
-        private void OversigtHideAllColums()//Daniella
+        private void OversigtHideAllColums()
         {
             foreach (var item in myObjectListView.AllColumns)
             {

@@ -134,7 +134,7 @@ namespace DataAccess
         }
         */
 
-        /*
+       /* 
         private static List<string[]> getColumnInfo(SqlConnection conn, SqlCommand com)
         {
             List<string[]> columnInfo = new List<string[]>();
