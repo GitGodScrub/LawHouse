@@ -350,6 +350,11 @@ namespace GUI
 
             }
         }
+
+        private void obj_Overblik_Sag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

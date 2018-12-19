@@ -120,6 +120,7 @@
             this.Dybere_Overblik = new System.Windows.Forms.TabControl();
             this.Sag = new System.Windows.Forms.TabPage();
             this.obj_Overblik_Sag = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_Sag_Title = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_Sag_StartDato = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_Sag_Kørselstimer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label3 = new System.Windows.Forms.Label();
@@ -136,7 +137,6 @@
             this.Btn_Help = new System.Windows.Forms.Button();
             this.ydelseTableAdapter = new GUI.DataSetDropTableAdapters.YdelseTableAdapter();
             this.ydelseTypeTableAdapter = new GUI.DataSetDropTableAdapters.YdelseTypeTableAdapter();
-            this.olvColumn_Sag_Title = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DynamicTabControl.SuspendLayout();
             this.tabStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1091,6 +1091,12 @@
             this.obj_Overblik_Sag.TileSize = new System.Drawing.Size(228, 70);
             this.obj_Overblik_Sag.UseCompatibleStateImageBehavior = false;
             this.obj_Overblik_Sag.View = System.Windows.Forms.View.Tile;
+            this.obj_Overblik_Sag.SelectedIndexChanged += new System.EventHandler(this.obj_Overblik_Sag_SelectedIndexChanged);
+            // 
+            // olvColumn_Sag_Title
+            // 
+            this.olvColumn_Sag_Title.AspectName = "Arbejdstitel";
+            this.olvColumn_Sag_Title.Text = "Arbejdstitel";
             // 
             // olvColumn_Sag_StartDato
             // 
@@ -1221,11 +1227,6 @@
             // ydelseTypeTableAdapter
             // 
             this.ydelseTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // olvColumn_Sag_Title
-            // 
-            this.olvColumn_Sag_Title.AspectName = "Arbejdstitel";
-            this.olvColumn_Sag_Title.Text = "Arbejdstitel";
             // 
             // Startside
             // 
